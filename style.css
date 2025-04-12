@@ -1,0 +1,124 @@
+/* Estilos generales para toda la página */
+body {
+    font-family: sans-serif; /* Tipo de letra simple */
+    line-height: 1.6; /* Espacio entre líneas de texto */
+    margin: 0; /* Sin márgenes exteriores */
+    padding: 0; /* Sin relleno interior */
+    background-color: #f4f4f4; /* Color de fondo gris claro */
+    color: #333; /* Color de texto principal oscuro */
+}
+
+/* Estilo para el encabezado */
+header {
+    background-color: #333; /* Fondo oscuro */
+    color: #fff; /* Texto blanco */
+    padding: 1rem 0; /* Relleno arriba/abajo */
+    text-align: center; /* Texto centrado */
+}
+
+/* Estilo para el contenedor principal de noticias */
+main {
+    max-width: 800px; /* Ancho máximo para que no sea muy ancho en pantallas grandes */
+    margin: 20px auto; /* Centrado horizontalmente con margen arriba/abajo */
+    padding: 15px; /* Relleno interior */
+    background-color: #fff; /* Fondo blanco */
+    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Una pequeña sombra alrededor */
+}
+
+/* Estilos para cada artículo individual */
+.article {
+    border-bottom: 1px solid #eee; /* Línea divisoria gris clarita abajo */
+    padding-bottom: 20px; /* Espacio abajo */
+    margin-bottom: 20px; /* Margen abajo */
+}
+
+.article:last-child { /* Quitar la línea del último artículo */
+    border-bottom: none;
+    margin-bottom: 0;
+}
+
+.article h2 { /* Título principal del artículo */
+    color: #555;
+    margin-top: 0;
+}
+
+.article h3 { /* Subtítulo */
+    color: #777;
+    font-weight: normal; /* Letra no tan gruesa */
+    font-size: 1.1em;
+    margin-bottom: 15px;
+}
+
+/* Para la información meta (autor, fecha) */
+.article-meta {
+    font-size: 0.9em; /* Letra un poco más pequeña */
+    color: #666; /* Color gris */
+    margin-bottom: 10px;
+}
+
+.article-meta span { /* Espacio entre autor y fecha */
+    margin-right: 15px;
+}
+
+/* Estilo para la imagen del artículo */
+.article-img {
+    max-width: 100%; /* Para que no se salga del contenedor */
+    height: auto; /* Altura automática */
+    margin-bottom: 10px;
+    display: block; /* Evita espacio extra debajo */
+}
+
+/* Estilo para el pie de foto */
+.article-img-caption {
+    font-size: 0.85em;
+    color: #777;
+    text-align: center;
+    margin-bottom: 15px;
+    font-style: italic; /* Letra cursiva */
+}
+
+/* Estilo para los párrafos del cuerpo del artículo */
+.article-body p {
+    margin-bottom: 1em; /* Espacio debajo de cada párrafo */
+    text-align: justify; /* Texto alineado a ambos lados */
+}
+
+/* --- Estilos para el Tooltip --- */
+
+/* Estilo para la palabra que activa el tooltip (el nombre de la persona) */
+.person-tooltip {
+    text-decoration: underline dotted blue; /* Subrayado punteado azul */
+    cursor: help; /* Cambia el cursor del ratón a uno de ayuda */
+    position: relative; /* Necesario por si luego queremos posicionar más avanzado */
+}
+
+/* El popup/tooltip en sí */
+#tooltip-popup {
+    display: none; /* Oculto por defecto */
+    position: absolute; /* Se posicionará respecto a la ventana (o su contenedor más cercano posicionado) */
+    border: 1px solid #ccc; /* Borde gris */
+    background-color: #fff; /* Fondo blanco */
+    padding: 10px; /* Relleno interior */
+    border-radius: 5px; /* Bordes redondeados */
+    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Sombra */
+    z-index: 100; /* Para asegurarnos que esté por encima de otros elementos */
+    max-width: 250px; /* Ancho máximo */
+    font-size: 0.9em; /* Letra un poco más pequeña */
+    pointer-events: none; /* Evita que interactuemos con el tooltip mismo */
+}
+
+#tooltip-popup img { /* La imagen dentro del tooltip */
+    float: left; /* Imagen a la izquierda */
+    margin-right: 10px; /* Espacio a la derecha */
+    margin-bottom: 5px; /* Espacio abajo */
+    max-width: 100px; /* Tamaño */
+    max-height: 100px;
+    border-radius: 3px; /* Bordes redondeados */
+}
+
+#tooltip-popup p { /* El texto (descripción) dentro del tooltip */
+    margin: 0;
+    padding: 0;
+    line-height: 1.4;
+    text-align: left; /* Alineado a la izquierda */
+}
