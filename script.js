@@ -1,4 +1,4 @@
-// Espera a que toda la estructura HTML esté cargada antes de ejecutar el código
+// Espera a que toda la estructura HTML esté cargada antes de ejecutar el código rama de fausto
 document.addEventListener('DOMContentLoaded', () => {
 
     // Obtenemos referencias a los elementos HTML que vamos a necesitar manipular
