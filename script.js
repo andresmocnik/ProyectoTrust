@@ -110,11 +110,31 @@ document.addEventListener('DOMContentLoaded', () => {
         // y eliminamos párrafos vacíos
         const paragraphs = (article.cuerpo || '').split('\n').filter(p => p.trim() !== '');
         // Procesamos cada párrafo
-        paragraphs.forEach(pText => {
-            // Creamos un elemento <p> y usamos 'innerHTML' porque highlightPeople devuelve HTML
-            const pElement = createElement('p', { innerHTML: highlightPeople(pText) });
-            bodyDiv.appendChild(pElement); // Añadimos el párrafo al cuerpo
-        });
+        const detectedPersonsInArticle = article.personas_detectadas || []; // Obtener la lista del artículo
+
+        paragraphs.forEach(pText => { // La línea forEach se mantiene, pero su contenido cambia
+        let processedHTML = pText; // Empezar con el texto original del párrafo
+
+        // Iterar sobre las personas detectadas *específicamente en este artículo* por spaCy
+        detectedPersonsInArticle.forEach(personName => {
+        // Crear Regex para encontrar esta persona específica...
+        const escapedName = personName.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
+        const regex = new RegExp(`\\b(${escapedName})\\b`, 'gi');
+
+
+        // SIEMPRE aplicar el span para que sea interactivo
+        processedHTML = processedHTML.replace(
+        regex,
+        // Usamos el nombre exacto detectado como clave
+        `<span class="person-tooltip" data-person-key="${personName}">$1</span>`
+        );
+    });
+
+
+    // Crear el elemento <p> con el HTML procesado...
+    const pElement = createElement('p', { innerHTML: processedHTML });
+    bodyDiv.appendChild(pElement); // Añadimos el párrafo al cuerpo
+});
 
         // Añadimos todas las partes creadas al 'div' principal del artículo
         articleDiv.appendChild(section);
@@ -138,20 +158,77 @@ document.addEventListener('DOMContentLoaded', () => {
         // Añadimos escuchadores de eventos a cada uno de ellos
         personSpans.forEach(span => {
             // Evento: Cuando el ratón entra sobre el nombre
-            span.addEventListener('mouseover', (event) => {
-                const personKey = event.target.getAttribute('data-person-key'); // Obtenemos la clave ("milei", "messi"...)
-                const data = personData[personKey]; // Buscamos la info en nuestro objeto personData
-                if (data) { // Si encontramos datos para esa persona
-                    tooltipImg.src = data.img || ''; // Ponemos la URL de la imagen
-                    tooltipImg.alt = data.name;     // Texto alternativo de la imagen
-                    tooltipDesc.textContent = data.desc; // Ponemos la descripción
-
-                    // Posicionamos el popup cerca del cursor del ratón
-                    // Los números (+15, +10) son para que no aparezca exactamente encima
-                    tooltipPopup.style.left = `${event.pageX + 15}px`; // Posición horizontal
-                    tooltipPopup.style.top = `${event.pageY + 10}px`;  // Posición vertical
-
-                    tooltipPopup.style.display = 'block'; // Hacemos visible el popup
+            span.addEventListener('mouseover', async (event) => { // Hacemos la función async para usar await
+                const personKey = event.target.getAttribute('data-person-key'); // Nombre detectado
+        
+                // --- Mostrar Tooltip Inicialmente (con datos manuales o cargando) ---
+                tooltipPopup.style.left = `${event.pageX + 15}px`;
+                tooltipPopup.style.top = `${event.pageY + 10}px`;
+                tooltipPopup.style.display = 'block'; // Mostrar el popup
+        
+                // 1. Buscar en datos manuales (personData)
+                const manualData = personData[personKey];
+                if (manualData) {
+                    console.log(`Mostrando datos manuales para: ${personKey}`);
+                    tooltipImg.src = manualData.img || '';
+                    tooltipImg.alt = manualData.name;
+                    tooltipDesc.textContent = manualData.desc;
+                    // Ya está listo, no necesitamos API para este
+                    return; // Salir de la función mouseover
+                }
+        
+                // 2. Si no hay datos manuales, intentar con la API
+                console.log(`Buscando en Wikipedia para: ${personKey}`);
+                tooltipImg.src = ''; // Limpiar imagen previa
+                tooltipImg.alt = 'Cargando...';
+                tooltipDesc.textContent = 'Buscando información...'; // Estado de carga
+        
+                try {
+                    // Construir la URL de la API de Wikipedia (español)
+                    const wikiApiUrl = `https://es.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=extracts|pageimages&titles=${encodeURIComponent(personKey)}&exintro=true&explaintext=true&piprop=thumbnail&pithumbsize=100&redirects=1`;
+        
+                    const response = await fetch(wikiApiUrl);
+                    if (!response.ok) {
+                        throw new Error(`Error HTTP de Wikipedia: ${response.status}`);
+                    }
+                    const wikiData = await response.json();
+        
+                    // Procesar la respuesta de Wikipedia (puede ser compleja)
+                    const pages = wikiData.query.pages;
+                    const pageId = Object.keys(pages)[0]; // Obtener el ID de la página (suele ser solo una)
+        
+                    if (pageId && pageId !== "-1" && pages[pageId]) { // Verificar que la página existe
+                        const page = pages[pageId];
+                        const description = page.extract;
+                        const imageUrl = page.thumbnail ? page.thumbnail.source : '';
+        
+                        if (description) {
+                            console.log(`Información encontrada para: ${personKey}`);
+                            tooltipDesc.textContent = description.substring(0, 250) + (description.length > 250 ? '...' : ''); // Limitar longitud
+                        } else {
+                            tooltipDesc.textContent = 'No se encontró descripción breve.';
+                        }
+        
+                        if (imageUrl) {
+                            tooltipImg.src = imageUrl;
+                            tooltipImg.alt = page.title; // Usar el título de la página de Wiki como alt
+                        } else {
+                             tooltipImg.src = ''; // O poner una imagen placeholder
+                             tooltipImg.alt = page.title || personKey;
+                        }
+        
+                    } else {
+                        console.log(`No se encontró página en Wikipedia para: ${personKey}`);
+                        tooltipDesc.textContent = 'Información no encontrada en Wikipedia.';
+                        tooltipImg.src = '';
+                        tooltipImg.alt = personKey;
+                    }
+        
+                } catch (error) {
+                    console.error(`Error al buscar en Wikipedia para ${personKey}:`, error);
+                    tooltipDesc.textContent = 'Error al buscar información.';
+                    tooltipImg.src = '';
+                    tooltipImg.alt = personKey;
                 }
             });
 
@@ -173,7 +250,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Cargar y Mostrar las Noticias ---
     // Usamos 'fetch' para leer el archivo JSON
-    fetch('noticiasjson.json')
+    fetch('noticias_procesadas.json')
         .then(response => { // Cuando el navegador recibe la respuesta...
             if (!response.ok) { // Comprobamos si hubo algún error al cargar el archivo
                 throw new Error(`Error HTTP! estado: ${response.status}`);
@@ -181,8 +258,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json(); // Convertimos la respuesta en datos JavaScript (un array de objetos)
         })
         .then(data => { // Cuando tenemos los datos listos...
-            // Mostramos los primeros 5 artículos
-            const articlesToDisplay = data.slice(0, 5); // 'slice(0, 2)' toma desde el índice 0 hasta (pero sin incluir) el 2
+            // Mostramos los primeros 15 artículos
+            const articlesToDisplay = data.slice(0, 15); // 'slice(0, 2)' toma desde el índice 0 hasta (pero sin incluir) el 2
             // Llamamos a la función displayArticle para cada uno de los artículos seleccionados
             articlesToDisplay.forEach(article => {
                 displayArticle(article);
