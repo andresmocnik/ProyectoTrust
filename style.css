@@ -122,3 +122,24 @@ main {
     line-height: 1.4;
     text-align: left; /* Alineado a la izquierda */
 }
+
+/* --- Estilos para Sección Colapsable --- */
+.collapsible-section {
+    margin-bottom: 20px; /* Espacio debajo */
+}
+
+.collapsible-trigger {
+    /* Estilos básicos ya puestos en línea, puedes moverlos aquí */
+    transition: background-color 0.3s ease; /* Suavizar cambio de color */
+}
+
+.collapsible-trigger:hover {
+    background-color: #ddd; /* Cambiar color al pasar el ratón */
+}
+
+.collapsible-content {
+    /* Estilos básicos ya puestos en línea */
+    overflow: hidden; /* Para manejar la transición si la añades */
+    /* Podrías añadir transiciones CSS para un efecto más suave,
+       pero requiere más JS para manejar alturas */
+}

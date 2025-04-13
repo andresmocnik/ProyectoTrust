@@ -35,6 +35,9 @@
         "hora": "19:14",
         "personas_detectadas": [
             "Daniel Salomone"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Daniel Salomone"
         ]
     },
     {
@@ -67,11 +70,19 @@
         "hora": "19:56",
         "personas_detectadas": [
             "Ernestina Pais",
-            "Coco Sily",
-            "Luli Trujllo",
+            "Parodi",
             "Eduardo Serenellin",
-            "Pablo Caruso",
-            "Parodi"
+            "Luli Trujllo",
+            "Coco Sily",
+            "Pablo Caruso"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Ernestina Pais",
+            "Parodi",
+            "Eduardo Serenellin",
+            "Luli Trujllo",
+            "Coco Sily",
+            "Pablo Caruso"
         ]
     },
     {
@@ -113,15 +124,24 @@
         "fecha": "22-03-2024",
         "hora": "00:07",
         "personas_detectadas": [
-            "Martín Llaryora",
-            "Victoria Villarruel",
-            "Alejandra Vigo",
-            "Schiaretti",
-            "Milei",
             "Juan Schiaretti",
-            "Negacionistas",
+            "Alberto Fernández",
+            "Milei",
+            "Martín Llaryora",
+            "Schiaretti",
             "Javier Milei",
-            "Alberto Fernández"
+            "Alejandra Vigo",
+            "Negacionistas",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan Schiaretti",
+            "Alberto Fernández",
+            "Martín Llaryora",
+            "Javier Milei",
+            "Alejandra Vigo",
+            "Negacionistas",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -159,12 +179,20 @@
         "fecha": "20-03-2024",
         "hora": "08:14",
         "personas_detectadas": [
-            "ATE",
             "Nicolás Posse",
             "Milei",
+            "Guibert",
+            "ATE",
             "Flavio Vergara",
-            "Modernización",
-            "Guibert"
+            "Modernización"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Nicolás Posse",
+            "Guibert",
+            "Javier Milei",
+            "ATE",
+            "Flavio Vergara",
+            "Modernización"
         ]
     },
     {
@@ -220,28 +248,51 @@
         "fecha": "22-03-2024",
         "hora": "08:50",
         "personas_detectadas": [
-            "Cristina Fernández de Kirchner",
-            "Juan Carlos Maqueda",
-            "Milei",
-            "Tarditti",
-            "María Ester Caffure de Battistelli",
-            "Ariel Lijo",
-            "Agregó Tarditti",
-            "Néstor Kircher",
-            "Manuel García Mansilla",
             "Argibay",
-            "Cedaw",
-            "Micaela",
             "Aída Tarditti",
-            "Highton de Nolasco",
-            "Javier Milei",
-            "Comodoro Py",
             "Caba",
             "Salía",
+            "Tarditti",
+            "Highton de Nolasco",
+            "Néstor Kircher",
+            "Elena Highton de Nolasco",
+            "María Ester Caffure de Battistelli",
+            "Comodoro Py",
+            "Manuel García Mansilla",
             "Amja",
             "Highton",
+            "Cristina Fernández de Kirchner",
+            "Juan Carlos Maqueda",
+            "Ariel Lijo",
+            "Milei",
+            "Cedaw",
+            "Agregó Tarditti",
+            "Mauricio Macri",
+            "Micaela",
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Argibay",
+            "Aída Tarditti",
+            "Caba",
+            "Tarditti",
+            "Salía",
+            "Highton de Nolasco",
+            "Néstor Kircher",
             "Elena Highton de Nolasco",
-            "Mauricio Macri"
+            "María Ester Caffure de Battistelli",
+            "Comodoro Py",
+            "Manuel García Mansilla",
+            "Amja",
+            "Highton",
+            "Juan Carlos Maqueda",
+            "Ariel Lijo",
+            "Cedaw",
+            "Agregó Tarditti",
+            "Mauricio Macri",
+            "Micaela",
+            "Javier Milei",
+            "Cristina Kirchner"
         ]
     },
     {
@@ -275,6 +326,11 @@
         "personas_detectadas": [
             "Economía Luis Caputo",
             "Caputo",
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Luis Caputo",
+            "Economía Luis Caputo",
             "Javier Milei"
         ]
     },
@@ -320,21 +376,36 @@
         "fecha": "24-03-2024",
         "hora": "00:01",
         "personas_detectadas": [
-            "Rodrigo de Loredo",
-            "Victoria Villarruel",
             "Karina Milei",
-            "Milei",
-            "Patricia Bullrich",
-            "Passerini",
-            "Yuyales",
-            "Ersa",
-            "Llaryora",
-            "Daniel Passerini",
-            "Contorsiones",
-            "Luis Juez",
             "Loredo",
+            "Passerini",
+            "Ersa",
+            "Milei",
+            "Llaryora",
+            "Martín Llaryora",
+            "Luis Juez",
+            "Rodrigo de Loredo",
             "Javier Milei",
-            "Martín Llaryora"
+            "Contorsiones",
+            "Yuyales",
+            "Patricia Bullrich",
+            "Daniel Passerini",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Karina Milei",
+            "Loredo",
+            "Passerini",
+            "Ersa",
+            "Martín Llaryora",
+            "Luis Juez",
+            "Javier Milei",
+            "Rodrigo de Loredo",
+            "Contorsiones",
+            "Yuyales",
+            "Patricia Bullrich",
+            "Daniel Passerini",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -376,19 +447,32 @@
         "fecha": "22-03-2024",
         "hora": "14:31",
         "personas_detectadas": [
-            "Extralite",
             "Daniel Scioli",
-            "Victoria Villarruel",
-            "Clarin",
-            "Milei",
             "Villarruel\nRespecto",
-            "Manuel Adorni",
             "Turismo",
+            "Milei",
+            "Mercedes Benz",
             "Luciana Sola de Suquet",
-            "Villarruel",
             "Javier Milei",
             "Eduardo Piva",
-            "Mercedes Benz"
+            "Villarruel",
+            "Manuel Adorni",
+            "Clarin",
+            "Extralite",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Villarruel\nRespecto",
+            "Turismo",
+            "Mercedes Benz",
+            "Luciana Sola de Suquet",
+            "Javier Milei",
+            "Eduardo Piva",
+            "Manuel Adorni",
+            "Daniel Scioli",
+            "Extralite",
+            "Clarin",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -439,13 +523,21 @@
         "fecha": "22-03-2024",
         "hora": "00:07",
         "personas_detectadas": [
-            "Estela de Carlotto",
-            "Milei",
-            "Passerini",
-            "Daniel Passerini",
             "Abuelas",
+            "Passerini",
+            "Milei",
+            "Martín Llaryora",
             "Javier Milei",
-            "Martín Llaryora"
+            "Estela de Carlotto",
+            "Daniel Passerini"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Abuelas",
+            "Passerini",
+            "Martín Llaryora",
+            "Javier Milei",
+            "Daniel Passerini",
+            "Estela de Carlotto"
         ]
     },
     {
@@ -499,21 +591,37 @@
         "fecha": "23-03-2024",
         "hora": "15:44",
         "personas_detectadas": [
-            "Ariel Lijo",
-            "Fonid",
-            "Jesús María",
+            "Presidente",
+            "Myrian Prunotto",
+            "Juan Schiaretti",
             "Milei",
             "Llaryora",
-            "Myrian Prunotto",
-            "Villarruel",
-            "Javier Pretto",
-            "Juez",
-            "Juan Schiaretti",
-            "Luis Juez",
-            "Luis Caputo",
-            "Presidente",
             "Martín Llaryora",
-            "Ignacio Torres"
+            "Jesús María",
+            "Luis Juez",
+            "Ignacio Torres",
+            "Villarruel",
+            "Fonid",
+            "Ariel Lijo",
+            "Javier Pretto",
+            "Luis Caputo",
+            "Juez"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Presidente",
+            "Juan Schiaretti",
+            "Myrian Prunotto",
+            "Martín Llaryora",
+            "Jesús María",
+            "Luis Juez",
+            "Javier Milei",
+            "Ignacio Torres",
+            "Fonid",
+            "Ariel Lijo",
+            "Javier Pretto",
+            "Luis Caputo",
+            "Juez",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -550,13 +658,21 @@
         "fecha": "25-03-2024",
         "hora": "11:01",
         "personas_detectadas": [
-            "Labraña",
-            "Guillermo Francos",
-            "Tata Yofre",
-            "Francos",
             "Presidente",
+            "Tata Yofre",
+            "Guillermo Francos",
+            "Victoria Villaruel",
+            "Labraña",
             "Carlotto",
-            "Victoria Villaruel"
+            "Francos"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Presidente",
+            "Tata Yofre",
+            "Guillermo Francos",
+            "Victoria Villaruel",
+            "Labraña",
+            "Estela de Carlotto"
         ]
     },
     {
@@ -593,11 +709,17 @@
         "fecha": "22-03-2024",
         "hora": "09:56",
         "personas_detectadas": [
-            "Jonathan Viale",
-            "Patricia Bullrich",
-            "Petri",
+            "Bullrich",
             "Villarruel",
-            "Bullrich"
+            "Patricia Bullrich",
+            "Jonathan Viale",
+            "Petri"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Jonathan Viale",
+            "Victoria Villarruel",
+            "Luis Petri",
+            "Patricia Bullrich"
         ]
     },
     {
@@ -653,48 +775,90 @@
         "fecha": "23-03-2024",
         "hora": "00:00",
         "personas_detectadas": [
-            "Quintela",
-            "Fernando Espinoza",
-            "Sergio Uñac",
-            "Juan Domingo Perón",
-            "Milei",
-            "Perón",
-            "Santiago Cafiero",
-            "Estevez",
-            "Gabriela Estévez",
-            "Antonio Caló",
-            "Cristina Kirchner",
-            "Gildo Insfrán",
-            "Verónica Magario",
-            "Máximo Kirchner",
-            "Kicillof",
-            "Néstor Kirchner",
-            "Trascendió",
-            "Fernando Gray",
-            "Corpacci",
-            "Grey",
-            "Martín Llaryora",
-            "Fernández",
-            "Alberto Fernández",
-            "Insfrán",
             "La Cámpora",
-            "Jalil",
+            "Quintela",
             "Eduardo Valdés",
-            "Guillermo Oliveri",
-            "Mayra Mendoza",
-            "Kirchner",
-            "Javier Milei",
-            "Anabel Fernández Sagasti",
-            "Julio Vitobello",
-            "Sergio Berni",
-            "Alberto Rodríguez Saá",
-            "Raúl Jalil",
             "Ziliotto",
-            "Alberto",
+            "Gildo Insfrán",
+            "Raúl Jalil",
+            "Grey",
+            "Juan Domingo Perón",
             "quela",
+            "Kicillof",
+            "Antonio Caló",
+            "Néstor Kirchner",
+            "Verónica Magario",
             "Felipe Solá",
+            "Alberto",
+            "Fernando Espinoza",
+            "Corpacci",
+            "Anabel Fernández Sagasti",
+            "Fernández",
+            "Insfrán",
+            "Guillermo Oliveri",
+            "Sergio Berni",
+            "Trascendió",
+            "Santiago Cafiero",
+            "Alberto Rodríguez Saá",
+            "Milei",
             "Evita",
-            "Ricardo Pignanelli"
+            "Jalil",
+            "Perón",
+            "Máximo Kirchner",
+            "Julio Vitobello",
+            "Gabriela Estévez",
+            "Fernando Gray",
+            "Alberto Fernández",
+            "Martín Llaryora",
+            "Javier Milei",
+            "Sergio Uñac",
+            "Estevez",
+            "Ricardo Pignanelli",
+            "Cristina Kirchner",
+            "Kirchner",
+            "Mayra Mendoza"
+        ],
+        "personas_detectadas_normalizadas": [
+            "La Cámpora",
+            "Quintela",
+            "Eduardo Valdés",
+            "Ziliotto",
+            "Gildo Insfrán",
+            "Raúl Jalil",
+            "Grey",
+            "Juan Domingo Perón",
+            "Antonio Caló",
+            "quela",
+            "Néstor Kirchner",
+            "Verónica Magario",
+            "Felipe Solá",
+            "Alberto",
+            "Fernando Espinoza",
+            "Corpacci",
+            "Anabel Fernández Sagasti",
+            "Insfrán",
+            "Guillermo Oliveri",
+            "Sergio Berni",
+            "Trascendió",
+            "Santiago Cafiero",
+            "Alberto Rodríguez Saá",
+            "Evita",
+            "Jalil",
+            "Perón",
+            "Máximo Kirchner",
+            "Julio Vitobello",
+            "Gabriela Estévez",
+            "Axel Kicillof",
+            "Fernando Gray",
+            "Alberto Fernández",
+            "Martín Llaryora",
+            "Javier Milei",
+            "Sergio Uñac",
+            "Estevez",
+            "Ricardo Pignanelli",
+            "Cristina Kirchner",
+            "Kirchner",
+            "Mayra Mendoza"
         ]
     },
     {
@@ -732,10 +896,16 @@
         "fecha": "25-03-2024",
         "hora": "08:14",
         "personas_detectadas": [
+            "Javier Milei",
             "Luis Majul",
-            "Caputo",
             "LN+",
             "Luis Caputo",
+            "Caputo"
+        ],
+        "personas_detectadas_normalizadas": [
+            "LN+",
+            "Luis Caputo",
+            "Luis Majul",
             "Javier Milei"
         ]
     },
@@ -797,31 +967,55 @@
         "fecha": "22-03-2024",
         "hora": "09:13",
         "personas_detectadas": [
-            "Gildo\nSi",
-            "Tampoco Schiaretti",
-            "Sergio Massa",
-            "Milei",
-            "Cristina Kirchner",
-            "Gildo Insfrán",
-            "Massa",
-            "Máximo Kirchner",
-            "Grey",
-            "Esteban Echeverría",
-            "Martín Llaryora",
-            "Alberto Fernández",
             "La Cámpora",
-            "Insfrán",
-            "Juan “Juanchi” Zabaleta",
-            "Kirchner",
-            "Sergio",
+            "Carlos Gutiérrez",
             "José Manuel de la Sota",
+            "Tampoco Schiaretti",
+            "Grey",
+            "Gildo Insfrán",
+            "Ricardo Quintela",
+            "Esteban Echeverría",
             "Fernando Grey",
             "Facundo Moyano",
-            "Schiaretti",
-            "Ricardo Quintela",
+            "Sergio",
+            "Insfrán",
+            "Juan Schiaretti",
+            "Massa",
             "Cristina",
+            "Milei",
+            "Máximo Kirchner",
+            "Juan “Juanchi” Zabaleta",
+            "Alberto Fernández",
+            "Martín Llaryora",
+            "Sergio Massa",
+            "Schiaretti",
+            "Kirchner",
+            "Cristina Kirchner",
+            "Gildo\nSi"
+        ],
+        "personas_detectadas_normalizadas": [
+            "La Cámpora",
             "Carlos Gutiérrez",
-            "Juan Schiaretti"
+            "José Manuel de la Sota",
+            "Tampoco Schiaretti",
+            "Grey",
+            "Gildo Insfrán",
+            "Ricardo Quintela",
+            "Esteban Echeverría",
+            "Fernando Grey",
+            "Facundo Moyano",
+            "Sergio",
+            "Insfrán",
+            "Juan Schiaretti",
+            "Máximo Kirchner",
+            "Juan “Juanchi” Zabaleta",
+            "Alberto Fernández",
+            "Sergio Massa",
+            "Martín Llaryora",
+            "Javier Milei",
+            "Cristina Kirchner",
+            "Kirchner",
+            "Gildo\nSi"
         ]
     },
     {
@@ -858,7 +1052,8 @@
         "index": 130,
         "fecha": "21-03-2024",
         "hora": "11:10",
-        "personas_detectadas": []
+        "personas_detectadas": [],
+        "personas_detectadas_normalizadas": []
     },
     {
         "link": "https://www.lavoz.com.ar/politica/conferencia-de-prensa-de-manuel-adorni-del-martes-19-de-enero-de-2024/",
@@ -889,9 +1084,14 @@
         "fecha": "19-03-2024",
         "hora": "12:39",
         "personas_detectadas": [
+            "Milei",
+            "Armando Guibert",
+            "Manuel Adorni"
+        ],
+        "personas_detectadas_normalizadas": [
             "Manuel Adorni",
             "Armando Guibert",
-            "Milei"
+            "Javier Milei"
         ]
     },
     {
@@ -928,19 +1128,31 @@
         "fecha": "25-03-2024",
         "hora": "09:54",
         "personas_detectadas": [
-            "Ernesto Guillermo Villarruel",
-            "Victoria Villarruel",
-            "Carlotto",
-            "Respetá",
-            "Estela de Carlotto",
-            "Aldo Rico",
-            "Eduardo Villarruel",
-            "Milei",
-            "Villarruel",
-            "Raúl Alfonsín",
             "Horacio Jaunarena",
+            "Ernesto Guillermo Villarruel",
+            "Milei",
+            "Javier Milei",
+            "Eduardo Villarruel",
+            "Respetá",
+            "Villarruel",
             "María Estela Martínez de Perón",
-            "Javier Milei"
+            "Aldo Rico",
+            "Carlotto",
+            "Raúl Alfonsín",
+            "Estela de Carlotto",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Horacio Jaunarena",
+            "Ernesto Guillermo Villarruel",
+            "Javier Milei",
+            "Eduardo Villarruel",
+            "Respetá",
+            "María Estela Martínez de Perón",
+            "Aldo Rico",
+            "Raúl Alfonsín",
+            "Estela de Carlotto",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -973,10 +1185,14 @@
         "fecha": "19-03-2024",
         "hora": "14:18",
         "personas_detectadas": [
-            "Javier Milei",
-            "Martín Llaryora",
+            "Milei",
             "Llaryora",
-            "Milei"
+            "Martín Llaryora",
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Martín Llaryora",
+            "Javier Milei"
         ]
     },
     {
@@ -1034,29 +1250,50 @@
         "fecha": "25-03-2024",
         "hora": "12:24",
         "personas_detectadas": [
-            "Beltrán Corvalán",
-            "Sergio Massa",
-            "Milei",
-            "Massa",
-            "Alejandra Vigo",
-            "Máximo Kirchner",
             "Ángel Mario Elettore",
-            "Daniel Passerini",
             "Cristina Fernández",
-            "Martín Llaryora",
-            "Kyshakevych",
-            "Agustín González",
-            "Javier Taborda",
-            "Ganancias",
-            "Javier Milei",
-            "Guillermo Michel",
-            "Sergio",
-            "Schiaretti",
-            "Llaryora",
             "Diego Giuliano",
+            "Alejandra Vigo",
+            "Llaryora",
+            "Sergio",
+            "Guillermo Michel",
             "Juan Schiaretti",
+            "Massa",
+            "Javier Taborda",
+            "Milei",
+            "González",
+            "Kyshakevych",
+            "Ganancias",
+            "Máximo Kirchner",
+            "Daniel Passerini",
+            "Martín Llaryora",
+            "Sergio Massa",
+            "Beltrán Corvalán",
+            "Schiaretti",
             "Tania Kyshakevych",
-            "González"
+            "Javier Milei",
+            "Agustín González"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Ángel Mario Elettore",
+            "Diego Giuliano",
+            "Alejandra Vigo",
+            "Sergio",
+            "Guillermo Michel",
+            "Juan Schiaretti",
+            "Javier Taborda",
+            "González",
+            "Kyshakevych",
+            "Ganancias",
+            "Máximo Kirchner",
+            "Daniel Passerini",
+            "Tania Kyshakevych",
+            "Martín Llaryora",
+            "Sergio Massa",
+            "Beltrán Corvalán",
+            "Javier Milei",
+            "Cristina Kirchner",
+            "Agustín González"
         ]
     },
     {
@@ -1093,11 +1330,16 @@
         "fecha": "24-03-2024",
         "hora": "07:17",
         "personas_detectadas": [
-            "Victoria Villarruel",
-            "Patricia Bullrich",
-            "Villarruel",
             "Bullrich",
-            "Quién"
+            "Villarruel",
+            "Quién",
+            "Patricia Bullrich",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Victoria Villarruel",
+            "Quién",
+            "Patricia Bullrich"
         ]
     },
     {
@@ -1153,14 +1395,24 @@
         "fecha": "24-03-2024",
         "hora": "18:06",
         "personas_detectadas": [
-            "Marengo",
-            "Andrés Borenstein",
             "Milei",
+            "Prepagas",
+            "Andrés Borenstein",
             "Borenstein",
             "Fernando Marengo",
-            "Prepagas",
+            "Luis Caputo",
             "Literalmente",
-            "Luis Caputo"
+            "Marengo"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Prepagas",
+            "Andrés Borenstein",
+            "Borenstein",
+            "Javier Milei",
+            "Fernando Marengo",
+            "Luis Caputo",
+            "Literalmente",
+            "Marengo"
         ]
     },
     {
@@ -1189,6 +1441,9 @@
         "fecha": "21-03-2024",
         "hora": "20:24",
         "personas_detectadas": [
+            "Guido Iannaccone"
+        ],
+        "personas_detectadas_normalizadas": [
             "Guido Iannaccone"
         ]
     },
@@ -1238,20 +1493,37 @@
         "fecha": "21-03-2024",
         "hora": "00:03",
         "personas_detectadas": [
-            "Ricardo Lorenzetti",
-            "Citando",
-            "Juan Carlos Maqueda",
-            "Highton de Nolasco",
-            "Mujer",
+            "Elena Highton de Nolasco",
             "Argibay",
             "Néstor Kirchner",
-            "Presidente de la Nación",
-            "Amja",
             "Juez",
-            "Carlos Rosenkrantz",
+            "Amja",
+            "Mujer",
             "Carmen Argibay",
-            "Elena Highton de Nolasco",
+            "Presidente de la Nación",
+            "Ricardo Lorenzetti",
             "Horacio Rosatti",
+            "Highton de Nolasco",
+            "Juan Carlos Maqueda",
+            "Citando",
+            "Carlos Rosenkrantz",
+            "Margarita Argúas"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Elena Highton de Nolasco",
+            "Argibay",
+            "Néstor Kirchner",
+            "Carlos Rosenkrantz",
+            "Amja",
+            "Mujer",
+            "Carmen Argibay",
+            "Presidente de la Nación",
+            "Ricardo Lorenzetti",
+            "Horacio Rosatti",
+            "Highton de Nolasco",
+            "Juan Carlos Maqueda",
+            "Citando",
+            "Juez",
             "Margarita Argúas"
         ]
     },
@@ -1308,28 +1580,49 @@
         "fecha": "24-03-2024",
         "hora": "20:22",
         "personas_detectadas": [
-            "De Loredo",
-            "Gabriela Brouwer de Koning",
-            "Milei",
-            "Gabriel Bornoroni",
-            "Mendiolaza",
-            "Martín Lousteau",
-            "Luis Roldán",
-            "Adela Arning",
-            "Hacienda",
-            "Mariano Jandula",
-            "Lousteau",
-            "Rodrigo de Loredo",
-            "Tribunales I",
-            "Carrera",
-            "Presidente",
-            "Javier Milei",
-            "Karina Milei",
-            "Eduardo Bittar",
-            "Juan Manuel Cid",
             "Marcos Ferrer",
+            "Mariano Jandula",
+            "De Loredo",
+            "Presidente",
+            "Karina Milei",
+            "Gabriel Bornoroni",
+            "Rodrigo de Loredo",
+            "Martín Lousteau",
             "Marta Trimarchi",
-            "Ignacio Segura"
+            "Carrera",
+            "Milei",
+            "Juan Manuel Cid",
+            "Hacienda",
+            "Gabriela Brouwer de Koning",
+            "Lousteau",
+            "Tribunales I",
+            "Mendiolaza",
+            "Adela Arning",
+            "Javier Milei",
+            "Ignacio Segura",
+            "Eduardo Bittar",
+            "Luis Roldán"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Marcos Ferrer",
+            "Mariano Jandula",
+            "Presidente",
+            "Karina Milei",
+            "Gabriel Bornoroni",
+            "Rodrigo de Loredo",
+            "Martín Lousteau",
+            "Marta Trimarchi",
+            "Carrera",
+            "Juan Manuel Cid",
+            "Hacienda",
+            "Gabriela Brouwer de Koning",
+            "Tribunales I",
+            "Mendiolaza",
+            "Adela Arning",
+            "Javier Milei",
+            "Ignacio Segura",
+            "Eduardo Bittar",
+            "Luis Roldán"
         ]
     },
     {
@@ -1370,18 +1663,32 @@
         "hora": "18:57",
         "personas_detectadas": [
             "Pablo Moyano",
-            "Gerardo Martínez",
-            "Héctor Daer",
-            "José Luis Lingieri",
-            "Juan Domingo Perón",
-            "Gustavo Weiss",
+            "Sergio Sasia",
             "Milei",
             "Eduardo Valdés",
-            "Manuel Adorni",
             "Moyano",
-            "Sergio Sasia",
+            "Javier Milei",
+            "José Luis Lingieri",
             "José Luis Rodríguez",
-            "Javier Milei"
+            "Manuel Adorni",
+            "Juan Domingo Perón",
+            "Héctor Daer",
+            "Gerardo Martínez",
+            "Gustavo Weiss"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Pablo Moyano",
+            "Héctor Daer",
+            "Sergio Sasia",
+            "Eduardo Valdés",
+            "Moyano",
+            "Javier Milei",
+            "José Luis Lingieri",
+            "José Luis Rodríguez",
+            "Juan Domingo Perón",
+            "Manuel Adorni",
+            "Gerardo Martínez",
+            "Gustavo Weiss"
         ]
     },
     {
@@ -1415,15 +1722,24 @@
         "fecha": "22-03-2024",
         "hora": "10:58",
         "personas_detectadas": [
-            "Extralite",
-            "Victoria Villarruel",
-            "Milei",
             "Villarruel\nRespecto",
-            "Manuel Adorni",
-            "Villarruel",
+            "Milei",
+            "Mercedes Benz",
             "Turismo",
             "Javier Milei",
-            "Mercedes Benz"
+            "Villarruel",
+            "Manuel Adorni",
+            "Extralite",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Villarruel\nRespecto",
+            "Mercedes Benz",
+            "Turismo",
+            "Javier Milei",
+            "Manuel Adorni",
+            "Extralite",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -1462,6 +1778,10 @@
         "personas_detectadas": [
             "Bullrich",
             "Nayib Bukele"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Nayib Bukele",
+            "Patricia Bullrich"
         ]
     },
     {
@@ -1497,11 +1817,17 @@
         "fecha": "21-03-2024",
         "hora": "18:29",
         "personas_detectadas": [
-            "Cristina Fernández de Kirchner",
-            "Milei",
-            "Presidente Milei",
             "Presidente",
-            "Alberto Fernández"
+            "Alberto Fernández",
+            "Milei",
+            "Cristina Fernández de Kirchner",
+            "Presidente Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Presidente",
+            "Alberto Fernández",
+            "Cristina Kirchner",
+            "Javier Milei"
         ]
     },
     {
@@ -1539,14 +1865,22 @@
         "fecha": "25-03-2024",
         "hora": "12:41",
         "personas_detectadas": [
-            "Horacio Pietragalla",
-            "Maldonado",
-            "Patricia Bullrich",
-            "Julián Ercolini",
             "Bullrich",
-            "Pietragalla",
+            "Alberto Fernández",
+            "Maldonado",
+            "Julián Ercolini",
+            "Horacio Pietragalla",
             "Javier Milei",
-            "Alberto Fernández"
+            "Patricia Bullrich",
+            "Pietragalla"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Alberto Fernández",
+            "Maldonado",
+            "Julián Ercolini",
+            "Horacio Pietragalla",
+            "Javier Milei",
+            "Patricia Bullrich"
         ]
     },
     {
@@ -1585,6 +1919,10 @@
         "personas_detectadas": [
             "Pablo Quirno",
             "LECAP"
+        ],
+        "personas_detectadas_normalizadas": [
+            "LECAP",
+            "Pablo Quirno"
         ]
     },
     {
@@ -1618,10 +1956,14 @@
         "fecha": "1-04-2024",
         "hora": "10:13",
         "personas_detectadas": [
+            "Alberto Fernández",
             "Fernández",
-            "Javier Milei",
             "Milei",
-            "Alberto Fernández"
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Alberto Fernández",
+            "Javier Milei"
         ]
     },
     {
@@ -1658,8 +2000,13 @@
         "fecha": "23-03-2024",
         "hora": "22:30",
         "personas_detectadas": [
-            "Piva",
             "Turismo",
+            "Piva",
+            "Cancillería"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Turismo",
+            "Piva",
             "Cancillería"
         ]
     },
@@ -1692,11 +2039,18 @@
         "fecha": "24-03-2024",
         "hora": "10:47",
         "personas_detectadas": [
+            "Massera",
             "Fernández",
             "Videla",
-            "Julio César Strassera",
+            "Viola",
+            "Julio César Strassera"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Alberto Fernández",
             "Massera",
-            "Viola"
+            "Videla",
+            "Viola",
+            "Julio César Strassera"
         ]
     },
     {
@@ -1725,6 +2079,10 @@
         "fecha": "19-03-2024",
         "hora": "12:46",
         "personas_detectadas": [
+            "Politikón Chanco",
+            "Ganancias"
+        ],
+        "personas_detectadas_normalizadas": [
             "Politikón Chanco",
             "Ganancias"
         ]
@@ -1763,6 +2121,10 @@
         "fecha": "26-03-2024",
         "hora": "10:03",
         "personas_detectadas": [
+            "Lemoine",
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
             "Lemoine",
             "Javier Milei"
         ]
@@ -1815,34 +2177,60 @@
         "fecha": "20-03-2024",
         "hora": "00:01",
         "personas_detectadas": [
-            "Facundo Pérez Carletti",
-            "La Libertad Avanza",
-            "Nacho Torres",
-            "Sergio Massa",
-            "Rodríguez",
-            "Horacio Rodríguez Larreta",
-            "Milei",
-            "Larreta",
-            "Rodríguez Larreta-Gerardo Morales",
-            "Luis Petri",
             "Humberto Schiavoni",
-            "Rogelio Frigerio",
-            "Vicente López",
-            "Pablo Walter",
-            "Macri\nMacri",
-            "Petri",
-            "Alvaro González",
-            "Bullrich",
-            "Jorge Macri",
-            "Silvia Lospennato",
-            "Javier Milei",
+            "Larreta",
             "Juan Pablo Arenaza",
-            "Macri",
+            "Facundo Pérez Carletti",
+            "Alvaro González",
+            "Petri",
+            "Nacho Torres",
             "Damián Arabia",
-            "Fernando de Andreis",
-            "Cristian Ritondo",
+            "Vicente López",
             "Derrotada",
-            "Rodríguez Larreta"
+            "Macri",
+            "Rogelio Frigerio",
+            "Rodríguez",
+            "Silvia Lospennato",
+            "Luis Petri",
+            "Cristian Ritondo",
+            "Pablo Walter",
+            "Jorge Macri",
+            "La Libertad Avanza",
+            "Milei",
+            "Horacio Rodríguez Larreta",
+            "Fernando de Andreis",
+            "Rodríguez Larreta",
+            "Bullrich",
+            "Sergio Massa",
+            "Javier Milei",
+            "Macri\nMacri",
+            "Rodríguez Larreta-Gerardo Morales"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Humberto Schiavoni",
+            "Juan Pablo Arenaza",
+            "Alvaro González",
+            "Patricia Bullrich",
+            "Nacho Torres",
+            "Damián Arabia",
+            "Vicente López",
+            "Derrotada",
+            "Rogelio Frigerio",
+            "Rodríguez",
+            "Silvia Lospennato",
+            "Luis Petri",
+            "Cristian Ritondo",
+            "Pablo Walter",
+            "Jorge Macri",
+            "La Libertad Avanza",
+            "Horacio Rodríguez Larreta",
+            "Rodríguez Larreta-Gerardo Morales",
+            "Mauricio Macri",
+            "Fernando de Andreis",
+            "Sergio Massa",
+            "Javier Milei",
+            "Macri\nMacri",
+            "Facundo Pérez Carletti"
         ]
     },
     {
@@ -1886,10 +2274,16 @@
         "fecha": "21-03-2024",
         "hora": "00:01",
         "personas_detectadas": [
-            "Santa Isabel",
-            "Pablo Chacón",
+            "Ramón Ramírez",
             "Agec",
-            "Ramón Ramírez"
+            "Santa Isabel",
+            "Pablo Chacón"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Ramón Ramírez",
+            "Agec",
+            "Santa Isabel",
+            "Pablo Chacón"
         ]
     },
     {
@@ -1938,21 +2332,38 @@
         "fecha": "21-03-2024",
         "hora": "07:53",
         "personas_detectadas": [
-            "Joel Benjamín Mamani",
-            "Albert Bedia",
-            "Milei\nLa senadora Bedia",
-            "Ricardo",
-            "Daiana Ester Llanes",
+            "Juan Carlos Bedia",
             "Juan Carlos",
+            "Albert Bedia",
+            "Joel Benjamín Mamani",
+            "Daiana Ester Llanes",
+            "Vilma Bedia",
             "Pablo Dipierri",
+            "Milei\nLa senadora Bedia",
+            "Javier Milei",
             "Nélida",
             "Mirta Araceli Silisque",
             "Manuel Adorni",
-            "Juan Carlos Bedia",
             "masoterapeuta",
-            "José Jair Mamani",
+            "Ricardo",
+            "José Jair Mamani"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan Carlos Bedia",
+            "Juan Carlos",
+            "Albert Bedia",
+            "Daiana Ester Llanes",
+            "Joel Benjamín Mamani",
+            "Vilma Bedia",
+            "Pablo Dipierri",
+            "Milei\nLa senadora Bedia",
             "Javier Milei",
-            "Vilma Bedia"
+            "Nélida",
+            "Mirta Araceli Silisque",
+            "Manuel Adorni",
+            "masoterapeuta",
+            "Ricardo",
+            "José Jair Mamani"
         ]
     },
     {
@@ -2002,8 +2413,12 @@
         "fecha": "23-03-2024",
         "hora": "00:09",
         "personas_detectadas": [
-            "Orlando Ferreres",
-            "Orlando Fererres"
+            "Orlando Fererres",
+            "Orlando Ferreres"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Orlando Fererres",
+            "Orlando Ferreres"
         ]
     },
     {
@@ -2037,10 +2452,16 @@
         "fecha": "21-03-2024",
         "hora": "10:08",
         "personas_detectadas": [
-            "Fernando Bossio",
             "Alberdi",
             "Javier Milei",
+            "Fernando Bossio",
             "Ricardo Scattolini"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Alberdi",
+            "Ricardo Scattolini",
+            "Fernando Bossio",
+            "Javier Milei"
         ]
     },
     {
@@ -2081,6 +2502,9 @@
         "hora": "12:53",
         "personas_detectadas": [
             "Martín Vauthier"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Martín Vauthier"
         ]
     },
     {
@@ -2117,6 +2541,10 @@
         "fecha": "19-03-2024",
         "hora": "22:34",
         "personas_detectadas": [
+            "Trucco",
+            "Daniel Trucco"
+        ],
+        "personas_detectadas_normalizadas": [
             "Trucco",
             "Daniel Trucco"
         ]
@@ -2158,12 +2586,20 @@
         "fecha": "19-03-2024",
         "hora": "11:43",
         "personas_detectadas": [
-            "Epec\nAguilera",
-            "Fecescor",
+            "Guillermo Oviedo",
             "Epec",
+            "Fecescor",
+            "Epec\nAguilera",
             "Aguilera",
-            "Face",
-            "Guillermo Oviedo"
+            "Face"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Guillermo Oviedo",
+            "Epec",
+            "Fecescor",
+            "Epec\nAguilera",
+            "Aguilera",
+            "Face"
         ]
     },
     {
@@ -2212,14 +2648,24 @@
         "fecha": "19-03-2024",
         "hora": "11:35",
         "personas_detectadas": [
-            "Cammesa",
             "López\nLópez",
+            "Mitre",
+            "Martín Llaryora",
+            "López",
             "Epec",
             "Fabián López",
-            "Mitre",
+            "Cammesa",
+            "Así"
+        ],
+        "personas_detectadas_normalizadas": [
+            "López\nLópez",
             "Así",
+            "Martín Llaryora",
             "López",
-            "Martín Llaryora"
+            "Epec",
+            "Fabián López",
+            "Cammesa",
+            "Mitre"
         ]
     },
     {
@@ -2271,15 +2717,25 @@
         "fecha": "20-03-2024",
         "hora": "12:21",
         "personas_detectadas": [
+            "Milei",
+            "Javier Milei",
+            "López",
+            "Epec",
+            "Fabián López",
+            "Fecescor",
             "Cammesa",
+            "Mitre",
+            "Aguilera"
+        ],
+        "personas_detectadas_normalizadas": [
+            "López",
+            "Javier Milei",
             "Fecescor",
             "Epec",
             "Fabián López",
-            "Milei",
+            "Cammesa",
             "Mitre",
-            "Aguilera",
-            "López",
-            "Javier Milei"
+            "Aguilera"
         ]
     },
     {
@@ -2332,12 +2788,19 @@
         "fecha": "24-03-2024",
         "hora": "00:00",
         "personas_detectadas": [
-            "Milei",
             "Paralizarán",
+            "Federico Giuliani",
             "Giuliani",
-            "Javier Milei",
+            "Milei",
             "Martín Llaryora",
-            "Federico Giuliani"
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Paralizarán",
+            "Federico Giuliani",
+            "Giuliani",
+            "Martín Llaryora",
+            "Javier Milei"
         ]
     },
     {
@@ -2379,11 +2842,18 @@
         "fecha": "23-03-2024",
         "hora": "00:06",
         "personas_detectadas": [
-            "Rodríguez",
-            "Gill",
             "Eduardo Rodríguez",
             "Juliana Companys",
-            "Martín Gill"
+            "Martín Gill",
+            "Rodríguez",
+            "Gill"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Eduardo Rodríguez",
+            "Juliana Companys",
+            "Martín Gill",
+            "Rodríguez",
+            "Gill"
         ]
     },
     {
@@ -2418,16 +2888,26 @@
         "fecha": "22-03-2024",
         "hora": "12:35",
         "personas_detectadas": [
-            "Extralite",
-            "Victoria Villarruel",
-            "Milei",
             "Villarruel\nRespecto",
-            "Manuel Adorni",
-            "Villarruel",
+            "Mercedes Benz",
+            "Alberto Fernández",
+            "Milei",
             "Turismo",
             "Javier Milei",
+            "Villarruel",
+            "Manuel Adorni",
+            "Extralite",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Villarruel\nRespecto",
             "Mercedes Benz",
-            "Alberto Fernández"
+            "Turismo",
+            "Alberto Fernández",
+            "Javier Milei",
+            "Manuel Adorni",
+            "Extralite",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -2463,12 +2943,19 @@
         "fecha": "25-03-2024",
         "hora": "17:08",
         "personas_detectadas": [
+            "María Corina Machado",
+            "Corina Yoris",
+            "Macri",
+            "Nicolás Maduro",
+            "Hugo Chávez",
+            "Mauricio Macri"
+        ],
+        "personas_detectadas_normalizadas": [
+            "María Corina Machado",
             "Corina Yoris",
             "Nicolás Maduro",
-            "Macri",
-            "María Corina Machado",
-            "Mauricio Macri",
-            "Hugo Chávez"
+            "Hugo Chávez",
+            "Mauricio Macri"
         ]
     },
     {
@@ -2519,13 +3006,21 @@
         "fecha": "23-03-2024",
         "hora": "00:01",
         "personas_detectadas": [
-            "Martín Llaryora",
-            "Caputo",
+            "Alberto Fernández",
             "Sergio Massa",
+            "Martín Llaryora",
+            "Javier Milei",
             "Osvaldo Giordano",
             "Luis Caputo",
+            "Caputo"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Alberto Fernández",
+            "Martín Llaryora",
+            "Sergio Massa",
             "Javier Milei",
-            "Alberto Fernández"
+            "Osvaldo Giordano",
+            "Luis Caputo"
         ]
     },
     {
@@ -2573,16 +3068,27 @@
         "fecha": "21-03-2024",
         "hora": "10:32",
         "personas_detectadas": [
-            "Fernando Cerimedo\nDel",
-            "Estela de Carlotto",
-            "H.I.J.O.S",
-            "Lula da Silva",
+            "Abuelas",
             "Milei",
             "Jair Bolsonaro",
-            "Agustín Cetrángolo",
-            "Abuelas",
+            "Javier Milei",
             "Fernando Cerimedo",
-            "Javier Milei"
+            "Agustín Cetrángolo",
+            "Fernando Cerimedo\nDel",
+            "Lula da Silva",
+            "Estela de Carlotto",
+            "H.I.J.O.S"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Abuelas",
+            "Jair Bolsonaro",
+            "Javier Milei",
+            "Agustín Cetrángolo",
+            "Fernando Cerimedo\nDel",
+            "Lula da Silva",
+            "H.I.J.O.S",
+            "Estela de Carlotto",
+            "Fernando Cerimedo"
         ]
     },
     {
@@ -2631,11 +3137,19 @@
         "fecha": "19-03-2024",
         "hora": "10:48",
         "personas_detectadas": [
+            "Causa Gutiérrez",
             "Madre de Plaza de Mayo",
             "Llamosas",
-            "Causa Gutiérrez",
-            "Susana Dillon",
             "Dillon",
+            "Susana Dillon",
+            "Novaira"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Causa Gutiérrez",
+            "Madre de Plaza de Mayo",
+            "Llamosas",
+            "Dillon",
+            "Susana Dillon",
             "Novaira"
         ]
     },
@@ -2666,8 +3180,13 @@
         "fecha": "26-03-2024",
         "hora": "08:25",
         "personas_detectadas": [
-            "Mitre",
             "Carlotto",
+            "Mitre",
+            "Estela"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Mitre",
+            "Estela de Carlotto",
             "Estela"
         ]
     },
@@ -2712,18 +3231,31 @@
         "fecha": "21-03-2024",
         "hora": "17:48",
         "personas_detectadas": [
-            "Ariel Lijo",
-            "Rossi",
-            "Rossi y Peralta",
-            "Camila Bossio",
-            "Manuel José García Mansilla",
-            "Milei",
-            "Martín Lousteau",
-            "Agustín Maldonado",
-            "Cristian Canalis",
-            "Luciana Almada",
             "Presidente",
-            "Javier Milei"
+            "Manuel José García Mansilla",
+            "Rossi",
+            "Agustín Maldonado",
+            "Milei",
+            "Luciana Almada",
+            "Rossi y Peralta",
+            "Javier Milei",
+            "Martín Lousteau",
+            "Camila Bossio",
+            "Cristian Canalis",
+            "Ariel Lijo"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Presidente",
+            "Manuel José García Mansilla",
+            "Rossi",
+            "Agustín Maldonado",
+            "Luciana Almada",
+            "Rossi y Peralta",
+            "Javier Milei",
+            "Martín Lousteau",
+            "Camila Bossio",
+            "Cristian Canalis",
+            "Ariel Lijo"
         ]
     },
     {
@@ -2752,10 +3284,15 @@
         "fecha": "25-03-2024",
         "hora": "14:18",
         "personas_detectadas": [
-            "Menem",
-            "Victoria Villarruel",
+            "Milei",
             "Javier Milei",
-            "Milei"
+            "Menem",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Victoria Villarruel",
+            "Martín Menem",
+            "Javier Milei"
         ]
     },
     {
@@ -2801,8 +3338,12 @@
         "fecha": "22-03-2024",
         "hora": "00:01",
         "personas_detectadas": [
-            "Manuel Adorni",
-            "Fonid"
+            "Fonid",
+            "Manuel Adorni"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Fonid",
+            "Manuel Adorni"
         ]
     },
     {
@@ -2834,9 +3375,14 @@
         "fecha": "26-03-2024",
         "hora": "12:22",
         "personas_detectadas": [
+            "Carolina Tealdi",
             "Sandra Pettovello",
-            "Marcos Aostri",
-            "Carolina Tealdi"
+            "Marcos Aostri"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Carolina Tealdi",
+            "Sandra Pettovello",
+            "Marcos Aostri"
         ]
     },
     {
@@ -2866,14 +3412,21 @@
         "fecha": "24-03-2024",
         "hora": "17:10",
         "personas_detectadas": [
-            "Victoria Villarruel",
+            "Abuelas",
+            "Milei",
             "Julio López",
+            "Javier Milei",
+            "Villarruel",
             "Carlotto",
             "Estela de Carlotto",
-            "Milei",
-            "Villarruel",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
             "Abuelas",
-            "Javier Milei"
+            "Julio López",
+            "Javier Milei",
+            "Estela de Carlotto",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -2925,6 +3478,9 @@
         "hora": "00:01",
         "personas_detectadas": [
             "Alberto"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Alberto"
         ]
     },
     {
@@ -2962,10 +3518,16 @@
         "fecha": "25-03-2024",
         "hora": "11:34",
         "personas_detectadas": [
-            "Manuel Adorni",
-            "Estela de Carlotto",
             "Luis Caputo",
-            "Máximo Kirchner"
+            "Máximo Kirchner",
+            "Estela de Carlotto",
+            "Manuel Adorni"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Luis Caputo",
+            "Máximo Kirchner",
+            "Estela de Carlotto",
+            "Manuel Adorni"
         ]
     },
     {
@@ -3014,20 +3576,35 @@
         "fecha": "26-03-2024",
         "hora": "08:19",
         "personas_detectadas": [
-            "Ayer",
             "Javier Milei-",
+            "Rogelio Coria",
+            "José Rucci\nNélida Vaglio",
+            "Alcorta",
+            "Javier Milei",
             "Rucci",
             "Juan Domingo Perón",
-            "José Rucci",
-            "Mitre",
-            "Lástima",
-            "Alcorta",
             "José",
-            "José Ignacio Rucci",
-            "Rogelio Coria",
             "Perón",
+            "José Ignacio Rucci",
+            "Ayer",
+            "Mitre",
+            "José Rucci",
+            "Lástima"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Javier Milei-",
+            "Rogelio Coria",
             "José Rucci\nNélida Vaglio",
-            "Javier Milei"
+            "Alcorta",
+            "Javier Milei",
+            "Juan Domingo Perón",
+            "José",
+            "Perón",
+            "José Ignacio Rucci",
+            "Ayer",
+            "Mitre",
+            "José Rucci",
+            "Lástima"
         ]
     },
     {
@@ -3059,11 +3636,18 @@
         "fecha": "25-03-2024",
         "hora": "17:41",
         "personas_detectadas": [
-            "Victoria Villarruel",
-            "Milei",
             "Juan Grabois",
+            "Milei",
             "Juan Manuel Pettigiani",
-            "Carlotto"
+            "Carlotto",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan Grabois",
+            "Javier Milei",
+            "Juan Manuel Pettigiani",
+            "Estela de Carlotto",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -3111,17 +3695,30 @@
         "fecha": "23-03-2024",
         "hora": "00:05",
         "personas_detectadas": [
-            "#justiciaporsebastian",
-            "Angulo",
             "Sebastián Villarreal",
-            "Jimena Villarreal",
-            "Sebastián",
             "Yofre",
+            "Sebastián",
+            "Martín Llaryora",
             "Martín López",
+            "#justiciaporsebastian",
             "Juan Carlos Maqueda",
             "Sebastián\nLa familia de",
-            "Luis Angulo",
-            "Martín Llaryora"
+            "Angulo",
+            "Jimena Villarreal",
+            "Luis Angulo"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Sebastián Villarreal",
+            "Yofre",
+            "Sebastián",
+            "Martín López",
+            "Martín Llaryora",
+            "#justiciaporsebastian",
+            "Juan Carlos Maqueda",
+            "Sebastián\nLa familia de",
+            "Angulo",
+            "Jimena Villarreal",
+            "Luis Angulo"
         ]
     },
     {
@@ -3152,6 +3749,9 @@
         "hora": "21:56",
         "personas_detectadas": [
             "Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Javier Milei"
         ]
     },
     {
@@ -3195,28 +3795,52 @@
         "fecha": "20-03-2024",
         "hora": "12:26",
         "personas_detectadas": [
-            "Agustín Domingo",
-            "Mónica Fein",
+            "Ignacio Torres",
+            "José Luis Espert",
+            "Martínez",
             "Natalia De la Sota",
-            "Gabriela Brouwer de Koning",
-            "Manuel Adorni",
-            "Alberto Weretilneck",
-            "Primero",
             "Gustavo Sáenz",
+            "Sergio Acevedo",
             "Rogelio Frigerio",
             "Martín Menem",
-            "Sergio Acevedo",
-            "Hacienda",
-            "Martín Llaryora",
-            "Osvaldo Llancafilo",
-            "Esteban Paulón",
-            "José Luis Espert",
-            "José Luis Garrido",
-            "Margarita Stolbizer",
-            "Martínez",
+            "Alberto Weretilneck",
             "Hugo Passalacqua",
+            "Osvaldo Llancafilo",
+            "Hacienda",
+            "Gabriela Brouwer de Koning",
+            "José Luis Garrido",
+            "Mónica Fein",
+            "Germán Martínez",
+            "Margarita Stolbizer",
+            "Martín Llaryora",
+            "Agustín Domingo",
+            "Manuel Adorni",
+            "Primero",
+            "Esteban Paulón"
+        ],
+        "personas_detectadas_normalizadas": [
             "Ignacio Torres",
-            "Germán Martínez"
+            "José Luis Espert",
+            "Martínez",
+            "Natalia De la Sota",
+            "Gustavo Sáenz",
+            "Sergio Acevedo",
+            "Rogelio Frigerio",
+            "Martín Menem",
+            "Alberto Weretilneck",
+            "Hugo Passalacqua",
+            "Osvaldo Llancafilo",
+            "Hacienda",
+            "Gabriela Brouwer de Koning",
+            "José Luis Garrido",
+            "Mónica Fein",
+            "Germán Martínez",
+            "Margarita Stolbizer",
+            "Martín Llaryora",
+            "Agustín Domingo",
+            "Manuel Adorni",
+            "Primero",
+            "Esteban Paulón"
         ]
     },
     {
@@ -3248,6 +3872,9 @@
         "fecha": "20-03-2024",
         "hora": "13:00",
         "personas_detectadas": [
+            "Moyano"
+        ],
+        "personas_detectadas_normalizadas": [
             "Moyano"
         ]
     },
@@ -3305,12 +3932,20 @@
         "hora": "23:59",
         "personas_detectadas": [
             "Caba",
-            "Peor",
-            "Martín Llaryora Milei",
-            "Milei",
-            "Ganancias",
             "Politikón Chaco",
-            "Javier Milei"
+            "Milei",
+            "Peor",
+            "Javier Milei",
+            "Ganancias",
+            "Martín Llaryora Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Caba",
+            "Politikón Chaco",
+            "Peor",
+            "Javier Milei",
+            "Ganancias",
+            "Martín Llaryora Milei"
         ]
     },
     {
@@ -3369,6 +4004,10 @@
         "personas_detectadas": [
             "Macri",
             "Caputo"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Luis Caputo",
+            "Mauricio Macri"
         ]
     },
     {
@@ -3422,11 +4061,19 @@
         "fecha": "20-03-2024",
         "hora": "16:42",
         "personas_detectadas": [
-            "Scantech",
             "Gabriel Caamaño",
-            "Caputo",
+            "Scantech",
             "Alfredo González",
             "Javier Milei",
+            "Lautaro Moschet",
+            "Caputo"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Gabriel Caamaño",
+            "Scantech",
+            "Alfredo González",
+            "Javier Milei",
+            "Luis Caputo",
             "Lautaro Moschet"
         ]
     },
@@ -3463,13 +4110,22 @@
         "fecha": "20-03-2024",
         "hora": "15:21",
         "personas_detectadas": [
+            "Carlos Gutiérrez",
+            "Julián Oberti",
+            "Juan Manuel Llamosas",
             "De Rivas",
             "Schiaretti",
-            "Juan Manuel Llamosas",
+            "Guillermo De Rivas",
+            "Martín Gutiérrez"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan Schiaretti",
             "Carlos Gutiérrez",
-            "Martín Gutiérrez",
             "Julián Oberti",
-            "Guillermo De Rivas"
+            "Juan Manuel Llamosas",
+            "De Rivas",
+            "Guillermo De Rivas",
+            "Martín Gutiérrez"
         ]
     },
     {
@@ -3549,19 +4205,34 @@
         "fecha": "19-03-2024",
         "hora": "19:50",
         "personas_detectadas": [
-            "Miguel Cabrera",
             "Sabattini",
-            "Hector Ludueña",
-            "Ricardo Fermín Albareda",
-            "Gladys Comba",
             "Costanera",
+            "Finochietto",
+            "Abuelas",
+            "Miguel Cabrera",
+            "Ricardo Fermín Albareda",
+            "Martín Llaryora",
+            "Hector Ludueña",
+            "Gladys Comba",
             "Astrid Patiño Carabelli",
             "Sonia Torres",
+            "María Eugenia Pujadas",
+            "Dante Alighieri"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Sabattini",
+            "Costanera",
             "Finochietto",
-            "Dante Alighieri",
             "Abuelas",
+            "Miguel Cabrera",
+            "Ricardo Fermín Albareda",
             "Martín Llaryora",
-            "María Eugenia Pujadas"
+            "Hector Ludueña",
+            "Gladys Comba",
+            "Astrid Patiño Carabelli",
+            "Sonia Torres",
+            "María Eugenia Pujadas",
+            "Dante Alighieri"
         ]
     },
     {
@@ -3612,8 +4283,12 @@
         "fecha": "19-03-2024",
         "hora": "11:05",
         "personas_detectadas": [
-            "Milei",
-            "Alberto Fernández"
+            "Alberto Fernández",
+            "Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Alberto Fernández",
+            "Javier Milei"
         ]
     },
     {
@@ -3642,15 +4317,27 @@
         "fecha": "22-03-2024",
         "hora": "15:58",
         "personas_detectadas": [
-            "Julieta González",
-            "Trinidad González",
-            "Insfrán",
-            "Gobernador",
-            "Gildo Insfrán",
             "Néstor Kirchner",
-            "LN+",
+            "Gobernador",
+            "Julieta González",
             "Germán",
+            "Gildo Insfrán",
             "Germán Malkiewiez",
+            "LN+",
+            "Insfrán",
+            "Trinidad González",
+            "Malkiewiez"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Néstor Kirchner",
+            "Gobernador",
+            "Julieta González",
+            "Germán",
+            "Gildo Insfrán",
+            "Germán Malkiewiez",
+            "LN+",
+            "Insfrán",
+            "Trinidad González",
             "Malkiewiez"
         ]
     },
@@ -3689,13 +4376,23 @@
         "hora": "14:59",
         "personas_detectadas": [
             "María Fernanda Viola",
-            "Side",
             "Juan Bautista “Tata” Yofre",
-            "Santiago Oría",
+            "Victoria Villaruel",
+            "Humberto Viola",
             "Kirchner",
             "Luis Labraña",
+            "Santiago Oría",
+            "Side"
+        ],
+        "personas_detectadas_normalizadas": [
+            "María Fernanda Viola",
+            "Juan Bautista “Tata” Yofre",
             "Humberto Viola",
-            "Victoria Villaruel"
+            "Victoria Villaruel",
+            "Kirchner",
+            "Luis Labraña",
+            "Santiago Oría",
+            "Side"
         ]
     },
     {
@@ -3765,20 +4462,33 @@
         "fecha": "19-03-2024",
         "hora": "14:56",
         "personas_detectadas": [
-            "Mauricio Macri",
-            "Cristina Kirchner",
-            "Massa",
-            "Balotaje\nOtro",
-            "Aquella",
-            "Sergio Massa",
             "Axel Kicillof",
-            "Milei",
+            "Massa",
             "Juan Grabois",
             "Cristina",
-            "Explanans",
+            "Milei",
+            "Alberto Fernández",
+            "Sergio Massa",
+            "Aquella",
             "Javier Milei",
             "Victoria Villaruel",
-            "Alberto Fernández"
+            "Explanans",
+            "Cristina Kirchner",
+            "Balotaje\nOtro",
+            "Mauricio Macri"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Axel Kicillof",
+            "Juan Grabois",
+            "Alberto Fernández",
+            "Sergio Massa",
+            "Javier Milei",
+            "Aquella",
+            "Victoria Villaruel",
+            "Explanans",
+            "Cristina Kirchner",
+            "Balotaje\nOtro",
+            "Mauricio Macri"
         ]
     },
     {
@@ -3828,15 +4538,25 @@
         "fecha": "25-03-2024",
         "hora": "18:39",
         "personas_detectadas": [
-            "Caputo",
-            "Santiago Bausili",
-            "Milei",
             "Bausili",
+            "Milei",
+            "Alberto Fernández",
+            "Santiago Bausili",
             "Van",
             "Osvaldo Giordano",
             "Marina Dal Pogetto",
             "Luis Caputo",
-            "Alberto Fernández"
+            "Caputo"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Bausili",
+            "Alberto Fernández",
+            "Santiago Bausili",
+            "Van",
+            "Javier Milei",
+            "Osvaldo Giordano",
+            "Marina Dal Pogetto",
+            "Luis Caputo"
         ]
     },
     {
@@ -3860,6 +4580,9 @@
         "fecha": "21-03-2024",
         "hora": "10:17",
         "personas_detectadas": [
+            "Martín Menem"
+        ],
+        "personas_detectadas_normalizadas": [
             "Martín Menem"
         ]
     },
@@ -3889,12 +4612,20 @@
         "fecha": "25-03-2024",
         "hora": "18:23",
         "personas_detectadas": [
-            "Antonio Russo",
-            "Gustavo Tevez",
+            "Raúl Figueroa",
             "Ileana Quaglino",
-            "Lucas Valiente",
+            "Antonio Russo",
             "Mariano Ceballos",
-            "Raúl Figueroa"
+            "Lucas Valiente",
+            "Gustavo Tevez"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Raúl Figueroa",
+            "Ileana Quaglino",
+            "Antonio Russo",
+            "Mariano Ceballos",
+            "Lucas Valiente",
+            "Gustavo Tevez"
         ]
     },
     {
@@ -3929,14 +4660,23 @@
         "fecha": "21-03-2024",
         "hora": "14:07",
         "personas_detectadas": [
-            "Ariel Lijo",
             "Fopea",
-            "Hijos",
             "Milei",
-            "Manuel Adorni",
+            "Javier Milei",
             "Casa Rosada",
             "Manuel García-Mansilla",
-            "Javier Milei"
+            "Ariel Lijo",
+            "Manuel Adorni",
+            "Hijos"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Fopea",
+            "Javier Milei",
+            "Casa Rosada",
+            "Manuel García-Mansilla",
+            "Ariel Lijo",
+            "Manuel Adorni",
+            "Hijos"
         ]
     },
     {
@@ -3970,12 +4710,20 @@
         "fecha": "25-03-2024",
         "hora": "17:53",
         "personas_detectadas": [
-            "Elizabeth Gómez Alcorta",
+            "Alberto Fernández",
             "Julián Ercolini",
             "Carlos Soria",
-            "Osvaldo Giordano",
             "Ercolini",
-            "Alberto Fernández"
+            "Osvaldo Giordano",
+            "Elizabeth Gómez Alcorta"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Alberto Fernández",
+            "Julián Ercolini",
+            "Carlos Soria",
+            "Ercolini",
+            "Osvaldo Giordano",
+            "Elizabeth Gómez Alcorta"
         ]
     },
     {
@@ -4012,12 +4760,21 @@
         "hora": "18:12",
         "personas_detectadas": [
             "Suárez",
-            "Cancillería",
             "Juan Antonio López Cazorla",
-            "Pablo Ferrara Raisberg",
             "Tai An",
+            "Liu Zhijiang",
+            "Pablo Ferrara Raisberg",
             "Julián Suárez",
-            "Liu Zhijiang"
+            "Cancillería"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Suárez",
+            "Juan Antonio López Cazorla",
+            "Tai An",
+            "Liu Zhijiang",
+            "Pablo Ferrara Raisberg",
+            "Julián Suárez",
+            "Cancillería"
         ]
     },
     {
@@ -4062,8 +4819,13 @@
         "hora": "16:25",
         "personas_detectadas": [
             "José de la Quintana",
-            "Alejandra Ferrero",
-            "Ferrero"
+            "Ferrero",
+            "Alejandra Ferrero"
+        ],
+        "personas_detectadas_normalizadas": [
+            "José de la Quintana",
+            "Ferrero",
+            "Alejandra Ferrero"
         ]
     },
     {
@@ -4103,24 +4865,44 @@
         "fecha": "20-03-2024",
         "hora": "19:15",
         "personas_detectadas": [
-            "Kirchner",
-            "Victoria Villarruel",
-            "Ricardo Lorenzetti",
-            "José Mayans",
-            "Carlos Arce",
-            "Guadalupe Tagliaferri",
-            "Néstor Kirchner",
-            "Martín Lousteau",
-            "Alicia Kirchner",
-            "Juan Carlos Romero",
             "Lijo",
-            "Horacio Rosatti",
             "Carlos Rosenkrantz",
+            "Néstor Kirchner",
+            "Alicia Kirchner",
             "Carlos “Camau” Espínola",
+            "Guadalupe Tagliaferri",
+            "Ricardo Lorenzetti",
+            "Anabel Fernández Sagasti",
+            "Horacio Rosatti",
+            "Martín Lousteau",
+            "Carlos Arce",
             "Juliana Di Tullio",
             "Ezequiel Atauche",
+            "Juan Carlos Romero",
+            "Kirchner",
+            "José Mayans",
             "Mauricio Macri",
-            "Anabel Fernández Sagasti"
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Néstor Kirchner",
+            "Alicia Kirchner",
+            "Carlos “Camau” Espínola",
+            "Guadalupe Tagliaferri",
+            "Ricardo Lorenzetti",
+            "Anabel Fernández Sagasti",
+            "Horacio Rosatti",
+            "Martín Lousteau",
+            "Carlos Arce",
+            "Juliana Di Tullio",
+            "Victoria Villarruel",
+            "Ariel Lijo",
+            "Juan Carlos Romero",
+            "Kirchner",
+            "José Mayans",
+            "Mauricio Macri",
+            "Carlos Rosenkrantz",
+            "Ezequiel Atauche"
         ]
     },
     {
@@ -4152,8 +4934,12 @@
         "fecha": "22-03-2024",
         "hora": "19:30",
         "personas_detectadas": [
-            "Manuel Adorni",
-            "Alberto Fernández"
+            "Alberto Fernández",
+            "Manuel Adorni"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Alberto Fernández",
+            "Manuel Adorni"
         ]
     },
     {
@@ -4206,14 +4992,24 @@
         "fecha": "22-03-2024",
         "hora": "00:00",
         "personas_detectadas": [
-            "Jonatan Viale",
-            "Hijos",
-            "Podía",
-            "Milei",
             "Cristina",
+            "Milei",
             "Villarruel",
+            "Victoria Villaruel",
+            "Jonatan Viale",
             "Kirchner",
-            "Victoria Villaruel"
+            "Podía",
+            "Hijos"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Javier Milei",
+            "Podía",
+            "Victoria Villaruel",
+            "Jonatan Viale",
+            "Cristina Kirchner",
+            "Kirchner",
+            "Hijos",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -4247,10 +5043,16 @@
         "fecha": "23-03-2024",
         "hora": "22:05",
         "personas_detectadas": [
-            "Usted",
-            "Villarruel",
             "Presidente",
+            "Villarruel",
+            "Usted",
             "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Presidente",
+            "Javier Milei",
+            "Usted",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -4331,26 +5133,47 @@
         "fecha": "24-03-2024",
         "hora": "07:00",
         "personas_detectadas": [
-            "De Loredo",
-            "Milei",
-            "Javier",
-            "Mínimo",
-            "Francos",
+            "Pichetto",
             "Karina Miliei",
-            "Massa",
-            "Gabriel Bornoroni",
-            "Saben",
-            "Nacho” García Aresca",
-            "Iba",
+            "Mínimo",
+            "De Loredo",
             "Presidente",
-            "Javier Milei",
-            "papelerío",
+            "Gabriel Bornoroni",
+            "Alberto",
             "Buffon",
             "Llaryora",
             "Macri",
-            "Alberto",
+            "Francos",
+            "Nacho” García Aresca",
+            "Massa",
             "Cristina",
-            "Pichetto"
+            "Milei",
+            "papelerío",
+            "Saben",
+            "Iba",
+            "Javier Milei",
+            "Javier"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Pichetto",
+            "Guillermo Francos",
+            "Karina Miliei",
+            "Mínimo",
+            "Presidente",
+            "Gabriel Bornoroni",
+            "Alberto",
+            "Buffon",
+            "Rodrigo de Loredo",
+            "Nacho” García Aresca",
+            "papelerío",
+            "Mauricio Macri",
+            "Saben",
+            "Iba",
+            "Martín Llaryora",
+            "Sergio Massa",
+            "Javier Milei",
+            "Javier",
+            "Cristina Kirchner"
         ]
     },
     {
@@ -4384,19 +5207,34 @@
         "fecha": "21-03-2024",
         "hora": "14:33",
         "personas_detectadas": [
-            "Rodrigo Rufeil",
-            "Sonia Torres",
             "Inés Contrera",
-            "Silvina Jurich",
-            "Ariela Szpanic",
-            "Matías Chamorro",
-            "Karen Acuña",
-            "Leandro Carpintero-",
-            "Pablo Ovejeros",
             "Viviana Martoccia",
-            "Mauricio Macri",
+            "Karen Acuña",
+            "Pablo Ovejeros",
+            "Sonia Torres",
+            "Ariela Szpanic",
             "Chamorro",
-            "Sonia Torres\n“Córdoba"
+            "Sonia Torres\n“Córdoba",
+            "Rodrigo Rufeil",
+            "Silvina Jurich",
+            "Leandro Carpintero-",
+            "Mauricio Macri",
+            "Matías Chamorro"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Inés Contrera",
+            "Viviana Martoccia",
+            "Karen Acuña",
+            "Pablo Ovejeros",
+            "Ariela Szpanic",
+            "Chamorro",
+            "Sonia Torres\n“Córdoba",
+            "Rodrigo Rufeil",
+            "Silvina Jurich",
+            "Sonia Torres",
+            "Mauricio Macri",
+            "Leandro Carpintero-",
+            "Matías Chamorro"
         ]
     },
     {
@@ -4433,8 +5271,13 @@
         "hora": "12:15",
         "personas_detectadas": [
             "Negarlos",
-            "Schiaretti",
-            "Milei"
+            "Milei",
+            "Schiaretti"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Negarlos",
+            "Juan Schiaretti",
+            "Javier Milei"
         ]
     },
     {
@@ -4470,18 +5313,32 @@
         "fecha": "20-03-2024",
         "hora": "07:44",
         "personas_detectadas": [
-            "Pablo Rossi",
-            "Carlos Baccini",
-            "Griecco",
-            "Mola",
-            "Daniel Lago",
-            "Jorge Griecco",
             "Axel Kicillof",
-            "Julio Conte Grand",
-            "Martín Insaurralde",
+            "Jorge Griecco",
+            "Daniel Lago",
+            "Mola",
+            "Sebastián Bisquert",
+            "Pablo Rossi",
             "Sergio Mola",
             "Insaurralde",
-            "Sebastián Bisquert"
+            "Carlos Baccini",
+            "Martín Insaurralde",
+            "Julio Conte Grand",
+            "Griecco"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Axel Kicillof",
+            "Jorge Griecco",
+            "Daniel Lago",
+            "Mola",
+            "Sebastián Bisquert",
+            "Pablo Rossi",
+            "Sergio Mola",
+            "Insaurralde",
+            "Carlos Baccini",
+            "Martín Insaurralde",
+            "Julio Conte Grand",
+            "Griecco"
         ]
     },
     {
@@ -4518,11 +5375,17 @@
         "fecha": "19-03-2024",
         "hora": "15:31",
         "personas_detectadas": [
-            "Jesús María",
-            "Patricia Bullrich",
             "Juan Pablo Quinteros",
             "Bullrich",
-            "Martín Llaryora"
+            "Jesús María",
+            "Martín Llaryora",
+            "Patricia Bullrich"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Martín Llaryora",
+            "Juan Pablo Quinteros",
+            "Jesús María",
+            "Patricia Bullrich"
         ]
     },
     {
@@ -4552,15 +5415,26 @@
         "fecha": "23-03-2024",
         "hora": "17:39",
         "personas_detectadas": [
-            "Maximiliano Aguiar",
-            "Paula Gaido",
             "Juan Leyes",
-            "Mauricio Ortega",
+            "Paula Gaido",
+            "Florencia Ripoll",
+            "Maximiliano Aguiar",
             "Juan Manuel González",
-            "Mariano Bergero y Chumbi",
             "Martín Menem",
+            "Mauricio Ortega",
             "Federico Giammaría",
-            "Florencia Ripoll"
+            "Mariano Bergero y Chumbi"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan Leyes",
+            "Paula Gaido",
+            "Florencia Ripoll",
+            "Maximiliano Aguiar",
+            "Juan Manuel González",
+            "Martín Menem",
+            "Mauricio Ortega",
+            "Federico Giammaría",
+            "Mariano Bergero y Chumbi"
         ]
     },
     {
@@ -4589,6 +5463,9 @@
         "hora": "16:53",
         "personas_detectadas": [
             "Francos"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Guillermo Francos"
         ]
     },
     {
@@ -4633,6 +5510,10 @@
             "Petri",
             "Luis Petri",
             "Patricia Bullrich"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Luis Petri",
+            "Patricia Bullrich"
         ]
     },
     {
@@ -4670,18 +5551,30 @@
         "fecha": "22-03-2024",
         "hora": "08:58",
         "personas_detectadas": [
-            "Ariel Lijo",
-            "Victoria Villarruel",
             "Karina Milei",
-            "Zago",
+            "Gabriel Bornoroni",
             "Oscar Zago",
             "Milei",
-            "Gabriel Bornoroni",
             "José Luis Espert",
-            "Menem",
             "Martín Menem",
+            "Javier Milei",
+            "Zago",
             "Manuel García-Mansilla",
-            "Javier Milei"
+            "Ariel Lijo",
+            "Menem",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Karina Milei",
+            "Gabriel Bornoroni",
+            "Oscar Zago",
+            "Martín Menem",
+            "Javier Milei",
+            "Victoria Villarruel",
+            "Zago",
+            "Manuel García-Mansilla",
+            "Ariel Lijo",
+            "José Luis Espert"
         ]
     },
     {
@@ -4714,9 +5607,14 @@
         "fecha": "20-03-2024",
         "hora": "16:48",
         "personas_detectadas": [
+            "Alberto Fernández",
             "Sergio Massa",
-            "Javier Milei",
-            "Alberto Fernández"
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Alberto Fernández",
+            "Sergio Massa",
+            "Javier Milei"
         ]
     },
     {
@@ -4758,17 +5656,29 @@
         "fecha": "20-03-2024",
         "hora": "00:01",
         "personas_detectadas": [
-            "Cristina Kirchner",
-            "Santiago Caputo",
             "Karina Milei",
             "Nicolás Posse",
-            "Swift",
-            "Ignora",
+            "Santiago Caputo",
             "Milei",
+            "Alberto Fernández",
             "Juan Bautista Alberdi",
-            "Jonathan Swift",
             "Javier Milei",
-            "Alberto Fernández"
+            "Jonathan Swift",
+            "Cristina Kirchner",
+            "Ignora",
+            "Swift"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Karina Milei",
+            "Nicolás Posse",
+            "Santiago Caputo",
+            "Alberto Fernández",
+            "Juan Bautista Alberdi",
+            "Javier Milei",
+            "Jonathan Swift",
+            "Cristina Kirchner",
+            "Ignora",
+            "Swift"
         ]
     },
     {
@@ -4825,18 +5735,31 @@
         "fecha": "24-03-2024",
         "hora": "22:30",
         "personas_detectadas": [
-            "Martín Llaryora",
-            "Hijos",
-            "Urquiza",
-            "Sonia Torres",
-            "Sonia",
-            "Milei",
-            "Villarruel",
-            "Silvia Parodi",
+            "Daniel Orozco",
             "Juan Schiaretti",
+            "Sonia",
+            "Silvia Parodi",
+            "Milei",
+            "Martín Llaryora",
             "Luis Juez",
             "Javier Milei",
-            "Daniel Orozco"
+            "Villarruel",
+            "Sonia Torres",
+            "Urquiza",
+            "Hijos"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Daniel Orozco",
+            "Juan Schiaretti",
+            "Sonia",
+            "Silvia Parodi",
+            "Martín Llaryora",
+            "Luis Juez",
+            "Javier Milei",
+            "Sonia Torres",
+            "Urquiza",
+            "Hijos",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -4878,13 +5801,20 @@
         "fecha": "21-03-2024",
         "hora": "14:13",
         "personas_detectadas": [
+            "Bullrich",
+            "General Paz",
+            "Javier Milei",
+            "Manuel Adorni",
             "Luis Petri",
             "Patricia Bullrich",
-            "Manuel Adorni",
-            "Petri",
+            "Petri"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Patricia Bullrich",
             "General Paz",
-            "Bullrich",
-            "Javier Milei"
+            "Javier Milei",
+            "Luis Petri",
+            "Manuel Adorni"
         ]
     },
     {
@@ -4933,12 +5863,20 @@
         "fecha": "24-03-2024",
         "hora": "15:56",
         "personas_detectadas": [
-            "Marcelo Capello",
-            "Capello",
             "Cohen Arazi",
             "Marcos Cohen Arazi",
+            "Javier Milei",
             "Luis Caputo",
-            "Javier Milei"
+            "Capello",
+            "Marcelo Capello"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Capello",
+            "Marcos Cohen Arazi",
+            "Javier Milei",
+            "Luis Caputo",
+            "Cohen Arazi",
+            "Marcelo Capello"
         ]
     },
     {
@@ -4968,6 +5906,9 @@
         "fecha": "24-03-2024",
         "hora": "17:40",
         "personas_detectadas": [
+            "Luis Juez"
+        ],
+        "personas_detectadas_normalizadas": [
             "Luis Juez"
         ]
     },
@@ -5012,21 +5953,38 @@
         "fecha": "22-03-2024",
         "hora": "00:00",
         "personas_detectadas": [
-            "Brouwer de Koning",
-            "Karina Banfi",
-            "Pedro Galimberti",
-            "Itai Hagman",
-            "Romina Del Plá",
-            "María Eugenia Vidal",
-            "Alejandra Torres",
-            "Gisela Marziotta",
-            "Nicolás Del Caño",
             "Juan Schiaretti",
+            "Nicolás Del Caño",
+            "Karina Banfi",
             "Danya Tavela",
             "Hacienda",
+            "Brouwer de Koning",
+            "Romina Del Plá",
             "Espert",
+            "Alejandra Torres",
+            "Gisela Marziotta",
+            "Itai Hagman",
+            "María Eugenia Vidal",
+            "Pedro Galimberti",
+            "Sergio Palazzo",
+            "Maximiliano Ferraro"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan Schiaretti",
+            "Nicolás Del Caño",
+            "Karina Banfi",
+            "Danya Tavela",
+            "Hacienda",
+            "Brouwer de Koning",
+            "Romina Del Plá",
+            "Alejandra Torres",
+            "Gisela Marziotta",
+            "Itai Hagman",
+            "María Eugenia Vidal",
+            "Pedro Galimberti",
+            "Sergio Palazzo",
             "Maximiliano Ferraro",
-            "Sergio Palazzo"
+            "José Luis Espert"
         ]
     },
     {
@@ -5058,8 +6016,12 @@
         "fecha": "24-03-2024",
         "hora": "00:07",
         "personas_detectadas": [
-            "Hijos",
-            "Irigoyen"
+            "Irigoyen",
+            "Hijos"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Irigoyen",
+            "Hijos"
         ]
     },
     {
@@ -5107,6 +6069,10 @@
         "fecha": "21-03-2024",
         "hora": "00:01",
         "personas_detectadas": [
+            "Fonid",
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
             "Fonid",
             "Javier Milei"
         ]
@@ -5171,9 +6137,14 @@
         "hora": "10:19",
         "personas_detectadas": [
             "Luis Caputo",
-            "Javier Milei",
             "Milei\nEl DNU",
-            "Milei"
+            "Milei",
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Luis Caputo",
+            "Milei\nEl DNU",
+            "Javier Milei"
         ]
     },
     {
@@ -5215,6 +6186,10 @@
         "personas_detectadas": [
             "Kirchner",
             "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Kirchner",
+            "Javier Milei"
         ]
     },
     {
@@ -5254,13 +6229,21 @@
         "fecha": "22-03-2024",
         "hora": "14:42",
         "personas_detectadas": [
+            "Abuelas",
             "Mauro Federico",
             "Digan",
-            "Estela de Carlotto",
             "Manuel Adorni",
-            "Manuel Adroni",
+            "Carlotto",
+            "Estela de Carlotto",
+            "Manuel Adroni"
+        ],
+        "personas_detectadas_normalizadas": [
             "Abuelas",
-            "Carlotto"
+            "Mauro Federico",
+            "Digan",
+            "Manuel Adorni",
+            "Estela de Carlotto",
+            "Manuel Adroni"
         ]
     },
     {
@@ -5293,8 +6276,12 @@
         "fecha": "26-03-2024",
         "hora": "10:43",
         "personas_detectadas": [
-            "Valdés",
-            "Rodrigo Valdés"
+            "Rodrigo Valdés",
+            "Valdés"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Rodrigo Valdés",
+            "Valdés"
         ]
     },
     {
@@ -5330,7 +6317,8 @@
         "index": 709,
         "fecha": "20-03-2024",
         "hora": "21:52",
-        "personas_detectadas": []
+        "personas_detectadas": [],
+        "personas_detectadas_normalizadas": []
     },
     {
         "link": "https://www.lavoz.com.ar/politica/javier-milei-designo-a-luis-lucero-como-nuevo-secretario-de-mineria/",
@@ -5361,11 +6349,19 @@
         "fecha": "25-03-2024",
         "hora": "14:24",
         "personas_detectadas": [
-            "Honorary Lecturer",
             "Pillsbury Winthrop Shaw Pittman",
             "Minería\nSegún",
-            "Luis Lucero",
             "Lucero",
+            "Luis Lucero",
+            "Honorary Lecturer",
+            "Marval O’Farrell Mairal"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Pillsbury Winthrop Shaw Pittman",
+            "Minería\nSegún",
+            "Lucero",
+            "Luis Lucero",
+            "Honorary Lecturer",
             "Marval O’Farrell Mairal"
         ]
     },
@@ -5402,12 +6398,20 @@
         "fecha": "23-03-2024",
         "hora": "10:35",
         "personas_detectadas": [
-            "Marcelo Basilotta",
             "Sandra Pettovello",
-            "Hugo Basilotta",
-            "Pettovello",
+            "Sandra",
             "Cristina Fernández",
-            "Sandra"
+            "Marcelo Basilotta",
+            "Hugo Basilotta",
+            "Pettovello"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Sandra Pettovello",
+            "Sandra",
+            "Marcelo Basilotta",
+            "Hugo Basilotta",
+            "Cristina Kirchner",
+            "Pettovello"
         ]
     },
     {
@@ -5449,11 +6453,18 @@
         "fecha": "22-03-2024",
         "hora": "00:01",
         "personas_detectadas": [
-            "General de la Nación",
             "Aída Tarditti",
+            "General de la Nación",
             "Alejandra Gils Carbó",
-            "María Elena Walsh",
-            "Olvidarse"
+            "Olvidarse",
+            "María Elena Walsh"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Aída Tarditti",
+            "General de la Nación",
+            "Alejandra Gils Carbó",
+            "Olvidarse",
+            "María Elena Walsh"
         ]
     },
     {
@@ -5511,24 +6522,41 @@
         "fecha": "24-03-2024",
         "hora": "16:48",
         "personas_detectadas": [
-            "Eduardo Duhalde",
-            "Milei",
             "Enrique Veramendi",
             "Adolfo Rodríguez Saá",
+            "Castro Videla",
+            "Néstor Kirchner",
+            "Macri",
             "Luis E. Vivacqua",
+            "Fernández",
+            "Castro Vega",
+            "Cristina",
+            "Milei",
+            "Eduardo Duhalde",
+            "Mauricio Macri",
+            "Santiago Castro Videla",
+            "Alberto Fernández",
+            "Javier Milei",
+            "Duhalde",
+            "Kirchner",
+            "Alfonso Santiago",
+            "CFK"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Castro Videla",
             "Castro Vega",
             "Néstor Kirchner",
-            "Duhalde",
-            "Fernández",
-            "Alberto Fernández",
-            "Castro Videla",
-            "CFK",
-            "Kirchner",
-            "Javier Milei",
             "Santiago Castro Videla",
-            "Macri",
-            "Cristina",
+            "Enrique Veramendi",
+            "Alberto Fernández",
+            "Eduardo Duhalde",
+            "Javier Milei",
+            "Duhalde",
+            "Luis E. Vivacqua",
+            "Cristina Kirchner",
+            "Kirchner",
             "Alfonso Santiago",
+            "Adolfo Rodríguez Saá",
             "Mauricio Macri"
         ]
     },
@@ -5562,6 +6590,9 @@
         "hora": "12:41",
         "personas_detectadas": [
             "Bullrich"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Patricia Bullrich"
         ]
     },
     {
@@ -5606,8 +6637,13 @@
         "hora": "08:47",
         "personas_detectadas": [
             "Luis Caputo",
-            "Javier Milei",
-            "Maximiliano Ferraro"
+            "Maximiliano Ferraro",
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Luis Caputo",
+            "Maximiliano Ferraro",
+            "Javier Milei"
         ]
     },
     {
@@ -5659,6 +6695,10 @@
         "personas_detectadas": [
             "Luis Caputo",
             "Martín Vauthier"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Luis Caputo",
+            "Martín Vauthier"
         ]
     },
     {
@@ -5687,11 +6727,18 @@
         "fecha": "24-03-2024",
         "hora": "19:49",
         "personas_detectadas": [
-            "Villarruel.",
+            "Piensen",
             "Milei",
-            "Petri",
+            "Villarruel.",
             "Villarruel",
-            "Piensen"
+            "Petri"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Piensen",
+            "Villarruel.",
+            "Javier Milei",
+            "Luis Petri",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -5730,14 +6777,25 @@
         "hora": "18:16",
         "personas_detectadas": [
             "Suárez",
-            "Cancillería",
             "Juan Antonio López Cazorla",
-            "Pablo Ferrara Raisberg",
             "Diana Mondino",
             "Infobae",
             "Mondino",
+            "Liu Zhijiang",
+            "Pablo Ferrara Raisberg",
             "Julián Suárez",
-            "Liu Zhijiang"
+            "Cancillería"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Suárez",
+            "Juan Antonio López Cazorla",
+            "Diana Mondino",
+            "Infobae",
+            "Mondino",
+            "Liu Zhijiang",
+            "Pablo Ferrara Raisberg",
+            "Julián Suárez",
+            "Cancillería"
         ]
     },
     {
@@ -5774,19 +6832,34 @@
         "fecha": "22-03-2024",
         "hora": "00:06",
         "personas_detectadas": [
-            "Guillermo Acosta",
-            "Juan Giacoboni",
-            "Sebastian Kosacof",
-            "Ariel Poli",
+            "Alejandra Cesolari",
             "Luis Manini",
+            "Pedro Dellarossa",
+            "Ariel Poli",
+            "Sebastian Kosacof",
+            "Javier Milei",
             "Horacio Cepeda",
             "José Manuali",
-            "Alejandra Cesolari",
-            "Elio Del Re",
+            "Juan Giacoboni",
             "Nancy Lizzul",
             "Gustavo del Boca",
+            "Guillermo Acosta",
+            "Elio Del Re"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Alejandra Cesolari",
+            "Luis Manini",
+            "Pedro Dellarossa",
+            "Ariel Poli",
+            "Sebastian Kosacof",
             "Javier Milei",
-            "Pedro Dellarossa"
+            "Horacio Cepeda",
+            "José Manuali",
+            "Juan Giacoboni",
+            "Nancy Lizzul",
+            "Gustavo del Boca",
+            "Guillermo Acosta",
+            "Elio Del Re"
         ]
     },
     {
@@ -5815,6 +6888,9 @@
         "fecha": "24-03-2024",
         "hora": "12:58",
         "personas_detectadas": [
+            "Sonia Torres"
+        ],
+        "personas_detectadas_normalizadas": [
             "Sonia Torres"
         ]
     },
@@ -5862,11 +6938,19 @@
         "hora": "13:54",
         "personas_detectadas": [
             "Franco Mogetta",
-            "Manuel Adorni",
-            "Claramente",
-            "Luis Caputo",
+            "CEAP",
             "Javier Milei",
-            "CEAP"
+            "Claramente",
+            "Manuel Adorni",
+            "Luis Caputo"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Franco Mogetta",
+            "CEAP",
+            "Javier Milei",
+            "Claramente",
+            "Manuel Adorni",
+            "Luis Caputo"
         ]
     },
     {
@@ -5904,13 +6988,21 @@
         "hora": "19:23",
         "personas_detectadas": [
             "escueto",
-            "Victoria Villarruel",
-            "Instagram",
             "Milei",
+            "Instagram",
+            "Javier Milei",
             "Ministro",
             "Villarruel",
+            "Primero",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "escueto",
+            "Instagram",
             "Javier Milei",
-            "Primero"
+            "Ministro",
+            "Primero",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -5955,16 +7047,27 @@
         "fecha": "22-03-2024",
         "hora": "17:47",
         "personas_detectadas": [
-            "Ariel Lijo",
-            "Brouwer de Koning",
-            "Victoria Villarruel",
-            "Desconcierto",
-            "Juan Carlos Maqueda",
-            "Gabriela Brouwer de Koning",
             "Elena Highton",
             "Lijo",
+            "Desconcierto",
+            "Gabriela Brouwer de Koning",
+            "Brouwer de Koning",
+            "Juan Carlos Maqueda",
             "Manuel García-Mansilla",
-            "Maximiliano Ferraro"
+            "Ariel Lijo",
+            "Maximiliano Ferraro",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Elena Highton",
+            "Desconcierto",
+            "Gabriela Brouwer de Koning",
+            "Brouwer de Koning",
+            "Juan Carlos Maqueda",
+            "Manuel García-Mansilla",
+            "Ariel Lijo",
+            "Maximiliano Ferraro",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -5998,9 +7101,14 @@
         "fecha": "9-04-2024",
         "hora": "08:10",
         "personas_detectadas": [
+            "Ariel Edgardo Ellena",
             "Marcela Patricia Giordano",
-            "Ariel Armando Baldo",
-            "Ariel Edgardo Ellena"
+            "Ariel Armando Baldo"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Ariel Edgardo Ellena",
+            "Marcela Patricia Giordano",
+            "Ariel Armando Baldo"
         ]
     },
     {
@@ -6039,8 +7147,14 @@
         "personas_detectadas": [
             "Podríamos",
             "Recordarlas",
+            "Máxime",
+            "Bernardo Houssay"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Podríamos",
             "Bernardo Houssay",
-            "Máxime"
+            "Máxime",
+            "Recordarlas"
         ]
     },
     {
@@ -6075,16 +7189,28 @@
         "hora": "12:12",
         "personas_detectadas": [
             "Declaraciones de Macri",
+            "Alberto Fernández",
+            "Dejará",
+            "Derechos Humanos",
+            "Milei",
+            "Javier Milei",
             "Santiago Maldonado",
+            "Manuel Adorni",
+            "Patricia Bullrich",
+            "Maduro",
+            "Horacio Pietragala"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Declaraciones de Macri",
+            "Alberto Fernández",
             "Dejará",
             "Derechos Humanos",
             "Patricia Bullrich",
-            "Milei",
-            "Manuel Adorni",
-            "Horacio Pietragala",
-            "Maduro",
             "Javier Milei",
-            "Alberto Fernández"
+            "Manuel Adorni",
+            "Santiago Maldonado",
+            "Maduro",
+            "Horacio Pietragala"
         ]
     },
     {
@@ -6138,16 +7264,28 @@
         "fecha": "24-03-2024",
         "hora": "00:05",
         "personas_detectadas": [
-            "Daniel Mautone",
-            "PlayCet",
-            "Darío Capitani",
-            "Munir Bracco",
-            "Daruma Sam",
-            "Lotería de Córdoba",
-            "Orlando Arduh",
-            "Daniel Passerini",
             "Juan Schiaretti",
-            "Martín Llaryora"
+            "PlayCet",
+            "Daniel Mautone",
+            "Daruma Sam",
+            "Darío Capitani",
+            "Martín Llaryora",
+            "Munir Bracco",
+            "Lotería de Córdoba",
+            "Daniel Passerini",
+            "Orlando Arduh"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan Schiaretti",
+            "PlayCet",
+            "Daniel Mautone",
+            "Darío Capitani",
+            "Daruma Sam",
+            "Martín Llaryora",
+            "Munir Bracco",
+            "Lotería de Córdoba",
+            "Daniel Passerini",
+            "Orlando Arduh"
         ]
     },
     {
@@ -6202,18 +7340,32 @@
         "fecha": "26-03-2024",
         "hora": "11:18",
         "personas_detectadas": [
-            "Ana Mariani",
-            "Gabriel García Márquez",
-            "Mario",
-            "Sara Solarz",
             "Melisa Paiaro",
             "Mariani",
-            "Carlos Vullo",
-            "Mario Andrés Osatinsky",
-            "Lisandro Guzmán",
             "Franco Piccato",
+            "Mario",
+            "Carlos Vullo",
+            "Ana Mariani",
+            "Sara Solarz",
             "Juan Carlos Simo",
-            "Luciano Benjamín Menéndez"
+            "Lisandro Guzmán",
+            "Luciano Benjamín Menéndez",
+            "Mario Andrés Osatinsky",
+            "Gabriel García Márquez"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Melisa Paiaro",
+            "Mariani",
+            "Franco Piccato",
+            "Carlos Vullo",
+            "Mario",
+            "Ana Mariani",
+            "Sara Solarz",
+            "Juan Carlos Simo",
+            "Lisandro Guzmán",
+            "Luciano Benjamín Menéndez",
+            "Gabriel García Márquez",
+            "Mario Andrés Osatinsky"
         ]
     },
     {
@@ -6260,20 +7412,33 @@
         "fecha": "22-03-2024",
         "hora": "07:40",
         "personas_detectadas": [
-            "Jonatan Viale",
-            "Victoria Villarruel",
+            "Elena Highton de Nolasco",
             "Claudia Rucci",
-            "Rucci",
             "Presidente",
             "Milei",
-            "Manuel José García-Mansilla",
-            "Villarruel",
-            "Freddy Krueger",
-            "José Ignacio Rucci",
-            "Elena Highton de Nolasco",
             "Javier Milei",
+            "Freddy Krueger",
+            "Victoria Villarruel",
+            "Villarruel",
+            "Rucci",
             "Roberto Perdía",
+            "Manuel José García-Mansilla",
+            "Jonatan Viale",
+            "José Ignacio Rucci",
             "García Mansilla"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Elena Highton de Nolasco",
+            "Claudia Rucci",
+            "Presidente",
+            "Manuel García Mansilla",
+            "Javier Milei",
+            "Freddy Krueger",
+            "Manuel José García-Mansilla",
+            "Roberto Perdía",
+            "Jonatan Viale",
+            "José Ignacio Rucci",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -6322,16 +7487,27 @@
         "fecha": "20-03-2024",
         "hora": "14:10",
         "personas_detectadas": [
-            "Ariel Lijo",
-            "García-Mansilla",
-            "Juan Carlos Maqueda",
-            "Manuel Adorni",
             "Lijo",
+            "Elena Highton de Nolasco",
+            "Javier Milei",
+            "Juan Carlos Maqueda",
+            "Manuel García-Mansilla",
             "Javier",
             "Mariano Cúneo Libarona",
-            "Manuel García-Mansilla",
+            "Ariel Lijo",
+            "Manuel Adorni",
+            "García-Mansilla"
+        ],
+        "personas_detectadas_normalizadas": [
             "Elena Highton de Nolasco",
-            "Javier Milei"
+            "Javier Milei",
+            "Juan Carlos Maqueda",
+            "Manuel García-Mansilla",
+            "Javier",
+            "Mariano Cúneo Libarona",
+            "Ariel Lijo",
+            "Manuel Adorni",
+            "García-Mansilla"
         ]
     },
     {
@@ -6361,15 +7537,26 @@
         "fecha": "19-03-2024",
         "hora": "16:29",
         "personas_detectadas": [
+            "Juan Pablo Quinteros",
             "Ignacio Cichello",
             "Zárate",
-            "Néstor Majul",
             "Jesús María",
             "Patricia Bullrich",
+            "Vicente Ventura Barreiro",
             "Raúl Remberto Cuello",
-            "Juan Pablo Quinteros",
             "Federico Zárate",
-            "Vicente Ventura Barreiro"
+            "Néstor Majul"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan Pablo Quinteros",
+            "Ignacio Cichello",
+            "Zárate",
+            "Jesús María",
+            "Patricia Bullrich",
+            "Vicente Ventura Barreiro",
+            "Raúl Remberto Cuello",
+            "Federico Zárate",
+            "Néstor Majul"
         ]
     },
     {
@@ -6399,6 +7586,9 @@
         "fecha": "25-03-2024",
         "hora": "09:05",
         "personas_detectadas": [
+            "Luis Caputo"
+        ],
+        "personas_detectadas_normalizadas": [
             "Luis Caputo"
         ]
     },
@@ -6435,13 +7625,21 @@
         "fecha": "26-03-2024",
         "hora": "09:17",
         "personas_detectadas": [
-            "Mario Grinam",
-            "Eduardo Feinmann",
             "Presidente",
-            "Milei",
-            "Mitre",
             "Grinman",
-            "Javier Milei"
+            "Milei",
+            "Javier Milei",
+            "Mitre",
+            "Eduardo Feinmann",
+            "Mario Grinam"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Presidente",
+            "Grinman",
+            "Javier Milei",
+            "Mitre",
+            "Eduardo Feinmann",
+            "Mario Grinam"
         ]
     },
     {
@@ -6488,39 +7686,71 @@
         "fecha": "21-03-2024",
         "hora": "00:05",
         "personas_detectadas": [
-            "Cristina Fernández de Kirchner",
-            "Juan Carlos Maqueda",
-            "Milei",
-            "Manuel Adorni",
-            "Jorge Di Lello",
+            "Lijo",
+            "Pichetto",
+            "Julián Ercolini",
+            "Highton de Nolasco",
+            "Decano",
+            "Juan Manuel López",
+            "Daniel Rafecas",
             "Andrés Gil Domínguez",
+            "Elena Highton de Nolasco",
+            "Comodoro Py",
+            "Néstor Kirchner",
+            "Cristina Fernández de Kirchner",
+            "Amado Boudou",
+            "Jorge Di Lello",
+            "Juan Carlos Maqueda",
+            "Dr. García-Mansilla",
+            "Ariel Lijo",
+            "Rosatti",
+            "Guillermo Montenegro",
+            "Milei",
+            "Dr. Maqueda",
+            "Mauricio Macri",
+            "Dr. Manuel García Mansilla",
+            "García Mansilla",
+            "Margarita Stolbizer",
+            "Ricardo Lorenzetti",
+            "Horacio Rosatti",
+            "Javier Milei",
+            "Elisa Carrió",
+            "Mariano Cúneo Libarona",
+            "Gil Domínguez",
+            "Manuel Adorni",
+            "Carlos Rosenkrantz"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Pichetto",
+            "Julián Ercolini",
+            "Highton de Nolasco",
+            "Decano",
+            "Juan Manuel López",
+            "Daniel Rafecas",
+            "Andrés Gil Domínguez",
+            "Elena Highton de Nolasco",
+            "Comodoro Py",
+            "Néstor Kirchner",
+            "Manuel García Mansilla",
+            "Amado Boudou",
+            "Jorge Di Lello",
+            "Juan Carlos Maqueda",
             "Dr. García-Mansilla",
             "Ariel Lijo",
             "Guillermo Montenegro",
-            "Amado Boudou",
-            "Elisa Carrió",
-            "Néstor Kirchner",
-            "Gil Domínguez",
-            "Lijo",
-            "Julián Ercolini",
-            "Carlos Rosenkrantz",
-            "Juan Manuel López",
-            "Rosatti",
-            "García Mansilla",
-            "Ricardo Lorenzetti",
             "Dr. Maqueda",
-            "Mariano Cúneo Libarona",
-            "Comodoro Py",
-            "Highton de Nolasco",
-            "Javier Milei",
-            "Horacio Rosatti",
-            "Daniel Rafecas",
-            "Margarita Stolbizer",
-            "Dr. Manuel García Mansilla",
-            "Decano",
-            "Elena Highton de Nolasco",
             "Mauricio Macri",
-            "Pichetto"
+            "Dr. Manuel García Mansilla",
+            "Margarita Stolbizer",
+            "Ricardo Lorenzetti",
+            "Horacio Rosatti",
+            "Javier Milei",
+            "Elisa Carrió",
+            "Mariano Cúneo Libarona",
+            "Gil Domínguez",
+            "Cristina Kirchner",
+            "Manuel Adorni",
+            "Carlos Rosenkrantz"
         ]
     },
     {
@@ -6548,8 +7778,12 @@
         "fecha": "24-03-2024",
         "hora": "10:35",
         "personas_detectadas": [
-            "Villarruel",
-            "Juan"
+            "Juan",
+            "Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -6582,6 +7816,10 @@
         "fecha": "22-03-2024",
         "hora": "09:14",
         "personas_detectadas": [
+            "Sergio Massa",
+            "Ganancias"
+        ],
+        "personas_detectadas_normalizadas": [
             "Sergio Massa",
             "Ganancias"
         ]
@@ -6635,14 +7873,24 @@
         "fecha": "24-03-2024",
         "hora": "00:08",
         "personas_detectadas": [
-            "Desarrollo Social de la Municipalidad de Córdoba",
+            "Fernando Miño",
             "Sandra Pettovello",
             "Juan Grabois",
+            "Pablo Montes",
+            "Desarrollo Social de la Municipalidad de Córdoba",
+            "Raúl La Cava",
             "Polémica\nLa decisión del",
-            "Daniel Passerini",
+            "Daniel Passerini"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Fernando Miño",
+            "Sandra Pettovello",
+            "Juan Grabois",
+            "Desarrollo Social de la Municipalidad de Córdoba",
             "Pablo Montes",
             "Raúl La Cava",
-            "Fernando Miño"
+            "Polémica\nLa decisión del",
+            "Daniel Passerini"
         ]
     },
     {
@@ -6697,10 +7945,15 @@
         "fecha": "19-03-2024",
         "hora": "11:05",
         "personas_detectadas": [
-            "Giordano",
+            "Milei",
             "Virginia Giordano",
-            "Javier Milei",
-            "Milei"
+            "Giordano",
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Virginia Giordano",
+            "Giordano",
+            "Javier Milei"
         ]
     },
     {
@@ -6738,20 +7991,34 @@
         "fecha": "21-03-2024",
         "hora": "10:14",
         "personas_detectadas": [
-            "Córdoba Karina Milei",
-            "Karina Milei",
+            "Blanco",
             "Losano",
-            "Ponce",
-            "Abelardo Losano",
-            "Celeste Ponce",
+            "Karina Milei",
             "Rodolfo Eiben",
             "Gabriel Bornoroni",
             "Milei",
-            "Menem",
-            "Blanco",
-            "Entre Ríos",
+            "Ponce",
+            "Córdoba Karina Milei",
             "Martín Menem",
-            "Javier Milei"
+            "Entre Ríos",
+            "Javier Milei",
+            "Abelardo Losano",
+            "Celeste Ponce",
+            "Menem"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Blanco",
+            "Losano",
+            "Karina Milei",
+            "Rodolfo Eiben",
+            "Gabriel Bornoroni",
+            "Ponce",
+            "Córdoba Karina Milei",
+            "Martín Menem",
+            "Entre Ríos",
+            "Javier Milei",
+            "Abelardo Losano",
+            "Celeste Ponce"
         ]
     },
     {
@@ -6804,22 +8071,38 @@
         "fecha": "20-03-2024",
         "hora": "00:01",
         "personas_detectadas": [
+            "Stella Maris Martínez",
+            "Rosatti",
+            "Sebastián Amerio",
             "Diego Guerendiain",
             "Evitamos",
-            "Stella Martínez",
-            "Cúneo",
-            "Cúneo Libarona",
-            "Stella Maris Martínez",
             "Milei",
-            "Eduardo Casal",
-            "Patricia Bullrich",
-            "Sebastián Amerio",
-            "Horacio Rosatti",
+            "Cúneo",
             "Guillermo Francos",
-            "Mariano Cúneo Libarona",
+            "Horacio Rosatti",
             "Javier Milei",
-            "Mariano Borinsky",
-            "Rosatti"
+            "Cúneo Libarona",
+            "Mariano Cúneo Libarona",
+            "Stella Martínez",
+            "Patricia Bullrich",
+            "Eduardo Casal",
+            "Mariano Borinsky"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Stella Maris Martínez",
+            "Diego Guerendiain",
+            "Sebastián Amerio",
+            "Evitamos",
+            "Cúneo",
+            "Guillermo Francos",
+            "Horacio Rosatti",
+            "Javier Milei",
+            "Cúneo Libarona",
+            "Mariano Cúneo Libarona",
+            "Stella Martínez",
+            "Patricia Bullrich",
+            "Eduardo Casal",
+            "Mariano Borinsky"
         ]
     },
     {
@@ -6851,7 +8134,8 @@
         "index": 925,
         "fecha": "22-03-2024",
         "hora": "20:25",
-        "personas_detectadas": []
+        "personas_detectadas": [],
+        "personas_detectadas_normalizadas": []
     },
     {
         "link": "https://www.lavoz.com.ar/politica/schiaretti-reaparecera-en-publico-con-una-conferencia-en-nueva-york/",
@@ -6894,14 +8178,23 @@
         "fecha": "25-03-2024",
         "hora": "12:43",
         "personas_detectadas": [
-            "Martín Llaryora",
-            "Victoria Villarruel",
-            "Negarlos",
-            "José Manuel de la Sota",
-            "Alejandra Vigo",
-            "Schiaretti",
             "Milei",
-            "Javier Milei"
+            "Martín Llaryora",
+            "José Manuel de la Sota",
+            "Schiaretti",
+            "Javier Milei",
+            "Alejandra Vigo",
+            "Negarlos",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan Schiaretti",
+            "José Manuel de la Sota",
+            "Martín Llaryora",
+            "Javier Milei",
+            "Alejandra Vigo",
+            "Negarlos",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -6949,22 +8242,38 @@
         "fecha": "19-03-2024",
         "hora": "18:52",
         "personas_detectadas": [
-            "Olga Riutort",
-            "María Cecilia Ibáñez",
+            "Presidente",
             "Losano",
-            "Ponce",
-            "Abelardo Losano",
-            "Celeste Ponce",
-            "Gabriel Bornoroni",
             "Rodolfo Eiben",
+            "Olga Riutort",
+            "Gabriel Bornoroni",
             "Milei",
-            "Menem",
-            "Van",
+            "Ponce",
+            "Marcos Patiño Brizuela",
             "Martín Menem",
             "Guillermo Fernández",
-            "Presidente",
             "Javier Milei",
-            "Marcos Patiño Brizuela"
+            "Van",
+            "María Cecilia Ibáñez",
+            "Abelardo Losano",
+            "Celeste Ponce",
+            "Menem"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Presidente",
+            "Losano",
+            "Rodolfo Eiben",
+            "Olga Riutort",
+            "Gabriel Bornoroni",
+            "Ponce",
+            "Marcos Patiño Brizuela",
+            "Martín Menem",
+            "Guillermo Fernández",
+            "Javier Milei",
+            "Van",
+            "María Cecilia Ibáñez",
+            "Abelardo Losano",
+            "Celeste Ponce"
         ]
     },
     {
@@ -7005,6 +8314,11 @@
             "Spaccesi",
             "Agustín Spaccesi",
             "Epec"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Spaccesi",
+            "Agustín Spaccesi",
+            "Epec"
         ]
     },
     {
@@ -7033,9 +8347,14 @@
         "fecha": "26-03-2024",
         "hora": "08:31",
         "personas_detectadas": [
+            "Gianfranco Davicini",
             "Davicini",
+            "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Gianfranco Davicini",
             "Javier Milei",
-            "Gianfranco Davicini"
+            "Davicini"
         ]
     },
     {
@@ -7085,39 +8404,72 @@
         "fecha": "21-03-2024",
         "hora": "19:28",
         "personas_detectadas": [
+            "Lijo",
+            "Argibay",
+            "Highton de Nolasco",
+            "Abogado",
+            "Marcelo Longobardi",
+            "Juliana Di Tullio",
+            "Quién",
+            "Juan Manuel López",
+            "García de Mansilla",
+            "Elena Highton de Nolasco",
+            "Presidente",
+            "Néstor Kirchner",
+            "Vergüenza Milei",
+            "Anabel Fernández Sagasti",
             "Juan Carlos Maqueda",
+            "Lorenzetti",
+            "Ariel Lijo",
+            "Daniel Sabsay",
+            "Cristina",
             "Milei",
-            "Manuel Adorni",
+            "López",
+            "Carrió",
+            "García Mansilla",
             "Ignacio Ortelli",
             "Alejandro Vigo",
-            "Ariel Lijo",
-            "Lorenzetti",
-            "Elisa Carrió",
-            "Abogado",
-            "Néstor Kirchner",
-            "Lijo",
-            "Vergüenza Milei",
-            "Carlos Rosenkrantz",
-            "Daniel Sabsay",
-            "Juliana Di Tullio",
-            "Juan Manuel López",
-            "García Mansilla",
-            "Marcelo Longobardi",
-            "Ricardo Lorenzetti",
-            "Argibay",
-            "Mariano Cúneo Libarona",
-            "Presidente",
-            "Horacio Rosatti",
-            "Highton de Nolasco",
-            "Quién",
-            "Carrió",
-            "Anabel Fernández Sagasti",
             "Santiago Caputo",
-            "Cristina",
-            "García de Mansilla",
             "Carmen Argibay",
+            "Ricardo Lorenzetti",
+            "Horacio Rosatti",
+            "Elisa Carrió",
+            "Mariano Cúneo Libarona",
+            "Manuel Adorni",
+            "Carlos Rosenkrantz"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Argibay",
+            "Highton de Nolasco",
+            "Abogado",
+            "Marcelo Longobardi",
+            "Juliana Di Tullio",
+            "Quién",
+            "Juan Manuel López",
+            "García de Mansilla",
             "Elena Highton de Nolasco",
-            "López"
+            "Presidente",
+            "Néstor Kirchner",
+            "Manuel García Mansilla",
+            "Vergüenza Milei",
+            "Anabel Fernández Sagasti",
+            "Juan Carlos Maqueda",
+            "Ariel Lijo",
+            "Daniel Sabsay",
+            "López",
+            "Carrió",
+            "Ignacio Ortelli",
+            "Alejandro Vigo",
+            "Santiago Caputo",
+            "Carmen Argibay",
+            "Ricardo Lorenzetti",
+            "Horacio Rosatti",
+            "Javier Milei",
+            "Elisa Carrió",
+            "Mariano Cúneo Libarona",
+            "Cristina Kirchner",
+            "Manuel Adorni",
+            "Carlos Rosenkrantz"
         ]
     },
     {
@@ -7153,7 +8505,8 @@
         "index": 991,
         "fecha": "22-03-2024",
         "hora": "22:14",
-        "personas_detectadas": []
+        "personas_detectadas": [],
+        "personas_detectadas_normalizadas": []
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-nacion-paga-375-al-dia-por-cada-preso-federal-menos-del-5-del-costo/",
@@ -7192,9 +8545,15 @@
         "fecha": "23-03-2024",
         "hora": "00:00",
         "personas_detectadas": [
+            "Abel Sánchez Torres",
+            "Sánchez Torres",
+            "Patricia Bullrich",
+            "Martín Soria"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Abel Sánchez Torres",
             "Sánchez Torres",
             "Martín Soria",
-            "Abel Sánchez Torres",
             "Patricia Bullrich"
         ]
     },
@@ -7231,11 +8590,18 @@
         "fecha": "19-03-2024",
         "hora": "18:38",
         "personas_detectadas": [
+            "Néstor Kirchner",
             "Jorge Cepernic",
             "Milei",
+            "Kirchner",
+            "Manuel Adorni"
+        ],
+        "personas_detectadas_normalizadas": [
             "Néstor Kirchner",
-            "Manuel Adorni",
-            "Kirchner"
+            "Jorge Cepernic",
+            "Javier Milei",
+            "Kirchner",
+            "Manuel Adorni"
         ]
     },
     {
@@ -7274,6 +8640,11 @@
             "Economía Luis Caputo",
             "Infobae",
             "Javier Milei"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Javier Milei",
+            "Economía Luis Caputo",
+            "Infobae"
         ]
     },
     {
@@ -7309,15 +8680,26 @@
         "fecha": "21-03-2024",
         "hora": "18:17",
         "personas_detectadas": [
-            "Milei\nBajo la Presidencia de Milei",
-            "William Burns",
-            "Donald Trump",
             "Nicolás Posse",
             "Milei",
-            "Manuel Adorni",
-            "Burns",
+            "Alberto Fernández",
+            "Donald Trump",
+            "Milei\nBajo la Presidencia de Milei",
             "Posse",
-            "Alberto Fernández"
+            "Manuel Adorni",
+            "William Burns",
+            "Burns"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Nicolás Posse",
+            "Alberto Fernández",
+            "Donald Trump",
+            "Milei\nBajo la Presidencia de Milei",
+            "Javier Milei",
+            "Posse",
+            "Manuel Adorni",
+            "William Burns",
+            "Burns"
         ]
     },
     {
@@ -7343,6 +8725,11 @@
         "fecha": "19-03-2024",
         "hora": "21:17",
         "personas_detectadas": [
+            "Pymes",
+            "Sergio Massa",
+            "Eduardo Fernández"
+        ],
+        "personas_detectadas_normalizadas": [
             "Pymes",
             "Sergio Massa",
             "Eduardo Fernández"
@@ -7379,12 +8766,20 @@
         "fecha": "25-03-2024",
         "hora": "21:38",
         "personas_detectadas": [
-            "Zoom",
+            "Franco Mogetta",
             "Rosario Romero",
+            "Zoom",
+            "Passerini",
+            "Ulpiano Suárez",
+            "Francos"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Franco Mogetta",
+            "Rosario Romero",
+            "Zoom",
             "Ulpiano Suárez",
             "Passerini",
-            "Francos",
-            "Franco Mogetta"
+            "Guillermo Francos"
         ]
     },
     {
@@ -7431,37 +8826,69 @@
         "fecha": "25-03-2024",
         "hora": "19:33",
         "personas_detectadas": [
-            "Fonid",
-            "Francos",
-            "Pullaro",
-            "Gildo Insfrán",
             "Nicolás Posse",
-            "Gustavo Saénz",
-            "Martín Menem",
-            "Javier Milano",
-            "Osvaldo Jaldo",
-            "Hacienda",
-            "Carlos Guberman",
-            "Posse",
-            "Maximiliano Pullaro",
-            "Gustavo Valdés",
-            "Lisandro Catalán",
-            "Gerardo Zamora",
-            "Rolandi",
-            "Carlos Sadir",
-            "Axel Kicillof",
-            "Ganancias",
-            "Guillermo Francos",
             "Silvana Giudici",
-            "Silvia Lospennato",
-            "José Rolandi",
-            "Sáez",
+            "Guillermo Francos",
+            "Leandro Zdero",
             "Raúl Jalil",
+            "Gildo Insfrán",
+            "Osvaldo Jaldo",
+            "Sáez",
+            "Posse",
             "Ricardo Quintela",
+            "José Rolandi",
+            "Martín Menem",
+            "Silvia Lospennato",
             "Guberman",
+            "Carlos Guberman",
             "Hugo Passalacqua",
             "Cristian Ritondo",
-            "Leandro Zdero"
+            "Francos",
+            "Javier Milano",
+            "Gustavo Valdés",
+            "Hacienda",
+            "Fonid",
+            "Ganancias",
+            "Axel Kicillof",
+            "Rolandi",
+            "Gerardo Zamora",
+            "Carlos Sadir",
+            "Gustavo Saénz",
+            "Pullaro",
+            "Maximiliano Pullaro",
+            "Lisandro Catalán"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Nicolás Posse",
+            "Silvana Giudici",
+            "Guillermo Francos",
+            "Leandro Zdero",
+            "Raúl Jalil",
+            "Gildo Insfrán",
+            "Osvaldo Jaldo",
+            "Sáez",
+            "Posse",
+            "Ricardo Quintela",
+            "José Rolandi",
+            "Martín Menem",
+            "Silvia Lospennato",
+            "Guberman",
+            "Carlos Guberman",
+            "Hugo Passalacqua",
+            "Cristian Ritondo",
+            "Javier Milano",
+            "Gustavo Valdés",
+            "Hacienda",
+            "Fonid",
+            "Ganancias",
+            "Axel Kicillof",
+            "Rolandi",
+            "Gerardo Zamora",
+            "Carlos Sadir",
+            "Gustavo Saénz",
+            "Pullaro",
+            "Maximiliano Pullaro",
+            "Lisandro Catalán"
         ]
     },
     {
@@ -7498,13 +8925,20 @@
         "fecha": "23-03-2024",
         "hora": "17:51",
         "personas_detectadas": [
-            "Sergio Berni",
-            "Victoria Villarruel",
-            "Alberto Fernández",
             "Axel Kicillof",
-            "Villarruel",
             "Victoria Villarruel\n“Yo la quiero",
-            "Berni"
+            "Alberto Fernández",
+            "Villarruel",
+            "Berni",
+            "Sergio Berni",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Axel Kicillof",
+            "Victoria Villarruel\n“Yo la quiero",
+            "Alberto Fernández",
+            "Sergio Berni",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -7551,15 +8985,26 @@
         "fecha": "25-03-2024",
         "hora": "11:19",
         "personas_detectadas": [
-            "Epec",
             "Silvana Paredes",
-            "Aompañaron",
-            "Llaryora",
-            "Daniel Kieffer",
             "Miguel Siciliano",
-            "Rosario Acevedo",
+            "Llaryora",
+            "Manuel Calvo",
             "Juan Blangino",
-            "Manuel Calvo"
+            "Aompañaron",
+            "Rosario Acevedo",
+            "Epec",
+            "Daniel Kieffer"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Silvana Paredes",
+            "Miguel Siciliano",
+            "Martín Llaryora",
+            "Manuel Calvo",
+            "Juan Blangino",
+            "Aompañaron",
+            "Rosario Acevedo",
+            "Epec",
+            "Daniel Kieffer"
         ]
     },
     {
@@ -7603,10 +9048,16 @@
         "fecha": "22-03-2024",
         "hora": "00:01",
         "personas_detectadas": [
-            "Liliana Montero",
             "Martín Llaryora",
             "Sebastián Villarreal",
-            "María Rosa Marcone"
+            "María Rosa Marcone",
+            "Liliana Montero"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Sebastián Villarreal",
+            "Martín Llaryora",
+            "María Rosa Marcone",
+            "Liliana Montero"
         ]
     },
     {
@@ -7643,13 +9094,21 @@
         "fecha": "23-03-2024",
         "hora": "18:25",
         "personas_detectadas": [
-            "Victoria Villarruel",
-            "Alejandra Vigo",
             "Myrian Prunotto",
-            "Milei",
-            "Prunotto",
             "Juan Schiaretti",
-            "Javier Milei"
+            "Prunotto",
+            "Milei",
+            "Javier Milei",
+            "Alejandra Vigo",
+            "Victoria Villarruel"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Myrian Prunotto",
+            "Juan Schiaretti",
+            "Prunotto",
+            "Javier Milei",
+            "Alejandra Vigo",
+            "Victoria Villarruel"
         ]
     },
     {
@@ -7704,23 +9163,40 @@
         "fecha": "19-03-2024",
         "hora": "11:04",
         "personas_detectadas": [
-            "Mauricio Macri",
-            "Cammesa",
-            "Daniel Scioli",
-            "Eduardo Rodríguez Chirillo",
-            "Fernández",
-            "Alejandro Eintoss",
-            "Rodríguez Chirillo",
-            "Rodríguez",
-            "Ferrario",
-            "Milei",
             "Néstor Kirchner",
-            "José María Rodríguez",
+            "Eduardo Rodríguez Chirillo",
+            "Alberto Fernández",
+            "Milei",
             "Alejandro Ferrario",
-            "Kirchner",
+            "Rodríguez",
             "Javier Milei",
             "Chirilo",
-            "Alberto Fernández"
+            "José María Rodríguez",
+            "Ferrario",
+            "Rodríguez Chirillo",
+            "Fernández",
+            "Alejandro Eintoss",
+            "Kirchner",
+            "Cammesa",
+            "Daniel Scioli",
+            "Mauricio Macri"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Néstor Kirchner",
+            "Eduardo Rodríguez Chirillo",
+            "Alberto Fernández",
+            "Alejandro Ferrario",
+            "Rodríguez",
+            "Javier Milei",
+            "Chirilo",
+            "José María Rodríguez",
+            "Ferrario",
+            "Alejandro Eintoss",
+            "Kirchner",
+            "Cammesa",
+            "Mauricio Macri",
+            "Daniel Scioli",
+            "Rodríguez Chirillo"
         ]
     },
     {
@@ -7744,7 +9220,8 @@
         "index": 1109,
         "fecha": "21-03-2024",
         "hora": "08:18",
-        "personas_detectadas": []
+        "personas_detectadas": [],
+        "personas_detectadas_normalizadas": []
     },
     {
         "link": "https://www.lavoz.com.ar/politica/passerini-emitio-letras-por-30-mil-millones-y-cancelo-el-primer-vencimiento-de-deuda-externa/",
@@ -7773,10 +9250,16 @@
         "fecha": "19-03-2024",
         "hora": "21:29",
         "personas_detectadas": [
-            "Passerini",
-            "Sergio Lorenzatti",
             "Ramón Mestre",
-            "Martín Llaryora"
+            "Martín Llaryora",
+            "Passerini",
+            "Sergio Lorenzatti"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Ramón Mestre",
+            "Martín Llaryora",
+            "Passerini",
+            "Sergio Lorenzatti"
         ]
     },
     {
@@ -7817,8 +9300,14 @@
         "fecha": "21-03-2024",
         "hora": "09:20",
         "personas_detectadas": [
-            "Dessein",
             "Daniel Dessein",
+            "Dessein",
+            "José Luis Cabezas",
+            "Alejandro Pueblas"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Daniel Dessein",
+            "Dessein",
             "José Luis Cabezas",
             "Alejandro Pueblas"
         ]
@@ -7880,30 +9369,51 @@
         "fecha": "25-03-2024",
         "hora": "18:21",
         "personas_detectadas": [
-            "Segundo",
-            "Sergio Massa",
-            "Horacio Rodríguez Larreta",
-            "Milei",
-            "Myrian Bregman",
-            "Luis Caputo",
-            "Cristina Kirchner",
-            "Massa",
-            "Milei\nLa encuesta",
-            "Martín Lousteau",
-            "Gustavo Sylvestre",
-            "Eduardo Feinmann",
-            "Axel Kicillof",
-            "Facundo Manes",
-            "Bullrich",
-            "Javier Milei",
-            "Aníbal Urios",
-            "Luis Majul",
-            "Guillermo Moreno",
-            "Karina Milei",
             "Patricia Bullrich",
-            "Cristina",
+            "Karina Milei",
             "Macri",
-            "Mauricio Macri"
+            "Guillermo Moreno",
+            "Martín Lousteau",
+            "Luis Caputo",
+            "Aníbal Urios",
+            "Massa",
+            "Cristina",
+            "Segundo",
+            "Gustavo Sylvestre",
+            "Milei",
+            "Horacio Rodríguez Larreta",
+            "Luis Majul",
+            "Eduardo Feinmann",
+            "Mauricio Macri",
+            "Axel Kicillof",
+            "Bullrich",
+            "Milei\nLa encuesta",
+            "Sergio Massa",
+            "Myrian Bregman",
+            "Javier Milei",
+            "Cristina Kirchner",
+            "Facundo Manes"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Patricia Bullrich",
+            "Karina Milei",
+            "Guillermo Moreno",
+            "Martín Lousteau",
+            "Luis Caputo",
+            "Aníbal Urios",
+            "Myriam Bregman",
+            "Segundo",
+            "Gustavo Sylvestre",
+            "Horacio Rodríguez Larreta",
+            "Luis Majul",
+            "Eduardo Feinmann",
+            "Mauricio Macri",
+            "Axel Kicillof",
+            "Milei\nLa encuesta",
+            "Sergio Massa",
+            "Javier Milei",
+            "Cristina Kirchner",
+            "Facundo Manes"
         ]
     },
     {
@@ -7943,11 +9453,17 @@
         "fecha": "24-03-2024",
         "hora": "09:00",
         "personas_detectadas": [
-            "Cristina Fernández de Kirchner",
+            "Presidente",
             "Néstor Kirchner",
             "Cristina",
             "General Perón",
-            "Presidente"
+            "Cristina Fernández de Kirchner"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Presidente",
+            "Néstor Kirchner",
+            "Cristina Kirchner",
+            "General Perón"
         ]
     },
     {
@@ -7998,11 +9514,19 @@
         "fecha": "20-03-2024",
         "hora": "08:53",
         "personas_detectadas": [
-            "Epec",
+            "Juan Schiaretti",
             "Facundo Cortés",
             "Ersep",
-            "Juan Schiaretti",
             "Martín Llaryora",
+            "Epec",
+            "Cortés"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan Schiaretti",
+            "Facundo Cortés",
+            "Ersep",
+            "Martín Llaryora",
+            "Epec",
             "Cortés"
         ]
     },
@@ -8061,26 +9585,45 @@
         "fecha": "20-03-2024",
         "hora": "12:23",
         "personas_detectadas": [
-            "Oscar González",
-            "Juan Domingo Perón",
-            "Sergio Massa",
-            "Cristina Kirchner",
-            "Gildo Insfrán",
-            "Massa",
-            "Martín Llaryora",
-            "Alberto Fernández",
-            "Insfrán",
-            "Jorge “Zurdo” Montoya",
-            "Javier Milei",
-            "José Manuel de la Sota",
-            "Gutiérrez",
-            "Schiaretti",
-            "Llaryora",
             "Carlos Gutiérrez",
-            "Juan Schiaretti",
+            "Gutiérrez",
+            "José Manuel de la Sota",
+            "Gildo Insfrán",
+            "Juan Domingo Perón",
             "José “Pepe” Pihen",
+            "Llaryora",
+            "Jorge “Zurdo” Montoya",
+            "Insfrán",
+            "Juan Schiaretti",
+            "Francisco Fortuna",
+            "Massa",
             "González",
-            "Francisco Fortuna"
+            "Oscar González",
+            "Alberto Fernández",
+            "Martín Llaryora",
+            "Sergio Massa",
+            "Schiaretti",
+            "Javier Milei",
+            "Cristina Kirchner"
+        ],
+        "personas_detectadas_normalizadas": [
+            "Juan Schiaretti",
+            "Francisco Fortuna",
+            "Carlos Gutiérrez",
+            "José “Pepe” Pihen",
+            "Oscar González",
+            "Alberto Fernández",
+            "Gutiérrez",
+            "José Manuel de la Sota",
+            "Martín Llaryora",
+            "Sergio Massa",
+            "Gildo Insfrán",
+            "González",
+            "Javier Milei",
+            "Juan Domingo Perón",
+            "Jorge “Zurdo” Montoya",
+            "Cristina Kirchner",
+            "Insfrán"
         ]
     }
 ]

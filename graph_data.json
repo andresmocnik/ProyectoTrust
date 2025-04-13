@@ -1,0 +1,1560 @@
+{
+    "nodes": [
+        {
+            "id": "Juan Schiaretti",
+            "label": "Juan Schiaretti",
+            "value": 23,
+            "title": "Aparece en 13 artículos"
+        },
+        {
+            "id": "Alberto Fernández",
+            "label": "Alberto Fernández",
+            "value": 32,
+            "title": "Aparece en 22 artículos"
+        },
+        {
+            "id": "Martín Llaryora",
+            "label": "Martín Llaryora",
+            "value": 34,
+            "title": "Aparece en 24 artículos"
+        },
+        {
+            "id": "Javier Milei",
+            "label": "Javier Milei",
+            "value": 50,
+            "title": "Aparece en 81 artículos"
+        },
+        {
+            "id": "Victoria Villarruel",
+            "label": "Victoria Villarruel",
+            "value": 35,
+            "title": "Aparece en 25 artículos"
+        },
+        {
+            "id": "Elena Highton de Nolasco",
+            "label": "Elena Highton de Nolasco",
+            "value": 16,
+            "title": "Aparece en 6 artículos"
+        },
+        {
+            "id": "Juan Carlos Maqueda",
+            "label": "Juan Carlos Maqueda",
+            "value": 17,
+            "title": "Aparece en 7 artículos"
+        },
+        {
+            "id": "Ariel Lijo",
+            "label": "Ariel Lijo",
+            "value": 20,
+            "title": "Aparece en 10 artículos"
+        },
+        {
+            "id": "Mauricio Macri",
+            "label": "Mauricio Macri",
+            "value": 22,
+            "title": "Aparece en 12 artículos"
+        },
+        {
+            "id": "Cristina Kirchner",
+            "label": "Cristina Kirchner",
+            "value": 26,
+            "title": "Aparece en 16 artículos"
+        },
+        {
+            "id": "Luis Caputo",
+            "label": "Luis Caputo",
+            "value": 26,
+            "title": "Aparece en 16 artículos"
+        },
+        {
+            "id": "Karina Milei",
+            "label": "Karina Milei",
+            "value": 16,
+            "title": "Aparece en 6 artículos"
+        },
+        {
+            "id": "Patricia Bullrich",
+            "label": "Patricia Bullrich",
+            "value": 25,
+            "title": "Aparece en 15 artículos"
+        },
+        {
+            "id": "Daniel Passerini",
+            "label": "Daniel Passerini",
+            "value": 15,
+            "title": "Aparece en 5 artículos"
+        },
+        {
+            "id": "Manuel Adorni",
+            "label": "Manuel Adorni",
+            "value": 30,
+            "title": "Aparece en 20 artículos"
+        },
+        {
+            "id": "Abuelas",
+            "label": "Abuelas",
+            "value": 15,
+            "title": "Aparece en 5 artículos"
+        },
+        {
+            "id": "Estela de Carlotto",
+            "label": "Estela de Carlotto",
+            "value": 19,
+            "title": "Aparece en 9 artículos"
+        },
+        {
+            "id": "Presidente",
+            "label": "Presidente",
+            "value": 22,
+            "title": "Aparece en 12 artículos"
+        },
+        {
+            "id": "Guillermo Francos",
+            "label": "Guillermo Francos",
+            "value": 16,
+            "title": "Aparece en 6 artículos"
+        },
+        {
+            "id": "Luis Petri",
+            "label": "Luis Petri",
+            "value": 15,
+            "title": "Aparece en 5 artículos"
+        },
+        {
+            "id": "Gildo Insfrán",
+            "label": "Gildo Insfrán",
+            "value": 15,
+            "title": "Aparece en 5 artículos"
+        },
+        {
+            "id": "Néstor Kirchner",
+            "label": "Néstor Kirchner",
+            "value": 20,
+            "title": "Aparece en 10 artículos"
+        },
+        {
+            "id": "Axel Kicillof",
+            "label": "Axel Kicillof",
+            "value": 16,
+            "title": "Aparece en 6 artículos"
+        },
+        {
+            "id": "Kirchner",
+            "label": "Kirchner",
+            "value": 19,
+            "title": "Aparece en 9 artículos"
+        },
+        {
+            "id": "Sergio Massa",
+            "label": "Sergio Massa",
+            "value": 21,
+            "title": "Aparece en 11 artículos"
+        },
+        {
+            "id": "Ganancias",
+            "label": "Ganancias",
+            "value": 15,
+            "title": "Aparece en 5 artículos"
+        },
+        {
+            "id": "Horacio Rosatti",
+            "label": "Horacio Rosatti",
+            "value": 15,
+            "title": "Aparece en 5 artículos"
+        },
+        {
+            "id": "Gabriel Bornoroni",
+            "label": "Gabriel Bornoroni",
+            "value": 15,
+            "title": "Aparece en 5 artículos"
+        },
+        {
+            "id": "Epec",
+            "label": "Epec",
+            "value": 16,
+            "title": "Aparece en 6 artículos"
+        },
+        {
+            "id": "Mitre",
+            "label": "Mitre",
+            "value": 15,
+            "title": "Aparece en 5 artículos"
+        },
+        {
+            "id": "Martín Menem",
+            "label": "Martín Menem",
+            "value": 18,
+            "title": "Aparece en 8 artículos"
+        }
+    ],
+    "edges": [
+        {
+            "from": "Alberto Fernández",
+            "to": "Javier Milei",
+            "value": 18,
+            "title": "Juntos en 18 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Juan Schiaretti",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Martín Llaryora",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Victoria Villarruel",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Juan Schiaretti",
+            "value": 9,
+            "title": "Juntos en 9 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Martín Llaryora",
+            "value": 14,
+            "title": "Juntos en 14 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Victoria Villarruel",
+            "value": 19,
+            "title": "Juntos en 19 artículos"
+        },
+        {
+            "from": "Juan Schiaretti",
+            "to": "Martín Llaryora",
+            "value": 9,
+            "title": "Juntos en 9 artículos"
+        },
+        {
+            "from": "Juan Schiaretti",
+            "to": "Victoria Villarruel",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Martín Llaryora",
+            "to": "Victoria Villarruel",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Cristina Kirchner",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Elena Highton de Nolasco",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Javier Milei",
+            "value": 8,
+            "title": "Juntos en 8 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Juan Carlos Maqueda",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Mauricio Macri",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Elena Highton de Nolasco",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Javier Milei",
+            "value": 14,
+            "title": "Juntos en 14 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Juan Carlos Maqueda",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Mauricio Macri",
+            "value": 6,
+            "title": "Juntos en 6 artículos"
+        },
+        {
+            "from": "Elena Highton de Nolasco",
+            "to": "Javier Milei",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Elena Highton de Nolasco",
+            "to": "Juan Carlos Maqueda",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Elena Highton de Nolasco",
+            "to": "Mauricio Macri",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Juan Carlos Maqueda",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Mauricio Macri",
+            "value": 8,
+            "title": "Juntos en 8 artículos"
+        },
+        {
+            "from": "Juan Carlos Maqueda",
+            "to": "Mauricio Macri",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Luis Caputo",
+            "value": 12,
+            "title": "Juntos en 12 artículos"
+        },
+        {
+            "from": "Daniel Passerini",
+            "to": "Javier Milei",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Daniel Passerini",
+            "to": "Karina Milei",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Daniel Passerini",
+            "to": "Martín Llaryora",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Daniel Passerini",
+            "to": "Patricia Bullrich",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Daniel Passerini",
+            "to": "Victoria Villarruel",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Karina Milei",
+            "value": 6,
+            "title": "Juntos en 6 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Patricia Bullrich",
+            "value": 7,
+            "title": "Juntos en 7 artículos"
+        },
+        {
+            "from": "Karina Milei",
+            "to": "Martín Llaryora",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Karina Milei",
+            "to": "Patricia Bullrich",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Karina Milei",
+            "to": "Victoria Villarruel",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Martín Llaryora",
+            "to": "Patricia Bullrich",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Patricia Bullrich",
+            "to": "Victoria Villarruel",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Manuel Adorni",
+            "value": 15,
+            "title": "Juntos en 15 artículos"
+        },
+        {
+            "from": "Manuel Adorni",
+            "to": "Victoria Villarruel",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Abuelas",
+            "to": "Daniel Passerini",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Abuelas",
+            "to": "Estela de Carlotto",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Abuelas",
+            "to": "Javier Milei",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Abuelas",
+            "to": "Martín Llaryora",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Daniel Passerini",
+            "to": "Estela de Carlotto",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Estela de Carlotto",
+            "to": "Javier Milei",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Estela de Carlotto",
+            "to": "Martín Llaryora",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Juan Schiaretti",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Luis Caputo",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Martín Llaryora",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Presidente",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Victoria Villarruel",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Presidente",
+            "value": 10,
+            "title": "Juntos en 10 artículos"
+        },
+        {
+            "from": "Juan Schiaretti",
+            "to": "Luis Caputo",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Juan Schiaretti",
+            "to": "Presidente",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Luis Caputo",
+            "to": "Martín Llaryora",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Luis Caputo",
+            "to": "Presidente",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Luis Caputo",
+            "to": "Victoria Villarruel",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Martín Llaryora",
+            "to": "Presidente",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Presidente",
+            "to": "Victoria Villarruel",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Estela de Carlotto",
+            "to": "Guillermo Francos",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Estela de Carlotto",
+            "to": "Presidente",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Guillermo Francos",
+            "to": "Presidente",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Luis Petri",
+            "to": "Patricia Bullrich",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Luis Petri",
+            "to": "Victoria Villarruel",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Axel Kicillof",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Cristina Kirchner",
+            "value": 7,
+            "title": "Juntos en 7 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Gildo Insfrán",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Kirchner",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Néstor Kirchner",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Cristina Kirchner",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Gildo Insfrán",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Javier Milei",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Kirchner",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Martín Llaryora",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Néstor Kirchner",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Gildo Insfrán",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Kirchner",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Martín Llaryora",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Néstor Kirchner",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Gildo Insfrán",
+            "to": "Javier Milei",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Gildo Insfrán",
+            "to": "Kirchner",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Gildo Insfrán",
+            "to": "Martín Llaryora",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Gildo Insfrán",
+            "to": "Néstor Kirchner",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Kirchner",
+            "value": 7,
+            "title": "Juntos en 7 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Néstor Kirchner",
+            "value": 6,
+            "title": "Juntos en 6 artículos"
+        },
+        {
+            "from": "Kirchner",
+            "to": "Martín Llaryora",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Kirchner",
+            "to": "Néstor Kirchner",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Martín Llaryora",
+            "to": "Néstor Kirchner",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Sergio Massa",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Juan Schiaretti",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Sergio Massa",
+            "value": 6,
+            "title": "Juntos en 6 artículos"
+        },
+        {
+            "from": "Gildo Insfrán",
+            "to": "Juan Schiaretti",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Gildo Insfrán",
+            "to": "Sergio Massa",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Sergio Massa",
+            "value": 9,
+            "title": "Juntos en 9 artículos"
+        },
+        {
+            "from": "Juan Schiaretti",
+            "to": "Kirchner",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Juan Schiaretti",
+            "to": "Sergio Massa",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Kirchner",
+            "to": "Sergio Massa",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Martín Llaryora",
+            "to": "Sergio Massa",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Estela de Carlotto",
+            "to": "Victoria Villarruel",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Daniel Passerini",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Ganancias",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Daniel Passerini",
+            "to": "Ganancias",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Daniel Passerini",
+            "to": "Juan Schiaretti",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Daniel Passerini",
+            "to": "Sergio Massa",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ganancias",
+            "to": "Javier Milei",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Ganancias",
+            "to": "Juan Schiaretti",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ganancias",
+            "to": "Martín Llaryora",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ganancias",
+            "to": "Sergio Massa",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Elena Highton de Nolasco",
+            "to": "Horacio Rosatti",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Elena Highton de Nolasco",
+            "to": "Néstor Kirchner",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Horacio Rosatti",
+            "to": "Juan Carlos Maqueda",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Horacio Rosatti",
+            "to": "Néstor Kirchner",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Juan Carlos Maqueda",
+            "to": "Néstor Kirchner",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Gabriel Bornoroni",
+            "to": "Javier Milei",
+            "value": 5,
+            "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Gabriel Bornoroni",
+            "to": "Karina Milei",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Gabriel Bornoroni",
+            "to": "Presidente",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Karina Milei",
+            "to": "Presidente",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Presidente",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Presidente",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Patricia Bullrich",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Luis Petri",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Luis Petri",
+            "to": "Mauricio Macri",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Luis Petri",
+            "to": "Sergio Massa",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Mauricio Macri",
+            "to": "Patricia Bullrich",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Mauricio Macri",
+            "to": "Sergio Massa",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Patricia Bullrich",
+            "to": "Sergio Massa",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Epec",
+            "to": "Martín Llaryora",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Epec",
+            "to": "Mitre",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Martín Llaryora",
+            "to": "Mitre",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Epec",
+            "to": "Javier Milei",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Mitre",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Manuel Adorni",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Luis Caputo",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Luis Caputo",
+            "to": "Sergio Massa",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Estela de Carlotto",
+            "to": "Mitre",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Javier Milei",
+            "to": "Martín Menem",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Martín Menem",
+            "to": "Victoria Villarruel",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Abuelas",
+            "to": "Victoria Villarruel",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Estela de Carlotto",
+            "to": "Luis Caputo",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Estela de Carlotto",
+            "to": "Manuel Adorni",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Luis Caputo",
+            "to": "Manuel Adorni",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Juan Carlos Maqueda",
+            "to": "Martín Llaryora",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Manuel Adorni",
+            "to": "Martín Llaryora",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Manuel Adorni",
+            "to": "Martín Menem",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Martín Llaryora",
+            "to": "Martín Menem",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Luis Caputo",
+            "to": "Mauricio Macri",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Mauricio Macri",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Mauricio Macri",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Sergio Massa",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Manuel Adorni",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Horacio Rosatti",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Kirchner",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Néstor Kirchner",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Horacio Rosatti",
+            "to": "Kirchner",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Horacio Rosatti",
+            "to": "Mauricio Macri",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Horacio Rosatti",
+            "to": "Victoria Villarruel",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Kirchner",
+            "to": "Mauricio Macri",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Kirchner",
+            "to": "Victoria Villarruel",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Mauricio Macri",
+            "to": "Néstor Kirchner",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Mauricio Macri",
+            "to": "Victoria Villarruel",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Néstor Kirchner",
+            "to": "Victoria Villarruel",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Victoria Villarruel",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Gabriel Bornoroni",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Guillermo Francos",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Gabriel Bornoroni",
+            "to": "Guillermo Francos",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Gabriel Bornoroni",
+            "to": "Martín Llaryora",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Gabriel Bornoroni",
+            "to": "Mauricio Macri",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Gabriel Bornoroni",
+            "to": "Sergio Massa",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Guillermo Francos",
+            "to": "Javier Milei",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Guillermo Francos",
+            "to": "Martín Llaryora",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Guillermo Francos",
+            "to": "Mauricio Macri",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Guillermo Francos",
+            "to": "Sergio Massa",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Martín Llaryora",
+            "to": "Mauricio Macri",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Mauricio Macri",
+            "to": "Presidente",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Presidente",
+            "to": "Sergio Massa",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Gabriel Bornoroni",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Karina Milei",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ariel Lijo",
+            "to": "Martín Menem",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Gabriel Bornoroni",
+            "to": "Martín Menem",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Gabriel Bornoroni",
+            "to": "Victoria Villarruel",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Karina Milei",
+            "to": "Martín Menem",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
+            "to": "Karina Milei",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Karina Milei",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Luis Petri",
+            "to": "Manuel Adorni",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Manuel Adorni",
+            "to": "Patricia Bullrich",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Abuelas",
+            "to": "Manuel Adorni",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Juan Carlos Maqueda",
+            "to": "Victoria Villarruel",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Elena Highton de Nolasco",
+            "to": "Presidente",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Elena Highton de Nolasco",
+            "to": "Victoria Villarruel",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Elena Highton de Nolasco",
+            "to": "Manuel Adorni",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Juan Carlos Maqueda",
+            "to": "Manuel Adorni",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Mitre",
+            "to": "Presidente",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Horacio Rosatti",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Manuel Adorni",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Horacio Rosatti",
+            "to": "Javier Milei",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Horacio Rosatti",
+            "to": "Manuel Adorni",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Manuel Adorni",
+            "to": "Mauricio Macri",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Manuel Adorni",
+            "to": "Néstor Kirchner",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Guillermo Francos",
+            "to": "Horacio Rosatti",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Guillermo Francos",
+            "to": "Patricia Bullrich",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Horacio Rosatti",
+            "to": "Patricia Bullrich",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Martín Menem",
+            "to": "Presidente",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Horacio Rosatti",
+            "to": "Presidente",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Juan Carlos Maqueda",
+            "to": "Presidente",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Manuel Adorni",
+            "to": "Presidente",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Néstor Kirchner",
+            "to": "Presidente",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
+            "from": "Kirchner",
+            "to": "Manuel Adorni",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Ganancias",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Guillermo Francos",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Martín Menem",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ganancias",
+            "to": "Gildo Insfrán",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ganancias",
+            "to": "Guillermo Francos",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Ganancias",
+            "to": "Martín Menem",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Gildo Insfrán",
+            "to": "Guillermo Francos",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Gildo Insfrán",
+            "to": "Martín Menem",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Guillermo Francos",
+            "to": "Martín Menem",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Victoria Villarruel",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Karina Milei",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Luis Caputo",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
+            "to": "Patricia Bullrich",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Luis Caputo",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Patricia Bullrich",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Karina Milei",
+            "to": "Luis Caputo",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Karina Milei",
+            "to": "Mauricio Macri",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Karina Milei",
+            "to": "Sergio Massa",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Luis Caputo",
+            "to": "Patricia Bullrich",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Epec",
+            "to": "Juan Schiaretti",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        }
+    ]
+}
