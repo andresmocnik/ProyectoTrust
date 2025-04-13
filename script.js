@@ -181,8 +181,8 @@ document.addEventListener('DOMContentLoaded', () => {
             return response.json(); // Convertimos la respuesta en datos JavaScript (un array de objetos)
         })
         .then(data => { // Cuando tenemos los datos listos...
-            // Mostramos los primeros 2 artículos (puedes cambiar el '2' por otro número)
-            const articlesToDisplay = data.slice(0, 2); // 'slice(0, 2)' toma desde el índice 0 hasta (pero sin incluir) el 2
+            // Mostramos los primeros 5 artículos
+            const articlesToDisplay = data.slice(0, 5); // 'slice(0, 2)' toma desde el índice 0 hasta (pero sin incluir) el 2
             // Llamamos a la función displayArticle para cada uno de los artículos seleccionados
             articlesToDisplay.forEach(article => {
                 displayArticle(article);
