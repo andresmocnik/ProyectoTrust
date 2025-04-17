@@ -6,15 +6,19 @@ document.addEventListener('DOMContentLoaded', () => {
     const tooltipPopup = document.getElementById('tooltip-popup');
     const tooltipImg = document.getElementById('tooltip-img');
     const tooltipDesc = document.getElementById('tooltip-desc');
-    const toggleGraphBtn = document.getElementById('toggle-graph-btn');
-    const graphContentDiv = document.getElementById('graph-content');
     // NUEVAS referencias para búsqueda/filtro
     const articleSearchInput = document.getElementById('article-search-input');
     const articleSearchBtn = document.getElementById('article-search-btn');
     const politicianSelect = document.getElementById('politician-select');
     const resetFilterBtn = document.getElementById('reset-filter-btn');
+    // NUEVAS referencias para la sidebar
+    const sidebar = document.getElementById('sidebar');
+    const openSidebarBtn = document.getElementById('open-sidebar-btn');
+    const closeSidebarBtn = document.getElementById('close-sidebar-btn');
+    const pageContent = document.getElementById('page-content'); // Referencia al contenedor principal
+    const body = document.body; // Referencia al body
 
-    let graphInitialized = false;
+    let graphInitialized = false; // Sigue siendo útil para cargar el grafo solo una vez
     let allArticles = []; // <-- Variable para almacenar todos los artículos cargados
 
     // --- Información para los Tooltips (personData) ---
@@ -83,14 +87,18 @@ document.addEventListener('DOMContentLoaded', () => {
         const sortedNames = Array.from(politicianNames).sort();
 
         // Limpiar opciones previas (excepto la primera por defecto)
-        politicianSelect.innerHTML = '<option value="">-- Seleccionar Político --</option>';
+        if(politicianSelect) { // Verificar que el elemento existe
+            politicianSelect.innerHTML = '<option value="">-- Seleccionar Político --</option>';
 
-        // Añadir cada político como una opción
-        sortedNames.forEach(name => {
-            const option = createElement('option', { value: name, textContent: name });
-            politicianSelect.appendChild(option);
-        });
-        console.log(`Filtro poblado con ${sortedNames.length} políticos.`);
+            // Añadir cada político como una opción
+            sortedNames.forEach(name => {
+                const option = createElement('option', { value: name, textContent: name });
+                politicianSelect.appendChild(option);
+            });
+            console.log(`Filtro poblado con ${sortedNames.length} políticos.`);
+        } else {
+            console.warn("Elemento 'politician-select' no encontrado para poblar.");
+        }
     }
 
     // --- displayArticle MODIFICADA para aceptar highlightedPolitician ---
@@ -115,7 +123,12 @@ document.addEventListener('DOMContentLoaded', () => {
             normalizedPersonsInArticle.forEach(normPersonName => {
                 // Creamos un Regex seguro para buscar este nombre específico (como palabra completa)
                 const escapedName = normPersonName.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                const regex = new RegExp(`\\b(${escapedName})\\b`, 'gi'); // 'g' global, 'i' case-insensitive
+                // Añadimos lookarounds para evitar coincidencias parciales si es posible (más seguro)
+                // Esto ayuda a no marcar 'Milei' dentro de 'Mileista', por ejemplo.
+                // Nota: \b ya hace gran parte de esto, pero esto es más explícito.
+                // const regex = new RegExp(`(?<!\\w)(${escapedName})(?!\\w)`, 'gi'); // Con lookarounds (más avanzado)
+                const regex = new RegExp(`\\b(${escapedName})\\b`, 'gi'); // 'g' global, 'i' case-insensitive (más simple y usualmente suficiente)
+
 
                  // Aplicar el span para tooltip y posible resaltado
                 processedHTML = processedHTML.replace(
@@ -142,16 +155,24 @@ document.addEventListener('DOMContentLoaded', () => {
         if (article.link_img) articleDiv.appendChild(image);
         if (article.caption_img) articleDiv.appendChild(caption);
         articleDiv.appendChild(bodyDiv);
-        articlesContainer.appendChild(articleDiv); // Añadir al contenedor principal
+        // Verificar si articlesContainer existe antes de añadir
+        if (articlesContainer) {
+            articlesContainer.appendChild(articleDiv);
+        }
     }
 
 
     // --- setupTooltipListeners ---
     function setupTooltipListeners() {
+        // Verificar si el contenedor existe
+        if (!articlesContainer) return;
+
         const personSpans = articlesContainer.querySelectorAll('.person-tooltip');
 
         personSpans.forEach(span => {
             span.addEventListener('mouseover', async (event) => {
+                if (!tooltipPopup || !tooltipImg || !tooltipDesc) return; // Verificar elementos del tooltip
+
                 const personKey = event.target.getAttribute('data-person-key'); // Usa la clave normalizada
 
                 tooltipPopup.style.left = `${event.pageX + 15}px`;
@@ -216,11 +237,11 @@ document.addEventListener('DOMContentLoaded', () => {
             });
 
             span.addEventListener('mouseout', () => {
-                tooltipPopup.style.display = 'none';
+                 if (tooltipPopup) tooltipPopup.style.display = 'none';
             });
 
             span.addEventListener('mousemove', (event) => {
-                 if (tooltipPopup.style.display === 'block') {
+                 if (tooltipPopup && tooltipPopup.style.display === 'block') {
                     // Lógica para evitar que el tooltip se solape o salga de pantalla
                     let newX = event.pageX + 15;
                     let newY = event.pageY + 10;
@@ -257,6 +278,11 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Función central para renderizar artículos ---
     function renderArticles(articlesToDisplay, politicianToHighlight = null) {
         console.log(`Renderizando ${articlesToDisplay.length} artículos.`);
+        if (!articlesContainer) {
+            console.error("El contenedor 'articles-container' no existe en el DOM.");
+            return;
+        }
+
         articlesContainer.innerHTML = ''; // Limpiar contenedor
 
         if (articlesToDisplay.length === 0) {
@@ -273,6 +299,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Lógica para el Buscador de Artículos ---
     function handleArticleSearch() {
+        if (!articleSearchInput || !politicianSelect) return; // Verificar elementos
+
         const searchTerm = articleSearchInput.value.trim().toLowerCase();
         politicianSelect.value = ""; // Resetea el filtro de político si se busca por texto
 
@@ -294,6 +322,8 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // --- Lógica para el Filtro de Políticos ---
     function handlePoliticianFilter() {
+        if (!politicianSelect || !articleSearchInput) return; // Verificar elementos
+
         const selectedPolitician = politicianSelect.value;
         articleSearchInput.value = ""; // Resetea la búsqueda por texto si se filtra por político
 
@@ -315,64 +345,79 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Lógica para Resetear la Vista ---
     function resetView() {
         console.log("Reseteando vista a todos los artículos.");
-        articleSearchInput.value = ''; // Limpiar campo de búsqueda
-        politicianSelect.value = '';   // Resetear selección del dropdown
+        if(articleSearchInput) articleSearchInput.value = ''; // Limpiar campo de búsqueda
+        if(politicianSelect) politicianSelect.value = '';   // Resetear selección del dropdown
         renderArticles(allArticles);   // Volver a mostrar todos los artículos sin resaltado
     }
 
 
-    // --- Grafo Colapsable y Carga ---
-    if (toggleGraphBtn && graphContentDiv) {
-        toggleGraphBtn.addEventListener('click', () => {
-            const isHidden = graphContentDiv.style.display === 'none';
-            if (isHidden) {
-                graphContentDiv.style.display = 'block';
-                toggleGraphBtn.textContent = 'Mostrar/Ocultar Grafo de Relaciones ▲';
-                if (!graphInitialized) {
-                    loadAndDrawGraph(); // Llama a la función para dibujar el grafo SÓLO la primera vez
-                    graphInitialized = true;
-                }
-            } else {
-                graphContentDiv.style.display = 'none';
-                toggleGraphBtn.textContent = 'Mostrar/Ocultar Grafo de Relaciones ▼';
-            }
-        });
-    } else {
-         if (document.getElementById('toggle-graph-btn') || document.getElementById('graph-content')) {
-             console.error("No se encontró el botón (#toggle-graph-btn) o el contenido (#graph-content) del grafo colapsable.");
-         }
+    // --- Lógica para Abrir/Cerrar Barra Lateral ---
+    function openSidebar() {
+        if (!sidebar || !body) return;
+        sidebar.classList.add('visible');
+        body.classList.add('sidebar-visible'); // Añade clase al body para empujar contenido o aplicar overlay
+
+        // Cargar el grafo si es la primera vez que se abre la sidebar
+        if (!graphInitialized) {
+            loadAndDrawGraph();
+            graphInitialized = true; // Marcar como inicializado incluso si falla la carga (para no reintentar infinitamente)
+        }
     }
 
+    function closeSidebar() {
+        if (!sidebar || !body) return;
+        sidebar.classList.remove('visible');
+        body.classList.remove('sidebar-visible'); // Quita clase del body
+    }
+
+
+    // --- loadAndDrawGraph ---
     function loadAndDrawGraph() {
-        const container = document.getElementById('mynetwork');
+        const container = document.getElementById('mynetwork'); // Sigue buscando el mismo ID
         if (!container) {
-            console.error("Contenedor del grafo 'mynetwork' no encontrado.");
+            console.error("Contenedor del grafo 'mynetwork' no encontrado DENTRO de la sidebar.");
+             const graphContainer = document.getElementById('graph-container-sidebar');
+             if (graphContainer) {
+                 graphContainer.innerHTML = '<p style="color: red;">Error: No se encontró el elemento del grafo (#mynetwork).</p>';
+             }
             return;
         }
+
+        // Mensaje de carga
+        container.innerHTML = '<p style="padding: 20px; text-align: center;">Cargando grafo...</p>';
 
         const options = { // Opciones de Vis.js (ajusta según necesites)
              nodes: {
                 shape: 'dot',
-                scaling: { min: 10, max: 50 },
+                scaling: { min: 10, max: 50, label: { enabled: false, min: 14, max: 30 } }, // Escala de nodos
                 font: { size: 12, face: 'Tahoma', color: '#333' },
-                 borderWidth: 2,
-                 color: { border: '#2B7CE9', background: '#97C2FC', highlight: { border: '#2B7CE9', background: '#D2E5FF' }, hover: { border: '#2B7CE9', background: '#D2E5FF' } }
+                 borderWidth: 1.5, // Borde más delgado
+                 color: { border: '#2B7CE9', background: '#D2E5FF', highlight: { border: '#2B7CE9', background: '#F0F8FF' }, hover: { border: '#2B7CE9', background: '#E0F0FF' } } // Colores más suaves
             },
             edges: {
-                width: 0.15,
-                 scaling: { min: 1, max: 10 },
-                color:{ color:'#848484', highlight:'#848484', hover: '#848484', inherit: 'from', opacity:1.0 },
-                font: { size: 10, align: 'middle', color: '#666' },
-                 smooth: { type: "continuous", roundness: 0.5 }
+                width: 0.15, // Ancho base fino
+                 scaling: { min: 0.5, max: 5 }, // Escala de ancho de arista más sutil
+                color:{ color:'#cccccc', highlight:'#888888', hover: '#aaaaaa', inherit: 'from', opacity:0.7 }, // Colores más tenues
+                //font: { size: 10, align: 'middle', color: '#666' }, // Opcional: quitar labels de aristas si son muchos
+                 smooth: { type: "continuous", roundness: 0.3 } // Menos curvo
             },
             physics:{
                 enabled: true,
-                solver: 'forceAtlas2Based',
-                forceAtlas2Based: { gravitationalConstant: -50, centralGravity: 0.01, springConstant: 0.08, springLength: 100, damping: 0.4, avoidOverlap: 0.5 },
-                 stabilization: { enabled: true, iterations: 1000, updateInterval: 100, onlyDynamicEdges: false, fit: true }
+                solver: 'forceAtlas2Based', // Buen solver para redes sociales
+                forceAtlas2Based: { gravitationalConstant: -40, centralGravity: 0.005, springLength: 100, springConstant: 0.08, damping: 0.6, avoidOverlap: 0.3 }, // Ajustes para dispersar un poco más
+                 minVelocity: 0.75, // Detener antes si se mueve poco
+                 stabilization: { enabled: true, iterations: 500, updateInterval: 50, onlyDynamicEdges: false, fit: true } // Menos iteraciones para carga inicial más rápida
             },
-            interaction: { hover: true, tooltipDelay: 200 },
-            layout:{ improvedLayout:true }
+            interaction: {
+                hover: true, // Activar hover
+                tooltipDelay: 300, // Retraso tooltip
+                navigationButtons: false, // Ocultar botones de zoom/navegación si prefieres
+                keyboard: true, // Permitir navegación por teclado
+                hideEdgesOnDrag: true, // Ocultar aristas al arrastrar nodo (mejora rendimiento)
+            },
+            layout:{
+                improvedLayout:true // Usar layout mejorado
+            }
         };
 
         fetch('graph_data.json')
@@ -381,55 +426,73 @@ document.addEventListener('DOMContentLoaded', () => {
                 return response.json();
             })
             .then(graphData => {
-                if (!graphData || !graphData.nodes || !graphData.edges) {
-                    throw new Error('El archivo graph_data.json no tiene el formato esperado.');
-                }
-                const nodesDataSet = new vis.DataSet(graphData.nodes);
-                const edgesDataSet = new vis.DataSet(graphData.edges);
-                const data = { nodes: nodesDataSet, edges: edgesDataSet };
-                const network = new vis.Network(container, data, options);
+                 if (!graphData || !graphData.nodes || !graphData.edges) {
+                     throw new Error('El archivo graph_data.json no tiene el formato esperado.');
+                 }
+                 // Limpiar mensaje de carga antes de dibujar
+                 container.innerHTML = '';
 
-                network.on("stabilizationIterationsDone", function () {
-                    console.log("Estabilización del grafo completada. Desactivando físicas.");
-                    network.setOptions( { physics: false } );
-                });
+                 const nodesDataSet = new vis.DataSet(graphData.nodes);
+                 const edgesDataSet = new vis.DataSet(graphData.edges);
+                 const data = { nodes: nodesDataSet, edges: edgesDataSet };
+                 const network = new vis.Network(container, data, options);
 
-                network.on("click", function (params) {
-                   if (params.edges.length > 0) {
-                       const clickedEdgeId = params.edges[0];
-                       const edgeData = edgesDataSet.get(clickedEdgeId);
-                       if (edgeData) {
+                 // Evento después de la estabilización inicial (más rápido con menos iteraciones)
+                 network.once("stabilizationIterationsDone", function () {
+                     console.log("Estabilización inicial del grafo completada.");
+                     // Opcional: Desactivar físicas completamente después de un tiempo o dejarlo así
+                     // network.setOptions( { physics: false } );
+                 });
+
+                  // Evento general de clic
+                 network.on("click", function (params) {
+                    // Priorizar clic en nodo
+                    if (params.nodes.length > 0) {
+                        const clickedNodeId = params.nodes[0];
+                        const nodeData = nodesDataSet.get(clickedNodeId);
+                        if (nodeData && politicianSelect) {
+                            console.log("Clic en nodo del grafo:", nodeData);
+                            politicianSelect.value = nodeData.id; // Selecciona el político en el dropdown
+                            handlePoliticianFilter(); // Ejecuta el filtro
+                            // Opcional: cerrar sidebar después de seleccionar?
+                            // closeSidebar();
+                            // Opcional: Hacer scroll hacia la sección de artículos si el contenedor existe
+                            if(articlesContainer) {
+                                articlesContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                            }
+                        }
+                    // Si no hay nodo, verificar clic en arista
+                    } else if (params.edges.length > 0) {
+                         const clickedEdgeId = params.edges[0];
+                         const edgeData = edgesDataSet.get(clickedEdgeId);
+                         if (edgeData) {
                            console.log("Clic en arista:", edgeData);
-                           alert(`Personas ${edgeData.from} y ${edgeData.to} aparecen juntas en ${edgeData.value} artículos.`);
-                           // Aquí podrías implementar la lógica para mostrar los artículos
-                       }
-                   } else if (params.nodes.length > 0) {
-                       const clickedNodeId = params.nodes[0];
-                       const nodeData = nodesDataSet.get(clickedNodeId);
-                       if (nodeData) {
-                           console.log("Clic en nodo:", nodeData);
-                            // --- ACCIÓN AL CLICKEAR NODO DEL GRAFO ---
-                           // Simular selección en el dropdown y filtrar
-                           if (politicianSelect) {
-                               politicianSelect.value = nodeData.id; // Selecciona el político en el dropdown
-                               handlePoliticianFilter(); // Ejecuta el filtro
-                               // Opcional: Hacer scroll hacia la sección de artículos
-                               articlesContainer.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                           }
-                       }
-                   }
-               });
-                console.log("Grafo dibujado.");
-            })
+                           // Mostrar información más detallada si es necesario
+                           alert(`Relación: ${edgeData.from} y ${edgeData.to}\nMencionados juntos en ${edgeData.title.split(' ')[2]} artículos.`);
+                         }
+                    }
+                    // Si no es nodo ni arista, no hacer nada (clic en el fondo)
+                 });
+                 console.log("Grafo dibujado en la sidebar.");
+             })
             .catch(error => {
-                console.error('Error al cargar o dibujar el grafo:', error);
-                container.innerHTML = `<p style="color: red; padding: 10px;">Error al cargar los datos del grafo: ${error.message}</p>`;
+                console.error('Error al cargar o dibujar el grafo en la sidebar:', error);
+                container.innerHTML = `<p style="color: red; padding: 10px;">Error al cargar datos del grafo: ${error.message}</p>`;
             });
     }
 
 
-    // --- Carga Inicial de Datos y Renderizado ---
-    fetch('noticias_procesadas.json') // Asegúrate que el nombre del archivo es correcto
+    // --- Carga Inicial de Datos y Configuración de Listeners ---
+    // Verificar que los elementos básicos existen antes de hacer fetch
+    if (!articlesContainer || !sidebar || !openSidebarBtn || !closeSidebarBtn || !pageContent || !body) {
+        console.error("Error crítico: Faltan elementos esenciales del DOM (contenedor de artículos, sidebar, botones o body). La aplicación no puede inicializar correctamente.");
+        // Podrías mostrar un mensaje al usuario aquí
+        document.body.innerHTML = '<p style="color: red; font-weight: bold; padding: 20px;">Error: La estructura de la página no se cargó correctamente. Por favor, recargue o contacte al administrador.</p>';
+        return; // Detener ejecución si falta algo esencial
+    }
+
+
+    fetch('noticias_procesadas.json')
         .then(response => {
             if (!response.ok) throw new Error(`Error HTTP! estado: ${response.status}`);
             return response.json();
@@ -438,31 +501,48 @@ document.addEventListener('DOMContentLoaded', () => {
             if (!Array.isArray(data)) {
                 throw new Error('Los datos cargados no son un array de artículos.');
             }
-            allArticles = data; // <-- Guardar los datos cargados globalmente
+            allArticles = data;
+            populatePoliticianFilter(allArticles);
+            renderArticles(allArticles);
 
-            populatePoliticianFilter(allArticles); // <-- Poblar el dropdown AHORA
-
-            renderArticles(allArticles); // <-- Llamar a la función de renderizado inicial
-
-            // Configurar listeners para los NUEVOS controles
+            // Configurar listeners para búsqueda y filtro (con verificación de existencia)
             if(articleSearchBtn) articleSearchBtn.addEventListener('click', handleArticleSearch);
             if(articleSearchInput) articleSearchInput.addEventListener('keypress', (event) => {
-                if (event.key === 'Enter') {
-                    handleArticleSearch();
-                }
+                if (event.key === 'Enter') handleArticleSearch();
             });
             if(politicianSelect) politicianSelect.addEventListener('change', handlePoliticianFilter);
             if(resetFilterBtn) resetFilterBtn.addEventListener('click', resetView);
+
+            // Configurar listeners para la sidebar
+            if (openSidebarBtn) openSidebarBtn.addEventListener('click', openSidebar);
+            if (closeSidebarBtn) closeSidebarBtn.addEventListener('click', closeSidebar);
+
+            // Cerrar la sidebar si se hace clic fuera de ella
+            document.addEventListener('click', (event) => {
+                if (!sidebar || !openSidebarBtn) return;
+                // Si la sidebar está visible y el clic NO fue dentro de la sidebar NI en el botón de abrir
+                if (sidebar.classList.contains('visible') &&
+                    !sidebar.contains(event.target) &&
+                    event.target !== openSidebarBtn &&
+                    !openSidebarBtn.contains(event.target)) {
+                    // Asegurarse de no cerrar si se hace clic en un elemento del tooltip (que está fuera)
+                    if(!tooltipPopup || !tooltipPopup.contains(event.target)) {
+                        closeSidebar();
+                    }
+                }
+            });
+
 
         })
         .catch(error => {
             console.error('Error al cargar o procesar los datos de noticias:', error);
             articlesContainer.innerHTML = `<p style="color: red;">Error fatal al cargar las noticias: ${error.message}. Por favor, revise el archivo 'noticias_procesadas.json'.</p>`;
-             // Deshabilitar controles si falla la carga
+            // Deshabilitar controles si falla la carga
              if(articleSearchInput) articleSearchInput.disabled = true;
              if(articleSearchBtn) articleSearchBtn.disabled = true;
              if(politicianSelect) politicianSelect.disabled = true;
              if(resetFilterBtn) resetFilterBtn.disabled = true;
+             if(openSidebarBtn) openSidebarBtn.disabled = true; // Deshabilitar también el botón de la sidebar
         });
 
 }); // Fin del addEventListener('DOMContentLoaded')

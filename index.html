@@ -7,67 +7,74 @@
     <link rel="stylesheet" href="style.css"> 
 </head>
 <body>
-    <header>
-        <h1>Noticias Recientes</h1>
-    </header>
 
-    <section class="search-controls" style="max-width: 800px; margin: 20px auto; padding: 15px; background-color: #eee; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+    <!-- === INICIO BARRA LATERAL === -->
+    <aside id="sidebar" class="sidebar">
+        <button id="close-sidebar-btn" class="close-sidebar-btn">×</button> <!-- Botón para cerrar dentro -->
+        <h2>Herramientas de Análisis</h2>
 
-        <!-- Buscador por palabra clave -->
-        <div style="flex: 1 1 300px;"> <!-- Ocupa espacio flexible, mínimo 300px -->
-            <label for="article-search-input" style="margin-right: 5px; font-weight: bold;">Buscar Artículo:</label>
-            <input type="text" id="article-search-input" placeholder="Ingrese palabra clave..." style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 110px);">
-            <button id="article-search-btn" style="padding: 8px 12px; cursor: pointer;">Buscar</button>
+        <!-- Contenedor del Grafo dentro de la Sidebar -->
+        <div id="graph-container-sidebar">
+             <h3>Relaciones entre Personas</h3>
+             <p style="font-size: 0.9em; color: #555;">Este grafo muestra qué personas fueron mencionadas juntas en los mismos artículos.</p>
+             <!-- Contenedor donde Vis.js dibujará el grafo -->
+             <div id="mynetwork" style="width: 100%; height: 450px; border: 1px solid lightgray; background-color: white;"></div>
+             <p style="font-size: 0.8em; color: #666; margin-top: 10px;">Clic en un nodo (círculo) para filtrar artículos por esa persona.</p>
         </div>
 
-        <!-- Filtro por Político -->
-        <div style="flex: 1 1 300px;"> <!-- Ocupa espacio flexible, mínimo 300px -->
-            <label for="politician-select" style="margin-right: 5px; font-weight: bold;">Filtrar por Político:</label>
-            <select id="politician-select" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 100px);">
-                <option value="">-- Seleccionar Político --</option>
-                <!-- Opciones se llenarán con JavaScript -->
-            </select>
-        </div>
+        <!-- Aquí podrías añadir más herramientas/secciones en el futuro -->
 
-        <!-- Botón para limpiar filtros -->
-        <div style="flex-basis: 100%; text-align: right;"> <!-- Ocupa toda la línea al final (o ajusta flex-basis) -->
-             <button id="reset-filter-btn" style="padding: 8px 12px; cursor: pointer; background-color: #d9534f; color: white; border: none; border-radius: 3px;">Mostrar Todo</button>
-        </div>
+    </aside>
+    <!-- === FIN BARRA LATERAL === -->
 
-    </section>
+    <!-- Botón para ABRIR la barra lateral (fijo en la esquina) -->
+    <button id="open-sidebar-btn" class="open-sidebar-btn">☰ Análisis</button>
 
-    <main id="articles-container">
+    <!-- Contenido principal de la página -->
+    <div id="page-content"> 
+
+        <header>
+            <h1>Artículos Priodísticos</h1>
+        </header>
+
+        <section class="search-controls" style="max-width: 800px; margin: 20px auto; padding: 15px; background-color: #eee; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+
+            <!-- Buscador por palabra clave -->
+            <div style="flex: 1 1 300px;"> <!-- Ocupa espacio flexible, mínimo 300px -->
+                <label for="article-search-input" style="margin-right: 5px; font-weight: bold;">Buscar Artículo:</label>
+                <input type="text" id="article-search-input" placeholder="Ingrese palabra clave..." style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 110px);">
+                <button id="article-search-btn" style="padding: 8px 12px; cursor: pointer;">Buscar</button>
+            </div>
+
+            <!-- Filtro por Político -->
+            <div style="flex: 1 1 300px;"> <!-- Ocupa espacio flexible, mínimo 300px -->
+                <label for="politician-select" style="margin-right: 5px; font-weight: bold;">Filtrar por Político:</label>
+                <select id="politician-select" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 100px);">
+                    <option value="">-- Seleccionar Político --</option>
+                    <!-- Opciones se llenarán con JavaScript -->
+                </select>
+            </div>
+
+            <!-- Botón para limpiar filtros -->
+            <div style="flex-basis: 100%; text-align: right;"> <!-- Ocupa toda la línea al final (o ajusta flex-basis) -->
+                <button id="reset-filter-btn" style="padding: 8px 12px; cursor: pointer; background-color: #d9534f; color: white; border: none; border-radius: 3px;">Mostrar Todo</button>
+            </div>
+
+        </section>
+
+        <main id="articles-container">
+            
+        </main>
         
-    </main>
-
-    <section class="collapsible-section" style="max-width: 900px; margin: 30px auto; padding: 0; border: 1px solid #ccc; border-radius: 5px; background-color: #f9f9f9;">
-        
-        <!-- Botón/Título para expandir/colapsar -->
-        <button id="toggle-graph-btn" class="collapsible-trigger" style="background-color: #eee; color: #444; cursor: pointer; padding: 15px; width: 100%; border: none; text-align: left; outline: none; font-size: 1.1em; border-bottom: 1px solid #ccc; border-radius: 5px 5px 0 0;">
-            Mostrar/Ocultar Grafo de Relaciones ▼ 
-            <!-- El símbolo ▼ es opcional, puedes usar otro o texto -->
-        </button>
-
-        <!-- Contenedor del contenido colapsable (inicialmente oculto) -->
-        <div id="graph-content" class="collapsible-content" style="display: none; padding: 15px; background-color: #fff;">
-            <h2>Relaciones entre Personas Mencionadas</h2>
-            <p>Este grafo muestra qué personas fueron mencionadas juntas en los mismos artículos. El tamaño del círculo indica cuántas veces aparece la persona, y el grosor de la línea cuántas veces aparecen juntas.</p>
-            <!-- Contenedor donde Vis.js dibujará el grafo -->
-            <div id="mynetwork" style="width: 100%; height: 600px; border: 1px solid lightgray;"></div>
+        <div id="tooltip-popup">
+            <img id="tooltip-img" src="" alt="Persona"> 
+            <p id="tooltip-desc"></p> 
         </div>
 
-    </section>
-    <!-- === FIN SECCIÓN COLAPSABLE DEL GRAFO === -->
-    
-    <div id="tooltip-popup">
-        <img id="tooltip-img" src="" alt="Persona"> 
-        <p id="tooltip-desc"></p> 
-    </div>
+        <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+        <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
 
-    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
-
-    
-    <script src="script.js"></script>
-</body>
-</html>
+        
+        <script src="script.js"></script>
+    </body>
+    </html>

@@ -169,3 +169,107 @@ main {
     padding: 0 2px; /* Pequeño espacio alrededor */
     border-radius: 2px; /* Bordes suaves */
 }
+
+/* --- Estilos Barra Lateral --- */
+.sidebar {
+    position: fixed; /* Fija en la pantalla */
+    top: 0;
+    left: -350px; /* Inicialmente oculta fuera de la pantalla (ajusta al ancho + algo de margen) */
+    width: 320px; /* Ancho de la barra lateral */
+    height: 100vh; /* Altura completa */
+    background-color: #f8f9fa; /* Color de fondo claro */
+    border-right: 1px solid #dee2e6; /* Borde derecho */
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Sombra sutil */
+    z-index: 1010; /* Por encima del contenido normal */
+    overflow-y: auto; /* Permitir scroll si el contenido es largo */
+    transition: left 0.3s ease-in-out; /* Animación suave para mostrar/ocultar */
+}
+
+.sidebar.visible {
+    left: 0; /* Posición visible */
+}
+
+.sidebar h2, .sidebar h3 {
+    color: #343a40;
+    margin-top: 0;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+#graph-container-sidebar {
+    margin-top: 20px;
+}
+
+
+/* Botón para ABRIR la sidebar */
+.open-sidebar-btn {
+    position: fixed;
+    top: 15px;
+    left: 15px;
+    z-index: 1011; /* Encima de la sidebar cerrada */
+    padding: 8px 12px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1em;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    transition: background-color 0.2s ease;
+}
+.open-sidebar-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Botón para CERRAR la sidebar (dentro) */
+.close-sidebar-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 1.8em;
+    color: #6c757d;
+    cursor: pointer;
+    padding: 0;
+    line-height: 1;
+}
+.close-sidebar-btn:hover {
+    color: #343a40;
+}
+
+
+/* Empujar el contenido principal cuando la sidebar está visible */
+#page-content {
+    transition: margin-left 0.3s ease-in-out; /* Animar el desplazamiento */
+    padding-left: 15px; /* Espacio para que no se pegue al borde */
+     padding-right: 15px;
+}
+
+body.sidebar-visible #page-content {
+    margin-left: 320px; /* Mismo ancho que la sidebar */
+}
+
+/* Ajuste opcional para pantallas pequeñas (ejemplo) */
+@media (max-width: 768px) {
+    .sidebar {
+        width: 280px; /* Más estrecha en móviles */
+        left: -300px; /* Ajustar posición inicial */
+    }
+    body.sidebar-visible #page-content {
+        margin-left: 0; /* No empujar contenido en móviles */
+        /* Podrías añadir un overlay oscuro sobre el contenido */
+    }
+    .open-sidebar-btn {
+        top: 10px;
+        left: 10px;
+    }
+     /* Podrías querer ocultar el botón de abrir cuando la sidebar está visible en móviles */
+     /* body.sidebar-visible .open-sidebar-btn { display: none; } */
+}
+
+/* Asegurar que el contenedor del grafo tenga un tamaño */
+#mynetwork {
+    min-height: 300px; /* Asegura una altura mínima */
+}
