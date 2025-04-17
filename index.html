@@ -11,7 +11,31 @@
         <h1>Noticias Recientes</h1>
     </header>
 
-    
+    <section class="search-controls" style="max-width: 800px; margin: 20px auto; padding: 15px; background-color: #eee; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+
+        <!-- Buscador por palabra clave -->
+        <div style="flex: 1 1 300px;"> <!-- Ocupa espacio flexible, mínimo 300px -->
+            <label for="article-search-input" style="margin-right: 5px; font-weight: bold;">Buscar Artículo:</label>
+            <input type="text" id="article-search-input" placeholder="Ingrese palabra clave..." style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 110px);">
+            <button id="article-search-btn" style="padding: 8px 12px; cursor: pointer;">Buscar</button>
+        </div>
+
+        <!-- Filtro por Político -->
+        <div style="flex: 1 1 300px;"> <!-- Ocupa espacio flexible, mínimo 300px -->
+            <label for="politician-select" style="margin-right: 5px; font-weight: bold;">Filtrar por Político:</label>
+            <select id="politician-select" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 100px);">
+                <option value="">-- Seleccionar Político --</option>
+                <!-- Opciones se llenarán con JavaScript -->
+            </select>
+        </div>
+
+        <!-- Botón para limpiar filtros -->
+        <div style="flex-basis: 100%; text-align: right;"> <!-- Ocupa toda la línea al final (o ajusta flex-basis) -->
+             <button id="reset-filter-btn" style="padding: 8px 12px; cursor: pointer; background-color: #d9534f; color: white; border: none; border-radius: 3px;">Mostrar Todo</button>
+        </div>
+
+    </section>
+
     <main id="articles-container">
         
     </main>

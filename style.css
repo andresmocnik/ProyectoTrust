@@ -143,3 +143,29 @@ main {
     /* Podrías añadir transiciones CSS para un efecto más suave,
        pero requiere más JS para manejar alturas */
 }
+
+/* --- Estilos para Controles de Búsqueda --- */
+.search-controls {
+    /* Estilos básicos ya puestos en línea, puedes ajustar aquí */
+    border-bottom: 1px solid #ddd;
+}
+
+.search-controls label {
+    display: inline-block; /* Mejor alineación */
+    margin-bottom: 5px; /* Espacio si se van a línea separada */
+}
+
+.search-controls input[type="text"],
+.search-controls select,
+.search-controls button {
+    /* Estilos básicos ya puestos en línea */
+    font-size: 0.95em; /* Tamaño de fuente consistente */
+}
+
+/* --- Estilo para Resaltar Político --- */
+.highlighted-person {
+    background-color: yellow; /* Color de fondo amarillo */
+    font-weight: bold; /* Opcional: hacerlo negrita */
+    padding: 0 2px; /* Pequeño espacio alrededor */
+    border-radius: 2px; /* Bordes suaves */
+}
