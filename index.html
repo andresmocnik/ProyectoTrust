@@ -1,80 +1,95 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
-    <title>Lector de Noticias</title> 
-    <link rel="stylesheet" href="style.css"> 
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lector de Noticias</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<!-- Añadimos clase inicial para la vista por defecto -->
+<body class="view-news">
 
-    <!-- === INICIO BARRA LATERAL === -->
+    <!-- === BARRA LATERAL (AHORA ES NAVEGACIÓN) === -->
     <aside id="sidebar" class="sidebar">
-        <button id="close-sidebar-btn" class="close-sidebar-btn">×</button> <!-- Botón para cerrar dentro -->
-        <h2>Herramientas de Análisis</h2>
-
-        <!-- Contenedor del Grafo dentro de la Sidebar -->
-        <div id="graph-container-sidebar">
-             <h3>Relaciones entre Personas</h3>
-             <p style="font-size: 0.9em; color: #555;">Este grafo muestra qué personas fueron mencionadas juntas en los mismos artículos.</p>
-             <!-- Contenedor donde Vis.js dibujará el grafo -->
-             <div id="mynetwork" style="width: 100%; height: 450px; border: 1px solid lightgray; background-color: white;"></div>
-             <p style="font-size: 0.8em; color: #666; margin-top: 10px;">Clic en un nodo (círculo) para filtrar artículos por esa persona.</p>
-        </div>
-
-        <!-- Aquí podrías añadir más herramientas/secciones en el futuro -->
-
+        <button id="close-sidebar-btn" class="close-sidebar-btn">×</button>
+        <h2>Vistas</h2>
+        <nav class="sidebar-nav">
+            <ul>
+                <!-- Botones para cambiar de vista -->
+                <li><button class="nav-button active" data-view="news">📰 Lector de Noticias</button></li>
+                <li><button class="nav-button" data-view="graph">🕸️ Grafo de Relaciones</button></li>
+                <!-- Puedes añadir más vistas aquí en el futuro -->
+            </ul>
+        </nav>
     </aside>
     <!-- === FIN BARRA LATERAL === -->
 
-    <!-- Botón para ABRIR la barra lateral (fijo en la esquina) -->
-    <button id="open-sidebar-btn" class="open-sidebar-btn">☰ Análisis</button>
+    <!-- Botón para ABRIR la barra lateral (sin cambios) -->
+    <button id="open-sidebar-btn" class="open-sidebar-btn">☰ Menú</button>
 
     <!-- Contenido principal de la página -->
-    <div id="page-content"> 
+    <div id="page-content">
 
-        <header>
-            <h1>Artículos Priodísticos</h1>
-        </header>
+        <!-- === VISTA 1: LECTOR DE NOTICIAS === -->
+        <div id="news-feed-view" class="main-view">
+            <header>
+                <h1>Noticias Recientes</h1>
+            </header>
 
-        <section class="search-controls" style="max-width: 800px; margin: 20px auto; padding: 15px; background-color: #eee; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+            <!-- SECCIÓN DE BÚSQUEDA Y FILTROS -->
+            <section class="search-controls" style="max-width: 800px; margin: 20px auto; padding: 15px; background-color: #eee; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
+                <!-- Input, Select, Buttons... -->
+                 <div style="flex: 1 1 300px;">
+                     <label for="article-search-input" style="margin-right: 5px; font-weight: bold;">Buscar Artículo:</label>
+                     <input type="text" id="article-search-input" placeholder="Ingrese palabra clave..." style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 110px);">
+                     <button id="article-search-btn" style="padding: 8px 12px; cursor: pointer;">Buscar</button>
+                 </div>
+                 <div style="flex: 1 1 300px;">
+                     <label for="politician-select" style="margin-right: 5px; font-weight: bold;">Filtrar por Político:</label>
+                     <select id="politician-select" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 100px);">
+                         <option value="">-- Seleccionar Político --</option>
+                     </select>
+                 </div>
+                 <div style="flex-basis: 100%; text-align: right;">
+                      <button id="reset-filter-btn" style="padding: 8px 12px; cursor: pointer; background-color: #d9534f; color: white; border: none; border-radius: 3px;">Mostrar Todo</button>
+                 </div>
+            </section>
 
-            <!-- Buscador por palabra clave -->
-            <div style="flex: 1 1 300px;"> <!-- Ocupa espacio flexible, mínimo 300px -->
-                <label for="article-search-input" style="margin-right: 5px; font-weight: bold;">Buscar Artículo:</label>
-                <input type="text" id="article-search-input" placeholder="Ingrese palabra clave..." style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 110px);">
-                <button id="article-search-btn" style="padding: 8px 12px; cursor: pointer;">Buscar</button>
-            </div>
-
-            <!-- Filtro por Político -->
-            <div style="flex: 1 1 300px;"> <!-- Ocupa espacio flexible, mínimo 300px -->
-                <label for="politician-select" style="margin-right: 5px; font-weight: bold;">Filtrar por Político:</label>
-                <select id="politician-select" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 100px);">
-                    <option value="">-- Seleccionar Político --</option>
-                    <!-- Opciones se llenarán con JavaScript -->
-                </select>
-            </div>
-
-            <!-- Botón para limpiar filtros -->
-            <div style="flex-basis: 100%; text-align: right;"> <!-- Ocupa toda la línea al final (o ajusta flex-basis) -->
-                <button id="reset-filter-btn" style="padding: 8px 12px; cursor: pointer; background-color: #d9534f; color: white; border: none; border-radius: 3px;">Mostrar Todo</button>
-            </div>
-
-        </section>
-
-        <main id="articles-container">
-            
-        </main>
-        
-        <div id="tooltip-popup">
-            <img id="tooltip-img" src="" alt="Persona"> 
-            <p id="tooltip-desc"></p> 
+            <!-- CONTENEDOR DE ARTÍCULOS -->
+            <main id="articles-container">
+                <!-- Los artículos se cargarán aquí -->
+            </main>
         </div>
+        <!-- === FIN VISTA 1 === -->
 
-        <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-        <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
 
-        
-        <script src="script.js"></script>
-    </body>
-    </html>
+        <!-- === VISTA 2: GRAFO DE RELACIONES === -->
+        <div id="graph-view" class="main-view">
+             <header>
+                 <h1>Grafo de Relaciones</h1>
+             </header>
+             <div style="padding: 15px;">
+                 <p>Este grafo muestra qué personas fueron mencionadas juntas en los mismos artículos. El tamaño del círculo indica cuántas veces aparece la persona, y el grosor de la línea cuántas veces aparecen juntas.</p>
+                 <p style="font-size: 0.9em; color: #666;">Haga clic en un nodo (círculo) para ver las noticias relacionadas con esa persona.</p>
+                 <!-- Contenedor donde Vis.js dibujará el grafo -->
+                 <div id="mynetwork" style="width: 100%; height: 75vh; border: 1px solid lightgray; background-color: white; margin-top: 15px;"></div>
+             </div>
+        </div>
+        <!-- === FIN VISTA 2 === -->
+
+
+    </div> <!-- Fin de page-content -->
+
+
+    <!-- === Tooltip (sin cambios) === -->
+    <div id="tooltip-popup">
+        <img id="tooltip-img" src="" alt="Persona">
+        <p id="tooltip-desc"></p>
+    </div>
+
+    <!-- === Scripts (sin cambios en qué se incluye) === -->
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <script src="script.js"></script>
+</body>
+</html>
