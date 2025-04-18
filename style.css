@@ -134,6 +134,95 @@ body.view-graph #graph-view {
     display: block; /* Mostrar vista de grafo si body tiene clase view-graph */
 }
 
+body.view-timeseries #timeseries-view {
+    display: block; /* Mostrar vista de series temporales */
+}
+
+/* --- Estilos Vista Series Temporales --- */
+#timeseries-view header {
+   background-color: #17a2b8; /* Color diferente para la cabecera */
+   color: white;
+   padding: 0.8rem 0;
+   text-align: center;
+   margin-bottom: 15px;
+}
+#timeseries-view h1 {
+    margin: 0;
+    font-size: 1.6em;
+}
+
+#timeseries-controls {
+    border-bottom: 1px solid #ddd;
+}
+
+#politician-checkboxes label {
+    display: block; /* Un checkbox por línea */
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+}
+ #politician-checkboxes label input {
+     margin-right: 8px;
+}
+#politician-checkboxes .checkbox-item label {
+    display: flex; /* Usar flex para alinear checkbox y texto */
+    align-items: center; /* Centrar verticalmente */
+    margin-bottom: 5px;
+    cursor: pointer;
+    font-size: 0.95em;
+}
+#politician-checkboxes .checkbox-item input[type="checkbox"] {
+    margin-right: 8px; /* Espacio entre checkbox y texto */
+    display: inline-block; /* Asegurar que se muestre */
+    width: auto; /* Tamaño por defecto */
+    height: auto; /* Tamaño por defecto */
+    vertical-align: middle; /* Alinear con el texto */
+    flex-shrink: 0; /* Evitar que el checkbox se encoja */
+    appearance: auto; /* Usar apariencia nativa */
+   -webkit-appearance: auto;
+   -moz-appearance: auto;
+   opacity: 1; /* Asegurar que no sea transparente */
+   position: static; /* Resetear posición por si acaso */
+}
+
+
+#charts-container {
+    display: grid; /* Usar grid para layout de gráficos */
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Columnas responsivas */
+    gap: 25px; /* Espacio entre gráficos */
+}
+
+.chart-container {
+    border: 1px solid #eee;
+    padding: 15px;
+    border-radius: 4px;
+    background-color: #fdfdfd;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.05);
+}
+
+ .chart-container canvas {
+    max-width: 100%; /* Asegurar que el canvas no se desborde */
+    height: auto;   /* Mantener proporción */
+ }
+
+ /* Estilos adicionales para el filtro de búsqueda de checkboxes */
+ #politician-checkboxes .checkbox-item.hidden {
+     display: none;
+ }
+
+ @media (max-width: 768px) {
+    #charts-container {
+         grid-template-columns: 1fr; /* Una columna en móviles */
+         gap: 15px;
+     }
+    .chart-container {
+         padding: 10px;
+     }
+    #timeseries-controls > div { /* Ajustar flex en móvil */
+         flex-basis: 100% !important;
+     }
+ }
+
 /* Estilos específicos para la vista de noticias */
 #news-feed-view header {
     background-color: #333; /* Fondo oscuro */

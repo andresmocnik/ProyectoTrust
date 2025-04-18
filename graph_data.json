@@ -1,28 +1,10 @@
 {
     "nodes": [
         {
-            "id": "Juan Schiaretti",
-            "label": "Juan Schiaretti",
-            "value": 23,
-            "title": "Aparece en 13 artículos"
-        },
-        {
             "id": "Alberto Fernández",
             "label": "Alberto Fernández",
             "value": 32,
             "title": "Aparece en 22 artículos"
-        },
-        {
-            "id": "Martín Llaryora",
-            "label": "Martín Llaryora",
-            "value": 34,
-            "title": "Aparece en 24 artículos"
-        },
-        {
-            "id": "Javier Milei",
-            "label": "Javier Milei",
-            "value": 50,
-            "title": "Aparece en 81 artículos"
         },
         {
             "id": "Victoria Villarruel",
@@ -31,16 +13,22 @@
             "title": "Aparece en 25 artículos"
         },
         {
-            "id": "Elena Highton de Nolasco",
-            "label": "Elena Highton de Nolasco",
-            "value": 16,
-            "title": "Aparece en 6 artículos"
+            "id": "Juan Schiaretti",
+            "label": "Juan Schiaretti",
+            "value": 23,
+            "title": "Aparece en 13 artículos"
         },
         {
-            "id": "Juan Carlos Maqueda",
-            "label": "Juan Carlos Maqueda",
-            "value": 17,
-            "title": "Aparece en 7 artículos"
+            "id": "Javier Milei",
+            "label": "Javier Milei",
+            "value": 50,
+            "title": "Aparece en 81 artículos"
+        },
+        {
+            "id": "Martín Llaryora",
+            "label": "Martín Llaryora",
+            "value": 34,
+            "title": "Aparece en 24 artículos"
         },
         {
             "id": "Ariel Lijo",
@@ -55,10 +43,22 @@
             "title": "Aparece en 12 artículos"
         },
         {
+            "id": "Juan Carlos Maqueda",
+            "label": "Juan Carlos Maqueda",
+            "value": 17,
+            "title": "Aparece en 7 artículos"
+        },
+        {
             "id": "Cristina Kirchner",
             "label": "Cristina Kirchner",
             "value": 26,
             "title": "Aparece en 16 artículos"
+        },
+        {
+            "id": "Elena Highton de Nolasco",
+            "label": "Elena Highton de Nolasco",
+            "value": 16,
+            "title": "Aparece en 6 artículos"
         },
         {
             "id": "Luis Caputo",
@@ -67,16 +67,16 @@
             "title": "Aparece en 16 artículos"
         },
         {
-            "id": "Karina Milei",
-            "label": "Karina Milei",
-            "value": 16,
-            "title": "Aparece en 6 artículos"
-        },
-        {
             "id": "Patricia Bullrich",
             "label": "Patricia Bullrich",
             "value": 25,
             "title": "Aparece en 15 artículos"
+        },
+        {
+            "id": "Karina Milei",
+            "label": "Karina Milei",
+            "value": 16,
+            "title": "Aparece en 6 artículos"
         },
         {
             "id": "Daniel Passerini",
@@ -91,16 +91,16 @@
             "title": "Aparece en 20 artículos"
         },
         {
-            "id": "Abuelas",
-            "label": "Abuelas",
-            "value": 15,
-            "title": "Aparece en 5 artículos"
-        },
-        {
             "id": "Estela de Carlotto",
             "label": "Estela de Carlotto",
             "value": 19,
             "title": "Aparece en 9 artículos"
+        },
+        {
+            "id": "Abuelas",
+            "label": "Abuelas",
+            "value": 15,
+            "title": "Aparece en 5 artículos"
         },
         {
             "id": "Presidente",
@@ -121,18 +121,6 @@
             "title": "Aparece en 5 artículos"
         },
         {
-            "id": "Gildo Insfrán",
-            "label": "Gildo Insfrán",
-            "value": 15,
-            "title": "Aparece en 5 artículos"
-        },
-        {
-            "id": "Néstor Kirchner",
-            "label": "Néstor Kirchner",
-            "value": 20,
-            "title": "Aparece en 10 artículos"
-        },
-        {
             "id": "Axel Kicillof",
             "label": "Axel Kicillof",
             "value": 16,
@@ -143,6 +131,18 @@
             "label": "Kirchner",
             "value": 19,
             "title": "Aparece en 9 artículos"
+        },
+        {
+            "id": "Gildo Insfrán",
+            "label": "Gildo Insfrán",
+            "value": 15,
+            "title": "Aparece en 5 artículos"
+        },
+        {
+            "id": "Néstor Kirchner",
+            "label": "Néstor Kirchner",
+            "value": 20,
+            "title": "Aparece en 10 artículos"
         },
         {
             "id": "Sergio Massa",

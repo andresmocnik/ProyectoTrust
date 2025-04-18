@@ -1,6 +1,7 @@
 import spacy
 import json
 import os # Para manejo de archivos
+from collections import defaultdict
 
 # --- Configuración ---
 INPUT_JSON_FILE = 'noticiasjson.json'
@@ -230,6 +231,9 @@ if __name__ == "__main__":
         processed_articles = []
         print(f"Procesando {len(articles)} artículos...")
 
+        mentions_by_date = defaultdict(lambda: defaultdict(int))  # [político][fecha] = cantidad
+
+
         for i, article in enumerate(articles):
             print(f"  Procesando artículo {i+1}/{len(articles)} (ID: {article.get('id', 'N/A')})...")
             text_to_process = article.get('cuerpo', '')
@@ -243,6 +247,18 @@ if __name__ == "__main__":
             # 3. Añadir AMBAS listas al artículo (o solo la normalizada si prefieres)
             article['personas_detectadas'] = raw_detected_persons # La lista original de spaCy
             article['personas_detectadas_normalizadas'] = normalized_persons # La lista normalizada
+            # === Registrar menciones por fecha ===
+            article_date = article.get('fecha')  # formato: dd-mm-aaaa
+            if article_date:
+                try:
+                    day, month, year = article_date.strip().split('-')
+                    formatted_date = f"{year}-{month}-{day}"  # yyyy-mm-dd
+                    for person in normalized_persons:
+                        mentions_by_date[person][formatted_date] += 1
+                except Exception as e:
+                    print(f"[!] Error formateando fecha '{article_date}': {e}")
+
+            
             processed_articles.append(article)
 
         print("Procesamiento NER y Normalización completado.")
@@ -252,6 +268,8 @@ if __name__ == "__main__":
         # Calcular y guardar los datos específicos para el grafo (usará la lista normalizada)
         graph_output_data = calculate_graph_data(processed_articles)
         save_data(graph_output_data, GRAPH_JSON_FILE)
+        save_data(mentions_by_date, 'menciones_por_fecha.json')
+        print("Archivo 'menciones_por_fecha.json' generado correctamente.")
 
     else:
         print("No se procesaron artículos debido a errores previos.")

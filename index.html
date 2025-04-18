@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lector de Noticias</title>
     <link rel="stylesheet" href="style.css">
+    <script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script> <!-- O la versión 4 si prefieres -->
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
 </head>
 <!-- Añadimos clase inicial para la vista por defecto -->
 <body class="view-news">
@@ -18,6 +21,7 @@
                 <!-- Botones para cambiar de vista -->
                 <li><button class="nav-button active" data-view="news">📰 Lector de Noticias</button></li>
                 <li><button class="nav-button" data-view="graph">🕸️ Grafo de Relaciones</button></li>
+                <li><button class="nav-button" data-view="timeseries">📈 Series Temporales</button></li>
                 <!-- Puedes añadir más vistas aquí en el futuro -->
             </ul>
         </nav>
@@ -50,10 +54,13 @@
                          <option value="">-- Seleccionar Político --</option>
                      </select>
                  </div>
-                 <div style="flex-basis: 100%; text-align: right;">
-                      <button id="reset-filter-btn" style="padding: 8px 12px; cursor: pointer; background-color: #d9534f; color: white; border: none; border-radius: 3px;">Mostrar Todo</button>
-                 </div>
-            </section>
+
+                 <div style="flex-basis: 100%; text-align: right; margin-top: 10px; display: flex; justify-content: flex-end; gap: 10px;">
+                    <button id="sort-newest-btn" style="padding: 8px 12px; cursor: pointer; background-color: #5bc0de; color: white; border: none; border-radius: 3px;">⬇️ Más Recientes</button>
+                    <button id="sort-oldest-btn" style="padding: 8px 12px; cursor: pointer; background-color: #5bc0de; color: white; border: none; border-radius: 3px;">⬆️ Más Antiguos</button>
+                    <button id="reset-filter-btn" style="padding: 8px 12px; cursor: pointer; background-color: #d9534f; color: white; border: none; border-radius: 3px;">Mostrar Todo</button>
+                </div>
+           </section>
 
             <!-- CONTENEDOR DE ARTÍCULOS -->
             <main id="articles-container">
@@ -76,6 +83,27 @@
              </div>
         </div>
         <!-- === FIN VISTA 2 === -->
+
+        <!-- === VISTA 3: SERIES TEMPORALES === -->
+        <div id="timeseries-view" class="main-view">
+            <header>
+                <h1>Menciones de Políticos en el Tiempo</h1>
+            </header>
+            <section id="timeseries-controls" class="search-controls" style="max-width: 800px; margin: 20px auto;">
+                <p style="margin-bottom: 15px;">A continuación se muestran los gráficos de menciones a lo largo del tiempo para los 4 políticos más mencionados. Podés cambiar cualquiera desde los selectores:</p>
+                <div id="politician-selectors" style="display: flex; flex-wrap: wrap; gap: 20px;">
+                  <!-- Aquí se generarán los selectores dinámicamente -->
+                </div>
+            </section>
+              
+
+            <!-- Contenedor para los Gráficos -->
+            <div id="charts-container" style="padding: 20px; margin-top: 15px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.05); border-radius: 5px; min-height: 300px;">
+                <p id="charts-placeholder" style="text-align: center; color: #888;">Selecciona políticos y haz clic en 'Actualizar Gráficos' para comenzar.</p>
+                <!-- Los canvas de los gráficos se añadirán aquí -->
+            </div>
+        </div>
+        <!-- === FIN VISTA 3 === -->
 
 
     </div> <!-- Fin de page-content -->
