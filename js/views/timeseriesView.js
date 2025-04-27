@@ -1,0 +1,1 @@
+export function initializeDashboard() { console.log("Placeholder: Inicializar Dashboard"); }

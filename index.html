@@ -3,121 +3,170 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lector de Noticias</title>
+    <!-- Cambia el Título si quieres -->
+    <title>El Pulso Político Argentino - Análisis</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Añadir Font Awesome (o tu librería de iconos preferida) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/moment@^2"></script>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script> <!-- O la versión 4 si prefieres -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script>
 </head>
-<!-- Añadimos clase inicial para la vista por defecto -->
-<body class="view-news">
+<!-- Vista inicial ahora es 'main' -->
+<body class="view-main">
 
-    <!-- === BARRA LATERAL (AHORA ES NAVEGACIÓN) === -->
+    <!-- === BARRA LATERAL === -->
     <aside id="sidebar" class="sidebar">
         <button id="close-sidebar-btn" class="close-sidebar-btn">×</button>
-        <h2>Vistas</h2>
+        <!-- Cambiamos el título o lo eliminamos si el logo/nombre está arriba -->
+        <!-- <h2>Vistas</h2> -->
         <nav class="sidebar-nav">
             <ul>
-                <!-- Botones para cambiar de vista -->
-                <li><button class="nav-button active" data-view="news">📰 Lector de Noticias</button></li>
-                <li><button class="nav-button" data-view="graph">🕸️ Grafo de Relaciones</button></li>
-                <li><button class="nav-button" data-view="timeseries">📈 Series Temporales</button></li>
-                <!-- Puedes añadir más vistas aquí en el futuro -->
+                <!-- NUEVO: Botón Inicio -->
+                <li><button class="nav-button active" data-view="main"><i class="fas fa-home fa-fw"></i> Inicio</button></li>
+                <li><button class="nav-button" data-view="news"><i class="fas fa-newspaper fa-fw"></i> Lector Noticias</button></li>
+                <li><button class="nav-button" data-view="graph"><i class="fas fa-project-diagram fa-fw"></i> Red de Influencia</button></li>
+                <li><button class="nav-button" data-view="timeseries"><i class="fas fa-chart-line fa-fw"></i> Dashboard</button></li>
             </ul>
         </nav>
     </aside>
     <!-- === FIN BARRA LATERAL === -->
 
-    <!-- Botón para ABRIR la barra lateral (sin cambios) -->
-    <button id="open-sidebar-btn" class="open-sidebar-btn">☰ Menú</button>
+    <!-- Botón para ABRIR la barra lateral -->
+    <button id="open-sidebar-btn" class="open-sidebar-btn"><i class="fas fa-bars"></i></button> <!-- Icono en vez de texto -->
 
     <!-- Contenido principal de la página -->
     <div id="page-content">
 
+        <!-- === VISTA 0: INICIO / MAIN === -->
+        <div id="main-view" class="main-view">
+            <section class="hero-section">
+                <div class="hero-content">
+                    <h1>EL PULSO POLÍTICO ARGENTINO</h1>
+                    <p>Visualiza las conexiones y la influencia en tiempo real.</p>
+                    <div class="hero-buttons">
+                        <button class="btn btn-primary" data-target-view="graph"><i class="fas fa-project-diagram"></i> Explorar Red Completa</button>
+                        <button class="btn btn-secondary" data-target-view="news"><i class="fas fa-newspaper"></i> Últimas Noticias</button>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <!-- Placeholder para la imagen/animación del grafo -->
+                    <i class="fas fa-brain fa-7x" style="color: var(--color-accent-hover); opacity: 0.7;"></i>
+                     <!-- O usa un icono grande: <i class="fas fa-brain fa-7x" style="color: var(--color-accent-hover);"></i> -->
+                </div>
+            </section>
+
+            <section class="key-news-section">
+                <h2>NOTICIAS CLAVE RECIENTES</h2>
+                <!-- Opcional: Barra de búsqueda -->
+                <!-- <div class="key-news-search">
+                    <input type="text" placeholder="Buscar en noticias clave...">
+                    <button><i class="fas fa-search"></i></button>
+                </div> -->
+                <div id="key-news-cards-container" class="key-news-cards">
+                    <!-- Las tarjetas se cargarán aquí dinámicamente -->
+                    <p class="loading-placeholder">Cargando noticias clave...</p>
+                </div>
+                <div class="section-cta">
+                    <button class="btn btn-secondary" data-target-view="news">Ver Todas las Noticias</button>
+                </div>
+            </section>
+
+            <section class="discover-network-section">
+                 <div class="discover-content">
+                     <h2>DESCUBRE LA RED DE INFLUENCIA</h2>
+                     <p>Explora las relaciones entre las figuras políticas y analiza su impacto.</p>
+                     <button class="btn btn-primary" data-target-view="graph"><i class="fas fa-search-location"></i> Explorar Ahora</button>
+                 </div>
+                 <div class="discover-visual">
+                      <!-- Otro placeholder -->
+                      <i class="fas fa-network-wired fa-7x" style="color: var(--color-accent); opacity: 0.5;"></i>
+                 </div>
+            </section>
+        </div>
+        <!-- === FIN VISTA 0 === -->
+
         <!-- === VISTA 1: LECTOR DE NOTICIAS === -->
         <div id="news-feed-view" class="main-view">
-            <header>
-                <h1>Noticias Recientes</h1>
+             <header>
+                 <h1>Noticias Recientes</h1>
             </header>
-
-            <!-- SECCIÓN DE BÚSQUEDA Y FILTROS -->
-            <section class="search-controls" style="max-width: 800px; margin: 20px auto; padding: 15px; background-color: #eee; border-radius: 5px; display: flex; flex-wrap: wrap; gap: 15px; align-items: center;">
-                <!-- Input, Select, Buttons... -->
-                 <div style="flex: 1 1 300px;">
-                     <label for="article-search-input" style="margin-right: 5px; font-weight: bold;">Buscar Artículo:</label>
-                     <input type="text" id="article-search-input" placeholder="Ingrese palabra clave..." style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 110px);">
-                     <button id="article-search-btn" style="padding: 8px 12px; cursor: pointer;">Buscar</button>
+             <section class="search-controls" style="max-width: 900px; margin: 25px auto; padding: 20px; border-radius: 8px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+                  <div style="flex: 1 1 350px;"> <!-- Ajustar base y crecimiento -->
+                      <label for="article-search-input">Buscar Artículo:</label>
+                      <div class="input-group">
+                          <input type="text" id="article-search-input" placeholder="Ingrese palabra clave...">
+                          <button id="article-search-btn" title="Buscar"><i class="fas fa-search"></i></button> <!-- Icono -->
+                      </div>
+                  </div>
+                  <div style="flex: 1 1 300px;">
+                      <label for="politician-select">Filtrar por Político:</label>
+                      <select id="politician-select">
+                          <option value="">-- Seleccionar Político --</option>
+                      </select>
+                  </div>
+                  <div class="filter-buttons" style="flex-basis: 100%; display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px;">
+                     <button id="sort-newest-btn" class="btn btn-info" title="Ordenar por más recientes"><i class="fas fa-arrow-down-short-wide"></i> Recientes</button> <!-- Icono -->
+                     <button id="sort-oldest-btn" class="btn btn-info" title="Ordenar por más antiguos"><i class="fas fa-arrow-up-wide-short"></i> Antiguos</button> <!-- Icono -->
+                     <button id="reset-filter-btn" class="btn btn-danger" title="Mostrar todos los artículos"><i class="fas fa-times"></i> Reset</button> <!-- Icono -->
                  </div>
-                 <div style="flex: 1 1 300px;">
-                     <label for="politician-select" style="margin-right: 5px; font-weight: bold;">Filtrar por Político:</label>
-                     <select id="politician-select" style="padding: 8px; border: 1px solid #ccc; border-radius: 3px; width: calc(100% - 100px);">
-                         <option value="">-- Seleccionar Político --</option>
-                     </select>
-                 </div>
-
-                 <div style="flex-basis: 100%; text-align: right; margin-top: 10px; display: flex; justify-content: flex-end; gap: 10px;">
-                    <button id="sort-newest-btn" style="padding: 8px 12px; cursor: pointer; background-color: #5bc0de; color: white; border: none; border-radius: 3px;">⬇️ Más Recientes</button>
-                    <button id="sort-oldest-btn" style="padding: 8px 12px; cursor: pointer; background-color: #5bc0de; color: white; border: none; border-radius: 3px;">⬆️ Más Antiguos</button>
-                    <button id="reset-filter-btn" style="padding: 8px 12px; cursor: pointer; background-color: #d9534f; color: white; border: none; border-radius: 3px;">Mostrar Todo</button>
-                </div>
-           </section>
-
-            <!-- CONTENEDOR DE ARTÍCULOS -->
-            <main id="articles-container">
-                <!-- Los artículos se cargarán aquí -->
-            </main>
+            </section>
+             <main id="articles-container">
+                 <!-- Los artículos se cargarán aquí -->
+             </main>
         </div>
         <!-- === FIN VISTA 1 === -->
 
 
         <!-- === VISTA 2: GRAFO DE RELACIONES === -->
         <div id="graph-view" class="main-view">
-             <header>
-                 <h1>Grafo de Relaciones</h1>
-             </header>
-             <div style="padding: 15px;">
-                 <p>Este grafo muestra qué personas fueron mencionadas juntas en los mismos artículos. El tamaño del círculo indica cuántas veces aparece la persona, y el grosor de la línea cuántas veces aparecen juntas.</p>
-                 <p style="font-size: 0.9em; color: #666;">Haga clic en un nodo (círculo) para ver las noticias relacionadas con esa persona.</p>
-                 <!-- Contenedor donde Vis.js dibujará el grafo -->
-                 <div id="mynetwork" style="width: 100%; height: 75vh; border: 1px solid lightgray; background-color: white; margin-top: 15px;"></div>
-             </div>
+              <header>
+                  <h1>Red de Influencia</h1>
+              </header>
+              <div class="graph-description"> <!-- Contenedor para centrar texto -->
+                  <p>Este grafo muestra qué personas fueron mencionadas juntas en los mismos artículos. El tamaño del círculo indica cuántas veces aparece la persona, y el grosor de la línea cuántas veces aparecen juntas.</p>
+                  <p><i class="fas fa-info-circle"></i> Haz clic en un nodo (círculo) para ver las noticias relacionadas con esa persona.</p>
+              </div>
+              <div id="mynetwork"></div> <!-- Quitar estilos inline -->
         </div>
         <!-- === FIN VISTA 2 === -->
 
-        <!-- === VISTA 3: SERIES TEMPORALES === -->
+        <!-- === VISTA 3: DASHBOARD (antes Series Temporales) === -->
         <div id="timeseries-view" class="main-view">
             <header>
-                <h1>Menciones de Políticos en el Tiempo</h1>
+                <h1>Dashboard Analítico</h1> <!-- Título actualizado -->
             </header>
-            <section id="timeseries-controls" class="search-controls" style="max-width: 800px; margin: 20px auto;">
-                <p style="margin-bottom: 15px;">A continuación se muestran los gráficos de menciones a lo largo del tiempo para los 4 políticos más mencionados. Podés cambiar cualquiera desde los selectores:</p>
-                <div id="politician-selectors" style="display: flex; flex-wrap: wrap; gap: 20px;">
-                  <!-- Aquí se generarán los selectores dinámicamente -->
-                </div>
-            </section>
-              
-
-            <!-- Contenedor para los Gráficos -->
-            <div id="charts-container" style="padding: 20px; margin-top: 15px; background-color: #fff; box-shadow: 0 0 10px rgba(0,0,0,0.05); border-radius: 5px; min-height: 300px;">
-                <p id="charts-placeholder" style="text-align: center; color: #888;">Selecciona políticos y haz clic en 'Actualizar Gráficos' para comenzar.</p>
-                <!-- Los canvas de los gráficos se añadirán aquí -->
-            </div>
+            <!-- Dejamos los controles y el contenedor, pero los rediseñaremos más adelante -->
+             <section id="timeseries-controls" class="search-controls" style="max-width: 900px; margin: 25px auto;">
+                 <p style="margin-bottom: 15px; flex-basis:100%;">Análisis temporal de menciones. Selecciona políticos para visualizar:</p>
+                 <div id="politician-selectors" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; width: 100%;">
+                   <!-- Selectores se generarán aquí -->
+                 </div>
+             </section>
+             <div id="charts-container">
+                 <p id="charts-placeholder" style="text-align: center; color: var(--text-muted); padding: 40px 0; grid-column: 1 / -1;">Selecciona políticos para ver los gráficos.</p>
+                 <!-- Los canvas de los gráficos se añadirán aquí -->
+             </div>
         </div>
         <!-- === FIN VISTA 3 === -->
 
-
     </div> <!-- Fin de page-content -->
 
-
-    <!-- === Tooltip (sin cambios) === -->
+    <!-- === Tooltip === -->
     <div id="tooltip-popup">
         <img id="tooltip-img" src="" alt="Persona">
         <p id="tooltip-desc"></p>
     </div>
 
-    <!-- === Scripts (sin cambios en qué se incluye) === -->
-    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <!-- === Scripts === -->
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
-    <script src="script.js"></script>
+    <!-- Carga principal como módulo -->
+    <script type="module" src="js/main.js"></script>
+    <!-- <script src="script.js"></script> --> <!-- Comentar o eliminar la carga antigua -->
+
 </body>
 </html>

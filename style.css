@@ -1,480 +1,412 @@
-/* Estilos generales para toda la página */
-body {
-    font-family: sans-serif; /* Tipo de letra simple */
-    line-height: 1.6; /* Espacio entre líneas de texto */
-    margin: 0; /* Sin márgenes exteriores */
-    padding: 0; /* Sin relleno interior */
-    background-color: #f4f4f4; /* Color de fondo gris claro */
-    color: #333; /* Color de texto principal oscuro */
-    transition: margin-left 0.3s ease-in-out; /* Para animar cuando se abre la sidebar */
+/* style.css*/
+
+/* --- Variables CSS (Sin cambios) --- */
+:root {
+    --bg-primary: #1a1d21;
+    --bg-secondary: #2c3035;
+    --bg-tertiary: #3a3f44;
+    --text-primary: #e8eaed;
+    --text-secondary: #bdc1c6;
+    --text-muted: #9aa0a6;
+    --border-color: #4a4e54;
+    --color-accent: #8ab4f8;
+    --color-accent-hover: #a1c5ff;
+    --color-danger: #f28b82;
+    --color-danger-hover: #f5a49e;
+    --color-info: #78d9ec;
+    --color-info-hover: #93e0f0;
+    --highlight-bg: rgba(138, 180, 248, 0.2);
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --scrollbar-bg: #2c3035;
+    --scrollbar-thumb: #5f6368;
+    --scrollbar-thumb-hover: #7f8388;
 }
 
-/* --- Estilos Barra Lateral --- */
+/* --- AJUSTE DE ESCALA BASE --- */
+html {
+    /* Establecer la base: 70% del tamaño por defecto del navegador (usualmente 16px) */
+    /* Esto hace que 1rem equivalga aproximadamente a 11.2px */
+    font-size: 70%;
+}
+
+/* Estilos generales */
+body {
+    font-family: 'Inter', sans-serif;
+    /* Ajustar line-height para la nueva fuente base */
+    line-height: 1.65;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    /* Tamaño de fuente base para el texto normal (1.4rem * 11.2px ≈ 15.7px) */
+    font-size: 1.4rem;
+    transition: margin-left 0.3s ease-in-out;
+    /* Mejorar renderizado de fuentes */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+/* --- Estilos Barra Lateral (Ajustes de tamaño) --- */
 .sidebar {
-    position: fixed; /* Fija en la pantalla */
+    position: fixed;
     top: 0;
-    left: -300px; /* Inicialmente oculta fuera de la pantalla (ajusta al ancho + algo de margen) */
-    width: 280px; /* Ancho de la barra lateral */
-    height: 100vh; /* Altura completa */
-    background-color: #f8f9fa; /* Color de fondo claro */
-    border-right: 1px solid #dee2e6; /* Borde derecho */
-    padding: 20px;
-    box-shadow: 2px 0 5px rgba(0,0,0,0.1); /* Sombra sutil */
-    z-index: 1010; /* Por encima del contenido normal */
-    overflow-y: auto; /* Permitir scroll si el contenido es largo */
-    transition: left 0.3s ease-in-out; /* Animación suave para mostrar/ocultar */
+    width: 200px; /* Ancho reducido */
+    left: -220px; /* Posición oculta ajustada */
+    height: 100vh;
+    background-color: var(--bg-secondary);
+    border-right: 1px solid var(--border-color);
+    padding: 14px; /* Padding reducido */
+    box-shadow: 2px 0 5px var(--shadow-color);
+    z-index: 1010;
+    overflow-y: auto;
+    transition: left 0.3s ease-in-out;
 }
 
 .sidebar.visible {
-    left: 0; /* Posición visible */
-}
-
-.sidebar h2 {
-    color: #343a40;
-    margin-top: 0;
-    border-bottom: 1px solid #eee;
-    padding-bottom: 10px;
-    margin-bottom: 15px;
-    font-size: 1.4em;
-}
-
-/* Navegación dentro de la Sidebar */
-.sidebar-nav ul {
-    list-style: none;
-    padding: 0;
-    margin: 20px 0 0 0;
-}
-.sidebar-nav li {
-    margin-bottom: 10px;
-}
-.nav-button {
-    display: block;
-    width: 100%;
-    padding: 10px 15px;
-    background-color: #e9ecef;
-    border: 1px solid #ced4da;
-    border-radius: 4px;
-    color: #495057;
-    text-align: left;
-    font-size: 1em;
-    cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-}
-.nav-button:hover {
-    background-color: #dee2e6;
-    border-color: #adb5bd;
-}
-.nav-button.active { /* Estilo para el botón de la vista activa */
-    background-color: #007bff;
-    border-color: #007bff;
-    color: white;
-    font-weight: bold;
-}
-
-
-/* Botón para ABRIR la sidebar */
-.open-sidebar-btn {
-    position: fixed;
-    top: 15px;
-    left: 15px;
-    z-index: 1011; /* Encima de la sidebar cerrada y contenido */
-    padding: 8px 12px;
-    background-color: #007bff;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 1em;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    transition: background-color 0.2s ease;
-}
-.open-sidebar-btn:hover {
-    background-color: #0056b3;
-}
-
-/* Botón para CERRAR la sidebar (dentro) */
-.close-sidebar-btn {
-    position: absolute;
-    top: 10px;
-    right: 15px;
-    background: none;
-    border: none;
-    font-size: 1.8em;
-    color: #6c757d;
-    cursor: pointer;
-    padding: 0;
-    line-height: 1;
-}
-.close-sidebar-btn:hover {
-    color: #343a40;
-}
-
-
-/* --- Estilos Contenido Principal y Vistas --- */
-#page-content {
-    transition: margin-left 0.3s ease-in-out; /* Animar el desplazamiento */
-    padding-left: 15px; /* Espacio por defecto */
-    padding-right: 15px;
+    left: 0;
 }
 
 body.sidebar-visible #page-content {
-    margin-left: 280px; /* Mismo ancho que la sidebar - Empuja el contenido */
+    margin-left: 200px; /* Coincidir con nuevo ancho de sidebar */
+}
+
+/* Overlay para móvil (cuando la sidebar está visible) */
+body.sidebar-visible::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 1009;
+    display: none; /* Oculto por defecto */
+}
+
+.sidebar h2 {
+    color: var(--text-primary);
+    margin-top: 0;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 7px; /* Padding reducido */
+    margin-bottom: 15px; /* Margen reducido */
+    /* Tamaño relativo al body, ajustar si es necesario */
+    font-size: 1.5em;
+    font-weight: 600;
+}
+
+.sidebar-nav ul { list-style: none; padding: 0; margin: 15px 0 0 0; }
+.sidebar-nav li { margin-bottom: 7px; }
+
+.nav-button {
+    display: flex; /* Para alinear icono y texto */
+    align-items: center;
+    gap: 8px; /* Espacio entre icono y texto */
+    width: 100%;
+    padding: 8px 12px; /* Padding reducido */
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 4px; /* Radio reducido */
+    color: var(--text-secondary);
+    text-align: left;
+    font-size: 1em; /* Tamaño relativo */
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.nav-button i.fa-fw { /* Asegurar ancho fijo para iconos */
+    width: 1.2em;
+    text-align: center;
+}
+.nav-button:hover { background-color: var(--bg-tertiary); color: var(--text-primary); }
+.nav-button.active { background-color: var(--color-accent); border-color: var(--color-accent); color: var(--bg-primary); font-weight: 700; }
+.nav-button.active:hover { background-color: var(--color-accent-hover); border-color: var(--color-accent-hover); }
+
+/* Botón ABRIR sidebar */
+.open-sidebar-btn {
+    position: fixed;
+    top: 10px; /* Posición ajustada */
+    left: 10px; /* Posición ajustada */
+    z-index: 1011;
+    padding: 6px 10px; /* Padding reducido */
+    background-color: var(--color-accent);
+    color: var(--bg-primary);
+    border: none;
+    border-radius: 33px; /* Radio ajustado */
+    cursor: pointer;
+    font-size: 1.2em; /* Tamaño icono */
+    box-shadow: 0 2px 4px var(--shadow-color);
+    transition: background-color 0.2s ease;
+    line-height: 1; /* Alinear icono */
+    display: flex; /* Alinear icono */
+    justify-content: center;
+    align-items: center;
+}
+.open-sidebar-btn:hover { background-color: var(--color-accent-hover); }
+
+/* Botón CERRAR sidebar */
+.close-sidebar-btn {
+    position: absolute;
+    top: 10px; /* Posición ajustada */
+    right: 13px; /* Posición ajustada */
+    background: none; border: none;
+    font-size: 1.6em; /* Tamaño icono */
+    color: var(--text-muted); cursor: pointer;
+    padding: 0; line-height: 1;
+    transition: color 0.2s ease;
+}
+.close-sidebar-btn:hover { color: var(--text-primary); }
+
+/* --- Estilos Contenido Principal y Vistas --- */
+#page-content {
+    transition: margin-left 0.3s ease-in-out;
+    padding: 15px 20px; /* Padding ajustado */
 }
 
 /* Ocultar/Mostrar Vistas Principales */
-.main-view {
-    display: none; /* Ocultar todas las vistas por defecto */
-}
+.main-view { display: none; }
+body.view-main #main-view,
+body.view-news #news-feed-view,
+body.view-graph #graph-view,
+body.view-timeseries #timeseries-view { display: block; }
 
-body.view-news #news-feed-view {
-    display: block; /* Mostrar vista de noticias si body tiene clase view-news */
-}
-
-body.view-graph #graph-view {
-    display: block; /* Mostrar vista de grafo si body tiene clase view-graph */
-}
-
-body.view-timeseries #timeseries-view {
-    display: block; /* Mostrar vista de series temporales */
-}
-
-/* --- Estilos Vista Series Temporales --- */
-#timeseries-view header {
-   background-color: #17a2b8; /* Color diferente para la cabecera */
-   color: white;
-   padding: 0.8rem 0;
+/* --- Estilos Cabeceras de Vistas --- */
+.main-view > header {
+   background-color: var(--bg-secondary); color: var(--text-primary);
+   padding: 1rem 0; /* Padding ajustado */
    text-align: center;
-   margin-bottom: 15px;
+   margin: -15px -20px 18px -20px; /* Márgenes ajustados */
+   border-bottom: 1px solid var(--border-color);
 }
-#timeseries-view h1 {
-    margin: 0;
-    font-size: 1.6em;
-}
+.main-view > header h1 { margin: 0; font-size: 1.6em; font-weight: 600; } /* Tamaño ajustado */
 
-#timeseries-controls {
-    border-bottom: 1px solid #ddd;
-}
-
-#politician-checkboxes label {
-    display: block; /* Un checkbox por línea */
-    margin-bottom: 5px;
-    cursor: pointer;
-    font-size: 0.95em;
-}
- #politician-checkboxes label input {
-     margin-right: 8px;
-}
-#politician-checkboxes .checkbox-item label {
-    display: flex; /* Usar flex para alinear checkbox y texto */
-    align-items: center; /* Centrar verticalmente */
-    margin-bottom: 5px;
-    cursor: pointer;
-    font-size: 0.95em;
-}
-#politician-checkboxes .checkbox-item input[type="checkbox"] {
-    margin-right: 8px; /* Espacio entre checkbox y texto */
-    display: inline-block; /* Asegurar que se muestre */
-    width: auto; /* Tamaño por defecto */
-    height: auto; /* Tamaño por defecto */
-    vertical-align: middle; /* Alinear con el texto */
-    flex-shrink: 0; /* Evitar que el checkbox se encoja */
-    appearance: auto; /* Usar apariencia nativa */
-   -webkit-appearance: auto;
-   -moz-appearance: auto;
-   opacity: 1; /* Asegurar que no sea transparente */
-   position: static; /* Resetear posición por si acaso */
-}
-
-
-#charts-container {
-    display: grid; /* Usar grid para layout de gráficos */
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr)); /* Columnas responsivas */
-    gap: 25px; /* Espacio entre gráficos */
-}
-
-.chart-container {
-    border: 1px solid #eee;
-    padding: 15px;
-    border-radius: 4px;
-    background-color: #fdfdfd;
-    box-shadow: 1px 1px 4px rgba(0,0,0,0.05);
-}
-
- .chart-container canvas {
-    max-width: 100%; /* Asegurar que el canvas no se desborde */
-    height: auto;   /* Mantener proporción */
- }
-
- /* Estilos adicionales para el filtro de búsqueda de checkboxes */
- #politician-checkboxes .checkbox-item.hidden {
-     display: none;
- }
-
- @media (max-width: 768px) {
-    #charts-container {
-         grid-template-columns: 1fr; /* Una columna en móviles */
-         gap: 15px;
-     }
-    .chart-container {
-         padding: 10px;
-     }
-    #timeseries-controls > div { /* Ajustar flex en móvil */
-         flex-basis: 100% !important;
-     }
- }
-
-/* Estilos específicos para la vista de noticias */
-#news-feed-view header {
-    background-color: #333; /* Fondo oscuro */
-    color: #fff; /* Texto blanco */
-    padding: 1rem 0; /* Relleno arriba/abajo */
-    text-align: center; /* Texto centrado */
-    margin-bottom: 20px; /* Espacio antes de los controles */
-}
-#news-feed-view h1 {
-    margin: 0;
-}
-
-/* Estilos para Controles de Búsqueda (dentro de news-feed-view) */
+/* --- Controles Búsqueda/Filtro (Ajustados) --- */
 .search-controls {
-    /* Estilos básicos ya puestos en línea, puedes ajustar aquí */
-    border-bottom: 1px solid #ddd;
+    max-width: 650px; /* Ancho ajustado */
+    margin: 18px auto; /* Margen ajustado */
+    padding: 15px; /* Padding ajustado */
+    background-color: var(--bg-secondary);
+    border-radius: 6px; /* Radio ajustado */
+    display: flex; flex-wrap: wrap; gap: 15px; /* Gap ajustado */
+    align-items: center; border: 1px solid var(--border-color);
 }
-
-.search-controls label {
-    display: inline-block; /* Mejor alineación */
-    margin-bottom: 5px; /* Espacio si se van a línea separada */
+.search-controls label { margin-right: 6px; font-weight: 600; color: var(--text-secondary); font-size: 0.9em; }
+.search-controls input[type="text"], .search-controls select {
+    padding: 7px 9px; /* Padding ajustado */
+    border: 1px solid var(--border-color); border-radius: 4px;
+    background-color: var(--bg-primary); color: var(--text-primary);
+    font-size: 0.95em; /* Tamaño ajustado */
+    flex-grow: 1; box-sizing: border-box; /* Añadido box-sizing */
 }
-
-.search-controls input[type="text"],
-.search-controls select,
-.search-controls button {
-    /* Estilos básicos ya puestos en línea */
-    font-size: 0.95em; /* Tamaño de fuente consistente */
+.search-controls input[type="text"]::placeholder { color: var(--text-muted); }
+.search-controls input[type="text"]:focus, .search-controls select:focus {
+    outline: none; border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.3);
 }
-
-/* Contenedor principal de noticias */
-#articles-container {
-    max-width: 800px; /* Ancho máximo para que no sea muy ancho en pantallas grandes */
-    margin: 20px auto; /* Centrado horizontalmente con margen arriba/abajo */
-    padding: 15px; /* Relleno interior */
-    background-color: #fff; /* Fondo blanco */
-    box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Una pequeña sombra alrededor */
+.search-controls button { /* Estilo base para botones dentro de controles */
+    padding: 7px 11px; /* Padding ajustado */
+    cursor: pointer; border: none; border-radius: 4px;
+    font-weight: 600; transition: background-color 0.2s ease;
+    font-size: 0.9em; /* Tamaño ajustado */
+    display: inline-flex; align-items: center; gap: 5px; /* Para iconos */
 }
+/* Agrupar input + botón */
+.input-group { display: flex; flex-grow: 1; }
+.input-group input[type="text"] { border-radius: 4px 0 0 4px; border-right: none; }
+.input-group button { border-radius: 0 4px 4px 0; margin-left: -1px; flex-shrink: 0; }
 
-/* Estilos para cada artículo individual */
+/* Contenedor select */
+#news-feed-view .search-controls > div:nth-child(2) { /* Div del select */
+    display: flex; flex-direction: column; flex: 1 1 200px; /* Ajustar base */
+}
+#politician-select { width: 100%; }
+
+/* Contenedor botones de filtro/orden */
+.filter-buttons { flex-basis: 100%; display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
+
+/* Colores específicos botones (heredan tamaño/forma) */
+#article-search-btn { background-color: var(--color-accent); color: var(--bg-primary); }
+#article-search-btn:hover { background-color: var(--color-accent-hover); }
+#sort-newest-btn, #sort-oldest-btn { background-color: var(--color-info); color: var(--bg-primary); }
+#sort-newest-btn:hover, #sort-oldest-btn:hover { background-color: var(--color-info-hover); }
+#reset-filter-btn { background-color: var(--color-danger); color: var(--bg-primary); }
+#reset-filter-btn:hover { background-color: var(--color-danger-hover); }
+
+/* --- Vista Lector Noticias (Ajustados) --- */
+#articles-container { max-width: 600px; margin: 18px auto; padding: 0; background-color: transparent; box-shadow: none; }
 .article {
-    border-bottom: 1px solid #eee; /* Línea divisoria gris clarita abajo */
-    padding-bottom: 20px; /* Espacio abajo */
-    margin-bottom: 20px; /* Margen abajo */
+    background-color: var(--bg-secondary); border: 1px solid var(--border-color);
+    border-radius: 6px; padding: 18px 20px; margin-bottom: 20px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
+.article:last-child { border-bottom: 1px solid var(--border-color); margin-bottom: 0; }
+.article h2 { color: var(--text-primary); margin-top: 0; margin-bottom: 6px; font-size: 1.5em; font-weight: 600; }
+.article h3 { color: var(--text-secondary); font-weight: normal; margin-bottom: 14px; margin-top: 0; font-size: 1.1em; }
+.article-meta { font-size: 0.85em; color: var(--text-muted); margin-bottom: 10px; border-bottom: 1px dashed var(--border-color); padding-bottom: 7px; }
+.article-meta span { margin-right: 14px; }
+.article-img { max-width: 100%; height: auto; margin-top: 14px; margin-bottom: 7px; display: block; border-radius: 4px; border: 1px solid var(--border-color); }
+.article-img-caption { font-size: 0.8em; color: var(--text-muted); text-align: center; margin-bottom: 14px; font-style: italic; }
+.article-body p { margin-bottom: 1.1em; color: var(--text-primary); text-align: left; font-size: 1em; }
+.article-body a { color: var(--color-accent); text-decoration: none; }
+.article-body a:hover { text-decoration: underline; }
 
-.article:last-child { /* Quitar la línea del último artículo */
-    border-bottom: none;
-    margin-bottom: 0;
+/* --- Vista Grafo (Ajustados) --- */
+.graph-description { max-width: 600px; margin: 0 auto 10px auto; text-align: center; padding: 0 10px; }
+.graph-description p { color: var(--text-secondary); margin-bottom: 4px; font-size: 1em; /* Relativo */ }
+.graph-description p:last-child { font-size: 0.9em; color: var(--text-muted); }
+.graph-description i { margin-right: 4px; color: var(--color-info); }
+#mynetwork {
+    width: 100%; height: 75vh; min-height: 370px; border: 1px solid var(--border-color);
+    background-color: var(--bg-primary); margin: 18px auto; border-radius: 6px; box-sizing: border-box;
 }
+#mynetwork .loading-placeholder, #mynetwork .error-placeholder {
+    text-align: center; padding: 40px 15px; font-size: 1em; display: flex;
+    justify-content: center; align-items: center; height: 100%;
+}
+#mynetwork .loading-placeholder { color: var(--text-secondary); }
+#mynetwork .error-placeholder { color: var(--color-danger); }
 
-.article h2 { /* Título principal del artículo */
-    color: #555;
-    margin-top: 0;
-    font-size: 1.5em;
+/* --- Vista Dashboard (Ajustados) --- */
+#timeseries-controls { max-width: 650px; margin: 18px auto; border-bottom: 1px solid var(--border-color); }
+#timeseries-controls p { color: var(--text-secondary); margin-bottom: 10px; flex-basis: 100%; }
+#politician-selectors { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; width: 100%; margin-top: 7px; }
+#politician-selectors label { font-size: 0.9em; color: var(--text-secondary); margin-bottom: 4px; }
+#politician-selectors select { width: 100%; }
+#charts-container {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;
+    padding: 14px 0; min-height: 200px;
 }
+.chart-container { border: 1px solid var(--border-color); padding: 14px; border-radius: 6px; background-color: var(--bg-secondary); box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
+.chart-container canvas { max-width: 100%; height: auto; }
+#charts-placeholder { text-align: center; color: var(--text-muted); font-style: italic; padding: 27px 0; grid-column: 1 / -1; }
+.chart-no-data p:first-child { color: var(--text-primary); font-weight: bold; margin-bottom: 5px; }
+.chart-no-data p:last-child { color: var(--text-muted); font-size: 0.9em; }
 
-.article h3 { /* Subtítulo */
-    color: #777;
-    font-weight: normal; /* Letra no tan gruesa */
-    font-size: 1.1em;
-    margin-bottom: 15px;
-}
-
-/* Para la información meta (autor, fecha, sección) */
-.article-meta {
-    font-size: 0.9em; /* Letra un poco más pequeña */
-    color: #666; /* Color gris */
-    margin-bottom: 10px;
-}
-
-.article-meta span { /* Espacio entre autor y fecha */
-    margin-right: 15px;
-}
-
-/* Estilo para la imagen del artículo */
-.article-img {
-    max-width: 100%; /* Para que no se salga del contenedor */
-    height: auto; /* Altura automática */
-    margin-top: 15px;
-    margin-bottom: 10px;
-    display: block; /* Evita espacio extra debajo */
-    border-radius: 3px; /* Bordes suaves */
-}
-
-/* Estilo para el pie de foto */
-.article-img-caption {
-    font-size: 0.85em;
-    color: #777;
-    text-align: center;
-    margin-bottom: 15px;
-    font-style: italic; /* Letra cursiva */
-}
-
-/* Estilo para los párrafos del cuerpo del artículo */
-.article-body p {
-    margin-bottom: 1em; /* Espacio debajo de cada párrafo */
-    text-align: justify; /* Texto alineado a ambos lados */
-}
-
-
-/* Estilos específicos para la vista del grafo */
-#graph-view header {
-   background-color: #6c757d; /* Color gris */
-   color: white;
-   padding: 0.8rem 0;
-   text-align: center;
-   margin-bottom: 15px;
-}
-#graph-view h1 {
-    margin: 0;
-    font-size: 1.6em; /* Tamaño consistente */
-}
-#graph-view p {
-    max-width: 900px; /* Limitar ancho del texto descriptivo */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0 15px; /* Espacio lateral */
-}
-#mynetwork { /* Asegurar que el grafo tenga altura y margen */
-    height: 75vh; /* Ocupa gran parte de la altura visible */
-    min-height: 500px; /* Altura mínima */
-    max-width: 1200px; /* Ancho máximo opcional para el grafo */
-    margin: 20px auto; /* Centrar el contenedor del grafo */
-}
-
-
-/* --- Estilos para el Tooltip --- */
-.person-tooltip {
-    text-decoration: underline dotted blue; /* Subrayado punteado azul */
-    cursor: help; /* Cambia el cursor del ratón a uno de ayuda */
-    position: relative; /* Necesario por si luego queremos posicionar más avanzado */
-}
-/* Estilo para Resaltar Político */
-.highlighted-person {
-    background-color: yellow; /* Color de fondo amarillo */
-    font-weight: bold; /* Opcional: hacerlo negrita */
-    padding: 0 2px; /* Pequeño espacio alrededor */
-    border-radius: 2px; /* Bordes suaves */
-}
+/* --- Tooltip y Resaltado (Ajustados) --- */
+.person-tooltip { text-decoration: none; border-bottom: 1px dotted var(--color-accent); cursor: help; position: relative; color: var(--color-accent); transition: color 0.2s ease; }
+.person-tooltip:hover { color: var(--color-accent-hover); }
+.highlighted-person { background-color: var(--highlight-bg); font-weight: bold; padding: 1px 3px; border-radius: 3px; color: var(--text-primary); border-bottom: none; }
+.highlighted-person:hover { color: var(--text-primary); }
 
 #tooltip-popup {
-    display: none; /* Oculto por defecto */
-    position: absolute; /* Se posicionará respecto a la ventana */
-    border: 1px solid #ccc; /* Borde gris */
-    background-color: #fff; /* Fondo blanco */
-    padding: 10px; /* Relleno interior */
-    border-radius: 5px; /* Bordes redondeados */
-    box-shadow: 2px 2px 5px rgba(0,0,0,0.2); /* Sombra */
-    z-index: 1050; /* Muy alto para estar sobre todo, incluso la sidebar */
-    max-width: 250px; /* Ancho máximo */
-    font-size: 0.9em; /* Letra un poco más pequeña */
-    pointer-events: none; /* Evita que interactuemos con el tooltip mismo */
+    display: none; position: absolute; border: 1px solid var(--border-color); background-color: var(--bg-secondary);
+    color: var(--text-primary); padding: 12px; /* Padding ajustado */
+    max-width: 250px; /* Ancho ajustado */ min-width: 140px; /* Ancho ajustado */
+    font-size: 0.95em; /* Tamaño ajustado */ border-radius: 6px; /* Radio ajustado */
+    box-shadow: 4px 4px 12px var(--shadow-color); z-index: 1050; pointer-events: none;
 }
-
-#tooltip-popup img { /* La imagen dentro del tooltip */
-    float: left; /* Imagen a la izquierda */
-    margin-right: 10px; /* Espacio a la derecha */
-    margin-bottom: 5px; /* Espacio abajo */
-    max-width: 80px; /* Tamaño ajustado */
-    max-height: 80px;
-    border-radius: 3px; /* Bordes redondeados */
-    display: none; /* Ocultar por defecto, mostrar con JS si existe */
+#tooltip-popup img {
+    float: left; margin-right: 10px; margin-bottom: 5px;
+    max-width: 60px; max-height: 60px; /* Tamaño ajustado */
+    border-radius: 4px; border: 1px solid var(--border-color); display: none;
 }
+#tooltip-popup p { margin: 0; padding: 0; line-height: 1.45; text-align: left; }
 
-#tooltip-popup p { /* El texto (descripción) dentro del tooltip */
-    margin: 0;
-    padding: 0;
-    line-height: 1.4;
-    text-align: left; /* Alineado a la izquierda */
+/* --- Scrollbar (Sin cambios) --- */
+::-webkit-scrollbar { width: 10px; height: 10px; }
+::-webkit-scrollbar-track { background: var(--scrollbar-bg); border-radius: 10px; }
+::-webkit-scrollbar-thumb { background-color: var(--scrollbar-thumb); border-radius: 10px; border: 2px solid var(--scrollbar-bg); }
+::-webkit-scrollbar-thumb:hover { background-color: var(--scrollbar-thumb-hover); }
+
+/* --- Vista Principal (Inicio / Main - Ajustados) --- */
+.hero-section, .discover-network-section {
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 27px; /* 40px*0.67 */ padding: 40px 14px; /* 60px 20px * 0.67 */ margin-bottom: 27px; /* 40px*0.67 */
+    background-color: var(--bg-secondary); border-radius: 8px; /* 12px*0.67 */ overflow: hidden;
 }
+.hero-content, .discover-content { flex: 1; max-width: 400px; /* 600px*0.67 */ }
+.hero-section h1 {
+    font-size: 2.3em; /* 3.5em * 0.67 */ font-weight: 700; color: var(--text-primary);
+    margin-bottom: 10px; /* 15px*0.67 */ line-height: 1.2;
+}
+.hero-section p, .discover-network-section p {
+    font-size: 1.1em; /* 1.2em * 0.9 (aprox) */ color: var(--text-secondary); margin-bottom: 20px; /* 30px*0.67 */
+}
+.hero-buttons, .section-cta, .discover-content button { display: flex; gap: 10px; /* 15px*0.67 */ flex-wrap: wrap; }
+/* Botones reutilizables (Ajustar padding/font-size) */
+.btn {
+    padding: 8px 17px; /* 12px 25px * 0.67 */ font-size: 0.95em; /* 1em -> 0.95em */ font-weight: 600;
+    border-radius: 33px; /* 50px*0.67 */ border: none; cursor: pointer; transition: background-color 0.2s ease, transform 0.1s ease;
+    text-decoration: none; display: inline-flex; align-items: center; gap: 6px; /* 8px*0.67 */
+}
+.btn:hover { transform: translateY(-1px); } /* Reducir efecto */
+/* ... (colores botones sin cambio) ... */
+.hero-visual img, .discover-visual img { max-width: 200px; height: auto; opacity: 0.7; } /* 300px*0.67 */
 
+.key-news-section { padding: 27px 0; text-align: center; }
+.key-news-section h2 { font-size: 1.7em; /* 2em*0.85 */ font-weight: 600; color: var(--text-primary); margin-bottom: 27px; }
+.key-news-cards {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* 300px*0.67 */
+    gap: 20px; /* 30px*0.67 */ margin-bottom: 27px; text-align: left;
+}
+.news-card {
+    background-color: var(--bg-secondary); border-radius: 6px; padding: 17px; /* 25px*0.67 */
+    border: 1px solid var(--border-color); transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    display: flex; flex-direction: column;
+}
+.news-card:hover { transform: translateY(-3px); box-shadow: 0 5px 10px rgba(0,0,0,0.2); } /* Reducir efecto */
+.news-card h3 { font-size: 1.2em; /* 1.3em -> 1.2em */ color: var(--text-primary); margin-top: 0; margin-bottom: 7px; font-weight: 600; }
+.news-card .meta { font-size: 0.8em; color: var(--text-muted); margin-bottom: 10px; }
+.news-card .summary { font-size: 0.9em; /* 0.95em -> 0.9em */ color: var(--text-secondary); margin-bottom: 14px; flex-grow: 1; }
+.news-card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
+.tag { background-color: var(--bg-tertiary); color: var(--text-secondary); padding: 3px 7px; /* 4px 10px * 0.7 */ border-radius: 10px; /* 15px*0.67 */ font-size: 0.75em; /* 0.8em -> 0.75em */ font-weight: 500; }
+.tag-more, .tag-none { font-style: italic; opacity: 0.8; }
 
-/* Ajustes Responsive */
+.section-cta { text-align: center; }
+.discover-network-section { background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary)); text-align: center; flex-direction: column; padding: 54px 14px; /* 80px 20px * 0.67 */ }
+.discover-content { max-width: 470px; /* 700px*0.67 */ }
+.discover-network-section h2 { font-size: 1.9em; /* 2.5em * 0.75 */ color: var(--text-primary); margin-bottom: 10px; }
+.discover-visual img { max-width: 170px; opacity: 0.5; margin-top: 20px; } /* 250px*0.67 */
+
+/* --- Ajustes Responsive (Mantener breakpoint, valores internos ya ajustados) --- */
 @media (max-width: 768px) {
-    .sidebar {
-        width: 250px;
-        left: -270px; /* Ajustar posición inicial oculta */
-        padding: 15px; /* Menos padding */
-    }
-    body.sidebar-visible #page-content {
-        margin-left: 0; /* No empujar contenido principal */
-        /* Considera añadir un overlay oscuro sobre page-content cuando la sidebar está visible */
-    }
-    body.sidebar-visible::before { /* Ejemplo de overlay */
-        content: '';
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background-color: rgba(0,0,0,0.4);
-        z-index: 1009; /* Debajo de la sidebar pero encima del contenido */
-    }
+    /* Mostrar overlay en móvil */
+     body.sidebar-visible::before { display: block; }
+     /* Sidebar width y left ya ajustados */
+     #page-content { padding: 10px; } /* Padding aún más reducido */
+     .open-sidebar-btn { top: 8px; left: 8px; padding: 5px 8px; font-size: 1.1em; } /* Más pequeño */
+     .close-sidebar-btn { top: 8px; right: 10px; font-size: 1.5em; }
 
-    #page-content {
-        padding-left: 5px;
-        padding-right: 5px;
-    }
-    .open-sidebar-btn {
-        top: 10px;
-        left: 10px;
-        padding: 6px 10px;
-        font-size: 0.9em;
-    }
-     .close-sidebar-btn {
-        font-size: 1.6em;
-    }
-     .sidebar h2 {
-        font-size: 1.2em;
-    }
-    .nav-button {
-        font-size: 0.95em;
-        padding: 8px 12px;
-    }
+     .main-view > header { padding: 0.8rem 0; margin: -10px -10px 14px -10px; }
+     .main-view > header h1 { font-size: 1.4em; }
 
-    #articles-container {
-        padding: 10px;
-    }
-     .article h2 {
-        font-size: 1.3em;
-    }
+     .search-controls { padding: 10px; gap: 10px; }
+     .search-controls > div { margin-bottom: 7px; }
+     .search-controls div[style*="text-align: right"] { flex-direction: row; flex-wrap: wrap; justify-content: center; gap: 6px; }
 
-    /* Grafo en móviles */
-    #mynetwork {
-        height: 65vh;
-        min-height: 400px;
-    }
-     #graph-view h1 {
-        font-size: 1.4em;
-    }
-    #graph-view p {
-        font-size: 0.9em;
-    }
+     .article { padding: 14px; margin-bottom: 14px; }
+     .article h2 { font-size: 1.3em; }
+     .article h3 { font-size: 1.05em; }
 
-    /* Controles de búsqueda */
-    .search-controls {
-        flex-direction: column; /* Apilar controles en móvil */
-        align-items: stretch; /* Estirar elementos */
-    }
-    .search-controls > div {
-        flex-basis: auto !important; /* Resetear base */
-        width: 100%;
-        margin-bottom: 10px;
-    }
-    .search-controls input[type="text"],
-    .search-controls select {
-        width: calc(100% - 85px); /* Ajustar ancho relativo al botón */
-    }
-     .search-controls div:last-child { /* Botón reset */
-        text-align: center;
-        margin-bottom: 0;
-    }
+     #mynetwork { min-height: 270px; margin: 14px auto; }
+     #graph-view p { font-size: 0.95em; } /* Un poco más legible en móvil */
 
+     #charts-container { gap: 14px; }
+     .chart-container { padding: 10px; }
+
+     .hero-section, .discover-network-section { padding: 27px 10px; gap: 20px; }
+     .hero-section h1 { font-size: 1.8em; }
+     .hero-section p, .discover-network-section p { font-size: 0.95em; margin-bottom: 15px; }
+     .hero-buttons { gap: 8px; }
+     .btn { padding: 7px 14px; font-size: 0.9em; } /* Botones más pequeños en móvil */
+     .hero-visual, .discover-visual { margin-top: 20px; }
+     .hero-visual img, .discover-visual img { max-width: 120px; opacity: 0.5;} /* Más pequeños */
+
+     .key-news-section { padding: 20px 0; }
+     .key-news-section h2 { font-size: 1.4em; margin-bottom: 20px; }
+     .key-news-cards { gap: 15px; grid-template-columns: 1fr; } /* Forzar una columna */
+     .news-card h3 { font-size: 1.1em; }
+     .news-card .summary { font-size: 0.85em; }
+
+     .discover-network-section h2 { font-size: 1.5em; }
+     .discover-visual img { max-width: 130px; }
+}
+
+/* Ajustes para pantallas MUY grandes (Opcional) */
+@media (min-width: 1600px) {
+     html { font-size: 72%; } /* Ligeramente más grande si se ve muy pequeño */
+     #page-content { padding: 20px 40px; } /* Más padding lateral */
+     .search-controls { max-width: 750px; }
+     #articles-container { max-width: 700px; }
+     #mynetwork { max-width: 1100px; }
 }

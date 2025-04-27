@@ -52,12 +52,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // --- Información para los Tooltips (personData) ---
     const personData = {
          // ... (Tu diccionario de datos para tooltips) ...
-         "Javier Milei": { /*...*/ },
-         "Lionel Messi": { /*...*/ },
-         "Ricardo Zielinski": { /*...*/ },
-         "Guillermo Coria": { /*...*/ },
-         "Diego Carballo": { /*...*/ },
-         "Martín Llaryora": { /*...*/ },
+         
          "Juan Schiaretti": {
              name: "Juan Schiaretti",
              img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Juan_Schiaretti_%28cropped%29.jpg/440px-Juan_Schiaretti_%28cropped%29.jpg",
