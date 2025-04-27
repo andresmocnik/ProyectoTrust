@@ -14,14 +14,16 @@ export const openSidebarBtn = document.getElementById('open-sidebar-btn');
 export const closeSidebarBtn = document.getElementById('close-sidebar-btn');
 export const navButtons = document.querySelectorAll('.sidebar-nav .nav-button');
 
-// Controles Vista Noticias
+// --- Controles Vista Noticias (MODIFICADO) ---
 export const articlesContainer = document.getElementById('articles-container');
-export const articleSearchInput = document.getElementById('article-search-input');
-export const articleSearchBtn = document.getElementById('article-search-btn');
-export const politicianSelect = document.getElementById('politician-select');
-export const resetFilterBtn = document.getElementById('reset-filter-btn');
-export const sortNewestBtn = document.getElementById('sort-newest-btn');
-export const sortOldestBtn = document.getElementById('sort-oldest-btn');
+// export const articleSearchInput = document.getElementById('article-search-input'); // <-- ELIMINADO O COMENTADO
+// export const articleSearchBtn = document.getElementById('article-search-btn');     // <-- ELIMINADO O COMENTADO
+export const articleSelect = document.getElementById('article-select'); // <-- AÑADIDO
+export const politicianSelect = document.getElementById('politician-select'); // Ya estaba bien
+export const resetFilterBtn = document.getElementById('reset-filter-btn'); // Ya estaba bien
+export const sortNewestBtn = document.getElementById('sort-newest-btn');   // Ya estaba bien
+export const sortOldestBtn = document.getElementById('sort-oldest-btn');   // Ya estaba bien
+// --- Fin Controles Vista Noticias ---
 
 // Tooltip
 export const tooltipPopup = document.getElementById('tooltip-popup');
@@ -40,3 +42,10 @@ export const chartsPlaceholder = document.getElementById('charts-placeholder');
 // Vista Principal (Inicio)
 export const keyNewsCardsContainer = document.getElementById('key-news-cards-container');
 export const mainViewButtons = document.querySelectorAll('#main-view .btn[data-target-view]');
+
+// --- Log de Verificación (Opcional pero útil) ---
+// console.log("DOM Elements Selected:", {
+//     articleSelect: !!articleSelect, // Debería ser true
+//     politicianSelect: !!politicianSelect, // Debería ser true
+//     // articleSearchInput: !!articleSearchInput // Debería ser false o undefined si se eliminó
+// });
