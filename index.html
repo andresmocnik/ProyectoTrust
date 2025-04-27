@@ -89,36 +89,42 @@
         </div>
         <!-- === FIN VISTA 0 === -->
 
-        <!-- === VISTA 1: LECTOR DE NOTICIAS === -->
-        <div id="news-feed-view" class="main-view">
-             <header>
-                 <h1>Noticias Recientes</h1>
-            </header>
-             <section class="search-controls" style="max-width: 900px; margin: 25px auto; padding: 20px; border-radius: 8px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-                  <div style="flex: 1 1 350px;"> <!-- Ajustar base y crecimiento -->
-                      <label for="article-search-input">Buscar Artículo:</label>
-                      <div class="input-group">
-                          <input type="text" id="article-search-input" placeholder="Ingrese palabra clave...">
-                          <button id="article-search-btn" title="Buscar"><i class="fas fa-search"></i></button> <!-- Icono -->
-                      </div>
-                  </div>
-                  <div style="flex: 1 1 300px;">
-                      <label for="politician-select">Filtrar por Político:</label>
-                      <select id="politician-select">
-                          <option value="">-- Seleccionar Político --</option>
-                      </select>
-                  </div>
-                  <div class="filter-buttons" style="flex-basis: 100%; display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px;">
-                     <button id="sort-newest-btn" class="btn btn-info" title="Ordenar por más recientes"><i class="fas fa-arrow-down-short-wide"></i> Recientes</button> <!-- Icono -->
-                     <button id="sort-oldest-btn" class="btn btn-info" title="Ordenar por más antiguos"><i class="fas fa-arrow-up-wide-short"></i> Antiguos</button> <!-- Icono -->
-                     <button id="reset-filter-btn" class="btn btn-danger" title="Mostrar todos los artículos"><i class="fas fa-times"></i> Reset</button> <!-- Icono -->
-                 </div>
-            </section>
-             <main id="articles-container">
-                 <!-- Los artículos se cargarán aquí -->
-             </main>
-        </div>
-        <!-- === FIN VISTA 1 === -->
+               <!-- === VISTA 1: LECTOR DE NOTICIAS === -->
+               <div id="news-feed-view" class="main-view">
+                <header>
+                    <h1>Noticias Recientes</h1>
+               </header>
+                <!-- SECCIÓN DE BÚSQUEDA Y FILTROS ACTUALIZADA CON SELECT DE ARTÍCULO -->
+                <section class="search-controls" style="max-width: 900px; margin: 25px auto; padding: 20px; border-radius: 8px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
+                     <!-- Select para Seleccionar Artículo (RESTAURADO) -->
+                     <div style="flex: 1 1 350px;"> <!-- O ajusta el tamaño como prefieras -->
+                         <label for="article-select" style="display: block; margin-bottom: 5px; font-weight: 500;">Seleccionar Artículo:</label>
+                         <select id="article-select" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                             <option value="">-- Todos los Artículos --</option>
+                             <!-- Las opciones se cargarán aquí dinámicamente con JavaScript -->
+                         </select>
+                         <!-- El botón de búsqueda ya no es necesario para un select -->
+                     </div>
+                     <!-- Select para Filtrar por Político (SIN CAMBIOS) -->
+                     <div style="flex: 1 1 300px;">
+                         <label for="politician-select" style="display: block; margin-bottom: 5px; font-weight: 500;">Filtrar por Político:</label>
+                         <select id="politician-select" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
+                             <option value="">-- Seleccionar Político --</option>
+                             <!-- Opciones se cargan con JS -->
+                         </select>
+                     </div>
+                     <!-- Botones de Orden/Reset (SIN CAMBIOS EN FUNCIONALIDAD) -->
+                     <div class="filter-buttons" style="flex-basis: 100%; display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px;">
+                        <button id="sort-newest-btn" class="btn btn-info" title="Ordenar por más recientes"><i class="fas fa-arrow-down-short-wide"></i> Recientes</button>
+                        <button id="sort-oldest-btn" class="btn btn-info" title="Ordenar por más antiguos"><i class="fas fa-arrow-up-wide-short"></i> Antiguos</button>
+                        <button id="reset-filter-btn" class="btn btn-danger" title="Mostrar todos los artículos"><i class="fas fa-times"></i> Reset</button>
+                    </div>
+               </section>
+                <main id="articles-container">
+                    <!-- Los artículos se cargarán aquí -->
+                </main>
+           </div>
+           <!-- === FIN VISTA 1 === -->
 
 
         <!-- === VISTA 2: GRAFO DE RELACIONES === -->
