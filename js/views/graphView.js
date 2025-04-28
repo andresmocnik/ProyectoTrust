@@ -1,257 +1,163 @@
 // js/views/graphView.js - Lógica para la vista del Grafo de Relaciones
 
-import * as DOM from '../ui/domElements.js';
-import { state } from '../state.js'; // Podríamos necesitarlo si guardamos datos del grafo
-import { switchView } from '../ui/navigation.js'; // Para navegar al hacer clic
+import * as DOM from '../ui/domElements.js'; // Importa los getters
+import { state } from '../state.js';
+import { switchView } from '../ui/navigation.js';
+const vis = window.vis; // Acceder a vis global
 
-let isInitialized = false; // Flag para controlar la inicialización única
-let networkInstance = null; // Guardar la instancia de Vis.js
+let isInitialized = false;
+let networkInstance = null;
 
 /**
- * Define las opciones de configuración para Vis.js adaptadas al tema oscuro.
- * @returns {object} Objeto de opciones de Vis.js.
+ * Define las opciones de configuración para Vis.js.
+ * (Función interna)
  */
 function _getVisOptions() {
     // Usar variables CSS o valores directos que coincidan con style.css
     const colors = {
-        background: '#1a1d21', // --bg-primary
-        nodeBorder: '#8ab4f8', // --color-accent
-        nodeBackground: '#2c3035', // --bg-secondary
-        nodeHighlightBorder: '#a1c5ff',// --color-accent-hover
-        nodeHighlightBackground: '#3a3f44', // --bg-tertiary
-        edge: '#5f6368', // --scrollbar-thumb (gris medio)
-        edgeHighlight: '#8ab4f8', // --color-accent
-        text: '#e8eaed', // --text-primary
+        background: '#1a1d21', nodeBorder: '#8ab4f8', nodeBackground: '#2c3035',
+        nodeHighlightBorder: '#a1c5ff', nodeHighlightBackground: '#3a3f44',
+        edge: '#5f6368', edgeHighlight: '#8ab4f8', text: '#e8eaed',
     };
-
     return {
         nodes: {
-            shape: 'dot', // Círculos
-            scaling: {
-                min: 12, // Tamaño mínimo nodo
-                max: 60, // Tamaño máximo nodo
-                label: { enabled: true, min: 14, max: 30, drawThreshold: 8 } // Mostrar etiquetas en nodos más grandes
-            },
-            font: {
-                size: 14,
-                color: colors.text,
-                strokeWidth: 0 // Sin borde en el texto
-            },
-            borderWidth: 2,
-            color: {
-                border: colors.nodeBorder,
-                background: colors.nodeBackground,
-                highlight: {
-                    border: colors.nodeHighlightBorder,
-                    background: colors.nodeHighlightBackground
-                },
-                hover: { // Usar mismos colores que highlight o unos intermedios
-                    border: colors.nodeHighlightBorder,
-                    background: colors.nodeHighlightBackground
-                }
-            },
-             shadow: { // Sombra sutil para profundidad
-                 enabled: true,
-                 color: 'rgba(0, 0, 0, 0.5)',
-                 size: 5,
-                 x: 2,
-                 y: 2
-             }
+            shape: 'dot', scaling: { min: 12, max: 60, label: { enabled: true, min: 14, max: 30, drawThreshold: 8 } },
+            font: { size: 14, color: colors.text, strokeWidth: 0 }, borderWidth: 2,
+            color: { border: colors.nodeBorder, background: colors.nodeBackground, highlight: { border: colors.nodeHighlightBorder, background: colors.nodeHighlightBackground }, hover: { border: colors.nodeHighlightBorder, background: colors.nodeHighlightBackground } },
+            shadow: { enabled: true, color: 'rgba(0, 0, 0, 0.5)', size: 5, x: 2, y: 2 }
         },
         edges: {
-            width: 1, // Ancho base más fino
-            scaling: {
-                min: 0.5, // Ancho mínimo
-                max: 8    // Ancho máximo
-            },
-            color: {
-                color: colors.edge,
-                highlight: colors.edgeHighlight,
-                hover: colors.edgeHighlight, // Resaltar al pasar mouse
-                inherit: false, // No heredar color del nodo
-                opacity: 0.5 // Hacerlas semi-transparentes
-            },
-            smooth: {
-                enabled: true,
-                type: "continuous", // Curvas suaves
-                roundness: 0.4
-            },
-            hoverWidth: 1.5 // Ancho al hacer hover
-            // arrows: { to: { enabled: false } } // Sin flechas por defecto
+            width: 1, scaling: { min: 0.5, max: 8 },
+            color: { color: colors.edge, highlight: colors.edgeHighlight, hover: colors.edgeHighlight, inherit: false, opacity: 0.5 },
+            smooth: { enabled: true, type: "continuous", roundness: 0.4 }, hoverWidth: 1.5
         },
         physics: {
-            enabled: true,
-            solver: 'forceAtlas2Based', // Buen algoritmo para redes sociales
-            forceAtlas2Based: {
-                gravitationalConstant: -50, // Ajustar gravedad
-                centralGravity: 0.01,       // Fuerza hacia el centro
-                springLength: 100,          // Longitud deseada de aristas
-                springConstant: 0.08,       // Rigidez aristas
-                damping: 0.6,               // Amortiguación para estabilizar
-                avoidOverlap: 0.5           // Evitar solapamiento nodos
-            },
-            minVelocity: 0.75, // Umbral para considerar estabilizado
-            stabilization: { // Permitir más iteraciones para mejor layout
-                enabled: true,
-                iterations: 500, // Más iteraciones
-                updateInterval: 50
-            }
+            enabled: true, solver: 'forceAtlas2Based', forceAtlas2Based: { gravitationalConstant: -50, centralGravity: 0.01, springLength: 100, springConstant: 0.08, damping: 0.6, avoidOverlap: 0.5 },
+            minVelocity: 0.75, stabilization: { enabled: true, iterations: 500, updateInterval: 50 }
         },
-        interaction: {
-            hover: true,             // Habilitar hover en nodos/aristas
-            tooltipDelay: 200,       // Delay corto para tooltips nativos (títulos)
-            navigationButtons: false, // Ocultar botones +/-/zoom (usar rueda)
-            keyboard: true,          // Permitir navegación teclado
-            hideEdgesOnDrag: true,   // Ocultar aristas al arrastrar nodo (mejora perf)
-            dragNodes: true          // Permitir arrastrar nodos
-        },
-        layout: {
-            improvedLayout: true // Usar mejora de layout de Vis.js
-        }
-        // No definimos background aquí, usamos el del div#mynetwork en CSS
+        interaction: { hover: true, tooltipDelay: 200, navigationButtons: false, keyboard: true, hideEdgesOnDrag: true, dragNodes: true },
+        layout: { improvedLayout: true }
     };
 }
 
 /**
  * Maneja el evento de clic en un nodo del grafo.
- * Navega a la vista de noticias y filtra por el político seleccionado.
- * @param {object} params - Objeto de evento de Vis.js.
+ * (Usa getter para el select de políticos)
  */
 function _handleNodeClick(params) {
     if (params.nodes.length > 0) {
-        const nodeId = params.nodes[0]; // ID del nodo es el nombre del político
+        const nodeId = params.nodes[0];
         console.log(`[graphView] Clic en nodo: ${nodeId}`);
+        const politicianSelectElement = DOM.getNewsPoliticianSelect(); // Usa el getter
 
-        // Intentar seleccionar en el dropdown de la vista de noticias
-        if (DOM.politicianSelect) {
-            const optionExists = Array.from(DOM.politicianSelect.options).some(opt => opt.value === nodeId);
+        if (politicianSelectElement) {
+            const optionExists = Array.from(politicianSelectElement.options).some(opt => opt.value === nodeId);
             if (optionExists) {
                 console.log(`[graphView] Navegando a 'news' y seleccionando ${nodeId}`);
-                switchView('news'); // Cambia a la vista de noticias
-                // Esperar un instante para que la vista cambie antes de manipular el select
+                switchView('news');
+                // Esperar un poco para que la otra vista se inicialice/renderice
                 setTimeout(() => {
-                    if (DOM.politicianSelect) { // Volver a verificar por si acaso
-                         DOM.politicianSelect.value = nodeId;
-                         // Disparar el evento 'change' para que se aplique el filtro
-                         DOM.politicianSelect.dispatchEvent(new Event('change'));
-                    }
-                }, 50); // Pequeño delay
-            } else {
-                console.warn(`[graphView] Político "${nodeId}" encontrado en grafo pero no en el select de filtro.`);
-                alert(`Seleccionado: ${nodeId}\n(No encontrado en el filtro de noticias)`);
-            }
-        } else {
-            console.warn("[graphView] No se encontró el select de políticos para filtrar.");
-            alert(`Seleccionado: ${nodeId}`);
-        }
+                    const selectAfter = DOM.getNewsPoliticianSelect(); // Re-obtener
+                    if (selectAfter) {
+                         selectAfter.value = nodeId;
+                         selectAfter.dispatchEvent(new Event('change', { bubbles: true }));
+                         console.log(`[graphView] Filtro para ${nodeId} aplicado.`);
+                    } else { console.warn("[graphView] Select no encontrado DESPUÉS de navegar."); }
+                }, 100); // Delay corto
+            } else { console.warn(`[graphView] Político "${nodeId}" no en select.`); alert(`Sel: ${nodeId}\n(No en filtro)`); }
+        } else { console.warn("[graphView] Select de políticos no encontrado."); alert(`Sel: ${nodeId}`); }
     }
 }
 
 /**
  * Maneja el evento de clic en una arista del grafo.
- * (Actualmente solo muestra una alerta).
- * @param {object} params - Objeto de evento de Vis.js.
  */
 function _handleEdgeClick(params, edgesDataSet, nodesDataSet) {
      if (params.edges.length > 0) {
-         const edgeId = params.edges[0];
-         const edgeData = edgesDataSet.get(edgeId);
-         if (edgeData) {
-             const fromNode = nodesDataSet.get(edgeData.from);
-             const toNode = nodesDataSet.get(edgeData.to);
-             if (fromNode && toNode) {
-                 const message = `Relación: ${fromNode.label} - ${toNode.label}\nMencionados juntos en ${edgeData.value || 'N/A'} artículos.`;
-                 console.log(`[graphView] Clic en arista: ${fromNode.label} - ${toNode.label}`);
-                 alert(message);
-             }
+         const edgeId = params.edges[0]; const edgeData = edgesDataSet.get(edgeId);
+         if (edgeData) { const from=nodesDataSet.get(edgeData.from); const to=nodesDataSet.get(edgeData.to);
+             if (from && to) { const msg=`Relación: ${from.label||from.id} - ${to.label||to.id}\nMenc. juntas ${edgeData.value||'N/A'} veces.`; console.log(`[graphView] Clic arista: ${from.label} - ${to.label}`); alert(msg); }
          }
      }
 }
 
-
 /**
- * Carga los datos del grafo desde JSON y dibuja la red usando Vis.js.
- * Se ejecuta solo una vez.
+ * Carga los datos del grafo y dibuja la red.
+ * (Modificado para obtener contenedor al inicio de la función)
  */
 async function _loadAndDrawGraph() {
-    if (!DOM.graphNetworkContainer) {
-        console.error("[graphView] Error: Contenedor '#mynetwork' no encontrado.");
-        return;
+    console.log("[_loadAndDrawGraph] Iniciando carga y dibujo...");
+
+    // --- OBTENER CONTENEDOR AL INICIO DE LA FUNCIÓN ---
+    const container = DOM.getGraphNetworkContainer();
+
+    // --- VERIFICACIÓN INMEDIATA ---
+    if (!container) {
+        console.error("[_loadAndDrawGraph] Contenedor '#mynetwork' NO encontrado. Revisar ID en HTML y getter en domElements.js.");
+        const graphViewElement = DOM.getGraphView();
+        if(graphViewElement && !graphViewElement.querySelector('.error-placeholder')) {
+             graphViewElement.innerHTML += '<p class="error-placeholder">Error: Área del grafo no disponible.</p>';
+        }
+        isInitialized = false; // Permitir reintentar si falla
+        return; // No continuar
     }
-    // Mostrar mensaje de carga
-    DOM.graphNetworkContainer.innerHTML = '<p class="loading-placeholder" style="text-align: center; padding: 50px; color: var(--text-secondary);">Cargando red de influencia...</p>';
+    // --- FIN VERIFICACIÓN ---
+
+    // Mostrar carga en el contenedor (que ahora sabemos existe)
+    container.innerHTML = '<p class="loading-placeholder">Cargando red...</p>';
 
     try {
-        console.log("[graphView] Cargando graph_data.json...");
+        console.log("[_loadAndDrawGraph] Cargando graph_data.json...");
         const response = await fetch('graph_data.json');
-        if (!response.ok) {
-            throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         const graphData = await response.json();
-        console.log("[graphView] graph_data.json cargado.");
+        console.log("[_loadAndDrawGraph] Datos cargados.");
 
-        // Validar datos básicos
-        if (!graphData || !Array.isArray(graphData.nodes) || !Array.isArray(graphData.edges)) {
-             throw new Error("Formato de graph_data.json inválido.");
-        }
+        if (!graphData || !Array.isArray(graphData.nodes) || !Array.isArray(graphData.edges)) throw new Error("Formato JSON inválido.");
+        container.innerHTML = ''; // Limpiar carga
 
-        // Limpiar contenedor antes de dibujar
-        DOM.graphNetworkContainer.innerHTML = '';
+        if (typeof vis === 'undefined' || !vis.Network || !vis.DataSet) throw new Error("Vis.js no cargado.");
 
-        // Crear datasets de Vis.js
         const nodesDataSet = new vis.DataSet(graphData.nodes);
         const edgesDataSet = new vis.DataSet(graphData.edges);
-
-        // Obtener opciones de configuración
         const options = _getVisOptions();
 
-        // Crear la instancia de la red
-        console.log("[graphView] Creando instancia de Vis.Network...");
-        networkInstance = new vis.Network(DOM.graphNetworkContainer, { nodes: nodesDataSet, edges: edgesDataSet }, options);
-        console.log("[graphView] Instancia de red creada.");
+        console.log("[_loadAndDrawGraph] Creando instancia Vis.Network...");
+        networkInstance = new vis.Network(container, { nodes: nodesDataSet, edges: edgesDataSet }, options);
+        console.log("[_loadAndDrawGraph] Instancia creada.");
 
-        // Evento cuando la estabilización inicial termina
-        networkInstance.once("stabilizationIterationsDone", () => {
-            console.log("[graphView] Estabilización inicial completada.");
-            // Opcional: Hacer zoom para ajustar todo después de estabilizar
-            // networkInstance.fit({ animation: { duration: 500, easingFunction: 'easeInOutQuad' } });
-        });
-
-        // Evento de clic (para nodos y aristas)
-        networkInstance.on("click", function (params) {
-            if (params.nodes.length > 0) {
-                _handleNodeClick(params);
-            } else if (params.edges.length > 0) {
-                _handleEdgeClick(params, edgesDataSet, nodesDataSet);
-            }
-        });
-
-         // Opcional: Añadir un pequeño delay antes de activar la física para que se vea la carga
-         // setTimeout(() => {
-         //     networkInstance.startSimulation();
-         // }, 200);
-
+        networkInstance.once("stabilizationIterationsDone", () => console.log("[graphView] Estabilización OK."));
+        networkInstance.on("click", (p) => { if (p.nodes.length > 0) _handleNodeClick(p); else if (p.edges.length > 0) _handleEdgeClick(p, edgesDataSet, nodesDataSet); });
 
     } catch (error) {
-        console.error("[graphView] Error al cargar o dibujar el grafo:", error);
-        DOM.graphNetworkContainer.innerHTML = `<p class="error-placeholder" style="text-align: center; padding: 50px; color: var(--color-danger);">Error al cargar la red: ${error.message}</p>`;
+        console.error("[_loadAndDrawGraph] Error:", error);
+        container.innerHTML = `<p class="error-placeholder">Error cargando red: ${error.message}</p>`;
+        networkInstance = null;
+        isInitialized = false; // Permitir reintentar
     }
 }
 
 /**
  * Función pública para inicializar la vista del grafo.
- * Llama a _loadAndDrawGraph solo la primera vez.
+ * Llama a _loadAndDrawGraph solo la primera vez (SIN setTimeout).
+ * (Exportada)
  */
 export function initializeGraph() {
     console.log(`[graphView] Solicitud de inicialización. ¿Ya inicializado? ${isInitialized}`);
     if (!isInitialized) {
         isInitialized = true; // Marcar como inicializado ANTES de empezar la carga
-        _loadAndDrawGraph(); // Cargar y dibujar
+        console.log("[graphView] Primera inicialización, llamando a _loadAndDrawGraph...");
+        _loadAndDrawGraph(); // Llamar directamente a la función que carga y dibuja
     } else {
-        console.log("[graphView] El grafo ya está inicializado. No se recarga.");
-        // Opcional: Si el grafo ya existe, podríamos querer reajustarlo a la vista
-        if (networkInstance) {
-            // networkInstance.fit(); // Podría ser molesto si el usuario ya hizo zoom/pan
+        console.log("[graphView] El grafo ya está inicializado.");
+        // Opcional: Reajustar el grafo existente si la ventana cambió, etc.
+        if (networkInstance && typeof networkInstance.fit === 'function') {
+            console.log("[graphView] Reajustando grafo existente (fit)...");
+            // Ejecutar fit directamente o con un pequeño delay si se prefiere
+            // setTimeout(() => { networkInstance?.fit({ animation: false }); }, 50);
+            networkInstance.fit({ animation: false });
         }
     }
 }
+
+console.log("[graphView.js] Módulo cargado.");

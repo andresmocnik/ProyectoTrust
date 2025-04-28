@@ -1,106 +1,196 @@
 // js/main.js - Punto de Entrada Principal
 
-import * as DOM from './ui/domElements.js';
-import { switchView } from './ui/navigation.js';
-import { state } from './state.js'; // Importar el objeto state
-import { loadArticles } from './dataLoader.js'; // Importar el cargador de artículos
-import { initializeNewsView } from './views/newsView.js';
+import * as DOM from './ui/domElements.js';        // Importa las funciones getter
+import { switchView } from './ui/navigation.js';   // Importar función clave
+import { state } from './state.js';
+import { loadArticles } from './dataLoader.js';
+import { initializeSearchView } from './views/newsView.js'; // La única inicialización que llamamos aquí
 
+/**
+ * Función Principal Asíncrona para Inicializar la Aplicación
+ */
+async function initializeApp() {
+    console.log("[main.js] Iniciando aplicación...");
+    try {
+        // --- 1. Carga de Datos Esenciales ---
+        console.log("[main.js] Iniciando carga de artículos...");
+        try {
+            state.allArticles = await loadArticles();
+            console.log(`[main.js] Artículos cargados. Número: ${state.allArticles?.length ?? 0}`);
+            if (!Array.isArray(state.allArticles) || state.allArticles.length === 0) {
+                console.warn("[main.js] No se cargaron artículos o archivo vacío."); state.allArticles = [];
+            }
+        } catch (loadError) {
+            console.error("[main.js] ERROR CRÍTICO al cargar artículos:", loadError);
+            state.allArticles = [];
+            const pageContent = DOM.getPageContent(); // Obtener contenedor de página
+            if (pageContent) {
+                pageContent.innerHTML = `<div class="error-container"><h2>Error de Carga</h2><p>No se pudieron cargar los datos necesarios (${loadError.message}). Intente recargar.</p></div>`;
+            }
+            return;
+        }
 
-// --- Función de Inicialización Principal ---
-async function initializeApp() { // Convertimos initializeApp en async
-    console.log("Inicializando aplicación...");
+        // --- 2. Configurar Listeners Globales ---
+        console.log("[main.js] Configurando listeners globales...");
+        setupGlobalListeners(); // Llamar a la función helper
 
-    // --- Carga de Datos Esenciales ---
-    // Usamos await para asegurar que los artículos se carguen antes de continuar
-    state.allArticles = await loadArticles();
+        // --- 3. Inicializar Vistas Críticas ---
+        console.log("[main.js] Inicializando vistas dependientes...");
+        try {
+            initializeSearchView();
+            console.log("[main.js] Vista de búsqueda inicializada.");
+        } catch (viewInitError) {
+             console.error("[main.js] Error durante la inicialización de la vista de búsqueda:", viewInitError);
+             const newsViewContainer = DOM.getNewsFeedView(); // Obtener contenedor específico
+             if (newsViewContainer) newsViewContainer.innerHTML = `<p class="error-message">Error al cargar buscador.</p>`;
+        }
 
-    // Si la carga falló o no hay artículos, podríamos mostrar un mensaje y detener
-    if (state.allArticles.length === 0) {
-        console.warn("No se cargaron artículos. La funcionalidad puede ser limitada.");
-        // Opcional: Mostrar mensaje en la UI
-        if(DOM.pageContent) {
-            // DOM.pageContent.innerHTML = '<p style="color: red; text-align: center; padding: 50px;">Error crítico: No se pudieron cargar las noticias.</p>';
-            // return; // Detener inicialización si es crítico
+        // --- 4. Establecer y Mostrar la Vista Inicial ---
+        console.log("[main.js] Estableciendo vista inicial...");
+        const initialView = determineInitialView();
+        console.log(`[main.js] Vista inicial: ${initialView}`);
+        // La primera llamada a switchView ejecutará la lógica de esa vista (ej. renderKeyNews)
+        switchView(initialView);
+
+        console.log("[main.js] Aplicación inicializada.");
+
+    } catch (error) {
+        console.error("[main.js] Error INESPERADO durante la inicialización:", error);
+        const body = DOM.getBody(); // Intentar obtener body para mostrar error
+        if (body) {
+             body.innerHTML = `<div class="error-container"><h2>Error Inesperado</h2><p>Ocurrió un error al iniciar. Por favor, recarga.</p><p><em>${error.message}</em></p></div>`;
         }
     }
+} // Fin de initializeApp
 
-    // --- Configurar listeners básicos --- (El código de listeners va aquí, sin cambios)
-    DOM.openSidebarBtn?.addEventListener('click', () => {
-        if (DOM.sidebar && DOM.body) {
-            DOM.sidebar.classList.add('visible');
-            DOM.body.classList.add('sidebar-visible');
-            DOM.body.classList.add('sidebar-overlay-active');
-        }
-        console.log("Abrir sidebar click");
-    });
+/**
+ * Configura los event listeners globales (sidebar, botones de navegación).
+ */
+function setupGlobalListeners() {
+    console.log("[setupGlobalListeners] Configurando...");
 
-    DOM.closeSidebarBtn?.addEventListener('click', () => {
-        if (DOM.sidebar && DOM.body) {
-            DOM.sidebar.classList.remove('visible');
-            DOM.body.classList.remove('sidebar-visible');
-            DOM.body.classList.remove('sidebar-overlay-active');
-        }
-        console.log("Cerrar sidebar click");
-    });
+    // Obtener elementos una vez para añadir listeners
+    const openBtn = DOM.getOpenSidebarBtn();
+    const closeBtn = DOM.getCloseSidebarBtn();
+    const navButtonsNodeList = DOM.getNavButtons();       // Para la sidebar
+    const mainViewButtonsNodeList = DOM.getMainViewButtons(); // Para la vista 'main'
 
-    DOM.navButtons.forEach(button => {
-        button.addEventListener('click', () => {
+    // Log para verificar si se encontraron los botones
+    console.log(`[setupGlobalListeners] Botón Abrir Sidebar encontrado: ${!!openBtn}`);
+    console.log(`[setupGlobalListeners] Botón Cerrar Sidebar encontrado: ${!!closeBtn}`);
+    console.log(`[setupGlobalListeners] Botones de Navegación (Sidebar) encontrados: ${navButtonsNodeList?.length ?? 0}`);
+    console.log(`[setupGlobalListeners] Botones de Vista Principal encontrados: ${mainViewButtonsNodeList?.length ?? 0}`);
+
+    // Listener para abrir Sidebar
+    if (openBtn) {
+        openBtn.addEventListener('click', () => {
+            console.log("[Event] Abrir sidebar click"); // Log de evento
+            const sidebar = DOM.getSidebar(); const body = DOM.getBody();
+            if (sidebar && body) {
+                sidebar.classList.add('visible');
+                body.classList.add('sidebar-visible');
+                body.classList.add('sidebar-overlay-active');
+            }
+        });
+    } else { console.warn("[setupGlobalListeners] Botón Abrir Sidebar no encontrado."); }
+
+    // Listener para cerrar Sidebar (botón X)
+    if (closeBtn) {
+        closeBtn.addEventListener('click', () => {
+            console.log("[Event] Cerrar sidebar (X) click"); // Log de evento
+            closeSidebar(); // Llama a la función helper
+        });
+    } else { console.warn("[setupGlobalListeners] Botón Cerrar Sidebar no encontrado."); }
+
+    // Listeners para botones de navegación en Sidebar
+    if (navButtonsNodeList && navButtonsNodeList.length > 0) { // Verificar que la lista no esté vacía
+        navButtonsNodeList.forEach((button, index) => {
             const view = button.getAttribute('data-view');
-            if (view) {
-                switchView(view);
+            if (view) { // Solo añadir listener si tiene data-view
+                 console.log(`[setupGlobalListeners] Añadiendo listener a NavButton #${index}, data-view: ${view}`);
+                 // Remover listener previo por si acaso esta función se llamara múltiples veces
+                 // (Aunque no debería en este flujo)
+                 // button.removeEventListener('click', handleNavButtonClick); // Necesitaría función nombrada
+                 button.addEventListener('click', () => { // Usar función anónima está bien aquí
+                    console.log(`[Event] Clic en NavButton con data-view=${view}`); // Log DENTRO del listener
+                    switchView(view); // Llamar a switchView con el valor de data-view
+                 });
+            } else {
+                 console.warn(`[setupGlobalListeners] NavButton #${index} no tiene atributo data-view.`);
             }
         });
-    });
+    } else {
+        console.warn("[setupGlobalListeners] No se encontraron botones de navegación (NodeList vacía o null).");
+    }
 
-    DOM.mainViewButtons.forEach(button => {
-        button.addEventListener('click', () => {
+    // Listeners para botones en la Vista Principal que cambian de vista
+    if (mainViewButtonsNodeList && mainViewButtonsNodeList.length > 0) { // Verificar lista
+        mainViewButtonsNodeList.forEach((button, index) => {
             const targetView = button.getAttribute('data-target-view');
-            if(targetView) {
-                switchView(targetView);
+            if (targetView) { // Solo añadir si tiene data-target-view
+                console.log(`[setupGlobalListeners] Añadiendo listener a MainViewButton #${index}, data-target-view: ${targetView}`);
+                button.addEventListener('click', () => {
+                    console.log(`[Event] Clic en MainViewButton con data-target-view=${targetView}`);
+                    switchView(targetView); // Llamar a switchView con el valor de data-target-view
+                });
+            } else {
+                 console.warn(`[setupGlobalListeners] MainViewButton #${index} no tiene atributo data-target-view.`);
             }
         });
-    });
+     } else {
+         console.warn("[setupGlobalListeners] No se encontraron botones en la vista principal (NodeList vacía o null).");
+     }
 
+    // Listener para cerrar Sidebar al hacer clic fuera
     document.addEventListener('click', (event) => {
-        if (!DOM.sidebar?.classList.contains('visible')) return;
-        const isClickInsideSidebar = DOM.sidebar.contains(event.target);
-        const isClickOnOpenBtn = DOM.openSidebarBtn?.contains(event.target);
+        const sidebar = DOM.getSidebar(); // Obtener sidebar en el momento del clic
+        if (!sidebar?.classList.contains('visible')) return; // Solo si está visible
+
+        const openBtn = DOM.getOpenSidebarBtn(); // Obtener botón abrir
+        const isClickInsideSidebar = sidebar.contains(event.target);
+        const isClickOnOpenBtn = openBtn?.contains(event.target);
+
         if (!isClickInsideSidebar && !isClickOnOpenBtn) {
-             if (DOM.sidebar && DOM.body) {
-                 DOM.sidebar.classList.remove('visible');
-                 DOM.body.classList.remove('sidebar-visible');
-                 DOM.body.classList.remove('sidebar-overlay-active');
-             }
-            console.log("Cerrar sidebar por clic fuera");
+             console.log("[Event] Cerrar sidebar (click fuera)");
+             closeSidebar();
         }
     });
 
-    // --- Inicializar Componentes/Vistas que dependen de datos ---
-    // Ahora que los datos están en state.allArticles, podemos llamar a funciones
-    // que los necesiten. renderKeyNews es llamada por switchView, pero podríamos
-    // querer poblar filtros o hacer otros cálculos iniciales aquí.
-
-    // Ejemplo: Poblar el filtro de políticos (moveremos esta lógica a newsView.js luego)
-    // populatePoliticianFilter(state.allArticles); // Necesitaríamos crear esta función
-
-
-    // --- Inicializar Componentes/Vistas que dependen de datos ---
-    initializeNewsView();
-
-    // --- Establecer la vista inicial ---
-    const initialView = DOM.body.className.split(' ').find(cls => cls.startsWith('view-'))?.replace('view-', '') || 'main';
-    console.log(`Intentando cambiar a vista inicial: ${initialView}`);
-    console.log('DOM.body existe:', !!DOM.body);
-    switchView(initialView); // Llama a switchView, que a su vez llamará a renderKeyNews
-
-    console.log("Aplicación inicializada.");
+    console.log("[setupGlobalListeners] Configuración de listeners completada.");
 }
 
-// --- Ejecutar Inicialización ---
+/**
+ * Función auxiliar para cerrar la sidebar.
+ */
+function closeSidebar() {
+    const sidebar = DOM.getSidebar();
+    const body = DOM.getBody();
+    if (sidebar && body) {
+        sidebar.classList.remove('visible');
+        body.classList.remove('sidebar-visible');
+        body.classList.remove('sidebar-overlay-active');
+    }
+}
+
+/**
+ * Determina la vista inicial a mostrar.
+ */
+function determineInitialView() {
+    const body = DOM.getBody();
+    if (!body) {
+        console.warn("[determineInitialView] No se pudo obtener <body>. Usando 'main'.");
+        return 'main';
+    }
+    const viewClass = Array.from(body.classList).find(cls => cls.startsWith('view-'));
+    return viewClass ? viewClass.substring(5) : 'main';
+}
+
+// --- Ejecutar Inicialización Principal ---
 if (document.readyState === 'loading') {
+    console.log("[main.js] DOM no listo, añadiendo listener DOMContentLoaded.");
     document.addEventListener('DOMContentLoaded', initializeApp);
 } else {
+    console.log("[main.js] DOM listo, ejecutando initializeApp directamente.");
     initializeApp();
 }
 
