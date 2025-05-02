@@ -170,6 +170,35 @@
     <!-- === Scripts === -->
     <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
     <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
+    
+    <!-- === MODAL DETALLES POLÍTICO (Inicialmente oculto) === -->
+    <div id="politician-modal-overlay" class="modal-overlay">
+        <div id="politician-modal" class="modal-content">
+            <button id="close-modal-btn" class="modal-close-btn">×</button>
+            <div class="modal-header">
+                <img id="modal-politician-img" src="" alt="Político" class="modal-img">
+                <h2 id="modal-politician-name">Nombre Político</h2>
+            </div>
+            <div class="modal-body">
+                <section>
+                    <h3>Artículos Relacionados (<span id="modal-article-count">0</span>)</h3>
+                    <ul id="modal-article-list" class="modal-list">
+                        <!-- Lista de artículos se llenará aquí -->
+                        <li>Cargando artículos...</li>
+                    </ul>
+                </section>
+                <section>
+                    <h3>Mencionado Junto Con (<span id="modal-related-count">0</span>)</h3>
+                    <ul id="modal-related-list" class="modal-list">
+                        <!-- Lista de políticos relacionados se llenará aquí -->
+                         <li>Cargando relaciones...</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </div>
+    <!-- === FIN MODAL === -->
+
     <!-- Carga principal como módulo -->
     <script type="module" src="js/main.js"></script>
     <!-- <script src="script.js"></script> --> <!-- Comentar o eliminar la carga antigua -->

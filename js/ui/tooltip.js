@@ -1,217 +1,192 @@
 // js/ui/tooltip.js - Lógica para el tooltip de información
 
-import * as DOM from './domElements.js';
+import * as DOM from './domElements.js'; // Referencias a elementos del tooltip
+import { state } from '../state.js';     // Acceso a la DB de políticos cargada
 
-// Datos manuales (pueden venir de config.js o state.js si crecen mucho)
-const personData = {
-    "Juan Schiaretti": {
-        name: "Juan Schiaretti",
-        img: "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Juan_Schiaretti_%28cropped%29.jpg/440px-Juan_Schiaretti_%28cropped%29.jpg",
-        desc: "Político argentino, miembro del Partido Justicialista, que desempeñó como Gobernador de la Provincia de Córdoba durante tres períodos no consecutivos (2007-2011, 2015-2019 y 2019-2023)."
-    },
-     "Alberto Fernández": {
-         name: "Alberto Fernández",
-         img: "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Alberto_Fernandez_en_2019.jpg/440px-Alberto_Fernandez_en_2019.jpg",
-         desc: "Abogado y político argentino, Presidente de la Nación Argentina entre 2019 y 2023."
-     },
-     // Ejemplo sin imagen para probar
-     "Coco Sily": {
-        name: "Coco Sily",
-        desc: "Actor, humorista y presentador de televisión argentino."
-     }
-    // ... (Añade más si es necesario) ...
-};
+let tooltipTimeout = null; // Timer para el delay al mostrar
 
-let tooltipTimeout = null; // Para gestionar el retraso al mostrar
-
-// --- Funciones del Tooltip ---
+// --- Funciones Helper del Tooltip ---
 
 /**
- * Posiciona el tooltip cerca del elemento target.
- * (Esta función se asume correcta por ahora, pero si fallara, podría detener la ejecución)
+ * Posiciona el tooltip de forma inteligente cerca del elemento que lo activó.
+ * @param {HTMLElement} targetElement - El span .person-tooltip sobre el que se hizo hover.
  */
 function positionTooltip(targetElement) {
-    // Log para verificar si esta función se llama y si los elementos son válidos
-    // console.log("[positionTooltip] Intentando posicionar. Popup:", DOM.tooltipPopup, "Target:", targetElement);
+    // console.log("[positionTooltip] Intentando posicionar."); // Log opcional
     if (!DOM.tooltipPopup || !targetElement) {
         console.error("[positionTooltip] Error: Falta popup o targetElement.");
         return;
     }
 
-    const rect = targetElement.getBoundingClientRect();
+    const rect = targetElement.getBoundingClientRect(); // Posición del span relativo al viewport
     const popup = DOM.tooltipPopup;
-    const scrollX = window.scrollX || window.pageXOffset;
-    const scrollY = window.scrollY || window.pageYOffset;
+    const scrollX = window.scrollX || window.pageXOffset; // Scroll horizontal actual
+    const scrollY = window.scrollY || window.pageYOffset; // Scroll vertical actual
 
-    let top = rect.bottom + scrollY + 5;
-    let left = rect.left + scrollX + 5;
+    // Posición inicial propuesta: Abajo y a la derecha del span
+    let top = rect.bottom + scrollY + 8; // 8px de margen inferior
+    let left = rect.left + scrollX + 5; // 5px de margen derecho
 
     // --- Forzar cálculo de dimensiones ---
-    // Guardar display original para restaurarlo
+    // Hacemos el popup invisible pero parte del layout para medirlo
     const originalDisplay = popup.style.display;
-    popup.style.visibility = 'hidden'; // Ocultar visualmente
-    popup.style.display = 'block';    // Ponerlo en el layout para medir
+    popup.style.visibility = 'hidden';
+    popup.style.display = 'block';
     const popupWidth = popup.offsetWidth;
     const popupHeight = popup.offsetHeight;
     // Restaurar display original antes de calcular posiciones finales
-    popup.style.display = originalDisplay === 'block' ? 'block' : 'none';
-    popup.style.visibility = 'visible'; // Hacerlo visible de nuevo
+    popup.style.display = originalDisplay; // Volver a como estaba (probablemente 'none')
+    popup.style.visibility = 'visible';
     // --- Fin cálculo dimensiones ---
 
-    // Si después del cálculo, las dimensiones son 0, puede haber un problema CSS
     if (popupWidth === 0 || popupHeight === 0) {
-        console.warn("[positionTooltip] El popup tiene dimensiones 0. ¿Está oculto por CSS o aún no tiene contenido?");
+        console.warn("[positionTooltip] El popup tiene dimensiones 0. Ver CSS o contenido.");
     }
 
-    // Ajustes de posición (lógica sin cambios)
-    if (left + popupWidth > window.innerWidth + scrollX - 10) { left = window.innerWidth + scrollX - popupWidth - 10; }
-    if (top + popupHeight > window.innerHeight + scrollY - 10) { top = rect.top + scrollY - popupHeight - 5; }
-    if (left < scrollX + 10) { left = scrollX + 10; }
-    if (top < scrollY + 10) { top = scrollY + 10; }
+    // --- Ajustar posición para que quepa en pantalla ---
+    const viewportWidth = window.innerWidth;
+    const viewportHeight = window.innerHeight;
+    const margin = 10; // Margen de seguridad con los bordes
 
-    // Aplicar posición final
-    popup.style.left = `${Math.max(0, left)}px`; // Asegurar que no sea negativo
-    popup.style.top = `${Math.max(0, top)}px`;  // Asegurar que no sea negativo
+    // Ajustar si se sale por la derecha
+    if (left + popupWidth > viewportWidth + scrollX - margin) {
+        left = viewportWidth + scrollX - popupWidth - margin;
+    }
+    // Ajustar si se sale por abajo
+    if (top + popupHeight > viewportHeight + scrollY - margin) {
+        // Intentar ponerlo arriba del span
+        top = rect.top + scrollY - popupHeight - 8; // 8px de margen superior
+    }
+    // Ajustar si se sale por la izquierda
+    if (left < scrollX + margin) {
+        left = scrollX + margin;
+    }
+    // Ajustar si se sale por arriba (si lo movimos arriba)
+     if (top < scrollY + margin) {
+        top = scrollY + margin;
+    }
+
+    // Aplicar posición final asegurando que no sea negativa
+    popup.style.left = `${Math.max(0, left)}px`;
+    popup.style.top = `${Math.max(0, top)}px`;
     // console.log(`[positionTooltip] Posición final - Top: ${top}px, Left: ${left}px`); // Log opcional
 }
 
 
 /**
- * Muestra el tooltip con la información correcta.
+ * Muestra el tooltip, buscando primero en la DB local y luego (opcional) en Wikipedia.
+ * @param {HTMLElement} targetSpan - El span .person-tooltip que activó el evento.
  */
 async function showTooltip(targetSpan) {
-    // Log #1: Verificar inicio y targetSpan (ya vimos que targetSpan llega bien)
-    console.log("[showTooltip] Iniciando showTooltip. targetSpan:", targetSpan);
+    console.log("[showTooltip] Iniciando. targetSpan:", targetSpan);
 
-    // Log #2: Verificar CADA elemento del DOM individualmente (CRUCIAL)
-    console.log("[showTooltip] DOM.tooltipPopup:", DOM.tooltipPopup);   // OK en tu log anterior
-    console.log("[showTooltip] DOM.tooltipImg:", DOM.tooltipImg);     // ¿Es null?
-    console.log("[showTooltip] DOM.tooltipDesc:", DOM.tooltipDesc);    // ¿Es null?
-
-    // Check #1: Detenerse si falta algún elemento esencial del tooltip
+    // Verificar elementos esenciales del DOM
     if (!DOM.tooltipPopup || !DOM.tooltipImg || !DOM.tooltipDesc) {
-        console.error("[showTooltip] ERROR CRÍTICO: Uno o más elementos del DOM para el tooltip son null. Verifica IDs en HTML y domElements.js.");
-        // Ocultar si accidentalmente quedó visible de un intento anterior
-        if(DOM.tooltipPopup) DOM.tooltipPopup.style.display = 'none';
-        return; // Detener ejecución aquí si falta algo
+        console.error("[showTooltip] ERROR CRÍTICO: Elementos del DOM para tooltip (popup, img, desc) no encontrados.");
+        return;
     }
+    console.log("[showTooltip] DOM Elements (Popup, Img, Desc):", DOM.tooltipPopup, DOM.tooltipImg, DOM.tooltipDesc);
 
-    // Check #2: Verificar y obtener personKey (ya vimos que targetSpan llega bien)
+    // Obtener la clave (nombre del político)
     const personKey = targetSpan.getAttribute('data-person-key');
-    console.log(`[showTooltip] personKey obtenido: "${personKey}"`); // Verificar valor
-
+    console.log(`[showTooltip] personKey obtenido: "${personKey}"`);
     if (!personKey) {
-         console.warn("[showTooltip] No se encontró 'data-person-key' en el targetSpan:", targetSpan);
+         console.warn("[showTooltip] No se encontró 'data-person-key'.");
          hideTooltip(); // Ocultar si no hay clave
          return;
     }
 
-    // Log #3: Confirmar que las referencias básicas están bien antes de continuar
-    console.log("[showTooltip] Referencias básicas OK. Procediendo...");
+    console.log("[showTooltip] Referencias OK. Posicionando y mostrando 'Cargando...'");
+    positionTooltip(targetSpan); // Posicionar antes de mostrar
+    DOM.tooltipPopup.style.display = 'block'; // Hacer visible el contenedor
 
-    // Log #4: Justo antes de llamar a positionTooltip
-    console.log("[showTooltip] Llamando a positionTooltip...");
-    try {
-        positionTooltip(targetSpan); // Envolvemos en try/catch por si falla
-        console.log("[showTooltip] positionTooltip ejecutado."); // Log si positionTooltip no lanza error
-    } catch (error) {
-        console.error("[showTooltip] Error durante positionTooltip:", error);
-        hideTooltip(); // Ocultar si falla el posicionamiento
-        return;
-    }
+    // Resetear contenido a estado "cargando"
+    DOM.tooltipImg.style.display = 'none';
+    DOM.tooltipImg.src = '';
+    DOM.tooltipImg.alt = 'Cargando...';
+    DOM.tooltipDesc.textContent = 'Buscando información...';
 
-    // Log #5: Justo antes de hacer visible el popup
-    console.log("[showTooltip] Estableciendo display: block...");
-    DOM.tooltipPopup.style.display = 'block';
+    // --- Lógica Principal: DB Local -> Wikipedia ---
 
-    // Log #6: Justo antes de resetear contenido
-    console.log("[showTooltip] Reseteando contenido (img/desc)...");
-    try {
-        // Es crucial que DOM.tooltipImg y DOM.tooltipDesc NO sean null aquí
-        DOM.tooltipImg.style.display = 'none';
-        DOM.tooltipImg.src = '';
-        DOM.tooltipImg.alt = 'Cargando...';
-        DOM.tooltipDesc.textContent = 'Buscando información...';
-        console.log("[showTooltip] Contenido reseteado.");
-    } catch(error) {
-         console.error("[showTooltip] Error al resetear contenido (¿Img o Desc son null?):", error);
-         hideTooltip();
-         return;
-    }
+    // 1. Buscar en la DB local (state.politiciansDB)
+    console.log(`[showTooltip] Buscando "${personKey}" en state.politiciansDB...`);
+    const dbData = state.politiciansDB[personKey];
 
-
-    // Log #7: Buscar en datos manuales
-    console.log(`[showTooltip] Buscando datos manuales para "${personKey}"...`);
-    const manualData = personData[personKey]; // Búsqueda case-sensitive
-    if (manualData) {
-        console.log("[showTooltip] Datos manuales encontrados.");
-        DOM.tooltipDesc.textContent = manualData.desc || 'Información no disponible.';
-        if (manualData.img) {
-            DOM.tooltipImg.src = manualData.img;
-            DOM.tooltipImg.alt = manualData.name || personKey;
+    if (dbData) { // ¡Encontrado en la DB local!
+        console.log("[showTooltip] Datos encontrados en DB local.");
+        DOM.tooltipDesc.textContent = dbData.description || 'Descripción no disponible.';
+        if (dbData.img) {
+            DOM.tooltipImg.src = dbData.img;
+            DOM.tooltipImg.alt = dbData.name || personKey;
             DOM.tooltipImg.style.display = 'block';
-            console.log("[showTooltip] Imagen manual establecida.");
+            console.log("[showTooltip] Imagen de DB local aplicada.");
         } else {
-            console.log("[showTooltip] No hay imagen en datos manuales.");
+            console.log("[showTooltip] No hay imagen en DB local.");
+             DOM.tooltipImg.style.display = 'none'; // Asegurar que esté oculta
         }
-        // Re-posicionar después de añadir contenido manual (el tamaño pudo cambiar)
-        console.log("[showTooltip] Reposicionando después de datos manuales...");
+        // Re-posicionar por si el contenido cambió el tamaño del tooltip
         positionTooltip(targetSpan);
-        return; // No buscar en Wikipedia
+        console.log("[showTooltip] Finalizado con datos de DB local.");
+        return; // Terminar aquí, no buscar en Wikipedia
     }
 
-    // Log #8: Si no hay datos manuales, intentar Wikipedia
-    console.log(`[showTooltip] No hay datos manuales para "${personKey}", buscando en Wikipedia...`);
+    // 2. Si NO se encontró en la DB local, intentar Fallback a Wikipedia
+    console.log(`[showTooltip] "${personKey}" no encontrado en DB local. Intentando fallback a Wikipedia...`);
     try {
         const wikiApiUrl = `https://es.wikipedia.org/w/api.php?action=query&format=json&origin=*&prop=extracts|pageimages&titles=${encodeURIComponent(personKey)}&exintro=true&explaintext=true&piprop=thumbnail&pithumbsize=100&redirects=1`;
-        console.log("[showTooltip] Fetching Wikipedia:", wikiApiUrl); // Log de la URL
+        console.log("[showTooltip] Fetching Wikipedia:", wikiApiUrl);
+        DOM.tooltipDesc.textContent = 'Buscando en fuentes externas...'; // Mensaje durante la búsqueda externa
+
         const response = await fetch(wikiApiUrl);
-        console.log("[showTooltip] Respuesta fetch recibida, status:", response.status); // Log del status
+        console.log("[showTooltip] Respuesta fetch Wikipedia, status:", response.status);
         if (!response.ok) throw new Error(`HTTP ${response.status}`);
 
         const wikiData = await response.json();
-        console.log("[showTooltip] Datos JSON de Wikipedia parseados:", wikiData); // Log de los datos crudos
+        // console.log("[showTooltip] Datos JSON de Wikipedia:", wikiData); // Log opcional detallado
 
         const pages = wikiData.query?.pages;
         const pageId = pages ? Object.keys(pages)[0] : null;
 
-        if (pageId && pageId !== "-1" && pages[pageId]) {
+        if (pageId && pageId !== "-1" && pages[pageId] && !pages[pageId].missing) { // Verificar que no sea 'missing'
             const page = pages[pageId];
             console.log("[showTooltip] Página de Wikipedia encontrada:", page);
             const description = page.extract;
             const imageUrl = page.thumbnail?.source;
 
             DOM.tooltipDesc.textContent = description
-                ? `${description.substring(0, 250)}${description.length > 250 ? '...' : ''}`
-                : 'Información no encontrada.';
+                ? `${description.substring(0, 250)}${description.length > 250 ? '...' : ''}` // Limitar longitud
+                : 'Información no encontrada en Wikipedia.';
 
             if (imageUrl) {
                 DOM.tooltipImg.src = imageUrl;
                 DOM.tooltipImg.alt = page.title || personKey;
                 DOM.tooltipImg.style.display = 'block';
-                console.log("[showTooltip] Imagen de Wikipedia establecida.");
+                console.log("[showTooltip] Imagen de Wikipedia aplicada.");
             } else {
+                 DOM.tooltipImg.style.display = 'none';
                  console.log("[showTooltip] No se encontró imagen thumbnail en Wikipedia.");
             }
         } else {
-            console.log("[showTooltip] No se encontró página válida en Wikipedia.");
-            DOM.tooltipDesc.textContent = 'Información no encontrada en Wikipedia.';
+            console.log("[showTooltip] No se encontró página válida/existente en Wikipedia.");
+            DOM.tooltipDesc.textContent = 'Información externa no disponible.'; // Mensaje más genérico
+            DOM.tooltipImg.style.display = 'none';
         }
         // Re-posicionar después de cargar datos de Wiki
-        console.log("[showTooltip] Reposicionando después de datos de Wikipedia...");
         positionTooltip(targetSpan);
+        console.log("[showTooltip] Finalizado con datos de Wikipedia (o no encontrados).");
 
     } catch (error) {
-        console.error(`[showTooltip] Error buscando info para "${personKey}" en Wikipedia:`, error);
-        DOM.tooltipDesc.textContent = 'Error al buscar información.';
-         // Re-posicionar incluso si hay error (para que el mensaje de error se vea)
-        positionTooltip(targetSpan);
+        console.error(`[showTooltip] Error en fallback a Wikipedia para "${personKey}":`, error);
+        DOM.tooltipDesc.textContent = 'Error al buscar información externa.';
+        DOM.tooltipImg.style.display = 'none';
+        positionTooltip(targetSpan); // Re-posicionar con el mensaje de error
+        console.log("[showTooltip] Finalizado con error en fetch Wikipedia.");
     }
-}
+} // Fin de showTooltip
 
 
 /**
- * Oculta el tooltip.
+ * Oculta el tooltip limpiando el timeout y estableciendo display: none.
  */
 function hideTooltip() {
     clearTimeout(tooltipTimeout);
@@ -223,40 +198,57 @@ function hideTooltip() {
 
 
 /**
- * Inicializa los listeners del tooltip en un contenedor específico.
+ * Configura los event listeners necesarios para mostrar/ocultar el tooltip
+ * en un contenedor dado (usando delegación de eventos).
+ * @param {HTMLElement} containerElement - El elemento contenedor (ej. #articles-container).
  */
 export function setupTooltipListeners(containerElement) {
     if (!containerElement) {
-        console.warn("setupTooltipListeners: No se proporcionó un contenedor.");
+        console.warn("setupTooltipListeners: No se proporcionó un contenedor válido.");
         return;
     }
     console.log(`[setupTooltipListeners] Configurando listeners en:`, containerElement);
 
+    // Listener para cuando el mouse ENTRA en un elemento hijo del contenedor
     containerElement.addEventListener('mouseover', (event) => {
+        // Buscar el span .person-tooltip más cercano al elemento donde ocurrió el evento
         const targetSpan = event.target.closest('.person-tooltip');
         // console.log('[Tooltip Listener] mouseover detectado en:', event.target); // Log opcional
-        if (!targetSpan) return;
+        if (!targetSpan) return; // Si no estamos sobre un span de persona, no hacer nada
         // console.log('[Tooltip Listener] targetSpan encontrado:', targetSpan); // Log opcional
 
+        // Si ya hay un timeout pendiente para mostrar el tooltip, cancelarlo
         clearTimeout(tooltipTimeout);
+        // Iniciar un nuevo timeout: llamar a showTooltip después de 300ms
         tooltipTimeout = setTimeout(() => {
             console.log('[Tooltip Listener] Timeout ejecutado, llamando showTooltip');
             showTooltip(targetSpan);
-        }, 300);
+        }, 300); // Delay de 300ms
     });
 
+    // Listener para cuando el mouse SALE de un elemento hijo del contenedor
     containerElement.addEventListener('mouseout', (event) => {
+        // Buscar si el mouse estaba sobre un span .person-tooltip
         const targetSpan = event.target.closest('.person-tooltip');
         // console.log('[Tooltip Listener] mouseout detectado en:', event.target); // Log opcional
         if (targetSpan) {
+             // Si salimos del span, cancelar cualquier timeout pendiente para MOSTRAR el tooltip
              // console.log('[Tooltip Listener] Limpiando timeout por mouseout'); // Log opcional
              clearTimeout(tooltipTimeout);
-             // Considerar ocultar con un pequeño delay aquí si se quiere
-             // setTimeout(hideTooltip, 100);
+             // NOTA: No llamamos a hideTooltip() inmediatamente aquí.
+             // Esto permite al usuario mover el cursor desde el span HACIA el tooltip
+             // si quisiera interactuar con él (aunque ahora mismo no sea interactivo).
+             // El tooltip se ocultará con los listeners de click y scroll.
         }
     });
 
-    // Ocultar tooltip si hacemos clic en cualquier lugar o scrolleamos
-    document.addEventListener('click', hideTooltip, true); // Usar captura
-    window.addEventListener('scroll', hideTooltip, true); // Usar captura
+    // --- Listeners Globales para OCULTAR el tooltip ---
+    // Usar 'capture: true' para detectar estos eventos antes que otros posibles
+    // listeners que pudieran detener la propagación (event.stopPropagation()).
+
+    // Ocultar si hacemos clic en cualquier lugar del documento
+    document.addEventListener('click', hideTooltip, true);
+
+    // Ocultar si hacemos scroll en la ventana
+    window.addEventListener('scroll', hideTooltip, true);
 }

@@ -3,14 +3,8 @@
         {
             "id": "Alberto Fernández",
             "label": "Alberto Fernández",
-            "value": 32,
-            "title": "Aparece en 22 artículos"
-        },
-        {
-            "id": "Victoria Villarruel",
-            "label": "Victoria Villarruel",
-            "value": 35,
-            "title": "Aparece en 25 artículos"
+            "value": 31,
+            "title": "Aparece en 21 artículos"
         },
         {
             "id": "Juan Schiaretti",
@@ -19,9 +13,15 @@
             "title": "Aparece en 13 artículos"
         },
         {
+            "id": "Victoria Villarruel",
+            "label": "Victoria Villarruel",
+            "value": 35,
+            "title": "Aparece en 25 artículos"
+        },
+        {
             "id": "Javier Milei",
             "label": "Javier Milei",
-            "value": 50,
+            "value": 70,
             "title": "Aparece en 81 artículos"
         },
         {
@@ -29,24 +29,6 @@
             "label": "Martín Llaryora",
             "value": 34,
             "title": "Aparece en 24 artículos"
-        },
-        {
-            "id": "Ariel Lijo",
-            "label": "Ariel Lijo",
-            "value": 20,
-            "title": "Aparece en 10 artículos"
-        },
-        {
-            "id": "Mauricio Macri",
-            "label": "Mauricio Macri",
-            "value": 22,
-            "title": "Aparece en 12 artículos"
-        },
-        {
-            "id": "Juan Carlos Maqueda",
-            "label": "Juan Carlos Maqueda",
-            "value": 17,
-            "title": "Aparece en 7 artículos"
         },
         {
             "id": "Cristina Kirchner",
@@ -61,22 +43,40 @@
             "title": "Aparece en 6 artículos"
         },
         {
+            "id": "Juan Carlos Maqueda",
+            "label": "Juan Carlos Maqueda",
+            "value": 17,
+            "title": "Aparece en 7 artículos"
+        },
+        {
+            "id": "Mauricio Macri",
+            "label": "Mauricio Macri",
+            "value": 22,
+            "title": "Aparece en 12 artículos"
+        },
+        {
+            "id": "Ariel Lijo",
+            "label": "Ariel Lijo",
+            "value": 20,
+            "title": "Aparece en 10 artículos"
+        },
+        {
             "id": "Luis Caputo",
             "label": "Luis Caputo",
             "value": 26,
             "title": "Aparece en 16 artículos"
         },
         {
-            "id": "Patricia Bullrich",
-            "label": "Patricia Bullrich",
-            "value": 25,
-            "title": "Aparece en 15 artículos"
-        },
-        {
             "id": "Karina Milei",
             "label": "Karina Milei",
             "value": 16,
             "title": "Aparece en 6 artículos"
+        },
+        {
+            "id": "Patricia Bullrich",
+            "label": "Patricia Bullrich",
+            "value": 25,
+            "title": "Aparece en 15 artículos"
         },
         {
             "id": "Daniel Passerini",
@@ -121,18 +121,6 @@
             "title": "Aparece en 5 artículos"
         },
         {
-            "id": "Axel Kicillof",
-            "label": "Axel Kicillof",
-            "value": 16,
-            "title": "Aparece en 6 artículos"
-        },
-        {
-            "id": "Kirchner",
-            "label": "Kirchner",
-            "value": 19,
-            "title": "Aparece en 9 artículos"
-        },
-        {
             "id": "Gildo Insfrán",
             "label": "Gildo Insfrán",
             "value": 15,
@@ -141,8 +129,20 @@
         {
             "id": "Néstor Kirchner",
             "label": "Néstor Kirchner",
-            "value": 20,
-            "title": "Aparece en 10 artículos"
+            "value": 24,
+            "title": "Aparece en 14 artículos"
+        },
+        {
+            "id": "Fernández",
+            "label": "Fernández",
+            "value": 15,
+            "title": "Aparece en 5 artículos"
+        },
+        {
+            "id": "Axel Kicillof",
+            "label": "Axel Kicillof",
+            "value": 16,
+            "title": "Aparece en 6 artículos"
         },
         {
             "id": "Sergio Massa",
@@ -592,21 +592,21 @@
         },
         {
             "from": "Alberto Fernández",
+            "to": "Fernández",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Alberto Fernández",
             "to": "Gildo Insfrán",
             "value": 3,
             "title": "Juntos en 3 artículos"
         },
         {
             "from": "Alberto Fernández",
-            "to": "Kirchner",
+            "to": "Néstor Kirchner",
             "value": 4,
             "title": "Juntos en 4 artículos"
-        },
-        {
-            "from": "Alberto Fernández",
-            "to": "Néstor Kirchner",
-            "value": 3,
-            "title": "Juntos en 3 artículos"
         },
         {
             "from": "Axel Kicillof",
@@ -616,6 +616,12 @@
         },
         {
             "from": "Axel Kicillof",
+            "to": "Fernández",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Axel Kicillof",
             "to": "Gildo Insfrán",
             "value": 2,
             "title": "Juntos en 2 artículos"
@@ -628,12 +634,6 @@
         },
         {
             "from": "Axel Kicillof",
-            "to": "Kirchner",
-            "value": 1,
-            "title": "Juntos en 1 artículos"
-        },
-        {
-            "from": "Axel Kicillof",
             "to": "Martín Llaryora",
             "value": 1,
             "title": "Juntos en 1 artículos"
@@ -643,6 +643,12 @@
             "to": "Néstor Kirchner",
             "value": 1,
             "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Cristina Kirchner",
+            "to": "Fernández",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
         },
         {
             "from": "Cristina Kirchner",
@@ -652,12 +658,6 @@
         },
         {
             "from": "Cristina Kirchner",
-            "to": "Kirchner",
-            "value": 4,
-            "title": "Juntos en 4 artículos"
-        },
-        {
-            "from": "Cristina Kirchner",
             "to": "Martín Llaryora",
             "value": 5,
             "title": "Juntos en 5 artículos"
@@ -665,62 +665,62 @@
         {
             "from": "Cristina Kirchner",
             "to": "Néstor Kirchner",
-            "value": 5,
-            "title": "Juntos en 5 artículos"
-        },
-        {
-            "from": "Gildo Insfrán",
-            "to": "Javier Milei",
-            "value": 3,
-            "title": "Juntos en 3 artículos"
-        },
-        {
-            "from": "Gildo Insfrán",
-            "to": "Kirchner",
-            "value": 2,
-            "title": "Juntos en 2 artículos"
-        },
-        {
-            "from": "Gildo Insfrán",
-            "to": "Martín Llaryora",
-            "value": 3,
-            "title": "Juntos en 3 artículos"
-        },
-        {
-            "from": "Gildo Insfrán",
-            "to": "Néstor Kirchner",
-            "value": 2,
-            "title": "Juntos en 2 artículos"
-        },
-        {
-            "from": "Javier Milei",
-            "to": "Kirchner",
             "value": 7,
             "title": "Juntos en 7 artículos"
         },
         {
+            "from": "Fernández",
+            "to": "Gildo Insfrán",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Fernández",
+            "to": "Javier Milei",
+            "value": 4,
+            "title": "Juntos en 4 artículos"
+        },
+        {
+            "from": "Fernández",
+            "to": "Martín Llaryora",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
+        },
+        {
+            "from": "Fernández",
+            "to": "Néstor Kirchner",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Gildo Insfrán",
+            "to": "Javier Milei",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Gildo Insfrán",
+            "to": "Martín Llaryora",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
+            "from": "Gildo Insfrán",
+            "to": "Néstor Kirchner",
+            "value": 3,
+            "title": "Juntos en 3 artículos"
+        },
+        {
             "from": "Javier Milei",
             "to": "Néstor Kirchner",
-            "value": 6,
-            "title": "Juntos en 6 artículos"
-        },
-        {
-            "from": "Kirchner",
-            "to": "Martín Llaryora",
-            "value": 2,
-            "title": "Juntos en 2 artículos"
-        },
-        {
-            "from": "Kirchner",
-            "to": "Néstor Kirchner",
-            "value": 5,
-            "title": "Juntos en 5 artículos"
+            "value": 9,
+            "title": "Juntos en 9 artículos"
         },
         {
             "from": "Martín Llaryora",
             "to": "Néstor Kirchner",
-            "value": 1,
-            "title": "Juntos en 1 artículos"
+            "value": 2,
+            "title": "Juntos en 2 artículos"
         },
         {
             "from": "Alberto Fernández",
@@ -760,7 +760,7 @@
         },
         {
             "from": "Juan Schiaretti",
-            "to": "Kirchner",
+            "to": "Néstor Kirchner",
             "value": 1,
             "title": "Juntos en 1 artículos"
         },
@@ -771,16 +771,16 @@
             "title": "Juntos en 3 artículos"
         },
         {
-            "from": "Kirchner",
-            "to": "Sergio Massa",
-            "value": 1,
-            "title": "Juntos en 1 artículos"
-        },
-        {
             "from": "Martín Llaryora",
             "to": "Sergio Massa",
             "value": 5,
             "title": "Juntos en 5 artículos"
+        },
+        {
+            "from": "Néstor Kirchner",
+            "to": "Sergio Massa",
+            "value": 1,
+            "title": "Juntos en 1 artículos"
         },
         {
             "from": "Estela de Carlotto",
@@ -1102,24 +1102,12 @@
         },
         {
             "from": "Ariel Lijo",
-            "to": "Kirchner",
-            "value": 1,
-            "title": "Juntos en 1 artículos"
-        },
-        {
-            "from": "Ariel Lijo",
             "to": "Néstor Kirchner",
             "value": 3,
             "title": "Juntos en 3 artículos"
         },
         {
             "from": "Horacio Rosatti",
-            "to": "Kirchner",
-            "value": 1,
-            "title": "Juntos en 1 artículos"
-        },
-        {
-            "from": "Horacio Rosatti",
             "to": "Mauricio Macri",
             "value": 2,
             "title": "Juntos en 2 artículos"
@@ -1129,18 +1117,6 @@
             "to": "Victoria Villarruel",
             "value": 1,
             "title": "Juntos en 1 artículos"
-        },
-        {
-            "from": "Kirchner",
-            "to": "Mauricio Macri",
-            "value": 3,
-            "title": "Juntos en 3 artículos"
-        },
-        {
-            "from": "Kirchner",
-            "to": "Victoria Villarruel",
-            "value": 2,
-            "title": "Juntos en 2 artículos"
         },
         {
             "from": "Mauricio Macri",
@@ -1157,8 +1133,8 @@
         {
             "from": "Néstor Kirchner",
             "to": "Victoria Villarruel",
-            "value": 1,
-            "title": "Juntos en 1 artículos"
+            "value": 2,
+            "title": "Juntos en 2 artículos"
         },
         {
             "from": "Cristina Kirchner",
@@ -1311,6 +1287,12 @@
             "title": "Juntos en 1 artículos"
         },
         {
+            "from": "Fernández",
+            "to": "Mauricio Macri",
+            "value": 2,
+            "title": "Juntos en 2 artículos"
+        },
+        {
             "from": "Juan Carlos Maqueda",
             "to": "Victoria Villarruel",
             "value": 1,
@@ -1429,12 +1411,6 @@
             "to": "Presidente",
             "value": 2,
             "title": "Juntos en 2 artículos"
-        },
-        {
-            "from": "Kirchner",
-            "to": "Manuel Adorni",
-            "value": 1,
-            "title": "Juntos en 1 artículos"
         },
         {
             "from": "Axel Kicillof",
