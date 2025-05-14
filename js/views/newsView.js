@@ -1,360 +1,107 @@
-// js/views/newsView.js - Lógica para la vista del Lector de Noticias
+// js/views/newsView.js - Lógica para el Motor de Búsqueda de Noticias
 
-// --- Importaciones ---
 import * as DOM from '../ui/domElements.js';
 import { state } from '../state.js';
 import { createElement, parseDateString } from '../utils.js';
+const moment = window.moment;
 import { setupTooltipListeners } from '../ui/tooltip.js';
 
-// --- Renderizado de Artículos ---
+// --- Funciones Principales ---
 
-/**
- * Crea el elemento HTML para un solo artículo.
- */
-function renderSingleArticle(article, highlightedPolitician = null) {
-    if (!article) {
-        console.error("[renderSingleArticle] Error: Se recibió un objeto de artículo inválido (null o undefined).");
-        return null;
-    }
-
-    const articleDiv = createElement('article', { className: 'article' });
-
-    articleDiv.innerHTML = `
-        <div class="article-meta">Sección: ${article.seccion || 'N/A'}</div>
-        <h2>${article.titulo || 'Sin Título'}</h2>
-        ${article.subtitulo ? `<h3>${article.subtitulo}</h3>` : ''}
-        <div class="article-meta">
-            <span>Autor: ${article.autor || 'N/A'}</span>
-            <span>Fecha: ${article.fecha_hora || 'N/A'}</span>
-        </div>
-        ${article.link_img ? `<img class="article-img" src="${article.link_img}" alt="${article.titulo || 'Imagen'}">` : ''}
-        ${article.caption_img ? `<figcaption class="article-img-caption">${article.caption_img}</figcaption>` : ''}
-        <div class="article-body"></div>
-    `;
-
-    const bodyContainer = articleDiv.querySelector('.article-body');
-    let spansAddedCount = 0;
-
-    if (!bodyContainer) {
-        console.error("[renderSingleArticle] CRÍTICO: No se encontró el contenedor .article-body para el artículo ID:", article.id);
-        return articleDiv;
-    }
-
-    const bodyContent = article.cuerpo || '';
-    const normalizedPersonsInArticle = article.personas_detectadas_normalizadas || [];
-
-    if (bodyContent && normalizedPersonsInArticle.length > 0) {
-        const paragraphs = bodyContent.split('\n').filter(p => p.trim() !== '');
-
-        if (paragraphs.length === 0 && bodyContent.trim() !== '') {
-             let processedHTML = bodyContent;
-             normalizedPersonsInArticle.forEach((normPersonName) => {
-                 if (!normPersonName || typeof normPersonName !== 'string') return;
-                 const escapedName = normPersonName.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                 const regex = new RegExp(`\\b(${escapedName})\\b`, 'gi');
-                 const shouldHighlight = highlightedPolitician && normPersonName.toLowerCase() === highlightedPolitician.toLowerCase();
-                 processedHTML = processedHTML.replace(regex, (match) => {
-                     spansAddedCount++;
-                     let spanClass = 'person-tooltip';
-                     if (shouldHighlight) {
-                         spanClass += ' highlighted-person';
-                     }
-                     return `<span class="${spanClass}" data-person-key="${normPersonName}">${match}</span>`;
-                 });
-             });
-             bodyContainer.appendChild(createElement('p', { innerHTML: processedHTML }));
-
-        } else {
-             paragraphs.forEach((pText) => {
-                 let processedHTML = pText;
-                 normalizedPersonsInArticle.forEach((normPersonName) => {
-                     if (!normPersonName || typeof normPersonName !== 'string') return;
-                     const escapedName = normPersonName.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&');
-                     const regex = new RegExp(`\\b(${escapedName})\\b`, 'gi');
-                     const shouldHighlight = highlightedPolitician && normPersonName.toLowerCase() === highlightedPolitician.toLowerCase();
-                     processedHTML = processedHTML.replace(regex, (match) => {
-                         spansAddedCount++;
-                         let spanClass = 'person-tooltip';
-                          if (shouldHighlight) {
-                             spanClass += ' highlighted-person';
-                         }
-                         return `<span class="${spanClass}" data-person-key="${normPersonName}">${match}</span>`;
-                     });
-                 });
-                 bodyContainer.appendChild(createElement('p', { innerHTML: processedHTML }));
-             });
-        }
-    } else if (bodyContent) {
-         bodyContent.split('\n').filter(p => p.trim() !== '').forEach(pText => {
-             bodyContainer.appendChild(createElement('p', { textContent: pText }));
-         });
-    } else {
-         bodyContainer.innerHTML = '<p><i>Contenido no disponible.</i></p>';
-    }
-    // console.log(`[renderSingleArticle] ID: ${article.id} - Finalizado. Spans .person-tooltip añadidos: ${spansAddedCount}`); // Log opcional
-    return articleDiv;
+/** Función central: Filtra, ordena, pagina y renderiza. Exportada. */
+export function performSearchAndRender() {
+    const resultsContainer = DOM.getSearchResultsContainer(); const paginationContainer = DOM.getPaginationControls(); const countSpan = DOM.getResultsCountSpan();
+    if (!resultsContainer || !paginationContainer || !countSpan) { console.error("[performSearchAndRender] Faltan elementos DOM críticos."); return; }
+    console.log('[performSearchAndRender] Ejecutando...');
+    try {
+        state.filteredArticles = filterArticles();
+        if (!Array.isArray(state.filteredArticles)) { console.error("filterArticles no devolvió array!"); state.filteredArticles = []; }
+        console.log(`[performSearchAndRender] Después de filterArticles: ${state.filteredArticles.length} artículos.`);
+        sortFilteredArticles();
+        console.log("[performSearchAndRender] Después de sortFilteredArticles.");
+        paginateResults();
+        console.log(`[performSearchAndRender] Después de paginateResults: ${state.paginatedResults.length} para pág ${state.currentPage}.`);
+        console.log("[performSearchAndRender] Actualizando UI...");
+        updateResultsHeader(countSpan); renderSearchResults(state.paginatedResults, resultsContainer); renderPagination(paginationContainer);
+        console.log(`[performSearchAndRender] Búsqueda/Renderizado completado.`);
+    } catch (error) { console.error("[performSearchAndRender] ERROR INESPERADO:", error); if (resultsContainer) resultsContainer.innerHTML = `<p class="error-message">Error al buscar/mostrar.</p>`; }
 }
 
-/**
- * Renderiza la lista de artículos en el contenedor principal.
- */
-export function renderNewsList(articlesToDisplay = state.allArticles, politicianToHighlight = null) {
-    if (!DOM.articlesContainer) {
-        console.error("[renderNewsList] CRÍTICO: Contenedor de artículos (DOM.articlesContainer) no encontrado.");
-        return;
-    }
-
-    DOM.articlesContainer.innerHTML = '';
-
-    if (!articlesToDisplay || articlesToDisplay.length === 0) {
-        DOM.articlesContainer.innerHTML = '<p style="text-align:center; color: var(--text-secondary); padding: 40px 0;">No se encontraron artículos que coincidan con los criterios.</p>';
-        return;
-    }
-
-    let articlesRenderedCount = 0;
-    articlesToDisplay.forEach((article, index) => {
-        try {
-            const articleElement = renderSingleArticle(article, politicianToHighlight);
-            if (articleElement) {
-                 DOM.articlesContainer.appendChild(articleElement);
-                 articlesRenderedCount++;
-            } else {
-                 console.warn(`[renderNewsList] renderSingleArticle devolvió null para artículo índice ${index}, ID: ${article?.id}`);
-            }
-        } catch (error) {
-            console.error(`[renderNewsList] Error en forEach renderizando artículo ID ${article?.id}:`, error);
-        }
-    });
-
-    if (typeof setupTooltipListeners === 'function') {
-        if (articlesRenderedCount > 0) {
-             setupTooltipListeners(DOM.articlesContainer);
-        }
-    } else {
-        console.error("[renderNewsList] Error: setupTooltipListeners no es una función importada correctamente.");
-    }
-}
-
-// --- Filtros y Ordenación ---
-
-/**
- * NUEVA FUNCIÓN: Puebla el dropdown de filtro por artículo.
- * (VERSIÓN CON LOGS - MANTENIDA)
- */
-function populateArticleSelect() {
-    // --- LOG DE DIAGNÓSTICO 3 ---
-    console.log("[populateArticleSelect] Ejecutando. Verificando DOM.articleSelect:", DOM.articleSelect);
-    if (!DOM.articleSelect) {
-        console.error("[populateArticleSelect] ¡Select de artículo no encontrado en DOM!");
-        return;
-    }
-    const articles = state.allArticles || [];
-    // --- LOG DE DIAGNÓSTICO 4 ---
-    console.log(`[populateArticleSelect] Número de artículos a procesar: ${articles.length}`);
-
-    const previousValue = DOM.articleSelect.value;
-    DOM.articleSelect.innerHTML = '<option value="">-- Todos los Artículos --</option>';
-    let optionsAdded = 0;
-
-    articles.forEach((article, index) => {
-        if (!article) {
-            console.warn(`[populateArticleSelect] Artículo en índice ${index} es null o undefined.`);
-            return; // Saltar este artículo
-        }
-        // --- LOG DE DIAGNÓSTICO 5 (opcional, puede ser mucho output) ---
-        // console.log(` -> Añadiendo artículo índice ${index}: ${article.titulo}`);
-        DOM.articleSelect.appendChild(createElement('option', {
-            value: index.toString(),
-            textContent: article.titulo || `Artículo ${index + 1} (Sin título)`
-        }));
-        optionsAdded++;
-    });
-
-    if (DOM.articleSelect.querySelector(`option[value="${previousValue}"]`)) {
-        DOM.articleSelect.value = previousValue;
-    }
-    console.log(`[populateArticleSelect] Finalizado. Opciones añadidas: ${optionsAdded}. Total en select: ${DOM.articleSelect.options.length}`);
-}
-
-/**
- * Puebla el dropdown de filtro por político.
- * (VERSIÓN CON LOGS - MANTENIDA)
- */
-function populatePoliticianFilter() {
-    // --- LOG DE DIAGNÓSTICO 6 ---
-    console.log("[populatePoliticianFilter] Ejecutando. Verificando DOM.politicianSelect:", DOM.politicianSelect);
-     if (!DOM.politicianSelect) {
-        console.error("[populatePoliticianFilter] ¡Select de político no encontrado en DOM!");
-        return;
-    }
-    const articles = state.allArticles || [];
-    const politicianNames = new Set();
-    let checkedArticles = 0;
-
-    articles.forEach(article => {
-        if (!article) return;
-        checkedArticles++;
-        const personas = article.personas_detectadas_normalizadas;
-        // --- LOG DE DIAGNÓSTICO 7 (opcional) ---
-        // console.log(` -> Políticos en artículo ${article.id || 'N/A'}:`, personas);
-        (personas || []).forEach(name => {
-            if (name?.trim()) {
-                politicianNames.add(name.trim());
-            }
+/** Filtra state.allArticles. (Interna) */
+function filterArticles() {
+    const currentSearchTermLower = (state.searchTerm || '').toLowerCase().trim();
+    const currentSectionLower = (state.selectedSection || '').toLowerCase();
+    if (!Array.isArray(state.allArticles)) { console.warn("[filterArticles] state.allArticles no es array."); return []; }
+    console.log(`[filterArticles] Filtrando ${state.allArticles.length} artículos con: Término='${currentSearchTermLower}', Sección='${currentSectionLower}', FiltroFecha='${state.selectedDateFilter}'`);
+    try {
+        const filtered = state.allArticles.filter(article => {
+            if (!article) return false;
+            const dateMatch = isDateInRange(article.fecha_hora, state.selectedDateFilter, state.customStartDate, state.customEndDate);
+            if (!dateMatch) return false; // Descartar por fecha primero
+            if (currentSectionLower !== '' && (typeof article.seccion !== 'string' || article.seccion.trim().toLowerCase() !== currentSectionLower)) return false; // Descartar por sección
+            if (currentSearchTermLower !== '') { const title = (typeof article.titulo === 'string' ? article.titulo : '').toLowerCase(); const body = (typeof article.cuerpo === 'string' ? article.cuerpo : '').toLowerCase(); if (!title.includes(currentSearchTermLower) && !body.includes(currentSearchTermLower)) return false; } // Descartar por término
+            return true; // Pasa todos los filtros activos
         });
-    });
-
-    const sortedNames = Array.from(politicianNames).sort((a, b) => a.localeCompare(b));
-    // --- LOG DE DIAGNÓSTICO 8 ---
-    console.log(`[populatePoliticianFilter] Artículos revisados: ${checkedArticles}. Nombres únicos encontrados: ${sortedNames.length}`, sortedNames);
-
-    const previousValue = DOM.politicianSelect.value;
-    DOM.politicianSelect.innerHTML = '<option value="">-- Seleccionar Político --</option>';
-    let optionsAdded = 0;
-
-    sortedNames.forEach(name => {
-        DOM.politicianSelect.appendChild(createElement('option', { value: name, textContent: name }));
-        optionsAdded++;
-    });
-    if (sortedNames.includes(previousValue)) {
-        DOM.politicianSelect.value = previousValue;
-    }
-     console.log(`[populatePoliticianFilter] Finalizado. Opciones añadidas: ${optionsAdded}. Total en select: ${DOM.politicianSelect.options.length}`);
+        console.log("[filterArticles] Filtrado completado exitosamente."); return filtered;
+    } catch (error) { console.error("[filterArticles] ERROR durante el filtrado:", error); return []; }
 }
 
-// (Aquí estaba la definición duplicada de populateArticleSelect - ELIMINADA)
-// (Aquí estaba la definición duplicada de populatePoliticianFilter - ELIMINADA)
-
-
-/**
- * Función centralizada para aplicar filtros (artículo Y político) y renderizar.
- */
-function applyFiltersAndRender() {
-    if (!DOM.articleSelect || !DOM.politicianSelect || !state.allArticles) {
-        console.error("[applyFiltersAndRender] Faltan elementos DOM (selects) o datos (allArticles).");
-        return;
-    }
-
-    const selectedArticleIndexStr = DOM.articleSelect.value;
-    const selectedPolitician = DOM.politicianSelect.value;
-
-    // console.log(`[applyFiltersAndRender] Aplicando filtros - Índice Artículo: '${selectedArticleIndexStr || 'Todos'}', Político: '${selectedPolitician || 'Todos'}'`);
-
-    let filteredArticles = [...state.allArticles];
-
-    if (selectedArticleIndexStr !== "") {
-        const index = parseInt(selectedArticleIndexStr, 10);
-        if (!isNaN(index) && index >= 0 && index < state.allArticles.length) {
-            filteredArticles = [state.allArticles[index]];
-            // console.log(` -> Filtro Artículo aplicado: Mostrando solo índice ${index}`);
-        } else {
-            // console.warn(` -> Índice de artículo inválido: ${selectedArticleIndexStr}. Mostrando 0 artículos por seguridad.`);
-            filteredArticles = [];
-        }
-    }
-    // else {
-        // console.log(" -> Filtro Artículo: No aplicado (Todos).");
-    // }
-
-    if (selectedPolitician !== "") {
-        // console.log(` -> Aplicando filtro Político: "${selectedPolitician}" sobre ${filteredArticles.length} artículos.`);
-        filteredArticles = filteredArticles.filter(article =>
-            (article.personas_detectadas_normalizadas || []).some(person => person.toLowerCase() === selectedPolitician.toLowerCase())
-        );
-        // console.log(` -> Después del filtro Político, quedan: ${filteredArticles.length} artículos.`);
-    }
-    // else {
-        // console.log(" -> Filtro Político: No aplicado (Todos).");
-    // }
-
-    renderNewsList(filteredArticles, selectedPolitician);
+/** Ordena state.filteredArticles in-place. (Interna) */
+function sortFilteredArticles() {
+    if (!Array.isArray(state.filteredArticles)) { console.warn("[sort] filteredArticles no es array."); state.filteredArticles = []; return; }
+    const field = state.currentSort.field; const ascending = state.currentSort.ascending; console.log(`[sort] Ordenando ${state.filteredArticles.length} por ${field} ${ascending?'ASC':'DESC'}`);
+    try { state.filteredArticles.sort((a, b) => { if (field === 'date') { const dA = parseDateString(a?.fecha_hora), dB = parseDateString(b?.fecha_hora); if (!dA && !dB) return 0; if (!dA) return 1; if (!dB) return -1; return ascending ? dA.getTime() - dB.getTime() : dB.getTime() - dA.getTime(); } return 0; }); console.log("[sort] Ordenación completada."); } catch (e) { console.error("[sort] ERROR:", e); }
 }
 
-/**
- * Maneja el evento de cambio en el select de artículos.
- */
-function handleArticleSelectChange() {
-    // console.log("[newsView] Cambio en selección de artículo."); // Log opcional
-    state.currentFilter.articleIndex = DOM.articleSelect?.value !== "" ? DOM.articleSelect.value : null;
-    applyFiltersAndRender();
+/** Calcula el slice para la paginación actual. (Interna) */
+function paginateResults() { if (!Array.isArray(state.filteredArticles)) state.filteredArticles = []; const rpp = state.resultsPerPage || 10; const start = (state.currentPage - 1) * rpp; state.paginatedResults = state.filteredArticles.slice(start, start + rpp); }
+
+// --- Funciones de Renderizado de UI (Internas) ---
+function updateResultsHeader(countSpan) { const filtered = Array.isArray(state.filteredArticles)?state.filteredArticles:[]; const count=filtered.length; let msg=''; if (state.searchTerm) msg=`${count} resultado${count!==1?'s':''} para "${state.searchTerm}"`; else if(state.selectedSection||state.selectedDateFilter!=='all') msg=`${count} resultado${count!==1?'s':''} con filtros`; else msg=`Mostrando ${count} artículo${count!==1?'s':''}`; countSpan.textContent=msg; }
+function renderSearchResults(articlesToShow, container) { container.innerHTML = ''; if (!articlesToShow || articlesToShow.length === 0) { container.innerHTML = '<p class="placeholder-message">No se encontraron noticias.</p>'; return; } const frag = document.createDocumentFragment(); articlesToShow.forEach(a => { try { const card = createSearchResultElement(a); if (card) frag.appendChild(card); } catch (e) { console.error("Error creando tarjeta:", e); }}); container.appendChild(frag); if (typeof setupTooltipListeners === 'function' && articlesToShow.length > 0) setupTooltipListeners(container); }
+function createSearchResultElement(article) { if (!article) return null; const card = createElement('div', { className: 'search-result-card' }); const snippet = createSnippet(article.cuerpo, state.searchTerm, 180); const pDate = parseDateString(article.fecha_hora); const dDate = pDate ? moment(pDate).format('DD MMM YYYY') : 'Fecha N/A'; const img = article.link_img ? `<img src="${article.link_img}" alt="" class="result-image" loading="lazy">` : '<div class="result-image-placeholder"><i class="fas fa-image"></i></div>'; const cont = `<div class="result-content"><h4 class="result-title">${article.titulo || 'Sin Título'}</h4><p class="result-snippet">${snippet}</p><div class="result-meta"><span class="result-section">${typeof article.seccion === 'string' ? article.seccion.trim() : 'N/A'}</span> <span class="result-date">${dDate}</span></div></div>`; card.innerHTML = img + cont; if (state.searchTerm && snippet !== 'Descripción no disponible.') { const snipEl = card.querySelector('.result-snippet'); if (snipEl) try { const esc = state.searchTerm.replace(/[-\/\\^$*+?.()|[\]{}]/g, '\\$&'); snipEl.innerHTML = snipEl.textContent.replace(new RegExp(`(${esc})`, 'gi'), '<mark>$1</mark>'); } catch(e){} } return card; }
+function createSnippet(text, term = '', max = 180) { const clean = (typeof text === 'string' ? text : '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim(); if (!clean) return 'Descripción no disponible.'; term = (term || '').trim(); if (term) { const tL = term.toLowerCase(); const cL = clean.toLowerCase(); const idx = cL.indexOf(tL); if (idx !== -1) { const m = Math.floor((max - term.length*1.5)/2); let s = Math.max(0, idx - m); let e = Math.min(clean.length, s + max); if (s > 0) s = clean.lastIndexOf(' ', s) + 1; if (e < clean.length) e = clean.indexOf(' ', e) === -1 ? clean.length : clean.indexOf(' ', e); let snip = clean.substring(s, e); if (s > 0) snip = '...' + snip; if (e < clean.length) snip = snip + '...'; return snip; }} return clean.length > max ? clean.substring(0, max) + '...' : clean; }
+function renderPagination(container) { container.innerHTML = ''; const total = state.filteredArticles.length; const rpp = state.resultsPerPage || 10; const pages = Math.ceil(total / rpp); const current = state.currentPage; if (pages <= 1) return; const frag = document.createDocumentFragment(); frag.appendChild(createElement('button', { className: 'page-button prev', innerHTML: '<i class="fas fa-chevron-left"></i> Ant.', disabled: current === 1, 'aria-label': 'Anterior', 'data-page': current - 1 })); const show = []; const d = 1; if (pages <= 5+(d*2)) { for(let i=1; i<=pages; i++) show.push(i); } else { show.push(1); if(current > d+2) show.push('...'); const s = Math.max(2, current-d); const e = Math.min(pages-1, current+d); for(let i=s; i<=e; i++) show.push(i); if(current < pages-d-1) show.push('...'); show.push(pages); } show.forEach(p => { if(p === '...') frag.appendChild(createElement('span', {className:'page-ellipsis',textContent:'...'})); else frag.appendChild(createElement('button', {className:`page-button number ${p===current?'active':''}`, textContent:p.toString(), 'aria-label':`Pág ${p}`, 'data-page':p}));}); frag.appendChild(createElement('button', { className: 'page-button next', innerHTML: 'Sig. <i class="fas fa-chevron-right"></i>', disabled: current === pages, 'aria-label': 'Siguiente', 'data-page': current + 1 })); container.appendChild(frag); }
+function populateSectionFilter() { const list = DOM.getSectionFilterList(); if (!list || !Array.isArray(state.allArticles)) return; console.log("[populateSectionFilter] Poblando..."); const sections = new Set(); state.allArticles.forEach(a => { if(typeof a?.seccion === 'string' && a.seccion.trim()) sections.add(a.seccion.trim()); }); const sorted = Array.from(sections).sort((a,b) => a.localeCompare(b)); let allLi = list.querySelector('li:first-child button[data-section=""]')?.parentElement; list.innerHTML = ''; if(allLi){ allLi.querySelector('button').classList.add('active'); list.appendChild(allLi); } else { const li=createElement('li'); li.appendChild(createElement('button', {className:'filter-button active',dataset:{section:''}, textContent:'Todas'})); list.appendChild(li); } const frag = document.createDocumentFragment(); sorted.forEach(s => { const li=createElement('li'); li.appendChild(createElement('button', {className:'filter-button', dataset:{section:s}, textContent:s})); frag.appendChild(li); }); list.appendChild(frag); console.log("[populateSectionFilter] Poblado."); }
+
+// --- Funciones de Ayuda (Helpers) (Internas) ---
+/** Verifica si la fecha está en rango. ¡CORREGIDO! */
+function isDateInRange(articleDateStr, filterType, customStartDate, customEndDate) {
+    if (filterType === 'all') return true; // <-- CORRECCIÓN CLAVE
+    const articleDate = parseDateString(articleDateStr); if (!articleDate) return false;
+    const mArticleDate = moment.utc(articleDate); if (!mArticleDate.isValid()) return false;
+    const now = moment.utc();
+    try { switch (filterType) { case 'today': return mArticleDate.isSame(now, 'day'); case 'week': return mArticleDate.isSameOrAfter(now.clone().startOf('isoWeek')); case 'month': return mArticleDate.isSameOrAfter(now.clone().startOf('month')); case 'year': return mArticleDate.isSameOrAfter(now.clone().startOf('year'));
+            case 'custom': if (!customStartDate || !customEndDate) return true; const mS=moment.utc(customStartDate).startOf('day'); const mE=moment.utc(customEndDate).endOf('day'); if(!mS.isValid()||!mE.isValid()||mE.isBefore(mS)) return false; return mArticleDate.isBetween(mS, mE, 'day', '[]');
+            default: return true; }
+    } catch (e) { console.error("Error en isDateInRange:", e); return false; }
 }
 
-/**
- * Maneja el evento de cambio en el select de políticos.
- */
-function handlePoliticianFilter() {
-    // console.log("[newsView] Cambio en selección de político."); // Log opcional
-     state.currentFilter.politician = DOM.politicianSelect?.value || null;
-    applyFiltersAndRender();
-}
-
-/**
- * Resetea ambos filtros (artículo y político) y muestra todos los artículos ordenados.
- */
-function resetNewsView() {
-    console.log("[newsView] Reseteando filtros.");
-    if (DOM.articleSelect) DOM.articleSelect.value = '';
-    if (DOM.politicianSelect) DOM.politicianSelect.value = '';
-    state.currentFilter = { type: null, value: null, articleIndex: null, politician: null };
-    sortArticlesByDate(); // Llama a sort para re-renderizar todo con la ordenación actual
-}
-
-/**
- * Ordena los artículos según el estado, repuebla el select de artículos y aplica filtros.
- */
-export function sortArticlesByDate(ascending = undefined) {
-    const sortAscending = (ascending === undefined) ? state.currentSort.ascending : ascending;
-    // console.log(`[sortArticlesByDate] Iniciando ordenación: ${sortAscending ? 'asc' : 'desc'}`);
-
-    if (ascending !== undefined) {
-        state.currentSort = { field: 'date', ascending: sortAscending };
-    }
-
-    // Ordenar la lista completa en state.allArticles
-    (state.allArticles || []).sort((a, b) => { // Añadir chequeo por si allArticles es null/undefined brevemente
-        const dateA = parseDateString(a?.fecha_hora); // Añadir chequeo en a y b
-        const dateB = parseDateString(b?.fecha_hora);
-        if (!dateA && !dateB) return 0;
-        if (!dateA) return 1;
-        if (!dateB) return -1;
-        return sortAscending ? dateA.getTime() - dateB.getTime() : dateB.getTime() - dateA.getTime();
-    });
-
-    // Volver a poblar el select de artículos DESPUÉS de ordenar
-    populateArticleSelect();
-
-    // Aplicar los filtros ACTUALES y renderizar
-    // console.log("[sortArticlesByDate] Ordenación completada. Llamando a applyFiltersAndRender...");
-    applyFiltersAndRender();
-}
+// --- Manejadores de Eventos (Internos) ---
+function handleSearchAction() { const input = DOM.getMainSearchInput(); if(!input) return; const term = input.value || ''; if (term !== state.searchTerm) { state.searchTerm = term; state.currentPage = 1; performSearchAndRender(); }}
+function handleDateFilterClick(event) { const btn = event.target.closest('button[data-range]'); if (!btn) return; const range = btn.dataset.range; if (range === state.selectedDateFilter) return; state.selectedDateFilter=range; state.customStartDate=null; state.customEndDate=null; const startIn=DOM.getDateStartInput(); const endIn=DOM.getDateEndInput(); if(startIn) startIn.value=''; if(endIn) endIn.value=''; state.currentPage=1; const list=DOM.getDateFilterList(); list?.querySelectorAll('button.filter-button').forEach(b => b.classList.remove('active')); btn.classList.add('active'); performSearchAndRender(); }
+function handleApplyDateRange() { const startIn=DOM.getDateStartInput(); const endIn=DOM.getDateEndInput(); if(!startIn || !endIn) return; const sVal=startIn.value; const eVal=endIn.value; if(!sVal || !eVal || !/^\d{4}-\d{2}-\d{2}$/.test(sVal) || !/^\d{4}-\d{2}-\d{2}$/.test(eVal)){alert("Fechas inválidas."); return;} const sD=moment.utc(sVal).toDate(); const eD=moment.utc(eVal).toDate(); if(!moment(sD).isValid() || !moment(eD).isValid() || moment(eD).isBefore(moment(sD))){alert("Rango inválido."); return;} state.selectedDateFilter='custom'; state.customStartDate=sD; state.customEndDate=eD; state.currentPage=1; const list=DOM.getDateFilterList(); list?.querySelectorAll('button.filter-button').forEach(b => b.classList.remove('active')); performSearchAndRender(); }
+function handleSectionFilterClick(event) { const btn = event.target.closest('button[data-section]'); if (!btn) return; const sect = btn.dataset.section; if (sect === state.selectedSection) return; state.selectedSection=sect; state.currentPage=1; const list=DOM.getSectionFilterList(); list?.querySelectorAll('button.filter-button').forEach(b => b.classList.remove('active')); btn.classList.add('active'); performSearchAndRender(); }
+function handleSortChange() { const sel = DOM.getSortOrderSelect(); if(!sel) return; const val = sel.value; const [f, d] = val.split('_'); const newAsc = d === 'asc'; if (state.currentSort.field !== f || state.currentSort.ascending !== newAsc) { state.currentSort.field=f; state.currentSort.ascending=newAsc; state.currentPage=1; performSearchAndRender(); }}
+function handlePaginationClick(event) { const btn = event.target.closest('button[data-page]'); if (!btn || btn.disabled || btn.classList.contains('active')) return; const newP = parseInt(btn.dataset.page, 10); if (!isNaN(newP)) handlePageChange(newP); }
+function handlePageChange(newPage) { const totalP = Math.ceil(state.filteredArticles.length / (state.resultsPerPage || 10)); if (newPage < 1 || newPage > totalP || newPage === state.currentPage) return; state.currentPage = newPage; const rCont = DOM.getSearchResultsContainer(); const pCont = DOM.getPaginationControls(); if(!rCont || !pCont) return; paginateResults(); renderSearchResults(state.paginatedResults, rCont); renderPagination(pCont); const sArea = DOM.getSearchResultsArea(); sArea?.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+function handleEnterKeyPress(event) { if (event.key === 'Enter') { event.preventDefault(); handleSearchAction(); }}
 
 // --- Inicialización de la Vista ---
-
-/**
- * Configura los event listeners para los controles de la vista de noticias.
- */
-export function initializeNewsView() {
-    console.log("[initializeNewsView] Inicializando listeners...");
-    if (!DOM.articleSelect || !DOM.politicianSelect || !DOM.resetFilterBtn || !DOM.sortNewestBtn || !DOM.sortOldestBtn) {
-        console.error("[newsView] Error: No se encontraron todos los elementos de control necesarios.");
-        return;
-    }
-
-    console.log(`[initializeNewsView] Verificando state.allArticles antes de poblar. Longitud: ${state.allArticles?.length ?? 'undefined'}`);
-
-    if (state.allArticles?.length > 0) {
-        console.log("[initializeNewsView] Llamando a populateArticleSelect y populatePoliticianFilter...");
-        populateArticleSelect();
-        populatePoliticianFilter();
-    } else {
-        console.warn("[initializeNewsView] No se poblarán los selects porque state.allArticles está vacío o no es un array.");
-    }
-
-    DOM.articleSelect.addEventListener('change', handleArticleSelectChange);
-    DOM.politicianSelect.addEventListener('change', handlePoliticianFilter);
-    DOM.resetFilterBtn.addEventListener('click', resetNewsView);
-    DOM.sortNewestBtn.addEventListener('click', () => sortArticlesByDate(false));
-    DOM.sortOldestBtn.addEventListener('click', () => sortArticlesByDate(true));
-
-    console.log("[newsView] Listeners configurados.");
+/** Función principal para inicializar la vista de búsqueda. Exportada. */
+export function initializeSearchView() { // ¡EXPORTADA!
+    console.log("[initializeSearchView] Inicializando vista de búsqueda...");
+    const requiredDOMElements = [ DOM.getMainSearchInput(), DOM.getMainSearchButton(), DOM.getDateFilterList(), DOM.getDateStartInput(), DOM.getDateEndInput(), DOM.getApplyDateRangeButton(), DOM.getSectionFilterList(), DOM.getSearchResultsContainer(), DOM.getPaginationControls(), DOM.getSortOrderSelect(), DOM.getResultsCountSpan() ];
+    if (requiredDOMElements.some(el => !el)) { console.error("[initializeSearchView] Error Crítico: Faltan elementos DOM. Abortando."); const nvCont = DOM.getNewsFeedView(); if(nvCont) nvCont.innerHTML = `<p class="error-message">Error al cargar interfaz.</p>`; return; }
+    if (Array.isArray(state.allArticles) && state.allArticles.length > 0) populateSectionFilter(); else console.warn("[initializeSearchView] No hay artículos para poblar filtro.");
+    // --- Añadir Listeners (una sola vez) ---
+    const searchBtn = DOM.getMainSearchButton(); const searchInput = DOM.getMainSearchInput(); const dateList = DOM.getDateFilterList(); const applyRangeBtn = DOM.getApplyDateRangeButton(); const sectionList = DOM.getSectionFilterList(); const sortSelect = DOM.getSortOrderSelect(); const paginationContainer = DOM.getPaginationControls();
+    searchBtn.removeEventListener('click', handleSearchAction); searchInput.removeEventListener('search', handleSearchAction); searchInput.removeEventListener('keypress', handleEnterKeyPress); dateList.removeEventListener('click', handleDateFilterClick); applyRangeBtn.removeEventListener('click', handleApplyDateRange); sectionList.removeEventListener('click', handleSectionFilterClick); sortSelect.removeEventListener('change', handleSortChange); paginationContainer.removeEventListener('click', handlePaginationClick);
+    searchBtn.addEventListener('click', handleSearchAction); searchInput.addEventListener('search', handleSearchAction); searchInput.addEventListener('keypress', handleEnterKeyPress); dateList.addEventListener('click', handleDateFilterClick); applyRangeBtn.addEventListener('click', handleApplyDateRange); sectionList.addEventListener('click', handleSectionFilterClick); sortSelect.addEventListener('change', handleSortChange); paginationContainer.addEventListener('click', handlePaginationClick);
+    console.log("[initializeSearchView] Listeners configurados.");
+    performSearchAndRender(); // Renderizado Inicial
+    console.log("[initializeSearchView] Vista de búsqueda inicializada.");
 }
+
+// Asegurarse que NINGUNA OTRA función tenga 'export'
+console.log("[newsView.js] Módulo cargado.");

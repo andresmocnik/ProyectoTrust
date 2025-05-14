@@ -1,91 +1,106 @@
 // js/ui/navigation.js
-import * as DOM from './domElements.js'; // Importamos todas las referencias del DOM
+import * as DOM from './domElements.js';
+import { state } from '../state.js';
 
-// Importamos funciones de inicialización de vistas (aunque aún no existan o estén vacías)
-// Las necesitaremos aquí para inicializar la vista cuando se cambia a ella.
-import { state } from '../state.js'; // Importamos el estado global
-import { initializeGraph } from '../views/graphView.js';
-import { initializeDashboard } from '../views/timeseriesView.js'; // Cambiamos nombre mentalmente
+// Importar funciones de inicialización/renderizado de CADA vista
 import { renderKeyNews } from '../views/mainView.js';
-import { renderNewsList } from '../views/newsView.js';
-import { sortArticlesByDate } from '../views/newsView.js';
+// --- IMPORTAR performSearchAndRender ---
+import { performSearchAndRender } from '../views/newsView.js'; // Necesitamos llamarla al entrar
+// --- FIN IMPORTACIÓN ---
+import { initializeGraph } from '../views/graphView.js';
+import { initializeDashboard } from '../views/timeseriesView.js';
 
-let currentView = ''; // Variable para guardar el estado de la vista actual
-let dashboardInitialized = false; // Para el dashboard
+let currentView = null;
+// Flags solo para vistas inicializadas LAZY aquí
+let viewsInitialized = {
+    // 'main' y 'news' se manejan diferente ahora
+    graph: false,
+    timeseries: false
+};
 
-// Función para cerrar la sidebar (la necesitamos aquí también)
+// Función auxiliar para cerrar la sidebar
 function closeSidebar() {
-    if (DOM.sidebar && DOM.body) {
-        DOM.sidebar.classList.remove('visible');
-        DOM.body.classList.remove('sidebar-visible');
-        DOM.body.classList.remove('sidebar-overlay-active'); // Quitamos overlay si existe
+    const sidebar = DOM.getSidebar(); const body = DOM.getBody();
+    if (sidebar && body) {
+        sidebar.classList.remove('visible');
+        body.classList.remove('sidebar-visible');
+        body.classList.remove('sidebar-overlay-active');
     }
 }
 
+/**
+ * Función principal para cambiar entre vistas.
+ */
 export function switchView(viewName) {
-    console.log(`[switchView] Iniciando para: ${viewName}`);
-    console.log(`[switchView] currentView (antes):`, currentView);
+    console.log(`[switchView] Solicitud para cambiar a: ${viewName}. Vista actual: ${currentView}`);
+    const body = DOM.getBody();
+    if (!body) { console.error("[switchView] Error crítico: body no encontrado."); return; }
 
-
-    if (!DOM.body || currentView === viewName) {
-         // Si ya estamos en la vista, al menos cerramos la sidebar si está abierta
-         if (DOM.sidebar?.classList.contains('visible')) {
-            closeSidebar();
-         }
-         
-    }
-    
+    // Permitir re-ejecutar si se selecciona la misma vista
+    const previousView = currentView;
     currentView = viewName;
 
-    // Elimina clases de vista anteriores y añade la nueva
-    DOM.body.classList.remove('view-main', 'view-news', 'view-graph', 'view-timeseries');
-    DOM.body.classList.add(`view-${viewName}`);
+    // Gestionar clases CSS
+    if (previousView && previousView !== viewName) body.classList.remove(`view-${previousView}`);
+    if (!body.classList.contains(`view-${viewName}`)) body.classList.add(`view-${viewName}`);
+    console.log(`[switchView] Clase del body actualizada a: ${body.className}`);
 
-    console.log(`[switchView] DOM.body.className (después):`, DOM.body.className); 
-
-    // Actualiza el botón activo en la sidebar
-    DOM.navButtons.forEach(button => {
+    // Actualizar botón activo en sidebar
+    DOM.getNavButtons().forEach(button => {
         button.classList.toggle('active', button.getAttribute('data-view') === viewName);
     });
 
-    console.log(`[switchView] Ejecutando lógica para vista: ${viewName}`); // LOG VISTA ACTIVA
-    // Lógica específica al entrar en una vista (inicializaciones lazy)
-    if (viewName === 'graph') {
-        console.log("[switchView] Inicializando vista del grafo...");
-        initializeGraph(); // Llama a la función para cargar/dibujar el grafo
-    } else if (viewName === 'timeseries' ) {
-        // Aquí iría la inicialización del Dashboard (cargar datos si es necesario, etc.)
-        // Por ahora, podemos llamar a una función placeholder
-        console.log("[switchView] Inicializando vista del dashboard...");
-        initializeDashboard();
-        dashboardInitialized = true;
-    } else if (viewName === 'main') {
-        // Podríamos querer refrescar las noticias clave cada vez que volvemos al inicio
-        renderKeyNews();
-    } else if (viewName === 'news') {
-        // Llama a la función para renderizar la lista COMPLETA de noticias
-        // Usará los artículos del state y aplicará filtros/orden actual si existen
-        console.log("[switchView] Llamando a sortArticlesByDate para actualizar la vista de noticias...");
-        // Idealmente, renderNewsList debería usar el estado de filtro/orden guardado
-        // O podemos pasarle los artículos completos y que ella aplique
-        sortArticlesByDate(state.currentSort.ascending); // Re-aplica orden y filtro actual
-        // renderNewsList(); // Llamar a la función de renderizado principal de newsView
-   }
+    // Ejecutar lógica específica CADA VEZ
+    console.log(`[switchView] Ejecutando lógica para vista: ${viewName}`);
+    try {
+        switch (viewName) {
+            case 'main':
+                if (typeof renderKeyNews === 'function') renderKeyNews();
+                else console.warn("renderKeyNews no disponible.");
+                break;
+            case 'news':
+                console.log("[switchView] Preparando vista de noticias (búsqueda)...");
+                // La vista fue inicializada en main.js.
+                // Ahora, cada vez que entramos, volvemos a llamar a performSearchAndRender
+                // para asegurar que se muestren los resultados correctos con los filtros/orden actual.
+                if (typeof performSearchAndRender === 'function') {
+                    console.log("[switchView] Llamando a performSearchAndRender...");
+                    performSearchAndRender(); // <--- LLAMADA CLAVE
+                } else {
+                    console.warn("[switchView] La función 'performSearchAndRender' no está disponible.");
+                }
+                break;
+            case 'graph':
+                if (!viewsInitialized.graph) {
+                    if (typeof initializeGraph === 'function') initializeGraph();
+                    else console.warn("initializeGraph no disponible.");
+                    viewsInitialized.graph = true;
+                } else {
+                    console.log("[switchView] Vista del grafo ya inicializada.");
+                    // Llama a una función de actualización/ajuste si es necesario al re-entrar
+                    // if (typeof window.graphNetworkInstance?.fit === 'function') window.graphNetworkInstance.fit();
+                }
+                break;
+            case 'timeseries':
+                if (!viewsInitialized.timeseries) {
+                    if (typeof initializeDashboard === 'function') initializeDashboard();
+                    else console.warn("initializeDashboard no disponible.");
+                    viewsInitialized.timeseries = true;
+                } else {
+                    console.log("[switchView] Vista del dashboard ya inicializada.");
+                    // Llama a una función de actualización si es necesario al re-entrar
+                }
+                break;
+            default:
+                console.warn(`[switchView] Lógica no encontrada para: ${viewName}`);
+        }
+    } catch (error) { console.error(`[switchView] Error en lógica para vista '${viewName}':`, error); }
 
-
-    closeSidebar(); // Cerramos la sidebar después de cambiar de vista
-
-     // Opcional: Scroll al inicio de la página
-     //window.scrollTo({ top: 0, behavior: 'smooth' });
-     console.log(`[switchView] Navegación completada a: ${viewName}`)
+    closeSidebar();
+    console.log(`[switchView] Navegación/Ejecución para '${viewName}' completada.`);
 }
 
-export function getCurrentView() {
-    return currentView;
-}
+/** Obtiene la vista actual. */
+export function getCurrentView() { return currentView; }
 
-// Inicializamos la variable currentView basada en la clase inicial del body
-// Esto es un fallback por si la inicialización directa falla
-if (DOM.body.classList.contains('view-main')) currentView = 'main';
-else if (DOM.body.classList.contains('view-news')) currentView = 'news';
-// ... etc para otras vistas si fueran default alguna vez
+console.log("[Navigation] Módulo cargado.");

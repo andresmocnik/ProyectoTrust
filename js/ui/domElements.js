@@ -1,51 +1,77 @@
-// js/ui/domElements.js
-export const body = document.body;
-export const pageContent = document.getElementById('page-content');
+// js/ui/domElements.js - Exporta FUNCIONES para obtener elementos del DOM
 
-// Vistas principales
-export const mainView = document.getElementById('main-view');
-export const newsFeedView = document.getElementById('news-feed-view');
-export const graphView = document.getElementById('graph-view');
-export const timeSeriesView = document.getElementById('timeseries-view'); // Aunque sea dashboard
+console.log("[domElements.js] Módulo cargando...");
 
-// Sidebar
-export const sidebar = document.getElementById('sidebar');
-export const openSidebarBtn = document.getElementById('open-sidebar-btn');
-export const closeSidebarBtn = document.getElementById('close-sidebar-btn');
-export const navButtons = document.querySelectorAll('.sidebar-nav .nav-button');
+// --- Elementos Globales ---
+export function getBody() { return document.body; }
+export function getPageContent() { return document.getElementById('page-content'); }
 
-// --- Controles Vista Noticias (MODIFICADO) ---
-export const articlesContainer = document.getElementById('articles-container');
-// export const articleSearchInput = document.getElementById('article-search-input'); // <-- ELIMINADO O COMENTADO
-// export const articleSearchBtn = document.getElementById('article-search-btn');     // <-- ELIMINADO O COMENTADO
-export const articleSelect = document.getElementById('article-select'); // <-- AÑADIDO
-export const politicianSelect = document.getElementById('politician-select'); // Ya estaba bien
-export const resetFilterBtn = document.getElementById('reset-filter-btn'); // Ya estaba bien
-export const sortNewestBtn = document.getElementById('sort-newest-btn');   // Ya estaba bien
-export const sortOldestBtn = document.getElementById('sort-oldest-btn');   // Ya estaba bien
-// --- Fin Controles Vista Noticias ---
+// --- Vistas Principales (Contenedores) ---
+export function getMainView() { return document.getElementById('main-view'); }
+export function getNewsFeedView() { return document.getElementById('news-feed-view'); }
+export function getGraphView() { return document.getElementById('graph-view'); }
+export function getTimeSeriesView() { return document.getElementById('timeseries-view'); }
 
-// Tooltip
-export const tooltipPopup = document.getElementById('tooltip-popup');
-export const tooltipImg = document.getElementById('tooltip-img');
-export const tooltipDesc = document.getElementById('tooltip-desc');
+// --- Sidebar ---
+export function getSidebar() { return document.getElementById('sidebar'); }
+export function getOpenSidebarBtn() { return document.getElementById('open-sidebar-btn'); }
+export function getCloseSidebarBtn() { return document.getElementById('close-sidebar-btn'); }
+export function getNavButtons() { return document.querySelectorAll('.sidebar-nav .nav-button'); }
 
-// Grafo
-export const graphNetworkContainer = document.getElementById('mynetwork');
+// --- Elementos Vista Búsqueda Noticias ---
+export function getMainSearchInput() { return document.getElementById('main-search-input'); }
+export function getMainSearchButton() { return document.getElementById('main-search-button'); }
+export function getSearchFiltersSidebar() { return document.getElementById('search-filters-sidebar'); }
+export function getDateFilterList() { return document.getElementById('date-filter-list'); }
+export function getDateStartInput() { return document.getElementById('date-start'); }
+export function getDateEndInput() { return document.getElementById('date-end'); }
+export function getApplyDateRangeButton() { return document.getElementById('apply-date-range-button'); }
+export function getSectionFilterList() { return document.getElementById('section-filter-list'); }
+export function getSearchResultsArea() { return document.getElementById('search-results-area'); }
+export function getResultsHeader() { return document.getElementById('results-header'); }
+export function getResultsCountSpan() { return document.getElementById('results-count-span'); }
+export function getSortOrderSelect() { return document.getElementById('sort-order'); }
+export function getSearchResultsContainer() { return document.getElementById('search-results-container'); }
+export function getPaginationControls() { return document.getElementById('pagination-controls'); }
+// IMPORTANTE: Añadir el getter para el select de políticos si _handleNodeClick lo necesita
+export function getNewsPoliticianSelect() { return document.getElementById('politician-select'); } // Asumiendo ID 'politician-select'
 
-// Series Temporales / Dashboard
-export const tsControls = document.getElementById('timeseries-controls');
-export const politicianSelectorsContainer = document.getElementById('politician-selectors');
-export const chartsContainer = document.getElementById('charts-container');
-export const chartsPlaceholder = document.getElementById('charts-placeholder');
+// --- Tooltip ---
+export function getTooltipPopup() { return document.getElementById('tooltip-popup'); }
+export function getTooltipImg() { return document.getElementById('tooltip-img'); }
+export function getTooltipDesc() { return document.getElementById('tooltip-desc'); }
 
-// Vista Principal (Inicio)
-export const keyNewsCardsContainer = document.getElementById('key-news-cards-container');
-export const mainViewButtons = document.querySelectorAll('#main-view .btn[data-target-view]');
+// --- Grafo ---
+// Getter para el contenedor del grafo con logs de depuración
+export function getGraphNetworkContainer() {
+    console.log(`--- [DOM Getter] Intentando obtener #mynetwork AHORA (${new Date().toLocaleTimeString()}) ---`);
+    const graphViewContainer = document.getElementById('graph-view');
+    console.log("--- [DOM Getter] Contenedor padre #graph-view encontrado:", graphViewContainer);
+    if (graphViewContainer) {
+         // Solo intentar obtener estilos si el padre existe
+         try {
+            const styles = window.getComputedStyle(graphViewContainer);
+            console.log("--- [DOM Getter] Estilos display/visibility de #graph-view:", styles.display, styles.visibility);
+         } catch (e) {
+             console.warn("--- [DOM Getter] No se pudieron obtener estilos computados para #graph-view", e);
+         }
+    } else {
+         console.warn("--- [DOM Getter] ¡El contenedor #graph-view tampoco se encuentra!");
+    }
 
-// --- Log de Verificación (Opcional pero útil) ---
-// console.log("DOM Elements Selected:", {
-//     articleSelect: !!articleSelect, // Debería ser true
-//     politicianSelect: !!politicianSelect, // Debería ser true
-//     // articleSearchInput: !!articleSearchInput // Debería ser false o undefined si se eliminó
-// });
+    const element = document.getElementById('mynetwork');
+    console.log("--- [DOM Getter] Resultado getElementById('mynetwork'):", element);
+    return element;
+}
+
+// --- Series Temporales / Dashboard ---
+export function getTsControls() { return document.getElementById('timeseries-controls'); }
+export function getPoliticianSelectorsContainer() { return document.getElementById('politician-selectors'); }
+export function getChartsContainer() { return document.getElementById('charts-container'); }
+export function getChartsPlaceholder() { return document.getElementById('charts-placeholder'); }
+
+// --- Vista Principal (Inicio) ---
+export function getKeyNewsCardsContainer() { return document.getElementById('key-news-cards-container'); }
+export function getMainViewButtons() { return document.querySelectorAll('#main-view .btn[data-target-view]'); }
+
+console.log("[domElements.js] Módulo cargado - Funciones getter exportadas.");
