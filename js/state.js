@@ -3,6 +3,7 @@
 
 export const state = {
     allArticles: [],        // Aquí guardaremos los artículos cargados
+    politicansDB: {},     // Aquí guardaremos los políticos cargados
     graphData: null,        // Para los datos del grafo
     timeSeriesData: null,   // Para los datos de menciones por fecha
     currentSort: { field: 'date', ascending: false }, // Estado inicial de ordenación noticias

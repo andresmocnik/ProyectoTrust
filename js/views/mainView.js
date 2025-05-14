@@ -1,102 +1,104 @@
-// js/views/mainView.js - Lógica para la vista principal/inicio
+// js/views/mainView.js
+import * as DOM from '../ui/domElements.js'; // Necesitamos el contenedor
+import { state } from '../state.js'; // Necesitamos los artículos
+import { switchView } from '../ui/navigation.js'; // Para el botón "Ver Todas" implícito en la tarjeta
 
-import * as DOM from '../ui/domElements.js'; // Importa las funciones getter
-import { state } from '../state.js';
-import { createElement, parseDateString } from '../utils.js';
-import { switchView } from '../ui/navigation.js';
-const moment = window.moment; // Asume carga global
-
-/**
- * Función para crear el HTML de una tarjeta de noticia clave.
- */
-function createKeyNewsCardHTML(article) {
-    if (!article) return '';
+// Función para crear el HTML de una tarjeta de noticia
+function createNewsCardHTML(article) {
+    // Extraer datos del artículo, con valores por defecto
     const title = article.titulo || 'Sin Título';
-    const sourceOrSection = article.seccion?.trim() || 'N/A';
-    const parsedDate = parseDateString(article.fecha_hora);
-    const displayDate = parsedDate && typeof moment !== 'undefined' && moment(parsedDate).isValid()
-        ? moment(parsedDate).fromNow()
-        : (parsedDate ? parsedDate.toLocaleDateString() : 'Fecha N/A');
-    let summary = article.subtitulo || '';
-    if (!summary && typeof article.cuerpo === 'string') { summary = article.cuerpo.substring(0, 120) + (article.cuerpo.length > 120 ? '...' : ''); }
-    summary = summary || 'No hay resumen disponible.';
+    const source = article.fuente || 'Fuente desconocida'; // Asume que tienes 'fuente' en tus datos
+    const date = article.fecha_hora || ''; // Formatear fecha si es necesario
+    const summary = article.subtitulo || article.cuerpo?.substring(0, 100) + '...' || 'No hay resumen disponible.'; // Tomar subtitulo o inicio del cuerpo
     const politicians = article.personas_detectadas_normalizadas || [];
+    // Limitar el número de tags de políticos a mostrar (ej. 3)
     const displayedPoliticians = politicians.slice(0, 3);
     const extraPoliticiansCount = politicians.length - displayedPoliticians.length;
+
+    // Generar HTML para los tags de políticos
     let tagsHTML = displayedPoliticians.map(p => `<span class="tag">${p}</span>`).join('');
-    if (extraPoliticiansCount > 0) tagsHTML += ` <span class="tag tag-more">+${extraPoliticiansCount}</span>`;
-    if (!tagsHTML) tagsHTML = '<span class="tag tag-none">Sin figuras detectadas</span>';
-    const articleIdentifier = article.id || `index-${article.index}`; // Asume que 'index' existe
-    return ` <article class="news-card" data-article-ref="${articleIdentifier}" role="link" tabindex="0"> <h3>${title}</h3> <div class="meta">${sourceOrSection} - ${displayDate}</div> <p class="summary">${summary}</p> <div class="tags"> ${tagsHTML} </div> </article> `;
+    if (extraPoliticiansCount > 0) {
+        tagsHTML += ` <span class="tag tag-more">+${extraPoliticiansCount}</span>`; // Tag para indicar más
+    }
+    if (tagsHTML === '') {
+        tagsHTML = '<span class="tag tag-none">Sin figuras detectadas</span>'; // Mensaje si no hay políticos
+    }
+
+    // Devolver el HTML completo de la tarjeta
+    // Añadimos un data-article-id para identificar la noticia si hacemos clic
+    // Hacemos que toda la tarjeta sea clickeable hacia la vista de noticias
+    return `
+        <article class="news-card" data-article-id="${article.id || ''}" role="link" tabindex="0">
+            <h3>${title}</h3>
+            <div class="meta">${source} - ${date}</div>
+            <p class="summary">${summary}</p>
+            <div class="tags">
+                ${tagsHTML}
+            </div>
+        </article>
+    `;
 }
 
-/**
- * Función principal para renderizar las noticias clave.
- * (MODIFICADA para usar la función getter)
- */
+// Función principal para renderizar las noticias clave
 export function renderKeyNews() {
-    console.log("[renderKeyNews] Iniciando renderizado...");
-
-    // Obtener el contenedor JUSTO AHORA
-    const container = DOM.getKeyNewsCardsContainer();
-
-    // Verificar si se encontró el contenedor
-    if (!container) {
-        console.warn("[renderKeyNews] Contenedor 'key-news-cards-container' NO encontrado al ejecutar renderKeyNews. Omitiendo.");
+    console.log("[renderKeyNews] Iniciando..."); 
+    console.log("[renderKeyNews] DOM.keyNewsCardsContainer:", DOM.keyNewsCardsContainer);
+    console.log("Renderizando Noticias Clave...");
+    if (!DOM.keyNewsCardsContainer) {
+        console.error("Error: Contenedor de tarjetas de noticias clave no encontrado.");
         return;
     }
 
-    container.innerHTML = '<p class="loading-placeholder">Cargando noticias clave...</p>';
+    const container = DOM.keyNewsCardsContainer;
+    container.innerHTML = '<p class="loading-placeholder">Cargando noticias clave...</p>'; // Mostrar carga
 
-    if (!Array.isArray(state.allArticles) || state.allArticles.length === 0) {
-        console.log("[renderKeyNews] No hay artículos disponibles.");
-        container.innerHTML = '<p class="placeholder-message">No hay noticias disponibles.</p>';
+    if (!state.allArticles || state.allArticles.length === 0) {
+        console.warn("No hay artículos disponibles en el estado para mostrar.");
+        container.innerHTML = '<p class="loading-placeholder">No hay noticias disponibles.</p>';
         return;
     }
 
-    const sortedArticles = [...state.allArticles].sort((a, b) => { /* ... lógica de ordenación ... */ });
-    const keyNewsCount = 3;
-    const articlesToShow = sortedArticles.slice(0, keyNewsCount);
+    // Ordenar artículos por fecha (más recientes primero) - Asume que parseDateString existe
+    // Necesitaremos mover parseDateString a utils.js
+    // Por ahora, asumimos que ya están más o menos ordenados o tomamos los primeros N
+    // const sortedArticles = [...state.allArticles].sort((a, b) => /* lógica de ordenación por fecha descendente */);
 
-    if (articlesToShow.length === 0) {
-        container.innerHTML = '<p class="placeholder-message">No hay noticias recientes.</p>';
+    // Tomar las primeras 3 noticias (o las que haya si son menos)
+    const articlesToDisplay = state.allArticles.slice(0, 3);
+
+    if (articlesToDisplay.length === 0) {
+        container.innerHTML = '<p class="loading-placeholder">No hay noticias recientes para mostrar.</p>';
         return;
     }
 
-    console.log(`[renderKeyNews] Renderizando ${articlesToShow.length} noticias clave.`);
-    const cardsHTML = articlesToShow.map(createKeyNewsCardHTML).join('');
+    // Generar el HTML para cada tarjeta y unirlas
+    const cardsHTML = articlesToDisplay.map(createNewsCardHTML).join('');
+
+    // Insertar el HTML en el contenedor
     container.innerHTML = cardsHTML;
 
-    // Añadir listeners (delegación en el contenedor)
-    container.removeEventListener('click', handleKeyNewsCardClick);
-    container.removeEventListener('keydown', handleKeyNewsCardKeydown);
-    container.addEventListener('click', handleKeyNewsCardClick);
-    container.addEventListener('keydown', handleKeyNewsCardKeydown);
+    // Añadir event listeners a las tarjetas creadas (delegación)
+    container.addEventListener('click', (event) => {
+        const card = event.target.closest('.news-card');
+        if (card) {
+            const articleId = card.dataset.articleId;
+            console.log(`Clic en tarjeta de noticia ID: ${articleId}. Navegando a 'news'...`);
+            // Aquí podríamos querer filtrar la vista de noticias para mostrar ESTE artículo
+            // o simplemente navegar a la vista general de noticias.
+            switchView('news');
+            // TODO: Scroll o highlight al artículo específico en la vista 'news' si se desea.
+        }
+    });
+     // Hacer las tarjetas accesibles con teclado
+     container.querySelectorAll('.news-card').forEach(card => {
+        card.addEventListener('keydown', (event) => {
+            if (event.key === 'Enter' || event.key === ' ') {
+                event.preventDefault(); // Evitar scroll con espacio
+                card.click(); // Simular clic
+            }
+        });
+    });
 
-    console.log("[renderKeyNews] Renderizado completado y listeners añadidos.");
+
+    console.log("Noticias Clave renderizadas.");
 }
-
-/**
- * Manejador para clics en las tarjetas de noticias clave (usando delegación).
- */
-function handleKeyNewsCardClick(event) {
-    const card = event.target.closest('.news-card[data-article-ref]');
-    if (card) {
-        const articleRef = card.dataset.articleRef;
-        console.log(`[handleKeyNewsCardClick] Clic en tarjeta ref: ${articleRef}. Navegando a 'news'...`);
-        switchView('news');
-    }
-}
-
-/**
- * Manejador para eventos de teclado en las tarjetas (accesibilidad).
- */
-function handleKeyNewsCardKeydown(event) {
-     const card = event.target.closest('.news-card[data-article-ref]');
-     if (card && (event.key === 'Enter' || event.key === ' ')) {
-        event.preventDefault();
-        card.click();
-     }
-}
-
-console.log("[mainView.js] Módulo cargado."); // Log para confirmar carga del módulo
