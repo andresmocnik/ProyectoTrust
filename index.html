@@ -117,7 +117,7 @@
                      <div class="filter-buttons" style="flex-basis: 100%; display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px;">
                         <button id="sort-newest-btn" class="btn btn-info" title="Ordenar por más recientes"><i class="fas fa-arrow-down-short-wide"></i> Recientes</button>
                         <button id="sort-oldest-btn" class="btn btn-info" title="Ordenar por más antiguos"><i class="fas fa-arrow-up-wide-short"></i> Antiguos</button>
-                        <button id="reset-filter-btn" class="btn btn-danger" title="Mostrar todos los artículos"><i class="fas fa-times"></i> Reset</button>
+                        <button id="reset-news-filter-btn" class="btn btn-danger" title="Mostrar todos los artículos"><i class="fas fa-times"></i> Reset</button> <!-- ID cambiado para evitar conflicto -->
                     </div>
                </section>
                 <main id="articles-container">
@@ -136,7 +136,30 @@
                   <p>Este grafo muestra qué personas fueron mencionadas juntas en los mismos artículos. El tamaño del círculo indica cuántas veces aparece la persona, y el grosor de la línea cuántas veces aparecen juntas.</p>
                   <p><i class="fas fa-info-circle"></i> Haz clic en un nodo (círculo) para ver las noticias relacionadas con esa persona.</p>
               </div>
-              <div id="mynetwork"></div> <!-- Quitar estilos inline -->
+
+              <!-- === NUEVOS CONTROLES DE FILTRO PARA EL GRAFO === -->
+              <div id="graph-filters" style="padding: 15px; background-color: var(--background-secondary); margin-bottom: 20px; border-radius: 8px; max-width: 800px; margin-left: auto; margin-right: auto; display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: center;">
+                  <div style="flex: 1 1 250px; min-width: 200px;">
+                      <label for="focus-politician-select" style="display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-primary);">Político Principal:</label>
+                      <select id="focus-politician-select" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; background-color: var(--background-primary); color: var(--text-primary);">
+                          <option value="">-- Seleccionar Político --</option>
+                          <!-- Options will be populated by JavaScript -->
+                      </select>
+                  </div>
+
+                  <div style="flex: 0 1 180px; min-width: 150px;">
+                      <label for="relation-threshold-input" style="display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-primary);">Mín. Apariciones Conjuntas:</label>
+                      <input type="number" id="relation-threshold-input" value="5" min="1" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; background-color: var(--background-primary); color: var(--text-primary);">
+                  </div>
+
+                  <div class="filter-buttons" style="flex-basis: 100%; display: flex; justify-content: center; gap: 12px; margin-top: 10px;">
+                        <button id="apply-filter-btn" class="btn btn-primary"><i class="fas fa-filter"></i> Aplicar Filtro</button>
+                        <button id="reset-graph-filter-btn" class="btn btn-secondary"><i class="fas fa-undo"></i> Mostrar Todo</button> <!-- ID cambiado para evitar conflicto -->
+                  </div>
+              </div>
+              <!-- === FIN CONTROLES DE FILTRO === -->
+
+              <div id="mynetwork" style="width: 100%; height: 600px; border: 1px solid var(--border-color-strong);"></div> <!-- Quitar estilos inline, usar CSS si es necesario -->
         </div>
         <!-- === FIN VISTA 2 === -->
 
