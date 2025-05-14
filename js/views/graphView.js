@@ -2,15 +2,18 @@
 
 import * as DOM from '../ui/domElements.js';    // Contenedor del grafo #mynetwork
 import { state } from '../state.js';           // Acceso a politiciansDB y allArticles
-// import { switchView } from '../ui/navigation.js'; // Ya no se usa directamente aquí
 import { createElement } from '../utils.js'; // Para crear elementos de lista en el modal
 
-let isInitialized = false;  // Control para inicializar el grafo solo una vez
-let networkInstance = null; // Guardar la instancia de Vis.js
-let graphNodesData = null; // Guardar datasets para buscar relaciones al mostrar modal
-let graphEdgesData = null;
+let isInitialized = false;
+let networkInstance = null;
+let graphNodesData = null; // Dataset actualmente en uso por el grafo (puede ser filtrado)
+let graphEdgesData = null; // Dataset actualmente en uso por el grafo (puede ser filtrado)
 
-// --- Elementos del Modal (Obtener referencias una vez) ---
+// Para almacenar los datos originales y poder resetear el filtro
+let originalGraphNodesData = null;
+let originalGraphEdgesData = null;
+
+// --- Elementos del Modal ---
 const modalOverlay = document.getElementById('politician-modal-overlay');
 const modalContent = document.getElementById('politician-modal');
 const closeModalBtn = document.getElementById('close-modal-btn');
@@ -20,6 +23,14 @@ const modalArticleCount = document.getElementById('modal-article-count');
 const modalArticleList = document.getElementById('modal-article-list');
 const modalRelatedCount = document.getElementById('modal-related-count');
 const modalRelatedList = document.getElementById('modal-related-list');
+
+// --- Elementos de Filtro ---
+const focusPoliticianSelect = document.getElementById('focus-politician-select');
+const relationThresholdInput = document.getElementById('relation-threshold-input');
+const applyFilterBtn = document.getElementById('apply-filter-btn');
+// IMPORTANT: Make sure this ID matches your HTML for the graph reset button
+const graphResetFilterBtn = document.getElementById('reset-graph-filter-btn');
+
 
 // --- Funciones del Modal ---
 
@@ -77,12 +88,9 @@ function _showPoliticianModal(politicianName) {
     modalArticleCount.textContent = relatedArticles.length;
     modalArticleList.innerHTML = ''; // Limpiar antes de añadir
     if (relatedArticles.length > 0) {
-        // Ordenar por fecha (más reciente primero) si tenemos fechas válidas
-        // relatedArticles.sort((a, b) => (parseDateString(b.fecha_hora)?.getTime() || 0) - (parseDateString(a.fecha_hora)?.getTime() || 0));
         relatedArticles.slice(0, 25).forEach(article => { // Limitar a 25 artículos
             const li = createElement('li');
             const link = createElement('a', {
-                // Usar título o un fragmento si no hay título
                 textContent: article.titulo || article.cuerpo?.substring(0, 50) + '...' || 'Artículo sin título',
                 href: article.link || '#',
                 title: `Fuente: ${article.fuente || 'N/A'} - Fecha: ${article.fecha_hora || 'N/A'}`,
@@ -102,18 +110,18 @@ function _showPoliticianModal(politicianName) {
     // 3. Llenar lista de Políticos Relacionados (Mencionados Juntos)
     modalRelatedList.innerHTML = '<li>Buscando relaciones...</li>'; // Placeholder
     const relatedPoliticians = new Map();
-    if (graphEdgesData && graphNodesData) { // Asegurarse que los datasets del grafo estén listos
-        graphEdgesData.forEach(edge => {
+    // IMPORTANTE: Usar graphEdgesData (el actual, posiblemente filtrado) y graphNodesData
+    if (graphEdgesData && graphNodesData) {
+        graphEdgesData.forEach(edge => { // Iterar sobre las aristas actualmente mostradas
             let relatedName = null;
-            let count = edge.value || 1; // 'value' de la arista = co-ocurrencias
+            let count = edge.value || 1;
 
-            if (edge.from === politicianName && graphNodesData.get(edge.to)) { // Nodo 'to' existe?
+            if (edge.from === politicianName && graphNodesData.get(edge.to)) {
                 relatedName = edge.to;
-            } else if (edge.to === politicianName && graphNodesData.get(edge.from)) { // Nodo 'from' existe?
+            } else if (edge.to === politicianName && graphNodesData.get(edge.from)) {
                 relatedName = edge.from;
             }
 
-            // Acumular conteo si encontramos una relación válida
             if (relatedName) {
                 relatedPoliticians.set(relatedName, (relatedPoliticians.get(relatedName) || 0) + count);
             }
@@ -131,16 +139,7 @@ function _showPoliticianModal(politicianName) {
     if (sortedRelated.length > 0) {
         sortedRelated.forEach(([name, count]) => {
             const li = createElement('li');
-            // Hacer clickeable para potencialmente abrir el modal de ESE político? (Recursivo)
-             const nameSpan = createElement('span', { textContent: name, style:"flex-grow: 1;" }); // Nombre ocupa espacio disponible
-             /* // Opcional: Hacer nombre clickeable
-             nameSpan.style.cursor = 'pointer';
-             nameSpan.style.textDecoration = 'underline dotted';
-             nameSpan.onclick = () => {
-                 console.log(`Clic en relacionado: ${name}`);
-                 _showPoliticianModal(name); // Podría causar problemas si la estructura no lo maneja bien
-             };
-             */
+             const nameSpan = createElement('span', { textContent: name, style:"flex-grow: 1;" });
             const countSpan = createElement('span', {
                  className: 'relation-count',
                  textContent: `${count} ${count === 1 ? 'vez' : 'veces'}`
@@ -162,13 +161,14 @@ function _showPoliticianModal(politicianName) {
 
 
 // --- Configuración y Dibujo del Grafo ---
-
 /**
  * Define las opciones de configuración para Vis.js adaptadas al tema oscuro.
  * @param {boolean} [hasImageNodes=false] - Indica si se usarán nodos de imagen.
  * @returns {object} Objeto de opciones de Vis.js.
  */
 function _getVisOptions(hasImageNodes = false) {
+    // YOUR EXISTING CODE FOR THIS FUNCTION HERE
+    // This is the function from your original graphView.js
     const colors = {
         background: '#1a1d21', nodeBorder: '#8ab4f8', nodeBackground: '#2c3035',
         nodeHighlightBorder: '#a1c5ff', nodeHighlightBackground: '#3a3f44',
@@ -201,16 +201,17 @@ function _getVisOptions(hasImageNodes = false) {
     };
 }
 
-
+// --- Manejadores de Eventos del Grafo ---
 /**
  * Maneja el evento de clic en un nodo del grafo -> Muestra el modal.
  * @param {object} params - Objeto de evento de Vis.js.
  */
 function _handleNodeClick(params) {
+    // YOUR EXISTING CODE FOR THIS FUNCTION HERE
     if (!params || !params.nodes || params.nodes.length === 0) return;
     const nodeId = params.nodes[0];
     console.log(`[graphView] Clic en nodo: ${nodeId}. Mostrando modal...`);
-    _showPoliticianModal(nodeId); // Llamar a la función que muestra el modal
+    _showPoliticianModal(nodeId);
 }
 
 /**
@@ -220,18 +221,18 @@ function _handleNodeClick(params) {
  * @param {vis.DataSet} nodesDataSet - Dataset de nodos.
  */
 function _handleEdgeClick(params, edgesDataSet, nodesDataSet) {
+    // YOUR EXISTING CODE FOR THIS FUNCTION HERE
      if (!params || !params.edges || params.edges.length === 0) return;
 
      const edgeId = params.edges[0];
      const edgeData = edgesDataSet.get(edgeId);
 
-     if (edgeData && nodesDataSet) { // Verificar que nodesDataSet exista
+     if (edgeData && nodesDataSet) {
          const fromNode = nodesDataSet.get(edgeData.from);
          const toNode = nodesDataSet.get(edgeData.to);
          if (fromNode && toNode) {
              const message = `Relación: ${fromNode.label} - ${toNode.label}\nMencionados juntos en ${edgeData.value || 'N/A'} artículos.`;
              // console.log(`[graphView] Clic en arista: ${fromNode.label} (${edgeData.value}) ${toNode.label}`);
-              
          }
      }
 }
@@ -246,8 +247,6 @@ async function _loadAndDrawGraph() {
     DOM.graphNetworkContainer.innerHTML = '<p class="loading-placeholder">Cargando red de influencia...</p>';
 
     try {
-        // Carga de datos del grafo
-        console.log("[graphView] Cargando graph_data.json...");
         const response = await fetch('graph_data.json');
         if (!response.ok) throw new Error(`HTTP ${response.status} al cargar graph_data.json`);
         const graphData = await response.json();
@@ -257,7 +256,6 @@ async function _loadAndDrawGraph() {
              return;
         }
 
-        // Preparación de nodos con imágenes (usando state.politiciansDB)
         console.log("[graphView] Preparando nodos con imágenes...");
         let nodesWithImages = [];
         let hasImageNodes = false;
@@ -272,75 +270,199 @@ async function _loadAndDrawGraph() {
             }
         }
 
-        // Crear Datasets y guardar referencias
-        console.log("[graphView] Creando Datasets...");
-        graphNodesData = new vis.DataSet(nodesWithImages); // Guardar dataset de nodos
-        graphEdgesData = new vis.DataSet(graphData.edges); // Guardar dataset de aristas
+        console.log("[graphView] Creando Datasets originales...");
+        originalGraphNodesData = new vis.DataSet(nodesWithImages);
+        originalGraphEdgesData = new vis.DataSet(graphData.edges);
 
-        // Obtener opciones y crear instancia de Vis.js
+        graphNodesData = new vis.DataSet(originalGraphNodesData.get());
+        graphEdgesData = new vis.DataSet(originalGraphEdgesData.get());
+
         const options = _getVisOptions(hasImageNodes);
         console.log("[graphView] Creando instancia de vis.Network...");
         if (typeof vis === 'undefined' || !vis.Network) throw new Error("Vis.js no cargado.");
-        DOM.graphNetworkContainer.innerHTML = ''; // Limpiar placeholder de carga
+        DOM.graphNetworkContainer.innerHTML = '';
         networkInstance = new vis.Network(DOM.graphNetworkContainer, { nodes: graphNodesData, edges: graphEdgesData }, options);
 
-        // Configurar eventos
         networkInstance.once("stabilizationIterationsDone", () => {
             console.log("[graphView] Estabilización completada. Deteniendo física.");
             networkInstance.setOptions({ physics: { enabled: false } });
-            // networkInstance.fit({ animation: ... }); // Opcional
         });
         networkInstance.on("click", (params) => {
-            _handleNodeClick(params); // Llama a la versión que abre el modal
-            _handleEdgeClick(params, graphEdgesData, graphNodesData); // Pasa los datasets guardados
+            _handleNodeClick(params);
+            _handleEdgeClick(params, graphEdgesData, graphNodesData);
         });
 
         console.log("[graphView] Grafo dibujado y listo.");
+        _populatePoliticianSelector();
 
     } catch (error) {
         console.error("[graphView] ERROR FATAL durante carga/dibujo:", error);
         DOM.graphNetworkContainer.innerHTML = `<p class="error-placeholder" style="color: var(--color-danger);">Error al generar la red: ${error.message}</p>`;
-        isInitialized = false; // Permitir reintentar?
+        isInitialized = false;
     }
 }
 
+// --- FUNCIONES DE FILTRADO ---
+function _populatePoliticianSelector() {
+    if (!focusPoliticianSelect || !originalGraphNodesData) {
+        console.warn("[graphView._populatePoliticianSelector] Selector o datos originales no disponibles.");
+        return;
+    }
+
+    focusPoliticianSelect.innerHTML = '<option value="">-- Seleccionar Político --</option>';
+    const politicians = originalGraphNodesData.get({
+        fields: ['id', 'label'],
+        filter: item => item.label
+    });
+
+    politicians.sort((a, b) => a.label.localeCompare(b.label));
+
+    politicians.forEach(politician => {
+        const option = createElement('option', {
+            value: politician.id,
+            textContent: politician.label
+        });
+        focusPoliticianSelect.appendChild(option);
+    });
+    console.log("[graphView] Selector de político para filtro poblado.");
+}
+
+function _applyGraphFilter() {
+    if (!networkInstance || !originalGraphNodesData || !originalGraphEdgesData) {
+        console.warn("[graphView._applyGraphFilter] Grafo o datos originales no listos.");
+        return;
+    }
+
+    const focusPoliticianId = focusPoliticianSelect.value;
+    const threshold = parseInt(relationThresholdInput.value, 10);
+
+    if (!focusPoliticianId) {
+        alert("Por favor, seleccione un político principal para filtrar.");
+        return;
+    }
+    if (isNaN(threshold) || threshold < 1) {
+        alert("Por favor, ingrese un umbral de relación válido (número mayor o igual a 1).");
+        return;
+    }
+
+    console.log(`[graphView] Aplicando filtro: Político=${focusPoliticianId}, Umbral=${threshold}`);
+
+    const filteredNodes = new vis.DataSet();
+    const filteredEdges = new vis.DataSet();
+
+    const focusNode = originalGraphNodesData.get(focusPoliticianId);
+    if (focusNode) {
+        filteredNodes.add(focusNode);
+    } else {
+        console.error(`[graphView._applyGraphFilter] Nodo de foco ${focusPoliticianId} no encontrado.`);
+        _resetGraphFilter();
+        return;
+    }
+
+    originalGraphEdgesData.forEach(edge => {
+        if (edge.value >= threshold) {
+            if (edge.from === focusPoliticianId) {
+                const toNode = originalGraphNodesData.get(edge.to);
+                if (toNode) {
+                    if (!filteredNodes.get(edge.to)) filteredNodes.add(toNode);
+                    filteredEdges.add(edge);
+                }
+            } else if (edge.to === focusPoliticianId) {
+                const fromNode = originalGraphNodesData.get(edge.from);
+                if (fromNode) {
+                    if (!filteredNodes.get(edge.from)) filteredNodes.add(fromNode);
+                    filteredEdges.add(edge);
+                }
+            }
+        }
+    });
+
+    graphNodesData = filteredNodes;
+    graphEdgesData = filteredEdges;
+
+    networkInstance.setData({
+        nodes: graphNodesData,
+        edges: graphEdgesData
+    });
+    networkInstance.fit({ animation: { duration: 1000, easingFunction: 'easeInOutQuad' } });
+    console.log(`[graphView] Filtro aplicado. Nodos: ${graphNodesData.length}, Aristas: ${graphEdgesData.length}`);
+}
+
+function _resetGraphFilter() {
+    if (!networkInstance || !originalGraphNodesData || !originalGraphEdgesData) {
+        console.warn("[graphView._resetGraphFilter] Grafo o datos originales no listos.");
+        return;
+    }
+
+    graphNodesData = new vis.DataSet(originalGraphNodesData.get());
+    graphEdgesData = new vis.DataSet(originalGraphEdgesData.get());
+
+    networkInstance.setData({
+        nodes: graphNodesData,
+        edges: graphEdgesData
+    });
+    networkInstance.fit({ animation: { duration: 1000, easingFunction: 'easeInOutQuad' } });
+
+    if (focusPoliticianSelect) focusPoliticianSelect.value = "";
+    if (relationThresholdInput) relationThresholdInput.value = "5"; // Default or desired value
+    console.log("[graphView] Filtro reseteado. Mostrando grafo completo.");
+}
+
+
 /**
  * Función pública exportada para inicializar la vista del grafo.
- * Se asegura de que el grafo se cargue y dibuje solo la primera vez.
  */
 export function initializeGraph() {
     console.log(`[graphView.initializeGraph] Solicitud. ¿Inicializado?: ${isInitialized}`);
     if (!isInitialized && DOM.graphNetworkContainer) {
-        // Verificar si los datos necesarios (state.politiciansDB) están listos
-        if (Object.keys(state.politiciansDB).length === 0) {
-            console.warn("[graphView.initializeGraph] DB de políticos aún no cargada. Reintentando en 500ms...");
-            setTimeout(initializeGraph, 500); // Reintentar después de un delay
+        if (Object.keys(state.politiciansDB).length === 0 || (state.allArticles && state.allArticles.length === 0) ) {
+            console.warn("[graphView.initializeGraph] DB de políticos o artículos aún no cargada. Reintentando en 500ms...");
+            setTimeout(initializeGraph, 500);
             return;
         }
         isInitialized = true;
         _loadAndDrawGraph();
     } else if (isInitialized) {
         console.log("[graphView.initializeGraph] Grafo ya inicializado.");
+        // If re-initializing view, ensure selector is populated if data is available
+        if (originalGraphNodesData && focusPoliticianSelect && focusPoliticianSelect.options.length <=1) {
+            _populatePoliticianSelector();
+        }
     } else {
         console.error("[graphView.initializeGraph] Contenedor #mynetwork no encontrado.");
     }
 }
 
-// --- Listeners del Modal (Asegurarse que se añadan una sola vez) ---
-function setupModalListeners() {
+// --- Listeners del Modal y Filtro (DEFINIR AL FINAL) ---
+function setupEventListeners() {
+    // Modal
     if (closeModalBtn && !closeModalBtn.dataset.listenerAttached) {
         closeModalBtn.addEventListener('click', _hidePoliticianModal);
-        closeModalBtn.dataset.listenerAttached = 'true'; // Marcar como añadido
+        closeModalBtn.dataset.listenerAttached = 'true';
     }
     if (modalOverlay && !modalOverlay.dataset.listenerAttached) {
         modalOverlay.addEventListener('click', (event) => {
-            if (event.target === modalOverlay) { // Clic solo en el fondo
+            if (event.target === modalOverlay) {
                 _hidePoliticianModal();
             }
         });
-        modalOverlay.dataset.listenerAttached = 'true'; // Marcar como añadido
+        modalOverlay.dataset.listenerAttached = 'true';
+    }
+
+    // Filtros
+    if (applyFilterBtn && !applyFilterBtn.dataset.listenerAttached) {
+        applyFilterBtn.addEventListener('click', _applyGraphFilter);
+        applyFilterBtn.dataset.listenerAttached = 'true';
+    }
+
+    // Uso de la constante graphResetFilterBtn definida arriba
+    if (graphResetFilterBtn && !graphResetFilterBtn.dataset.listenerAttached) {
+        graphResetFilterBtn.addEventListener('click', _resetGraphFilter);
+        graphResetFilterBtn.dataset.listenerAttached = 'true';
+    } else if (!graphResetFilterBtn) {
+         console.warn("[graphView] Botón 'reset-graph-filter-btn' no encontrado para adjuntar listener.");
     }
 }
 
-// Llamar a la configuración de listeners del modal una vez que el script carga
-setupModalListeners();
+// Llamar a la configuración de listeners DESPUÉS de que todas las funciones estén definidas.
+setupEventListeners();

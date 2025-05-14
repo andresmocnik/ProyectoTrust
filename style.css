@@ -129,8 +129,15 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 #article-search-btn:hover { background-color: var(--color-accent-hover); }
 #sort-newest-btn, #sort-oldest-btn { background-color: var(--color-info); color: var(--bg-primary); }
 #sort-newest-btn:hover, #sort-oldest-btn:hover { background-color: var(--color-info-hover); }
-#reset-filter-btn { background-color: var(--color-danger); color: var(--bg-primary); }
-#reset-filter-btn:hover { background-color: var(--color-danger-hover); }
+
+/* Ensure reset buttons from different views are styled if they use .btn .btn-danger */
+#reset-news-filter-btn, #reset-graph-filter-btn {
+    /* Styles already covered by .btn and .btn-danger if applied in HTML */
+}
+#reset-news-filter-btn:hover, #reset-graph-filter-btn:hover {
+    /* Styles already covered by .btn and .btn-danger:hover if applied in HTML */
+}
+
 
 /* --- Vista Lector Noticias (Ajustados) --- */
 #articles-container { max-width: 600px; margin: 18px auto; padding: 0; background-color: transparent; box-shadow: none; }
@@ -151,31 +158,29 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 
 /* --- Vista Grafo (Ajustados para Descripción y Tamaño) --- */
 .graph-description {
-    /* max-width eliminado para ocupar todo el ancho */
-    margin: 0 auto 15px auto; /* Margen inferior */
+    margin: 0 auto 15px auto;
     text-align: center;
-    padding: 0 20px; /* Padding lateral */
+    padding: 0 20px;
 }
 .graph-description p {
     color: var(--text-secondary);
     margin-bottom: 5px;
-    font-size: 0.9em; /* Fuente más pequeña */
+    font-size: 0.9em;
     line-height: 1.5;
 }
 .graph-description p:last-child {
-    font-size: 0.85em; /* Fuente hint aún más pequeña */
+    font-size: 0.85em;
     color: var(--text-muted);
 }
 .graph-description i { margin-right: 4px; color: var(--color-info); }
 
 #mynetwork {
     width: 100%;
-    height: 85vh; /* Más altura */
-    min-height: 600px; /* Más altura mínima */
-    /* max-width eliminado */
+    height: 85vh;
+    min-height: 600px;
     border: 1px solid var(--border-color);
     background-color: var(--bg-primary);
-    margin: 10px auto 15px auto; /* Menos margen superior */
+    margin: 10px auto 15px auto;
     border-radius: 8px;
     box-sizing: border-box;
 }
@@ -185,6 +190,107 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 }
 #mynetwork .loading-placeholder { color: var(--text-secondary); }
 #mynetwork .error-placeholder { color: var(--color-danger); }
+
+
+/* --- ESTILOS PARA FILTROS DEL GRAFO --- */
+#graph-filters {
+    padding: 15px;
+    background-color: var(--bg-secondary);
+    margin-bottom: 20px;
+    border-radius: 8px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    align-items: flex-end;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+}
+
+#graph-filters > div {
+    flex-grow: 1;
+    min-width: 180px;
+}
+#graph-filters > div:last-child {
+    flex-basis: 100%;
+    margin-top: 10px;
+}
+
+#graph-filters label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+    color: var(--text-secondary);
+    font-size: 0.9em;
+}
+
+#graph-filters select,
+#graph-filters input[type="number"] {
+    width: 100%;
+    padding: 9px 10px;
+    border: 1px solid var(--border-color);
+    border-radius: 4px;
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    font-size: 0.95em;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    /* Custom arrow */
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23e8eaed%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.4-5.4-13z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px 10px; /* Ajusta el tamaño de la flecha */
+    padding-right: 30px; /* Espacio para la flecha personalizada */
+}
+/* Para Firefox, puede que necesites un padding específico si la flecha no se alinea bien */
+@-moz-document url-prefix() {
+    #graph-filters select {
+        padding-right: 25px; /* Ajuste para Firefox */
+    }
+}
+
+
+#graph-filters select:focus,
+#graph-filters input[type="number"]:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.3);
+}
+
+/* === ESTILOS PARA LAS OPCIONES DEL SELECT === */
+#graph-filters select option {
+    background-color: var(--bg-primary); /* Fondo oscuro para cada opción */
+    color: var(--text-primary);          /* Texto claro para cada opción */
+    padding: 8px 10px;                   /* Padding para las opciones */
+}
+
+/* Estilo para la opción seleccionada/hover dentro del desplegable */
+#graph-filters select option:hover {
+    background-color: var(--color-accent);  /* Color de acento al pasar el mouse */
+    color: var(--bg-primary);               /* Texto oscuro sobre fondo de acento */
+}
+
+#graph-filters select option:checked {
+     background-color: var(--color-accent);
+     color: var(--bg-primary);
+}
+/* === FIN ESTILOS SELECT OPTIONS === */
+
+#graph-filters .filter-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    width: 100%;
+}
+
+#graph-filters .btn i {
+    margin-right: 6px;
+}
+
 
 /* --- Vista Dashboard (Ajustados) --- */
 #timeseries-controls { max-width: 650px; margin: 18px auto; border-bottom: 1px solid var(--border-color); }
@@ -256,6 +362,7 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 .discover-network-section h2 { font-size: 1.9em; color: var(--text-primary); margin-bottom: 10px; }
 .discover-visual img { max-width: 170px; opacity: 0.5; margin-top: 20px; }
 
+
 /* --- Ajustes Responsive (Ajustados) --- */
 @media (max-width: 768px) {
     /* Mostrar overlay en móvil */
@@ -270,18 +377,41 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
      .main-view > header { padding: 0.8rem 0; margin: -10px -10px 14px -10px; }
      .main-view > header h1 { font-size: 1.4em; }
 
-     .search-controls { padding: 10px; gap: 10px; flex-direction: column; align-items: stretch; max-width: 95%; } /* Hacer más ancho en móvil */
+     .search-controls { padding: 10px; gap: 10px; flex-direction: column; align-items: stretch; max-width: 95%; }
      .search-controls > div { margin-bottom: 7px; flex-basis: auto !important; }
-     .input-group { flex-grow: 0; } /* Evitar que crezca innecesariamente */
-     .search-controls input[type="text"] { min-width: 150px; } /* Ancho mínimo para búsqueda */
-     #news-feed-view .search-controls > div:nth-child(2) { min-width: 150px; } /* Ancho mínimo para select */
+     .input-group { flex-grow: 0; }
+     .search-controls input[type="text"] { min-width: 150px; }
+     #news-feed-view .search-controls > div:nth-child(2) { min-width: 150px; }
      .filter-buttons { justify-content: center; gap: 6px; }
+
+    /* Ajustes para #graph-filters en móvil */
+    #graph-filters {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 10px;
+        padding: 10px;
+    }
+    #graph-filters > div {
+        min-width: unset;
+        flex-grow: 0;
+    }
+    #graph-filters > div:last-child {
+         margin-top: 5px;
+    }
+    #graph-filters .filter-buttons {
+        flex-direction: column;
+        gap: 8px;
+    }
+    #graph-filters .filter-buttons .btn {
+        width: 100%;
+    }
+
 
      .article { padding: 14px; margin-bottom: 14px; }
      .article h2 { font-size: 1.3em; }
      .article h3 { font-size: 1.05em; }
 
-     #mynetwork { height: 75vh; min-height: 450px; margin: 14px auto; } /* Más altura relativa en móvil */
+     #mynetwork { height: 75vh; min-height: 450px; margin: 14px auto; }
      .graph-description p { font-size: 0.85em; }
      .graph-description p:last-child { font-size: 0.8em; }
 
@@ -290,7 +420,7 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
      #politician-selectors { grid-template-columns: 1fr; }
 
      .hero-section, .discover-network-section { padding: 27px 10px; gap: 20px; text-align: center; flex-direction: column; }
-     .hero-content, .discover-content { max-width: 100%; } /* Ocupar ancho */
+     .hero-content, .discover-content { max-width: 100%; }
      .hero-section h1 { font-size: 1.8em; }
      .hero-section p, .discover-network-section p { font-size: 0.95em; margin-bottom: 15px; }
      .hero-buttons, .section-cta, .discover-content button { justify-content: center; gap: 8px;}
@@ -310,11 +440,11 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 
 /* Ajustes para pantallas MUY grandes (Opcional) */
 @media (min-width: 1600px) {
-     html { font-size: 72%; } /* Ligeramente más grande */
+     html { font-size: 72%; }
      #page-content { padding: 20px 40px; }
      .search-controls { max-width: 750px; }
      #articles-container { max-width: 700px; }
-     #mynetwork { max-width: 100%; /* Permitir que ocupe todo */ }
+     #mynetwork { max-width: 100%; }
 }
 
 /* --- Estilos Modal Detalles Político --- */
@@ -325,33 +455,33 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.75); /* Fondo oscuro semi-transparente */
-    display: none; /* Oculto por defecto */
+    background-color: rgba(0, 0, 0, 0.75);
+    display: none;
     justify-content: center;
     align-items: center;
-    z-index: 1060; /* Encima de todo, excepto quizás tooltips muy persistentes */
+    z-index: 1060;
     opacity: 0;
     transition: opacity 0.3s ease-in-out;
 }
 
 .modal-overlay.visible {
-    display: flex; /* Mostrar usando flex para centrar */
+    display: flex;
     opacity: 1;
 }
 
 .modal-content {
     background-color: var(--bg-secondary);
     color: var(--text-primary);
-    padding: 25px 30px; /* Padding interno */
+    padding: 25px 30px;
     border-radius: 10px;
     box-shadow: 0 5px 25px rgba(0, 0, 0, 0.4);
     width: 90%;
-    max-width: 650px; /* Ancho máximo */
-    max-height: 85vh; /* Altura máxima relativa al viewport */
-    overflow: hidden; /* Contener elementos internos */
+    max-width: 650px;
+    max-height: 85vh;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
-    position: relative; /* Para posicionar el botón de cierre */
+    position: relative;
     transform: scale(0.95);
     transition: transform 0.3s ease-in-out;
 }
@@ -366,7 +496,7 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     right: 15px;
     background: none;
     border: none;
-    font-size: 2.5rem; /* Tamaño 'x' */
+    font-size: 2.5rem;
     font-weight: bold;
     color: var(--text-muted);
     cursor: pointer;
@@ -388,40 +518,39 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 }
 
 .modal-img {
-    width: 80px; /* Tamaño imagen */
+    width: 80px;
     height: 80px;
-    border-radius: 50%; /* Imagen circular */
-    object-fit: cover; /* Asegurar que la imagen cubra el círculo */
+    border-radius: 50%;
+    object-fit: cover;
     border: 2px solid var(--color-accent);
     flex-shrink: 0;
-    background-color: var(--bg-tertiary); /* Fondo si no carga imagen */
+    background-color: var(--bg-tertiary);
 }
-.modal-img[src=""], /* Ocultar si src está vacío */
-.modal-img:not([src]) { /* Ocultar si no tiene atributo src */
+.modal-img[src=""], 
+.modal-img:not([src]) {
     display: none;
 }
 
 
 .modal-header h2 {
     margin: 0;
-    font-size: 1.8em; /* Tamaño nombre */
+    font-size: 1.8em;
     font-weight: 600;
     color: var(--text-primary);
     line-height: 1.3;
 }
 
 .modal-body {
-    overflow-y: auto; /* Permitir scroll si el contenido es largo */
-    padding-right: 10px; /* Espacio para la scrollbar */
+    overflow-y: auto;
+    padding-right: 10px;
     display: grid;
-    grid-template-columns: 1fr; /* Una columna por defecto */
+    grid-template-columns: 1fr;
     gap: 25px;
 }
 
-/* Opcional: Dos columnas en pantallas más grandes */
 @media (min-width: 600px) {
     .modal-body {
-        grid-template-columns: 1fr 1fr; /* Dos columnas */
+        grid-template-columns: 1fr 1fr;
     }
 }
 
@@ -429,13 +558,13 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 .modal-body section h3 {
     font-size: 1.2em;
     font-weight: 600;
-    color: var(--color-accent); /* Color de acento para títulos de sección */
+    color: var(--color-accent);
     margin-top: 0;
     margin-bottom: 12px;
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 6px;
 }
-.modal-body section h3 span { /* Para los contadores */
+.modal-body section h3 span {
     font-size: 0.8em;
     color: var(--text-secondary);
     font-weight: normal;
@@ -445,9 +574,9 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     list-style: none;
     padding: 0;
     margin: 0;
-    max-height: 250px; /* Altura máxima para listas antes de scroll interno (ajustar) */
-    overflow-y: auto; /* Scroll si la lista es larga */
-    padding-right: 5px; /* Espacio para scrollbar */
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 5px;
 }
 
 .modal-list li {
@@ -464,18 +593,16 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     border-bottom: none;
 }
 
-/* Estilo para títulos de artículos clickeables */
 .modal-list li a {
     color: var(--text-secondary);
     text-decoration: none;
-    flex-grow: 1; /* Ocupar espacio */
+    flex-grow: 1;
     transition: color 0.2s ease;
 }
 .modal-list li a:hover {
     color: var(--color-accent);
 }
 
-/* Estilo para la relación (conteo) */
 .modal-list li .relation-count {
     font-size: 0.85em;
     color: var(--text-muted);
@@ -485,7 +612,6 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     white-space: nowrap;
 }
 
-/* Ajuste Scrollbar dentro del modal */
 .modal-body::-webkit-scrollbar,
 .modal-list::-webkit-scrollbar {
     width: 8px;
