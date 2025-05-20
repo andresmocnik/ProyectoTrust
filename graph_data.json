@@ -1,22 +1,16 @@
 {
     "nodes": [
         {
-            "id": "Alberto Fernández",
-            "label": "Alberto Fernández",
-            "value": 31,
-            "title": "Aparece en 21 artículos"
-        },
-        {
             "id": "Juan Schiaretti",
             "label": "Juan Schiaretti",
             "value": 23,
             "title": "Aparece en 13 artículos"
         },
         {
-            "id": "Victoria Villarruel",
-            "label": "Victoria Villarruel",
-            "value": 35,
-            "title": "Aparece en 25 artículos"
+            "id": "Alberto Fernández",
+            "label": "Alberto Fernández",
+            "value": 31,
+            "title": "Aparece en 21 artículos"
         },
         {
             "id": "Javier Milei",
@@ -31,6 +25,30 @@
             "title": "Aparece en 24 artículos"
         },
         {
+            "id": "Victoria Villarruel",
+            "label": "Victoria Villarruel",
+            "value": 35,
+            "title": "Aparece en 25 artículos"
+        },
+        {
+            "id": "Mauricio Macri",
+            "label": "Mauricio Macri",
+            "value": 22,
+            "title": "Aparece en 12 artículos"
+        },
+        {
+            "id": "Juan Carlos Maqueda",
+            "label": "Juan Carlos Maqueda",
+            "value": 17,
+            "title": "Aparece en 7 artículos"
+        },
+        {
+            "id": "Ariel Lijo",
+            "label": "Ariel Lijo",
+            "value": 20,
+            "title": "Aparece en 10 artículos"
+        },
+        {
             "id": "Cristina Kirchner",
             "label": "Cristina Kirchner",
             "value": 26,
@@ -41,24 +59,6 @@
             "label": "Elena Highton de Nolasco",
             "value": 16,
             "title": "Aparece en 6 artículos"
-        },
-        {
-            "id": "Juan Carlos Maqueda",
-            "label": "Juan Carlos Maqueda",
-            "value": 17,
-            "title": "Aparece en 7 artículos"
-        },
-        {
-            "id": "Mauricio Macri",
-            "label": "Mauricio Macri",
-            "value": 22,
-            "title": "Aparece en 12 artículos"
-        },
-        {
-            "id": "Ariel Lijo",
-            "label": "Ariel Lijo",
-            "value": 20,
-            "title": "Aparece en 10 artículos"
         },
         {
             "id": "Luis Caputo",
@@ -91,16 +91,16 @@
             "title": "Aparece en 20 artículos"
         },
         {
-            "id": "Estela de Carlotto",
-            "label": "Estela de Carlotto",
-            "value": 19,
-            "title": "Aparece en 9 artículos"
-        },
-        {
             "id": "Abuelas",
             "label": "Abuelas",
             "value": 15,
             "title": "Aparece en 5 artículos"
+        },
+        {
+            "id": "Estela de Carlotto",
+            "label": "Estela de Carlotto",
+            "value": 19,
+            "title": "Aparece en 9 artículos"
         },
         {
             "id": "Presidente",
@@ -121,6 +121,12 @@
             "title": "Aparece en 5 artículos"
         },
         {
+            "id": "Axel Kicillof",
+            "label": "Axel Kicillof",
+            "value": 16,
+            "title": "Aparece en 6 artículos"
+        },
+        {
             "id": "Gildo Insfrán",
             "label": "Gildo Insfrán",
             "value": 15,
@@ -137,12 +143,6 @@
             "label": "Fernández",
             "value": 15,
             "title": "Aparece en 5 artículos"
-        },
-        {
-            "id": "Axel Kicillof",
-            "label": "Axel Kicillof",
-            "value": 16,
-            "title": "Aparece en 6 artículos"
         },
         {
             "id": "Sergio Massa",

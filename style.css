@@ -35,7 +35,7 @@ body {
     padding: 0;
     background-color: var(--bg-primary);
     color: var(--text-primary);
-    font-size: 1.4rem;
+    font-size: 1.4rem; /* Este será el 100% para los elementos dentro del body si no se especifica otra cosa */
     transition: margin-left 0.3s ease-in-out;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -96,13 +96,14 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 /* --- Cabeceras de Vistas --- */
 .main-view > header {
    background-color: var(--bg-secondary); color: var(--text-primary); padding: 1rem 0;
-   text-align: center; margin: -15px -20px 18px -20px; border-bottom: 1px solid var(--border-color);
+   text-align: center; margin: -15px -20px 25px -20px; /* Aumentado margen inferior para separar del contenido */
+   border-bottom: 1px solid var(--border-color);
 }
-.main-view > header h1 { margin: 0; font-size: 1.6em; font-weight: 600; }
+.main-view > header h1 { margin: 0; font-size: 1.8em; /* Un poco más grande */ font-weight: 600; }
 
 /* --- Controles Búsqueda/Filtro (Ajustados) --- */
 .search-controls {
-    max-width: 650px; margin: 18px auto; padding: 15px; background-color: var(--bg-secondary);
+    max-width: 650px; margin: 18px auto 25px auto; padding: 15px; background-color: var(--bg-secondary);
     border-radius: 6px; display: flex; flex-wrap: wrap; gap: 15px; align-items: center; border: 1px solid var(--border-color);
 }
 .search-controls label { margin-right: 6px; font-weight: 600; color: var(--text-secondary); font-size: 0.9em; }
@@ -115,7 +116,7 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 .search-controls input[type="text"]:focus, .search-controls select:focus {
     outline: none; border-color: var(--color-accent); box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.3);
 }
-.search-controls button {
+.search-controls button { /* Este estilo se aplica a los botones DENTRO de search-controls */
     padding: 7px 11px; cursor: pointer; border: none; border-radius: 4px; font-weight: 600;
     transition: background-color 0.2s ease; font-size: 0.9em; display: inline-flex; align-items: center; gap: 5px;
 }
@@ -123,20 +124,12 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 .input-group input[type="text"] { border-radius: 4px 0 0 4px; border-right: none; }
 .input-group button { border-radius: 0 4px 4px 0; margin-left: -1px; flex-shrink: 0; }
 #news-feed-view .search-controls > div:nth-child(2) { display: flex; flex-direction: column; flex: 1 1 200px; }
-#politician-select { width: 100%; }
+#politician-select { width: 100%; } /* Este #politician-select es de la vista news */
 .filter-buttons { flex-basis: 100%; display: flex; justify-content: flex-end; gap: 8px; margin-top: 8px; }
 #article-search-btn { background-color: var(--color-accent); color: var(--bg-primary); }
 #article-search-btn:hover { background-color: var(--color-accent-hover); }
-#sort-newest-btn, #sort-oldest-btn { background-color: var(--color-info); color: var(--bg-primary); }
-#sort-newest-btn:hover, #sort-oldest-btn:hover { background-color: var(--color-info-hover); }
-
-/* Ensure reset buttons from different views are styled if they use .btn .btn-danger */
-#reset-news-filter-btn, #reset-graph-filter-btn {
-    /* Styles already covered by .btn and .btn-danger if applied in HTML */
-}
-#reset-news-filter-btn:hover, #reset-graph-filter-btn:hover {
-    /* Styles already covered by .btn and .btn-danger:hover if applied in HTML */
-}
+/* #sort-newest-btn, #sort-oldest-btn ya no son necesarios si no existen */
+/* Los botones .btn .btn-info y .btn .btn-danger cubrirán los estilos de los botones de reset/sort */
 
 
 /* --- Vista Lector Noticias (Ajustados) --- */
@@ -145,7 +138,7 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 6px;
     padding: 18px 20px; margin-bottom: 20px; box-shadow: 0 2px 8px rgba(0,0,0,0.15);
 }
-.article:last-child { border-bottom: 1px solid var(--border-color); margin-bottom: 0; }
+.article:last-child { /* border-bottom: 1px solid var(--border-color); */ margin-bottom: 0; } /* Quitar border-bottom si es el último */
 .article h2 { color: var(--text-primary); margin-top: 0; margin-bottom: 6px; font-size: 1.5em; font-weight: 600; }
 .article h3 { color: var(--text-secondary); font-weight: normal; margin-bottom: 14px; margin-top: 0; font-size: 1.1em; }
 .article-meta { font-size: 0.85em; color: var(--text-muted); margin-bottom: 10px; border-bottom: 1px dashed var(--border-color); padding-bottom: 7px; }
@@ -191,7 +184,6 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 #mynetwork .loading-placeholder { color: var(--text-secondary); }
 #mynetwork .error-placeholder { color: var(--color-danger); }
 
-
 /* --- ESTILOS PARA FILTROS DEL GRAFO --- */
 #graph-filters {
     padding: 15px;
@@ -204,18 +196,21 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     display: flex;
     flex-wrap: wrap;
     gap: 15px;
-    align-items: flex-end;
+    align-items: flex-end; /* Alinea los elementos (label+input y botón) al final */
     justify-content: center;
     border: 1px solid var(--border-color);
 }
 
-#graph-filters > div {
+#graph-filters > div { /* Contenedor para label+input */
     flex-grow: 1;
     min-width: 180px;
 }
-#graph-filters > div:last-child {
-    flex-basis: 100%;
-    margin-top: 10px;
+#graph-filters .filter-buttons { /* Contenedor para los botones */
+    flex-basis: 100%; /* Ocupa toda la línea si es necesario */
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 10px; /* Espacio si los inputs están arriba */
 }
 
 #graph-filters label {
@@ -236,23 +231,24 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     color: var(--text-primary);
     font-size: 0.95em;
     box-sizing: border-box;
-    appearance: none;
+    appearance: none; /* Quitar apariencia nativa */
     -webkit-appearance: none;
-    -moz-appearance: none;
-    /* Custom arrow */
+    -moz-appearance: textfield; /* Para Firefox en number input */
+}
+/* Flecha personalizada para select */
+#graph-filters select {
     background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23e8eaed%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.4-5.4-13z%22%2F%3E%3C%2Fsvg%3E');
     background-repeat: no-repeat;
     background-position: right 10px center;
-    background-size: 10px 10px; /* Ajusta el tamaño de la flecha */
-    padding-right: 30px; /* Espacio para la flecha personalizada */
+    background-size: 10px 10px;
+    padding-right: 30px;
 }
-/* Para Firefox, puede que necesites un padding específico si la flecha no se alinea bien */
-@-moz-document url-prefix() {
-    #graph-filters select {
-        padding-right: 25px; /* Ajuste para Firefox */
-    }
+/* Quitar flechas de input number en Chrome/Safari/Edge */
+#graph-filters input[type="number"]::-webkit-outer-spin-button,
+#graph-filters input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
-
 
 #graph-filters select:focus,
 #graph-filters input[type="number"]:focus {
@@ -261,49 +257,114 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     box-shadow: 0 0 0 2px rgba(138, 180, 248, 0.3);
 }
 
-/* === ESTILOS PARA LAS OPCIONES DEL SELECT === */
 #graph-filters select option {
-    background-color: var(--bg-primary); /* Fondo oscuro para cada opción */
-    color: var(--text-primary);          /* Texto claro para cada opción */
-    padding: 8px 10px;                   /* Padding para las opciones */
+    background-color: var(--bg-primary);
+    color: var(--text-primary);
+    padding: 8px 10px;
 }
-
-/* Estilo para la opción seleccionada/hover dentro del desplegable */
 #graph-filters select option:hover {
-    background-color: var(--color-accent);  /* Color de acento al pasar el mouse */
-    color: var(--bg-primary);               /* Texto oscuro sobre fondo de acento */
+    background-color: var(--color-accent);
+    color: var(--bg-primary);
 }
-
 #graph-filters select option:checked {
-     background-color: var(--color-accent);
-     color: var(--bg-primary);
+     background-color: var(--color-accent) !important; /* Forzar para que se vea la selección */
+     color: var(--bg-primary) !important;
 }
-/* === FIN ESTILOS SELECT OPTIONS === */
+#graph-filters .btn i { margin-right: 6px; }
 
-#graph-filters .filter-buttons {
+
+/* --- Vista Dashboard (Integrados y Ajustados) --- */
+/* La vista #timeseries-view usa la cabecera genérica .main-view > header */
+
+/* Contenedor de KPIs */
+.kpi-container {
     display: flex;
-    justify-content: center;
-    gap: 12px;
-    width: 100%;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-around;
+    margin-bottom: 40px; /* Espacio antes de los gráficos */
 }
 
-#graph-filters .btn i {
-    margin-right: 6px;
+.kpi-box {
+    background-color: var(--bg-secondary);
+    padding: 20px 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    text-align: center;
+    flex: 1;
+    min-width: 220px;
+    border-left: 5px solid var(--color-accent);
 }
 
+.kpi-box h2 {
+    font-size: 1.1em;
+    color: var(--text-secondary);
+    margin-top: 0; /* Ajuste */
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
 
-/* --- Vista Dashboard (Ajustados) --- */
-#timeseries-controls { max-width: 650px; margin: 18px auto; border-bottom: 1px solid var(--border-color); }
-#timeseries-controls p { color: var(--text-secondary); margin-bottom: 10px; flex-basis: 100%; }
-#politician-selectors { display: grid; grid-template-columns: repeat(auto-fit, minmax(170px, 1fr)); gap: 14px; width: 100%; margin-top: 7px; }
-#politician-selectors label { font-size: 0.9em; color: var(--text-secondary); margin-bottom: 4px; }
-#politician-selectors select { width: 100%; }
-#charts-container { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px; padding: 14px 0; min-height: 200px; }
-.chart-container { border: 1px solid var(--border-color); padding: 14px; border-radius: 6px; background-color: var(--bg-secondary); box-shadow: 0 1px 4px rgba(0,0,0,0.1); }
-.chart-container canvas { max-width: 100%; height: auto; }
-#charts-placeholder { text-align: center; color: var(--text-muted); font-style: italic; padding: 27px 0; grid-column: 1 / -1; }
-.chart-no-data p:first-child { color: var(--text-primary); font-weight: bold; margin-bottom: 5px; }
-.chart-no-data p:last-child { color: var(--text-muted); font-size: 0.9em; }
+.kpi-box p {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin: 0;
+}
+
+/* Área de Gráficos del Dashboard */
+.dashboard-charts-area { /* Contenedor principal para filas de gráficos */
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.chart-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.chart-container {
+    background-color: var(--bg-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    flex: 1 1 45%; /* Dos por fila por defecto */
+    min-width: 300px; /* Mínimo antes de envolver */
+    display: flex;
+    flex-direction: column;
+}
+
+.chart-container.full-width {
+    flex-basis: 100%;
+}
+
+.chart-container h2 {
+    text-align: center;
+    font-size: 1.3em;
+    color: var(--text-primary);
+    margin-top: 0; /* Ajuste */
+    margin-bottom: 20px;
+}
+
+.chart-container canvas {
+    width: 100% !important;
+    max-height: 450px; /* Evitar que sean demasiado altos */
+    /* Chart.js usualmente maneja bien esto, pero puedes forzar height si es necesario */
+    /* height: auto; o un valor fijo como height: 350px !important; */
+}
+#charts-placeholder { /* Si se usa, aunque la nueva estructura no lo tiene por defecto */
+    text-align: center; color: var(--text-muted); font-style: italic;
+    padding: 27px 0; grid-column: 1 / -1;
+}
+.chart-note { /* Para la nota del heatmap */
+    font-size: 0.9em;
+    color: var(--text-muted);
+    text-align: center;
+    margin-top: 15px;
+    font-style: italic;
+}
 
 /* --- Tooltip y Resaltado (Ajustados) --- */
 .person-tooltip { text-decoration: none; border-bottom: 1px dotted var(--color-accent); cursor: help; position: relative; color: var(--color-accent); transition: color 0.2s ease; }
@@ -344,6 +405,13 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 .btn-danger { background-color: var(--color-danger); color: var(--bg-primary); padding: 7px 11px; font-size: 0.9em; border-radius: 4px; }
 .btn-danger:hover { background-color: var(--color-danger-hover); }
 .hero-visual img, .discover-visual img { max-width: 200px; height: auto; opacity: 0.7; }
+.hero-visual i, .discover-visual i { /* Para los iconos de placeholder */
+    font-size: 7em; /* o 70px, ajusta según tu preferencia */
+    opacity: 0.6;
+}
+.hero-visual i { color: var(--color-accent-hover); }
+.discover-visual i { color: var(--color-accent); }
+
 
 .key-news-section { padding: 27px 0; text-align: center; }
 .key-news-section h2 { font-size: 1.7em; font-weight: 600; color: var(--text-primary); margin-bottom: 27px; }
@@ -356,11 +424,11 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 .news-card .tags { display: flex; flex-wrap: wrap; gap: 6px; margin-top: auto; }
 .tag { background-color: var(--bg-tertiary); color: var(--text-secondary); padding: 3px 7px; border-radius: 10px; font-size: 0.75em; font-weight: 500; }
 .tag-more, .tag-none { font-style: italic; opacity: 0.8; }
-.section-cta { text-align: center; }
+.section-cta { text-align: center; margin-top: 20px; } /* Añadido un poco de margen superior */
 .discover-network-section { background: linear-gradient(to bottom, var(--bg-secondary), var(--bg-primary)); text-align: center; flex-direction: column; padding: 54px 14px; }
 .discover-content { max-width: 470px; }
 .discover-network-section h2 { font-size: 1.9em; color: var(--text-primary); margin-bottom: 10px; }
-.discover-visual img { max-width: 170px; opacity: 0.5; margin-top: 20px; }
+.discover-visual { margin-top: 20px; } /* Ajustado para que el visual esté debajo del contenido */
 
 
 /* --- Ajustes Responsive (Ajustados) --- */
@@ -374,8 +442,8 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
      .sidebar h2 { font-size: 1.3em; }
      .nav-button { font-size: 0.95em; padding: 7px 10px; gap: 6px; }
 
-     .main-view > header { padding: 0.8rem 0; margin: -10px -10px 14px -10px; }
-     .main-view > header h1 { font-size: 1.4em; }
+     .main-view > header { padding: 0.8rem 0; margin: -10px -10px 20px -10px; /* Aumentado margen inferior */ }
+     .main-view > header h1 { font-size: 1.5em; /* Un poco más grande en móvil */ }
 
      .search-controls { padding: 10px; gap: 10px; flex-direction: column; align-items: stretch; max-width: 95%; }
      .search-controls > div { margin-bottom: 7px; flex-basis: auto !important; }
@@ -395,12 +463,10 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
         min-width: unset;
         flex-grow: 0;
     }
-    #graph-filters > div:last-child {
-         margin-top: 5px;
-    }
     #graph-filters .filter-buttons {
-        flex-direction: column;
-        gap: 8px;
+         flex-direction: column;
+         gap: 8px;
+         margin-top: 5px; /* Reducido */
     }
     #graph-filters .filter-buttons .btn {
         width: 100%;
@@ -415,9 +481,26 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
      .graph-description p { font-size: 0.85em; }
      .graph-description p:last-child { font-size: 0.8em; }
 
-     #charts-container { gap: 14px; grid-template-columns: 1fr; }
-     .chart-container { padding: 10px; }
-     #politician-selectors { grid-template-columns: 1fr; }
+    /* Dashboard responsive */
+    .kpi-container {
+        gap: 15px;
+        margin-bottom: 30px;
+    }
+    .kpi-box {
+        flex-basis: 100%; /* KPIs en una sola columna */
+        padding: 15px 20px;
+    }
+    .kpi-box h2 { font-size: 1em; }
+    .kpi-box p { font-size: 1.8em; }
+
+    .dashboard-charts-area { gap: 20px; }
+    .chart-row { gap: 20px; }
+    .chart-container {
+        flex-basis: 100%; /* Gráficos en una sola columna */
+        padding: 15px;
+    }
+    .chart-container h2 { font-size: 1.2em; margin-bottom: 15px; }
+
 
      .hero-section, .discover-network-section { padding: 27px 10px; gap: 20px; text-align: center; flex-direction: column; }
      .hero-content, .discover-content { max-width: 100%; }
@@ -427,6 +510,8 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
      .btn { padding: 7px 14px; font-size: 0.9em; }
      .hero-visual, .discover-visual { margin-top: 20px; }
      .hero-visual img, .discover-visual img { max-width: 120px; opacity: 0.5;}
+     .hero-visual i, .discover-visual i { font-size: 5em; }
+
 
      .key-news-section { padding: 20px 0; }
      .key-news-section h2 { font-size: 1.4em; margin-bottom: 20px; }
@@ -435,20 +520,21 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
      .news-card .summary { font-size: 0.85em; }
 
      .discover-network-section h2 { font-size: 1.5em; }
-     .discover-visual img { max-width: 130px; }
+     .discover-visual { margin-top: 15px; } /* Reducido */
 }
 
 /* Ajustes para pantallas MUY grandes (Opcional) */
 @media (min-width: 1600px) {
-     html { font-size: 72%; }
+     html { font-size: 72%; } /* O incluso 75% si quieres todo más grande */
      #page-content { padding: 20px 40px; }
-     .search-controls { max-width: 750px; }
+     .search-controls, #graph-filters { max-width: 850px; } /* Aumentar max-width */
      #articles-container { max-width: 700px; }
-     #mynetwork { max-width: 100%; }
+     /* #mynetwork ya es width: 100%, así que se adaptará */
+     .kpi-container { max-width: 1200px; margin-left: auto; margin-right: auto;}
+     .dashboard-charts-area { max-width: 1400px; margin-left: auto; margin-right: auto;}
 }
 
-/* --- Estilos Modal Detalles Político --- */
-
+/* --- Estilos Modal Detalles Político (Sin cambios de la versión anterior, ya estaban bien) --- */
 .modal-overlay {
     position: fixed;
     top: 0;
@@ -456,7 +542,7 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     width: 100%;
     height: 100%;
     background-color: rgba(0, 0, 0, 0.75);
-    display: none;
+    display: none; /* Inicialmente oculto */
     justify-content: center;
     align-items: center;
     z-index: 1060;
@@ -478,7 +564,7 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     width: 90%;
     max-width: 650px;
     max-height: 85vh;
-    overflow: hidden;
+    overflow: hidden; /* El overflow-y se maneja en modal-body */
     display: flex;
     flex-direction: column;
     position: relative;
@@ -496,7 +582,7 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     right: 15px;
     background: none;
     border: none;
-    font-size: 2.5rem;
+    font-size: 2.5rem; /* Usar rem para escalar con el html font-size si se cambia */
     font-weight: bold;
     color: var(--text-muted);
     cursor: pointer;
@@ -524,11 +610,15 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     object-fit: cover;
     border: 2px solid var(--color-accent);
     flex-shrink: 0;
-    background-color: var(--bg-tertiary);
+    background-color: var(--bg-tertiary); /* Color de fondo si la imagen no carga */
 }
+/* Ocultar si no hay src, como ya tenías */
 .modal-img[src=""], 
 .modal-img:not([src]) {
-    display: none;
+    /* Podrías mostrar un icono de placeholder en lugar de ocultarlo */
+    /* content: url('path/to/placeholder-icon.svg'); */
+    /* o usar un pseudo-elemento con un icono de FontAwesome */
+    display: none; 
 }
 
 
@@ -541,14 +631,15 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 }
 
 .modal-body {
-    overflow-y: auto;
-    padding-right: 10px;
+    overflow-y: auto; /* Permitir scroll solo en el cuerpo */
+    padding-right: 10px; /* Espacio para la scrollbar */
+    /* Estructura del grid para las dos columnas */
     display: grid;
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr; /* Por defecto una columna */
     gap: 25px;
 }
 
-@media (min-width: 600px) {
+@media (min-width: 600px) { /* A partir de 600px, dos columnas para el modal body */
     .modal-body {
         grid-template-columns: 1fr 1fr;
     }
@@ -564,7 +655,7 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     border-bottom: 1px solid var(--border-color);
     padding-bottom: 6px;
 }
-.modal-body section h3 span {
+.modal-body section h3 span { /* Para el contador (0) */
     font-size: 0.8em;
     color: var(--text-secondary);
     font-weight: normal;
@@ -574,9 +665,9 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
     list-style: none;
     padding: 0;
     margin: 0;
-    max-height: 250px;
-    overflow-y: auto;
-    padding-right: 5px;
+    max-height: 250px; /* Limitar altura de las listas internas */
+    overflow-y: auto; /* Scroll para listas largas */
+    padding-right: 5px; /* Espacio para su propia scrollbar si es necesario */
 }
 
 .modal-list li {
@@ -596,22 +687,23 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 .modal-list li a {
     color: var(--text-secondary);
     text-decoration: none;
-    flex-grow: 1;
+    flex-grow: 1; /* Para que el texto ocupe el espacio disponible */
     transition: color 0.2s ease;
 }
 .modal-list li a:hover {
     color: var(--color-accent);
 }
 
-.modal-list li .relation-count {
+.modal-list li .relation-count { /* Para el contador de relaciones junto a cada persona */
     font-size: 0.85em;
     color: var(--text-muted);
     background-color: var(--bg-tertiary);
     padding: 2px 6px;
     border-radius: 4px;
-    white-space: nowrap;
+    white-space: nowrap; /* Para que no se rompa el número */
 }
 
+/* Estilos de scrollbar para el modal y sus listas internas */
 .modal-body::-webkit-scrollbar,
 .modal-list::-webkit-scrollbar {
     width: 8px;

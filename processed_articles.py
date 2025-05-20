@@ -3,18 +3,20 @@ import json
 import os
 from collections import defaultdict
 import re # Importar módulo de expresiones regulares
+from pysentimiento import create_analyzer # MODIFICADO: Importar create_analyzer
 
 # --- Configuración ---
 INPUT_JSON_FILE = 'noticiasjson.json'       # Archivo de entrada con los artículos
-OUTPUT_JSON_FILE = 'noticias_procesadas.json' # Archivo de salida con personas normalizadas
+OUTPUT_JSON_FILE = 'noticias_procesadas.json' # Archivo de salida con personas normalizadas y sentimiento
 GRAPH_JSON_FILE = 'graph_data.json'         # Archivo para datos del grafo
 MENTIONS_JSON_FILE = 'menciones_por_fecha.json' # Archivo para menciones por fecha
 NLP_MODEL = 'es_core_news_lg'               # Modelo spaCy para español
 MIN_ARTICLE_APPEARANCES_GRAPH = 5           # Umbral para incluir nodos en el grafo
+# MODIFICADO: Configuración para análisis de sentimiento
+SENTIMENT_MODEL_NAME = "pysentimiento/robertuito-sentiment-analysis" # Modelo de sentimiento en español
 
 # === Diccionario de Mapeo de Nombres (¡IMPORTANTE AJUSTAR!) ===
-# Clave: Variante detectada (en minúsculas) | Valor: Nombre Canónico
-# Priorizar nombres completos y combinaciones comunes. Evitar apellidos solos si son ambiguos.
+# (Tu NAME_MAPPING existente va aquí - sin cambios)
 NAME_MAPPING = {
     # Javier Milei
     "milei": "Javier Milei",
@@ -97,11 +99,13 @@ NAME_MAPPING = {
      "wado de pedro": "Eduardo “Wado” de Pedro", # Apodo común
      "eduardo de pedro": "Eduardo “Wado” de Pedro",
      "wado": "Eduardo “Wado” de Pedro", # Usar apodo si es muy común
+     "daniel salomone": "Daniel Salomone", # Añadido del ejemplo
     # ... ¡AÑADIR MUCHOS MÁS DE TU LISTA Y SUS VARIANTES! ...
 }
 # === FIN NAME_MAPPING ===
 
 # === Lista de Nombres Comunes (¡AÑADIR MÁS!) ===
+# (Tu NOMBRES_COMUNES existente va aquí - sin cambios)
 NOMBRES_COMUNES = {
     "alberto", "alejandra", "alejandro", "alfredo", "amado", "anabel", "anibal",
     "andrés", "antonio", "ariel", "armando", "axel", "beatriz",
@@ -136,20 +140,17 @@ def load_data(filepath):
         return None
     try:
         with open(filepath, 'r', encoding='utf-8') as f:
-            # Leer línea por línea para manejar mejor JSONL o JSON muy grandes si fuera necesario
-            # Por ahora, asumimos un solo objeto JSON o un array JSON estándar
             data = json.load(f)
         print(f"Datos cargados exitosamente desde '{filepath}'.")
         return data
     except json.JSONDecodeError as e:
         print(f"Error: El archivo '{filepath}' no contiene JSON válido. Error: {e}")
-        # Intentar leer como JSON Lines (un JSON por línea) como fallback
         try:
             print("Intentando leer como JSON Lines...")
             data = []
             with open(filepath, 'r', encoding='utf-8') as f:
                 for line in f:
-                    if line.strip(): # Ignorar líneas vacías
+                    if line.strip():
                         data.append(json.loads(line))
             print(f"Leído como JSON Lines exitosamente desde '{filepath}'.")
             return data
@@ -170,107 +171,64 @@ def save_data(data, filepath):
         print(f"Error al guardar datos en '{filepath}': {e}")
 
 def es_nombre_pila_probable(nombre_texto):
-    """Heurística simple para determinar si un texto es probablemente solo un nombre de pila."""
     parts = nombre_texto.split()
     if len(parts) == 1:
-        # Comprobar si está en la lista de nombres comunes (ignorando mayúsculas/minúsculas)
-        # o si es una palabra corta (podría ser un nombre menos común)
-        return parts[0].lower() in NOMBRES_COMUNES # or len(parts[0]) <= 4 # Podríamos ajustar el largo
-    return False # Si tiene más de una palabra, no es solo un nombre de pila
+        return parts[0].lower() in NOMBRES_COMUNES
+    return False
 
 def find_and_normalize_persons(article_text, nlp):
-    """
-    Encuentra entidades de persona, aplica heurística de combinación y normaliza.
-    """
     if not article_text or not isinstance(article_text, str):
         return []
-
-    # Pre-procesar texto ligeramente? (ej. quitar saltos de línea excesivos)
-    # article_text = re.sub(r'\s*\n\s*', '\n', article_text) # Ejemplo
-
     doc = nlp(article_text)
-    detected_persons_candidates = {} # Usar dict para manejar superposiciones o duplicados iniciales
-    processed_token_indices = set() # Para evitar procesar el apellido dos veces
-
-    # Primera pasada: Detectar entidades y aplicar heurística
+    detected_persons_candidates = {}
+    processed_token_indices = set()
     for ent in doc.ents:
         if ent.start in processed_token_indices or ent.end - 1 in processed_token_indices:
-            continue # Saltar si algún token de esta entidad ya fue usado en una combinación
-
+            continue
         if ent.label_ == "PER":
             person_name_candidate = ent.text.strip()
-            start_char, end_char = ent.start_char, ent.end_char # Guardar posición original
-
-            # --- HEURÍSTICA: Comprobar siguiente token ---
-            # Verificar si la entidad actual es un nombre de pila probable
-            # y si el siguiente token parece un apellido
+            start_char, end_char = ent.start_char, ent.end_char
             next_token_index = ent.end
             if (next_token_index < len(doc) and
-                doc[next_token_index].text and # Asegurar que el token tiene texto
+                doc[next_token_index].text and
                 doc[next_token_index].text[0].isupper() and
                 not doc[next_token_index].is_sent_start and
                 not doc[next_token_index].is_punct and
-                len(doc[next_token_index].text) > 1 and # Evitar iniciales solas
+                len(doc[next_token_index].text) > 1 and
                 es_nombre_pila_probable(person_name_candidate)):
-
-                # Combinar con el siguiente token (probable apellido)
                 apellido_probable = doc[next_token_index].text
                 combined_name = f"{person_name_candidate} {apellido_probable}"
-
-                # Verificar si la combinación está en nuestro mapeo o parece válida
-                if combined_name.lower() in NAME_MAPPING or len(combined_name.split()) == 2 : # Aceptar si está mapeado o tiene 2 partes
-                     # print(f"  -> Heurística aplicada: '{ent.text}' + '{apellido_probable}' -> '{combined_name}'")
+                if combined_name.lower() in NAME_MAPPING or len(combined_name.split()) == 2 :
                      person_name_candidate = combined_name
-                     # Marcar los índices de los tokens usados para evitar reprocesarlos
                      for i in range(ent.start, next_token_index + 1):
                          processed_token_indices.add(i)
-                     end_char = doc[next_token_index].idx + len(doc[next_token_index].text) # Actualizar fin
-                # else:
-                     # print(f"  -> Heurística: Combinación '{combined_name}' descartada (no en map y no 2 partes).")
-
-            # Guardar candidato con su posición original (start_char) para desambiguar si hay duplicados
+                     end_char = doc[next_token_index].idx + len(doc[next_token_index].text)
             detected_persons_candidates[start_char] = {'text': person_name_candidate, 'end': end_char}
-            # Marcar índices originales como procesados también, por si no se combinó
             if start_char not in processed_token_indices:
                  for i in range(ent.start, ent.end):
                       processed_token_indices.add(i)
-
-
-    # Segunda pasada: Normalización usando NAME_MAPPING
     normalized_persons = set()
-    # Iterar sobre los candidatos guardados (el dict maneja superposiciones por inicio)
     for start_char in sorted(detected_persons_candidates.keys()):
          candidate_info = detected_persons_candidates[start_char]
          person_name_candidate = candidate_info['text']
-
-         # Buscar la forma canónica en el mapeo
          canonical_name = NAME_MAPPING.get(person_name_candidate.lower(), person_name_candidate)
-
-         # Filtro final (longitud, no solo dígitos, etc.)
-         # Podríamos añadir filtro para excluir entidades contenidas en otras más largas si fuera necesario
          if len(canonical_name) > 3 and not canonical_name.isdigit():
               normalized_persons.add(canonical_name)
-
-    # Tercera pasada: Eliminar subcadenas/nombres de pila si el nombre completo ya está presente
     final_persons = set(normalized_persons)
     to_remove = set()
-    person_list = list(normalized_persons) # Lista para comparar pares
+    person_list = list(normalized_persons)
     for i in range(len(person_list)):
         for j in range(i + 1, len(person_list)):
             p1 = person_list[i]
             p2 = person_list[j]
-            # Verificar si p1 es subcadena de p2 Y p1 parece nombre de pila
             if p1 in p2 and es_nombre_pila_probable(p1) and len(p2.split()) > len(p1.split()):
                 to_remove.add(p1)
-            # Verificar si p2 es subcadena de p1 Y p2 parece nombre de pila
             elif p2 in p1 and es_nombre_pila_probable(p2) and len(p1.split()) > len(p2.split()):
                 to_remove.add(p2)
-
     final_persons.difference_update(to_remove)
-
     return list(final_persons)
 
-
+# (Tu función calculate_graph_data va aquí - sin cambios)
 def calculate_graph_data(articles_data, min_appearances):
     """Calcula los nodos y aristas para el grafo, filtrando por apariciones."""
     print(f"\nCalculando datos del grafo (umbral: {min_appearances} apariciones)...")
@@ -298,8 +256,6 @@ def calculate_graph_data(articles_data, min_appearances):
         if unique_count >= min_appearances:
             filtered_nodes_data[person] = unique_count # Guardamos el conteo de artículos únicos
             kept_node_ids.add(person)
-        # else:
-            # print(f"  - Excluyendo nodo: {person} (aparece en {unique_count} artículos)")
 
     print(f"Nodos filtrados para el grafo (>= {min_appearances} artículos): {len(kept_node_ids)}")
     if not kept_node_ids:
@@ -309,10 +265,7 @@ def calculate_graph_data(articles_data, min_appearances):
     # 3. Calcular co-ocurrencias (aristas) SOLO entre nodos filtrados
     co_occurrences = defaultdict(int)
     for article_id, persons_list_normalized in article_persons_normalized.items():
-        # Filtrar la lista de personas de este artículo para incluir solo los nodos que estarán en el grafo
         filtered_persons_in_article = [p for p in persons_list_normalized if p in kept_node_ids]
-
-        # Generar pares únicos ordenados para evitar duplicados (A,B) vs (B,A)
         filtered_persons_in_article.sort()
         for i in range(len(filtered_persons_in_article)):
             for j in range(i + 1, len(filtered_persons_in_article)):
@@ -324,26 +277,22 @@ def calculate_graph_data(articles_data, min_appearances):
     # 4. Formatear datos para Vis.js
     nodes = []
     for person, unique_article_count in filtered_nodes_data.items():
-        # Usar el conteo total de MENCIONES para el tamaño del nodo (value)
-        # Usar el conteo de ARTÍCULOS ÚNICOS para el título (tooltip)
-        total_mentions = person_counts.get(person, unique_article_count) # Fallback por si acaso
-        # Escalar tamaño del nodo basado en menciones totales
-        node_size = min(10 + total_mentions, 70) # Ajustar escala como prefieras (antes era 50)
+        total_mentions = person_counts.get(person, unique_article_count)
+        node_size = min(10 + total_mentions, 70)
         nodes.append({
             "id": person,
             "label": person,
-            "value": node_size, # Tamaño basado en menciones totales
-            "title": f"Aparece en {unique_article_count} artículos" # Tooltip basado en artículos únicos
+            "value": node_size,
+            "title": f"Aparece en {unique_article_count} artículos"
         })
 
     edges = []
     for pair, weight in co_occurrences.items():
-        # Filtrar aristas con peso bajo si se desea (ej. weight > 1)
-        if weight > 0: # Mantener todas las conexiones por ahora
+        if weight > 0:
             edges.append({
                 "from": pair[0],
                 "to": pair[1],
-                "value": weight, # Grosor basado en co-ocurrencias
+                "value": weight,
                 "title": f"Juntos en {weight} artículos"
             })
 
@@ -355,8 +304,7 @@ def calculate_graph_data(articles_data, min_appearances):
 if __name__ == "__main__":
     print(f"Cargando modelo spaCy '{NLP_MODEL}'...")
     try:
-        # Deshabilitar componentes no necesarios puede acelerar un poco
-        nlp = spacy.load(NLP_MODEL, disable=['parser', 'lemmatizer']) # Mantenemos NER y tagger (usado por algunas heurísticas)
+        nlp = spacy.load(NLP_MODEL, disable=['parser', 'lemmatizer'])
         print("Modelo spaCy cargado.")
     except OSError:
         print(f"Error: Modelo '{NLP_MODEL}' no encontrado.")
@@ -367,41 +315,66 @@ if __name__ == "__main__":
         print(f"Error inesperado al cargar el modelo spaCy: {e}")
         exit()
 
+    # MODIFICADO: Cargar el analizador de sentimiento
+    print(f"Cargando modelo de análisis de sentimiento '{SENTIMENT_MODEL_NAME}'...")
+    try:
+        # Usamos 'sentiment' como task. Para otros idiomas o tasks, consultar la doc de pysentimiento
+        sentiment_analyzer = create_analyzer(task="sentiment", lang="es")
+        print("Modelo de sentimiento cargado.")
+    except Exception as e:
+        print(f"Error al cargar el modelo de sentimiento: {e}")
+        print("Asegúrate de tener 'pysentimiento' y 'torch' instalados.")
+        exit()
+
+
     articles = load_data(INPUT_JSON_FILE)
 
-    if articles and isinstance(articles, list): # Asegurar que sea una lista
+    if articles and isinstance(articles, list):
         processed_articles = []
-        mentions_by_date_agg = defaultdict(lambda: defaultdict(int)) # [político][fecha] = cantidad
+        mentions_by_date_agg = defaultdict(lambda: defaultdict(int))
 
         print(f"\n--- Iniciando Procesamiento de {len(articles)} Artículos ---")
         for i, article in enumerate(articles):
-            # Validar que 'article' sea un diccionario y tenga 'cuerpo'
             if not isinstance(article, dict):
                  print(f"  Saltando item {i+1}: No es un diccionario.")
                  continue
             print(f"  Procesando artículo {i+1}/{len(articles)} (ID: {article.get('id', 'N/A')})...")
-            text_to_process = article.get('cuerpo', '') # Usar 'cuerpo' consistentemente
+            text_to_process = article.get('cuerpo', '')
+
+            # --- Detección y Normalización de Personas ---
             if not text_to_process:
-                 print("    Advertencia: Artículo sin 'cuerpo', no se detectarán personas.")
+                 print("    Advertencia: Artículo sin 'cuerpo', no se detectarán personas ni sentimiento.")
                  normalized_persons = []
+                 sentiment_scores = None # MODIFICADO: Sentimiento nulo si no hay texto
             else:
-                 # Usar la función mejorada
                  normalized_persons = find_and_normalize_persons(text_to_process, nlp)
 
-            # Añadir la lista normalizada al diccionario del artículo
+                 # --- MODIFICADO: Análisis de Sentimiento ---
+                 try:
+                     # pysentimiento puede manejar textos largos, pero considera truncar si son EXTREMADAMENTE largos
+                     # o si quieres analizar solo un resumen/primeros párrafos para velocidad.
+                     # Para artículos de noticias típicos, debería estar bien.
+                     prediction = sentiment_analyzer.predict(text_to_process)
+                     sentiment_scores = {
+                         "etiqueta": prediction.output, # POS, NEG, NEU
+                         "positivo": prediction.probas.get("POS", 0.0),
+                         "negativo": prediction.probas.get("NEG", 0.0),
+                         "neutral": prediction.probas.get("NEU", 0.0)
+                     }
+                     # print(f"    -> Sentimiento: {sentiment_scores['etiqueta']} (Pos: {sentiment_scores['positivo']:.2f}, Neg: {sentiment_scores['negativo']:.2f}, Neu: {sentiment_scores['neutral']:.2f})")
+                 except Exception as e:
+                     print(f"    [!] Error al analizar sentimiento: {e}")
+                     sentiment_scores = None # Guardar null si hay error
+
             article['personas_detectadas_normalizadas'] = normalized_persons
-            # print(f"    -> Personas finales: {normalized_persons}") # Log opcional
+            article['sentimiento'] = sentiment_scores # MODIFICADO: Añadir sentimiento al artículo
 
             # --- Registrar menciones por fecha ---
-            # Usar 'fecha' o 'fecha_hora', asegurándose de que el formato sea consistente
-            # Asumiendo 'fecha' con formato 'dd-mm-aaaa' según el código anterior
             article_date_str = article.get('fecha')
             if article_date_str:
                 try:
-                    # Validar formato dd-mm-aaaa antes de hacer split
                     if re.match(r"^\d{1,2}-\d{1,2}-\d{4}$", article_date_str.strip()):
                         day, month, year = article_date_str.strip().split('-')
-                        # Asegurar formato YYYY-MM-DD para consistencia
                         formatted_date = f"{year}-{int(month):02d}-{int(day):02d}"
                         for person in normalized_persons:
                             mentions_by_date_agg[person][formatted_date] += 1
@@ -409,25 +382,14 @@ if __name__ == "__main__":
                          print(f"      [!] Advertencia: Formato de fecha inesperado '{article_date_str}', no se registrará mención.")
                 except Exception as e:
                     print(f"      [!] Error procesando fecha '{article_date_str}' o registrando mención: {e}")
-            # else:
-                # print("      Advertencia: Artículo sin 'fecha'.")
-
 
             processed_articles.append(article)
-            # Limpiar memoria si los artículos son muy grandes?
-            # del text_to_process
-            # gc.collect() # Requiere 'import gc'
 
         print("\n--- Procesamiento de Artículos Completado ---")
 
-        # Guardar artículos procesados con la lista de personas normalizadas
         save_data(processed_articles, OUTPUT_JSON_FILE)
-
-        # Calcular y guardar los datos específicos para el grafo
         graph_output_data = calculate_graph_data(processed_articles, MIN_ARTICLE_APPEARANCES_GRAPH)
         save_data(graph_output_data, GRAPH_JSON_FILE)
-
-        # Guardar datos de menciones agregadas por fecha
         save_data(mentions_by_date_agg, MENTIONS_JSON_FILE)
         print(f"Archivo '{MENTIONS_JSON_FILE}' generado.")
 
