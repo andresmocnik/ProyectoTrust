@@ -35,7 +35,13 @@
         "hora": "19:14",
         "personas_detectadas_normalizadas": [
             "Daniel Salomone"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.013170027174055576,
+            "negativo": 0.7670428156852722,
+            "neutral": 0.21978724002838135
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/tras-cancelar-cocineros-argentinos-y-otros-programas-renuncio-el-director-de-la-tv-publica/",
@@ -66,13 +72,19 @@
         "fecha": "22-03-2024",
         "hora": "19:56",
         "personas_detectadas_normalizadas": [
-            "Pablo Caruso",
-            "Coco Sily",
             "Ernestina Pais",
-            "Parodi",
             "Eduardo Serenellin",
-            "Luli Trujllo"
-        ]
+            "Parodi",
+            "Luli Trujllo",
+            "Coco Sily",
+            "Pablo Caruso"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.0073219481855630875,
+            "negativo": 0.8181766271591187,
+            "neutral": 0.17450138926506042
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/schiaretti-avalo-un-duro-mensaje-politico-de-vigo-repudiando-el-ataque-a-un-militante-de-hijos/",
@@ -113,14 +125,20 @@
         "fecha": "22-03-2024",
         "hora": "00:07",
         "personas_detectadas_normalizadas": [
-            "Alberto Fernández",
             "Juan Schiaretti",
-            "Victoria Villarruel",
-            "Javier Milei",
+            "Alberto Fernández",
             "Alejandra Vigo",
+            "Javier Milei",
+            "Negacionistas",
             "Martín Llaryora",
-            "Negacionistas"
-        ]
+            "Victoria Villarruel"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.013849418610334396,
+            "negativo": 0.8542671799659729,
+            "neutral": 0.13188335299491882
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/gremios-estatales-en-alerta-advierten-por-70-mil-despidos-en-la-administracion-publica-nacional/",
@@ -157,12 +175,18 @@
         "fecha": "20-03-2024",
         "hora": "08:14",
         "personas_detectadas_normalizadas": [
-            "Modernización",
-            "Javier Milei",
-            "Flavio Vergara",
             "Guibert",
-            "Nicolás Posse"
-        ]
+            "Nicolás Posse",
+            "Flavio Vergara",
+            "Javier Milei",
+            "Modernización"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.02936737984418869,
+            "negativo": 0.24045290052890778,
+            "neutral": 0.7301796674728394
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/aida-tarditti-la-decision-politica-de-designar-jueces-es-patriarcal/",
@@ -217,26 +241,32 @@
         "fecha": "22-03-2024",
         "hora": "08:50",
         "personas_detectadas_normalizadas": [
-            "Agregó Tarditti",
-            "Cristina Kirchner",
-            "Tarditti",
-            "Comodoro Py",
-            "Micaela",
-            "Elena Highton de Nolasco",
-            "Javier Milei",
-            "Manuel García Mansilla",
-            "Juan Carlos Maqueda",
-            "Cedaw",
             "Amja",
-            "Argibay",
-            "Salía",
-            "Néstor Kircher",
-            "Caba",
             "Mauricio Macri",
             "María Ester Caffure de Battistelli",
+            "Javier Milei",
+            "Juan Carlos Maqueda",
+            "Ariel Lijo",
+            "Argibay",
+            "Cedaw",
+            "Cristina Kirchner",
+            "Comodoro Py",
+            "Micaela",
+            "Caba",
+            "Tarditti",
+            "Néstor Kircher",
+            "Agregó Tarditti",
+            "Elena Highton de Nolasco",
+            "Manuel García Mansilla",
             "Aída Tarditti",
-            "Ariel Lijo"
-        ]
+            "Salía"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.02827414870262146,
+            "negativo": 0.417247474193573,
+            "neutral": 0.5544784069061279
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-gobierno-de-milei-alcanzo-superavit-financiero-por-segundo-mes-consecutivo/",
@@ -267,10 +297,16 @@
         "fecha": "20-03-2024",
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
+            "Luis Caputo",
             "Economía Luis Caputo",
-            "Javier Milei",
-            "Luis Caputo"
-        ]
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.32929718494415283,
+            "negativo": 0.063262939453125,
+            "neutral": 0.6074399352073669
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-politica-cordobesa-en-un-equilibrio-muy-dificultoso/",
@@ -314,20 +350,26 @@
         "fecha": "24-03-2024",
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
-            "Karina Milei",
-            "Luis Juez",
-            "Loredo",
-            "Victoria Villarruel",
-            "Ersa",
+            "Contorsiones",
             "Rodrigo de Loredo",
-            "Patricia Bullrich",
             "Javier Milei",
+            "Ersa",
+            "Karina Milei",
+            "Victoria Villarruel",
             "Passerini",
+            "Patricia Bullrich",
+            "Luis Juez",
             "Yuyales",
+            "Loredo",
             "Daniel Passerini",
-            "Martín Llaryora",
-            "Contorsiones"
-        ]
+            "Martín Llaryora"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.00489087076857686,
+            "negativo": 0.9509037137031555,
+            "neutral": 0.044205475598573685
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/cuanto-ganaban-por-mes-en-dolares-los-delegados-de-turismo-de-miami-y-paris-echados-por-milei/",
@@ -368,18 +410,24 @@
         "fecha": "22-03-2024",
         "hora": "14:31",
         "personas_detectadas_normalizadas": [
-            "Villarruel\nRespecto",
-            "Clarin",
-            "Daniel Scioli",
-            "Mercedes Benz",
+            "Luciana Sola de Suquet",
+            "Manuel Adorni",
             "Eduardo Piva",
+            "Javier Milei",
+            "Mercedes Benz",
+            "Daniel Scioli",
             "Victoria Villarruel",
+            "Clarin",
             "Turismo",
             "Extralite",
-            "Luciana Sola de Suquet",
-            "Javier Milei",
-            "Manuel Adorni"
-        ]
+            "Villarruel\nRespecto"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.03417845815420151,
+            "negativo": 0.5124877095222473,
+            "neutral": 0.4533338248729706
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/martin-llaryora-repudio-el-ataque-a-una-integrante-de-hijos/",
@@ -429,13 +477,19 @@
         "fecha": "22-03-2024",
         "hora": "00:07",
         "personas_detectadas_normalizadas": [
-            "Estela de Carlotto",
-            "Javier Milei",
-            "Passerini",
             "Abuelas",
+            "Javier Milei",
             "Daniel Passerini",
-            "Martín Llaryora"
-        ]
+            "Estela de Carlotto",
+            "Martín Llaryora",
+            "Passerini"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.051559142768383026,
+            "negativo": 0.6851798295974731,
+            "neutral": 0.26326102018356323
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/villarruel-y-una-inesperada-ayuda-para-llaryora/",
@@ -488,21 +542,27 @@
         "fecha": "23-03-2024",
         "hora": "15:44",
         "personas_detectadas_normalizadas": [
-            "Ignacio Torres",
-            "Luis Juez",
-            "Juan Schiaretti",
-            "Victoria Villarruel",
             "Presidente",
-            "Javier Pretto",
             "Luis Caputo",
-            "Jesús María",
             "Javier Milei",
+            "Ariel Lijo",
+            "Ignacio Torres",
             "Fonid",
+            "Victoria Villarruel",
+            "Juan Schiaretti",
+            "Luis Juez",
+            "Javier Pretto",
             "Juez",
             "Myrian Prunotto",
-            "Martín Llaryora",
-            "Ariel Lijo"
-        ]
+            "Jesús María",
+            "Martín Llaryora"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.006327338516712189,
+            "negativo": 0.9357298016548157,
+            "neutral": 0.05794293060898781
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/guillermo-francos-apunto-contra-los-comentarios-de-estela-de-carlotto/",
@@ -538,13 +598,19 @@
         "fecha": "25-03-2024",
         "hora": "11:01",
         "personas_detectadas_normalizadas": [
-            "Estela de Carlotto",
-            "Victoria Villaruel",
+            "Guillermo Francos",
             "Presidente",
             "Tata Yofre",
-            "Guillermo Francos",
+            "Victoria Villaruel",
+            "Estela de Carlotto",
             "Labraña"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.008699202910065651,
+            "negativo": 0.880859911441803,
+            "neutral": 0.11044088751077652
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/patricia-bullrich-defendio-la-participacion-de-militares-en-la-lucha-contra-el-narcotrafico/",
@@ -580,11 +646,17 @@
         "fecha": "22-03-2024",
         "hora": "09:56",
         "personas_detectadas_normalizadas": [
-            "Jonathan Viale",
-            "Luis Petri",
             "Patricia Bullrich",
+            "Luis Petri",
+            "Jonathan Viale",
             "Victoria Villarruel"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.2648385763168335,
+            "negativo": 0.097062848508358,
+            "neutral": 0.6380985975265503
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/congreso-del-pj-la-falta-de-acuerdos-postergo-la-integracion-de-la-mesa-de-accion-politica/",
@@ -639,45 +711,51 @@
         "fecha": "23-03-2024",
         "hora": "00:00",
         "personas_detectadas_normalizadas": [
+            "Raúl Jalil",
+            "Máximo Kirchner",
+            "Fernando Espinoza",
+            "Axel Kicillof",
+            "Antonio Caló",
             "Gildo Insfrán",
-            "Cristina Kirchner",
-            "quela",
-            "Quintela",
-            "Perón",
-            "Sergio Berni",
-            "Julio Vitobello",
-            "La Cámpora",
-            "Felipe Solá",
+            "Javier Milei",
+            "Evita",
+            "Santiago Cafiero",
             "Anabel Fernández Sagasti",
             "Estevez",
-            "Ricardo Pignanelli",
-            "Fernando Espinoza",
-            "Gabriela Estévez",
             "Néstor Kirchner",
-            "Alberto Fernández",
-            "Santiago Cafiero",
+            "Alberto Rodríguez Saá",
+            "Trascendió",
+            "Fernández",
+            "Martín Llaryora",
+            "quela",
+            "Jalil",
             "Eduardo Valdés",
             "Fernando Gray",
-            "Juan Domingo Perón",
-            "Evita",
-            "Fernández",
-            "Trascendió",
-            "Alberto Rodríguez Saá",
-            "Raúl Jalil",
-            "Verónica Magario",
-            "Jalil",
-            "Guillermo Oliveri",
-            "Axel Kicillof",
-            "Javier Milei",
+            "Felipe Solá",
+            "Ricardo Pignanelli",
             "Grey",
-            "Martín Llaryora",
             "Ziliotto",
-            "Corpacci",
+            "Guillermo Oliveri",
             "Sergio Uñac",
-            "Antonio Caló",
+            "Sergio Berni",
+            "Verónica Magario",
+            "Cristina Kirchner",
+            "Gabriela Estévez",
+            "Perón",
+            "La Cámpora",
+            "Julio Vitobello",
+            "Corpacci",
+            "Quintela",
+            "Juan Domingo Perón",
             "Mayra Mendoza",
-            "Máximo Kirchner"
-        ]
+            "Alberto Fernández"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.035291239619255066,
+            "negativo": 0.2750778794288635,
+            "neutral": 0.689630925655365
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/luis-caputo-confirmo-un-aumento-para-los-jubilados/",
@@ -714,10 +792,16 @@
         "fecha": "25-03-2024",
         "hora": "08:14",
         "personas_detectadas_normalizadas": [
+            "Luis Caputo",
             "Javier Milei",
-            "Luis Majul",
-            "Luis Caputo"
-        ]
+            "Luis Majul"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.13872785866260529,
+            "negativo": 0.17331604659557343,
+            "neutral": 0.6879560947418213
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/que-peronismo-quieren-llaryora-y-schiaretti/",
@@ -777,27 +861,33 @@
         "fecha": "22-03-2024",
         "hora": "09:13",
         "personas_detectadas_normalizadas": [
-            "Cristina Kirchner",
-            "Gildo Insfrán",
-            "Juan Schiaretti",
-            "Tampoco Schiaretti",
-            "Fernando Grey",
-            "Esteban Echeverría",
-            "Sergio Massa",
-            "Gildo\nSi",
-            "Facundo Moyano",
-            "Javier Milei",
-            "La Cámpora",
-            "Grey",
-            "Juan “Juanchi” Zabaleta",
-            "Martín Llaryora",
-            "José Manuel de la Sota",
-            "Carlos Gutiérrez",
+            "Máximo Kirchner",
             "Ricardo Quintela",
+            "José Manuel de la Sota",
+            "Javier Milei",
+            "Gildo Insfrán",
             "Néstor Kirchner",
+            "Cristina Kirchner",
+            "Fernando Grey",
+            "Martín Llaryora",
+            "Sergio Massa",
+            "La Cámpora",
+            "Gildo\nSi",
+            "Esteban Echeverría",
+            "Juan “Juanchi” Zabaleta",
+            "Juan Schiaretti",
+            "Grey",
+            "Facundo Moyano",
+            "Carlos Gutiérrez",
             "Alberto Fernández",
-            "Máximo Kirchner"
-        ]
+            "Tampoco Schiaretti"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.022957967594265938,
+            "negativo": 0.6128208637237549,
+            "neutral": 0.3642211854457855
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/vouchers-educativos-quienes-pueden-acceder-y-como-anotarse/",
@@ -833,7 +923,13 @@
         "index": 130,
         "fecha": "21-03-2024",
         "hora": "11:10",
-        "personas_detectadas_normalizadas": []
+        "personas_detectadas_normalizadas": [],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.17193695902824402,
+            "negativo": 0.08841196447610855,
+            "neutral": 0.739651083946228
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/conferencia-de-prensa-de-manuel-adorni-del-martes-19-de-enero-de-2024/",
@@ -864,10 +960,16 @@
         "fecha": "19-03-2024",
         "hora": "12:39",
         "personas_detectadas_normalizadas": [
+            "Manuel Adorni",
             "Armando Guibert",
-            "Javier Milei",
-            "Manuel Adorni"
-        ]
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.07189154624938965,
+            "negativo": 0.5719822645187378,
+            "neutral": 0.35612615942955017
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/victoria-villarruel-y-la-dura-respuesta-a-estela-de-carlotto/",
@@ -903,17 +1005,23 @@
         "fecha": "25-03-2024",
         "hora": "09:54",
         "personas_detectadas_normalizadas": [
-            "Respetá",
-            "Victoria Villarruel",
-            "Ernesto Guillermo Villarruel",
             "Eduardo Villarruel",
-            "Horacio Jaunarena",
-            "Estela de Carlotto",
-            "María Estela Martínez de Perón",
             "Javier Milei",
+            "Victoria Villarruel",
+            "María Estela Martínez de Perón",
+            "Ernesto Guillermo Villarruel",
+            "Respetá",
+            "Raúl Alfonsín",
             "Aldo Rico",
-            "Raúl Alfonsín"
-        ]
+            "Estela de Carlotto",
+            "Horacio Jaunarena"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.03077872097492218,
+            "negativo": 0.8255279660224915,
+            "neutral": 0.14369338750839233
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/llaryora-entendiendo-que-la-nacion-hoy-necesita-generar-una-modificacion-para-salir-adelante/",
@@ -945,9 +1053,15 @@
         "fecha": "19-03-2024",
         "hora": "14:18",
         "personas_detectadas_normalizadas": [
-            "Javier Milei",
-            "Martín Llaryora"
-        ]
+            "Martín Llaryora",
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "POS",
+            "positivo": 0.7833009362220764,
+            "negativo": 0.05649739131331444,
+            "neutral": 0.16020165383815765
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-impuesto-a-las-ganancias-un-posible-punto-de-conflicto-entre-llaryora-y-milei/",
@@ -1004,25 +1118,31 @@
         "fecha": "25-03-2024",
         "hora": "12:24",
         "personas_detectadas_normalizadas": [
-            "Cristina Kirchner",
-            "Juan Schiaretti",
-            "Tania Kyshakevych",
-            "Alejandra Vigo",
-            "Kyshakevych",
-            "Sergio Massa",
-            "Ganancias",
+            "Máximo Kirchner",
             "Javier Milei",
-            "Javier Taborda",
-            "Agustín González",
+            "Cristina Kirchner",
+            "Ganancias",
             "Diego Giuliano",
-            "Martín Llaryora",
-            "Guillermo Michel",
-            "González",
-            "Ángel Mario Elettore",
-            "Beltrán Corvalán",
             "Daniel Passerini",
-            "Máximo Kirchner"
-        ]
+            "Beltrán Corvalán",
+            "Martín Llaryora",
+            "Agustín González",
+            "Sergio Massa",
+            "Javier Taborda",
+            "Ángel Mario Elettore",
+            "González",
+            "Juan Schiaretti",
+            "Kyshakevych",
+            "Alejandra Vigo",
+            "Guillermo Michel",
+            "Tania Kyshakevych"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.011331774294376373,
+            "negativo": 0.7961240410804749,
+            "neutral": 0.1925441473722458
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/bullrich-sobre-el-dia-de-la-memoria-los-derechos-humanos-terminaron-siendo-algo-absolutamente-partidista/",
@@ -1059,9 +1179,15 @@
         "hora": "07:17",
         "personas_detectadas_normalizadas": [
             "Patricia Bullrich",
-            "Victoria Villarruel",
-            "Quién"
-        ]
+            "Quién",
+            "Victoria Villarruel"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.02925002947449684,
+            "negativo": 0.6973122954368591,
+            "neutral": 0.2734376788139343
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/dolar-planchado-por-que-no-sube-hasta-cuando-no-lo-hara/",
@@ -1116,15 +1242,21 @@
         "fecha": "24-03-2024",
         "hora": "18:06",
         "personas_detectadas_normalizadas": [
-            "Fernando Marengo",
-            "Andrés Borenstein",
-            "Borenstein",
             "Luis Caputo",
+            "Fernando Marengo",
+            "Literalmente",
             "Prepagas",
             "Javier Milei",
-            "Literalmente",
+            "Borenstein",
+            "Andrés Borenstein",
             "Marengo"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.009286588989198208,
+            "negativo": 0.8134521842002869,
+            "neutral": 0.1772611141204834
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/pregunto-cual-es-la-mejor-banda-de-rock-argentino-de-la-historia-y-genero-debate-en-tiktok/",
@@ -1153,7 +1285,13 @@
         "hora": "20:24",
         "personas_detectadas_normalizadas": [
             "Guido Iannaccone"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "POS",
+            "positivo": 0.48649269342422485,
+            "negativo": 0.032046739012002945,
+            "neutral": 0.4814605712890625
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/en-162-anos-de-historia-la-corte-suprema-tuvo-111-ministros-solo-tres-fueron-mujeres/",
@@ -1201,21 +1339,27 @@
         "fecha": "21-03-2024",
         "hora": "00:03",
         "personas_detectadas_normalizadas": [
-            "Carlos Rosenkrantz",
-            "Mujer",
             "Amja",
             "Carmen Argibay",
-            "Argibay",
+            "Juan Carlos Maqueda",
             "Horacio Rosatti",
-            "Citando",
+            "Carlos Rosenkrantz",
+            "Ricardo Lorenzetti",
+            "Argibay",
+            "Mujer",
+            "Presidente de la Nación",
             "Néstor Kirchner",
             "Elena Highton de Nolasco",
-            "Presidente de la Nación",
-            "Juan Carlos Maqueda",
             "Juez",
-            "Margarita Argúas",
-            "Ricardo Lorenzetti"
-        ]
+            "Citando",
+            "Margarita Argúas"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.09133180975914001,
+            "negativo": 0.18526478111743927,
+            "neutral": 0.7234034538269043
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-relacion-helada-entre-de-loredo-y-lousteau-con-milei-en-el-medio/",
@@ -1270,27 +1414,33 @@
         "fecha": "24-03-2024",
         "hora": "20:22",
         "personas_detectadas_normalizadas": [
-            "Presidente",
-            "Mendiolaza",
-            "Gabriela Brouwer de Koning",
-            "Luis Roldán",
-            "Rodrigo de Loredo",
-            "Marta Trimarchi",
             "Javier Milei",
-            "Eduardo Bittar",
             "Karina Milei",
-            "Adela Arning",
+            "Carrera",
             "Mariano Jandula",
+            "Marta Trimarchi",
+            "Hacienda",
+            "Eduardo Bittar",
             "Marcos Ferrer",
+            "Presidente",
+            "Adela Arning",
             "Juan Manuel Cid",
+            "Rodrigo de Loredo",
+            "Luis Roldán",
+            "Mendiolaza",
+            "Gabriel Bornoroni",
             "Tribunales I",
             "De Loredo",
-            "Gabriel Bornoroni",
-            "Ignacio Segura",
-            "Carrera",
-            "Hacienda",
-            "Martín Lousteau"
-        ]
+            "Gabriela Brouwer de Koning",
+            "Martín Lousteau",
+            "Ignacio Segura"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.027973996475338936,
+            "negativo": 0.529411792755127,
+            "neutral": 0.44261428713798523
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/otro-paro-de-la-cgt-al-gobierno-de-milei-las-dudas-en-la-central-obrera-antes-de-convocarlo/",
@@ -1329,19 +1479,25 @@
         "fecha": "25-03-2024",
         "hora": "18:57",
         "personas_detectadas_normalizadas": [
-            "Juan Domingo Perón",
-            "José Luis Rodríguez",
-            "Sergio Sasia",
-            "Manuel Adorni",
             "Gustavo Weiss",
-            "Moyano",
-            "Gerardo Martínez",
-            "Pablo Moyano",
-            "Eduardo Valdés",
+            "Manuel Adorni",
             "Javier Milei",
+            "Eduardo Valdés",
+            "Gerardo Martínez",
+            "Juan Domingo Perón",
+            "Sergio Sasia",
+            "José Luis Rodríguez",
+            "Héctor Daer",
+            "Pablo Moyano",
             "José Luis Lingieri",
-            "Héctor Daer"
-        ]
+            "Moyano"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.019870437681674957,
+            "negativo": 0.6345818042755127,
+            "neutral": 0.34554776549339294
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/conferencia-de-prensa-de-manuel-adorni-del-viernes-22-de-marzo-de-2024/",
@@ -1374,14 +1530,20 @@
         "fecha": "22-03-2024",
         "hora": "10:58",
         "personas_detectadas_normalizadas": [
-            "Villarruel\nRespecto",
-            "Mercedes Benz",
-            "Javier Milei",
-            "Victoria Villarruel",
             "Manuel Adorni",
+            "Javier Milei",
             "Turismo",
-            "Extralite"
-        ]
+            "Mercedes Benz",
+            "Extralite",
+            "Villarruel\nRespecto",
+            "Victoria Villarruel"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.052248794585466385,
+            "negativo": 0.3600517213344574,
+            "neutral": 0.5876994729042053
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/que-dice-la-ley-antimafia-que-presento-el-gobierno-de-milei-inspirada-en-la-que-usa-nayib-bukele/",
@@ -1419,7 +1581,13 @@
         "personas_detectadas_normalizadas": [
             "Patricia Bullrich",
             "Nayib Bukele"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.10432132333517075,
+            "negativo": 0.1385788917541504,
+            "neutral": 0.7570998072624207
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/alberto-fernandez-responsabilizo-a-javier-milei-por-el-ataque-a-una-integrante-de-hijos/",
@@ -1454,11 +1622,17 @@
         "fecha": "21-03-2024",
         "hora": "18:29",
         "personas_detectadas_normalizadas": [
+            "Presidente",
             "Cristina Kirchner",
             "Alberto Fernández",
-            "Javier Milei",
-            "Presidente"
-        ]
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.04145025089383125,
+            "negativo": 0.43073856830596924,
+            "neutral": 0.5278112292289734
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/bullrich-denuncio-a-pietragalla-por-responsabilizar-al-estado-de-la-muerte-de-santiago-maldonado/",
@@ -1495,14 +1669,20 @@
         "fecha": "25-03-2024",
         "hora": "12:41",
         "personas_detectadas_normalizadas": [
-            "Pietragalla",
-            "Horacio Pietragalla",
             "Patricia Bullrich",
-            "Maldonado",
-            "Alberto Fernández",
             "Javier Milei",
+            "Maldonado",
+            "Pietragalla",
+            "Alberto Fernández",
+            "Horacio Pietragalla",
             "Julián Ercolini"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.022050756961107254,
+            "negativo": 0.6249549984931946,
+            "neutral": 0.3529942035675049
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/economia-coloco-titulos-por-132-billones-y-comprara-dolares-para-pagar-deuda/",
@@ -1538,9 +1718,15 @@
         "fecha": "21-03-2024",
         "hora": "18:40",
         "personas_detectadas_normalizadas": [
-            "LECAP",
-            "Pablo Quirno"
-        ]
+            "Pablo Quirno",
+            "LECAP"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.11078564822673798,
+            "negativo": 0.06494233757257462,
+            "neutral": 0.8242720365524292
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/combustibles-con-la-suba-del-impuesto-nafta-super-subiria-37-en-cordoba/",
@@ -1576,7 +1762,13 @@
             "Fernández",
             "Alberto Fernández",
             "Javier Milei"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.05411019176244736,
+            "negativo": 0.280061811208725,
+            "neutral": 0.6658279895782471
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-descargo-de-uno-de-los-funcionarios-de-turismo-despedidos-por-el-gobierno-nacional/",
@@ -1613,9 +1805,15 @@
         "hora": "22:30",
         "personas_detectadas_normalizadas": [
             "Turismo",
-            "Piva",
-            "Cancillería"
-        ]
+            "Cancillería",
+            "Piva"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.03338151425123215,
+            "negativo": 0.20909716188907623,
+            "neutral": 0.7575212717056274
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/24m-el-mensaje-de-alberto-fernandez-contra-quienes-intentan-tergiversar-la-verdad/",
@@ -1646,12 +1844,18 @@
         "fecha": "24-03-2024",
         "hora": "10:47",
         "personas_detectadas_normalizadas": [
+            "Julio César Strassera",
             "Massera",
-            "Fernández",
-            "Videla",
             "Viola",
-            "Julio César Strassera"
-        ]
+            "Videla",
+            "Fernández"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.06642281264066696,
+            "negativo": 0.7260145545005798,
+            "neutral": 0.2075626403093338
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/gobierno-de-javier-milei-se-acentua-la-caida-de-las-transferencias-nacionales-a-las-provincias/",
@@ -1681,7 +1885,13 @@
         "personas_detectadas_normalizadas": [
             "Politikón Chanco",
             "Ganancias"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.06807199120521545,
+            "negativo": 0.11246710270643234,
+            "neutral": 0.8194609880447388
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/lemoine-mostro-como-practica-tiro-y-conto-que-se-esta-preparando-para-pedir-la-tenencia-de-armas/",
@@ -1717,9 +1927,15 @@
         "fecha": "26-03-2024",
         "hora": "10:03",
         "personas_detectadas_normalizadas": [
-            "Javier Milei",
-            "Lemoine"
-        ]
+            "Lemoine",
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.19453927874565125,
+            "negativo": 0.05162522941827774,
+            "neutral": 0.7538353800773621
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/hubo-acuerdo-con-patricia-bullrich-y-mauricio-macri-sera-el-proximo-presidente-del-pro/",
@@ -1769,31 +1985,37 @@
         "fecha": "20-03-2024",
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
-            "Vicente López",
-            "Silvia Lospennato",
-            "Alvaro González",
-            "Juan Pablo Arenaza",
-            "Derrotada",
-            "Facundo Pérez Carletti",
-            "Macri\nMacri",
-            "Sergio Massa",
-            "Humberto Schiavoni",
-            "Nacho Torres",
-            "Rogelio Frigerio",
-            "Javier Milei",
-            "Fernando de Andreis",
-            "Rodríguez Larreta-Gerardo Morales",
-            "Horacio Rodríguez Larreta",
-            "Jorge Macri",
-            "Rodríguez",
-            "Damián Arabia",
-            "La Libertad Avanza",
-            "Pablo Walter",
-            "Patricia Bullrich",
             "Mauricio Macri",
+            "Rodríguez",
+            "Javier Milei",
+            "La Libertad Avanza",
+            "Fernando de Andreis",
+            "Damián Arabia",
+            "Derrotada",
+            "Pablo Walter",
+            "Humberto Schiavoni",
+            "Juan Pablo Arenaza",
+            "Sergio Massa",
+            "Vicente López",
+            "Jorge Macri",
+            "Luis Petri",
+            "Facundo Pérez Carletti",
+            "Rodríguez Larreta-Gerardo Morales",
+            "Patricia Bullrich",
+            "Nacho Torres",
+            "Alvaro González",
+            "Silvia Lospennato",
+            "Rogelio Frigerio",
+            "Horacio Rodríguez Larreta",
             "Cristian Ritondo",
-            "Luis Petri"
-        ]
+            "Macri\nMacri"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.04949541762471199,
+            "negativo": 0.17141373455524445,
+            "neutral": 0.7790908217430115
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-empleo-privado-comienza-a-resentirse-por-la-larga-recesion/",
@@ -1836,11 +2058,17 @@
         "fecha": "21-03-2024",
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
-            "Pablo Chacón",
             "Santa Isabel",
+            "Pablo Chacón",
             "Ramón Ramírez",
             "Agec"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.01075538620352745,
+            "negativo": 0.7576306462287903,
+            "neutral": 0.23161396384239197
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/escandalo-por-senadora-libertaria-que-nombro-a-8-familiares-en-el-congreso-la-respuesta-de-milei/",
@@ -1888,22 +2116,28 @@
         "fecha": "21-03-2024",
         "hora": "07:53",
         "personas_detectadas_normalizadas": [
+            "Manuel Adorni",
+            "Javier Milei",
             "Ricardo",
-            "Pablo Dipierri",
-            "Joel Benjamín Mamani",
-            "Daiana Ester Llanes",
+            "Albert Bedia",
             "Nélida",
+            "Joel Benjamín Mamani",
             "masoterapeuta",
             "Vilma Bedia",
-            "Javier Milei",
-            "Albert Bedia",
-            "Manuel Adorni",
+            "Mirta Araceli Silisque",
+            "Juan Carlos Bedia",
+            "José Jair Mamani",
             "Milei\nLa senadora Bedia",
             "Juan Carlos",
-            "Mirta Araceli Silisque",
-            "José Jair Mamani",
-            "Juan Carlos Bedia"
-        ]
+            "Daiana Ester Llanes",
+            "Pablo Dipierri"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.0731087252497673,
+            "negativo": 0.2886735498905182,
+            "neutral": 0.6382177472114563
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/se-profundiza-la-recesion-fuerte-caida-de-la-produccion-industrial/",
@@ -1952,9 +2186,15 @@
         "fecha": "23-03-2024",
         "hora": "00:09",
         "personas_detectadas_normalizadas": [
-            "Orlando Ferreres",
-            "Orlando Fererres"
-        ]
+            "Orlando Fererres",
+            "Orlando Ferreres"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.006186396349221468,
+            "negativo": 0.9377664923667908,
+            "neutral": 0.056047119200229645
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/quien-es-ricardo-scattolini-el-contador-publico-libertario-designado-al-frente-del-pami-de-rio-cuarto/",
@@ -1988,10 +2228,16 @@
         "hora": "10:08",
         "personas_detectadas_normalizadas": [
             "Fernando Bossio",
-            "Javier Milei",
             "Ricardo Scattolini",
+            "Javier Milei",
             "Alberdi"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.1681937426328659,
+            "negativo": 0.06853766739368439,
+            "neutral": 0.7632685303688049
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-gobierno-ratifico-el-aumento-de-275-para-abril-pero-el-decreto-genero-confusion/",
@@ -2031,7 +2277,13 @@
         "hora": "12:53",
         "personas_detectadas_normalizadas": [
             "Martín Vauthier"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.020398752763867378,
+            "negativo": 0.23740454018115997,
+            "neutral": 0.7421967387199402
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/comerciantes-de-morteros-convocaron-a-un-apagon-generalizado-contra-el-tarifazo-este-viernes/",
@@ -2067,9 +2319,15 @@
         "fecha": "19-03-2024",
         "hora": "22:34",
         "personas_detectadas_normalizadas": [
-            "Daniel Trucco",
-            "Trucco"
-        ]
+            "Trucco",
+            "Daniel Trucco"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.017531761899590492,
+            "negativo": 0.7331656217575073,
+            "neutral": 0.24930262565612793
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/pagar-la-luz-en-carretilla-el-descargo-de-la-cooperativa-de-huinca-renanco/",
@@ -2108,13 +2366,19 @@
         "fecha": "19-03-2024",
         "hora": "11:43",
         "personas_detectadas_normalizadas": [
-            "Face",
+            "Fecescor",
+            "Epec\nAguilera",
+            "Guillermo Oviedo",
             "Epec",
             "Aguilera",
-            "Epec\nAguilera",
-            "Fecescor",
-            "Guillermo Oviedo"
-        ]
+            "Face"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.026407582685351372,
+            "negativo": 0.591034471988678,
+            "neutral": 0.38255804777145386
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/como-sera-y-a-quienes-abarca-el-nuevo-aumento-del-100-en-la-energia-electrica-a-partir-de-mayo/",
@@ -2162,14 +2426,20 @@
         "fecha": "19-03-2024",
         "hora": "11:35",
         "personas_detectadas_normalizadas": [
-            "Epec",
             "Fabián López",
             "López",
+            "Epec",
             "López\nLópez",
+            "Mitre",
             "Cammesa",
-            "Martín Llaryora",
-            "Mitre"
-        ]
+            "Martín Llaryora"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.006092557683587074,
+            "negativo": 0.9032559990882874,
+            "neutral": 0.09065145254135132
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/energia-cordoba-le-pide-a-la-nacion-mayor-gradualismo-en-las-subas/",
@@ -2220,15 +2490,21 @@
         "fecha": "20-03-2024",
         "hora": "12:21",
         "personas_detectadas_normalizadas": [
-            "Epec",
-            "López",
-            "Mitre",
-            "Aguilera",
             "Fabián López",
+            "López",
             "Javier Milei",
+            "Mitre",
             "Fecescor",
+            "Epec",
+            "Aguilera",
             "Cammesa"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.006150539964437485,
+            "negativo": 0.8860617280006409,
+            "neutral": 0.10778766125440598
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/habra-centenares-de-despidos-de-estatales-nacionales-en-cordoba/",
@@ -2280,12 +2556,18 @@
         "fecha": "24-03-2024",
         "hora": "00:00",
         "personas_detectadas_normalizadas": [
-            "Federico Giuliani",
             "Javier Milei",
+            "Federico Giuliani",
             "Giuliani",
-            "Martín Llaryora",
-            "Paralizarán"
-        ]
+            "Paralizarán",
+            "Martín Llaryora"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.03332144767045975,
+            "negativo": 0.4328918159008026,
+            "neutral": 0.5337867140769958
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-ministro-gill-volvio-a-declarar-por-5-horas-en-la-causa-como-imputado-por-lesiones-leves/",
@@ -2326,12 +2608,18 @@
         "fecha": "23-03-2024",
         "hora": "00:06",
         "personas_detectadas_normalizadas": [
-            "Juliana Companys",
-            "Gill",
-            "Rodríguez",
             "Martín Gill",
+            "Rodríguez",
+            "Gill",
+            "Juliana Companys",
             "Eduardo Rodríguez"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.04889705404639244,
+            "negativo": 0.27652788162231445,
+            "neutral": 0.6745750308036804
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/llegaron-al-pais-30-camiones-donados-por-china-a-la-argentina-para-combatir-el-covid-19/",
@@ -2365,15 +2653,21 @@
         "fecha": "22-03-2024",
         "hora": "12:35",
         "personas_detectadas_normalizadas": [
+            "Manuel Adorni",
+            "Javier Milei",
             "Mercedes Benz",
-            "Villarruel\nRespecto",
             "Victoria Villarruel",
             "Turismo",
             "Extralite",
-            "Alberto Fernández",
-            "Javier Milei",
-            "Manuel Adorni"
-        ]
+            "Villarruel\nRespecto",
+            "Alberto Fernández"
+        ],
+        "sentimiento": {
+            "etiqueta": "POS",
+            "positivo": 0.5072965621948242,
+            "negativo": 0.05705228075385094,
+            "neutral": 0.43565118312835693
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/macri-llamo-al-pueblo-venezolano-a-que-se-levante-contra-la-dictadura-de-maduro/",
@@ -2408,12 +2702,18 @@
         "fecha": "25-03-2024",
         "hora": "17:08",
         "personas_detectadas_normalizadas": [
+            "María Corina Machado",
             "Mauricio Macri",
             "Nicolás Maduro",
-            "Hugo Chávez",
             "Corina Yoris",
-            "María Corina Machado"
-        ]
+            "Hugo Chávez"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.00965186394751072,
+            "negativo": 0.8862895369529724,
+            "neutral": 0.10405854135751724
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-macro-viene-bien-pero-los-bolsillos-siguen-esperando/",
@@ -2463,13 +2763,19 @@
         "fecha": "23-03-2024",
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
-            "Alberto Fernández",
-            "Javier Milei",
-            "Osvaldo Giordano",
-            "Martín Llaryora",
+            "Luis Caputo",
             "Sergio Massa",
-            "Luis Caputo"
-        ]
+            "Javier Milei",
+            "Martín Llaryora",
+            "Osvaldo Giordano",
+            "Alberto Fernández"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.011572963558137417,
+            "negativo": 0.8349839448928833,
+            "neutral": 0.1534430831670761
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/hijos-aseguran-que-una-militante-fue-golpeada-y-abusada-y-le-dejaron-una-pintada-de-vllc/",
@@ -2516,16 +2822,22 @@
         "fecha": "21-03-2024",
         "hora": "10:32",
         "personas_detectadas_normalizadas": [
-            "Agustín Cetrángolo",
             "Abuelas",
-            "Jair Bolsonaro",
-            "Fernando Cerimedo",
-            "Fernando Cerimedo\nDel",
-            "Estela de Carlotto",
-            "Javier Milei",
             "H.I.J.O.S",
-            "Lula da Silva"
-        ]
+            "Javier Milei",
+            "Jair Bolsonaro",
+            "Fernando Cerimedo\nDel",
+            "Lula da Silva",
+            "Fernando Cerimedo",
+            "Estela de Carlotto",
+            "Agustín Cetrángolo"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.011288149282336235,
+            "negativo": 0.8696326613426208,
+            "neutral": 0.11907925456762314
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/semana-de-la-memoria-amplia-grilla-de-actividades-en-rio-cuarto/",
@@ -2573,13 +2885,19 @@
         "fecha": "19-03-2024",
         "hora": "10:48",
         "personas_detectadas_normalizadas": [
-            "Madre de Plaza de Mayo",
             "Susana Dillon",
-            "Novaira",
-            "Llamosas",
             "Causa Gutiérrez",
-            "Dillon"
-        ]
+            "Llamosas",
+            "Novaira",
+            "Dillon",
+            "Madre de Plaza de Mayo"
+        ],
+        "sentimiento": {
+            "etiqueta": "POS",
+            "positivo": 0.6184267997741699,
+            "negativo": 0.04756703972816467,
+            "neutral": 0.3340061902999878
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-fiscal-que-denuncio-a-carlotto-alerto-que-la-dirigente-invito-a-derrocar-al-presidente-por-la-fuerza/",
@@ -2610,7 +2928,13 @@
         "personas_detectadas_normalizadas": [
             "Estela de Carlotto",
             "Mitre"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.07832986861467361,
+            "negativo": 0.5560571551322937,
+            "neutral": 0.36561307311058044
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/un-grupo-de-radicales-cordobeses-salio-al-cruce-del-gobierno-nacional/",
@@ -2653,18 +2977,24 @@
         "fecha": "21-03-2024",
         "hora": "17:48",
         "personas_detectadas_normalizadas": [
-            "Rossi",
-            "Ariel Lijo",
-            "Cristian Canalis",
             "Presidente",
+            "Rossi",
+            "Javier Milei",
+            "Ariel Lijo",
             "Camila Bossio",
-            "Rossi y Peralta",
+            "Cristian Canalis",
+            "Martín Lousteau",
             "Luciana Almada",
             "Agustín Maldonado",
-            "Javier Milei",
             "Manuel José García Mansilla",
-            "Martín Lousteau"
-        ]
+            "Rossi y Peralta"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.0040084379725158215,
+            "negativo": 0.9687861800193787,
+            "neutral": 0.027205392718315125
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/martin-memen-sorteara-su-primer-sueldo-de-diputado-nacional-quienes-pueden-participar/",
@@ -2692,10 +3022,16 @@
         "fecha": "25-03-2024",
         "hora": "14:18",
         "personas_detectadas_normalizadas": [
-            "Martín Menem",
+            "Victoria Villarruel",
             "Javier Milei",
-            "Victoria Villarruel"
-        ]
+            "Martín Menem"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.06876824796199799,
+            "negativo": 0.0496039092540741,
+            "neutral": 0.8816277980804443
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/opinion/editorial/el-equilibrio-fiscal-de-las-provincias/",
@@ -2740,9 +3076,15 @@
         "fecha": "22-03-2024",
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
-            "Fonid",
-            "Manuel Adorni"
-        ]
+            "Manuel Adorni",
+            "Fonid"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.003623394761234522,
+            "negativo": 0.955469012260437,
+            "neutral": 0.040907587856054306
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/reincorporaron-a-una-de-los-trabajadores-despedidos-de-anses-y-esperan-la-resolucion-de-otros-dos-casos/",
@@ -2776,7 +3118,13 @@
             "Sandra Pettovello",
             "Marcos Aostri",
             "Carolina Tealdi"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.11878161132335663,
+            "negativo": 0.3233874440193176,
+            "neutral": 0.5578309297561646
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/estela-de-carlotto-la-democracia-tiene-una-enorme-deuda-restituir-la-identidad-de-unas-300-personas/",
@@ -2805,12 +3153,18 @@
         "fecha": "24-03-2024",
         "hora": "17:10",
         "personas_detectadas_normalizadas": [
+            "Abuelas",
+            "Javier Milei",
             "Estela de Carlotto",
             "Julio López",
-            "Javier Milei",
-            "Victoria Villarruel",
-            "Abuelas"
-        ]
+            "Victoria Villarruel"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.009166157804429531,
+            "negativo": 0.9228174090385437,
+            "neutral": 0.068016417324543
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/indec-alberto-dejo-el-desempleo-en-minimos-pero-cuidado-con-los-datos/",
@@ -2861,7 +3215,13 @@
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
             "Alberto"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.05426362156867981,
+            "negativo": 0.5000937581062317,
+            "neutral": 0.4456426203250885
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/conferencia-de-prensa-de-manuel-adorni-de-este-lunes-25-de-marzo-de-2024/",
@@ -2899,10 +3259,16 @@
         "hora": "11:34",
         "personas_detectadas_normalizadas": [
             "Luis Caputo",
-            "Máximo Kirchner",
+            "Manuel Adorni",
             "Estela de Carlotto",
-            "Manuel Adorni"
-        ]
+            "Máximo Kirchner"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.03507367894053459,
+            "negativo": 0.362905353307724,
+            "neutral": 0.6020209789276123
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-viuda-de-jose-rucci-rompio-el-silencio-tras-50-anos-pidio-memoria-completa/",
@@ -2950,19 +3316,25 @@
         "fecha": "26-03-2024",
         "hora": "08:19",
         "personas_detectadas_normalizadas": [
-            "Juan Domingo Perón",
-            "José Ignacio Rucci",
-            "Javier Milei-",
-            "Rogelio Coria",
-            "José Rucci\nNélida Vaglio",
-            "Perón",
-            "Mitre",
             "Ayer",
-            "Rucci",
+            "Perón",
             "Javier Milei",
+            "Mitre",
+            "Javier Milei-",
             "Alcorta",
-            "José Rucci"
-        ]
+            "Juan Domingo Perón",
+            "Rogelio Coria",
+            "Rucci",
+            "José Rucci",
+            "José Ignacio Rucci",
+            "José Rucci\nNélida Vaglio"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.03046802245080471,
+            "negativo": 0.5324753522872925,
+            "neutral": 0.4370565414428711
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/denunciaron-a-estela-de-carlotto-por-alzamiento-en-armas-contra-la-constitucion/",
@@ -2993,12 +3365,18 @@
         "fecha": "25-03-2024",
         "hora": "17:41",
         "personas_detectadas_normalizadas": [
-            "Estela de Carlotto",
             "Juan Manuel Pettigiani",
-            "Juan Grabois",
             "Javier Milei",
+            "Estela de Carlotto",
+            "Juan Grabois",
             "Victoria Villarruel"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.026882115751504898,
+            "negativo": 0.5757667422294617,
+            "neutral": 0.39735108613967896
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-presidente-del-tsj-abre-un-ano-judicial-desafiante-por-la-crisis-y-la-inseguridad/",
@@ -3045,18 +3423,24 @@
         "fecha": "23-03-2024",
         "hora": "00:05",
         "personas_detectadas_normalizadas": [
+            "Luis Angulo",
+            "#justiciaporsebastian",
+            "Martín López",
+            "Juan Carlos Maqueda",
             "Jimena Villarreal",
             "Sebastián Villarreal",
-            "Sebastián",
             "Angulo",
             "Yofre",
+            "Sebastián",
             "Sebastián\nLa familia de",
-            "#justiciaporsebastian",
-            "Luis Angulo",
-            "Juan Carlos Maqueda",
-            "Martín Llaryora",
-            "Martín López"
-        ]
+            "Martín Llaryora"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.30746376514434814,
+            "negativo": 0.14550957083702087,
+            "neutral": 0.5470266938209534
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-gobierno-de-milei-otorgo-un-nuevo-aumento-a-estatales-de-cuanto-es-y-que-gremio-lo-rechazo/",
@@ -3086,7 +3470,13 @@
         "hora": "21:56",
         "personas_detectadas_normalizadas": [
             "Javier Milei"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.018832826986908913,
+            "negativo": 0.5448647737503052,
+            "neutral": 0.43630242347717285
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/sin-los-votos-para-el-rechazo-union-por-la-patria-evita-forzar-una-sesion-por-el-dnu/",
@@ -3129,29 +3519,35 @@
         "fecha": "20-03-2024",
         "hora": "12:26",
         "personas_detectadas_normalizadas": [
-            "Hugo Passalacqua",
-            "Osvaldo Llancafilo",
-            "José Luis Espert",
-            "Gabriela Brouwer de Koning",
-            "José Luis Garrido",
-            "Germán Martínez",
-            "Rogelio Frigerio",
-            "Martín Menem",
-            "Martín Llaryora",
-            "Ignacio Torres",
-            "Sergio Acevedo",
-            "Natalia De la Sota",
-            "Margarita Stolbizer",
-            "Gustavo Sáenz",
-            "Primero",
-            "Agustín Domingo",
-            "Esteban Paulón",
             "Manuel Adorni",
-            "Hacienda",
-            "Alberto Weretilneck",
+            "Sergio Acevedo",
+            "Esteban Paulón",
             "Martínez",
-            "Mónica Fein"
-        ]
+            "Primero",
+            "Mónica Fein",
+            "Osvaldo Llancafilo",
+            "Hacienda",
+            "Martín Llaryora",
+            "Germán Martínez",
+            "Natalia De la Sota",
+            "Agustín Domingo",
+            "Martín Menem",
+            "Margarita Stolbizer",
+            "Ignacio Torres",
+            "José Luis Espert",
+            "Rogelio Frigerio",
+            "Gabriela Brouwer de Koning",
+            "Gustavo Sáenz",
+            "José Luis Garrido",
+            "Hugo Passalacqua",
+            "Alberto Weretilneck"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.007351466454565525,
+            "negativo": 0.8655645847320557,
+            "neutral": 0.12708386778831482
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/hugo-moyano-amenazo-a-ypf-con-un-paro-que-afectaria-la-actividad-en-nueve-provincias/",
@@ -3183,7 +3579,13 @@
         "hora": "13:00",
         "personas_detectadas_normalizadas": [
             "Moyano"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.016416992992162704,
+            "negativo": 0.7711842060089111,
+            "neutral": 0.21239879727363586
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/coparticipacion-sin-tregua-en-la-lucha-politica-se-acentua-la-caida-de-las-transferencias-nacionales-a-las-provincias/",
@@ -3238,13 +3640,19 @@
         "fecha": "19-03-2024",
         "hora": "23:59",
         "personas_detectadas_normalizadas": [
-            "Peor",
-            "Caba",
-            "Ganancias",
             "Politikón Chaco",
             "Javier Milei",
-            "Martín Llaryora Milei"
-        ]
+            "Peor",
+            "Ganancias",
+            "Martín Llaryora Milei",
+            "Caba"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.04910353198647499,
+            "negativo": 0.24699726700782776,
+            "neutral": 0.7038992047309875
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/muchachos-el-dolar-no-va-a-aumentar-caputo-uso-la-cancion-del-mundial-para-descartar-una-devaluacion/",
@@ -3300,9 +3708,15 @@
         "fecha": "21-03-2024",
         "hora": "17:40",
         "personas_detectadas_normalizadas": [
-            "Mauricio Macri",
-            "Luis Caputo"
-        ]
+            "Luis Caputo",
+            "Mauricio Macri"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.010456310585141182,
+            "negativo": 0.8219824433326721,
+            "neutral": 0.16756126284599304
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/proyecciones-de-inflacion-justifican-la-inquietud-del-gobierno/",
@@ -3355,13 +3769,19 @@
         "fecha": "20-03-2024",
         "hora": "16:42",
         "personas_detectadas_normalizadas": [
-            "Gabriel Caamaño",
-            "Scantech",
-            "Javier Milei",
+            "Luis Caputo",
             "Lautaro Moschet",
+            "Javier Milei",
+            "Scantech",
             "Alfredo González",
-            "Luis Caputo"
-        ]
+            "Gabriel Caamaño"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.02389467880129814,
+            "negativo": 0.601279616355896,
+            "neutral": 0.37482571601867676
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/provincia-rubrico-el-convenio-para-el-inicio-de-la-primera-etapa-de-la-circunvalacion-de-rio-cuarto/",
@@ -3396,14 +3816,20 @@
         "fecha": "20-03-2024",
         "hora": "15:21",
         "personas_detectadas_normalizadas": [
-            "Martín Gutiérrez",
-            "Juan Manuel Llamosas",
             "Juan Schiaretti",
-            "De Rivas",
-            "Carlos Gutiérrez",
             "Julián Oberti",
-            "Guillermo De Rivas"
-        ]
+            "De Rivas",
+            "Guillermo De Rivas",
+            "Martín Gutiérrez",
+            "Carlos Gutiérrez",
+            "Juan Manuel Llamosas"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.24623948335647583,
+            "negativo": 0.07114192098379135,
+            "neutral": 0.6826186180114746
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/continuan-las-actividades-educativas-y-culturales-por-la-semana-de-la-memoria-en-cordoba/",
@@ -3482,20 +3908,26 @@
         "fecha": "19-03-2024",
         "hora": "19:50",
         "personas_detectadas_normalizadas": [
-            "Sonia Torres",
-            "Astrid Patiño Carabelli",
-            "Costanera",
             "Abuelas",
-            "Ricardo Fermín Albareda",
             "Sabattini",
+            "Hector Ludueña",
+            "Ricardo Fermín Albareda",
+            "Sonia Torres",
             "Dante Alighieri",
-            "Miguel Cabrera",
-            "Finochietto",
             "María Eugenia Pujadas",
+            "Finochietto",
+            "Miguel Cabrera",
+            "Astrid Patiño Carabelli",
             "Gladys Comba",
             "Martín Llaryora",
-            "Hector Ludueña"
-        ]
+            "Costanera"
+        ],
+        "sentimiento": {
+            "etiqueta": "POS",
+            "positivo": 0.5276610851287842,
+            "negativo": 0.04491911083459854,
+            "neutral": 0.4274197816848755
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/gobierno-de-milei-100-dias-en-los-que-celebra-la-macro-economia-pero-sufre-la-actividad-en-la-calle/",
@@ -3547,7 +3979,13 @@
         "personas_detectadas_normalizadas": [
             "Alberto Fernández",
             "Javier Milei"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.0078000519424676895,
+            "negativo": 0.8815862536430359,
+            "neutral": 0.11061370372772217
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/hablo-el-joven-que-fue-preso-acusado-de-terrorismo-por-hacerle-fuck-you-a-gildo-insfran/",
@@ -3575,15 +4013,21 @@
         "fecha": "22-03-2024",
         "hora": "15:58",
         "personas_detectadas_normalizadas": [
-            "Gildo Insfrán",
-            "Malkiewiez",
-            "Germán Malkiewiez",
-            "Néstor Kirchner",
-            "Trinidad González",
-            "Germán",
             "Gobernador",
+            "Germán",
+            "Germán Malkiewiez",
+            "Gildo Insfrán",
+            "Trinidad González",
+            "Néstor Kirchner",
+            "Malkiewiez",
             "Julieta González"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.0065047177486121655,
+            "negativo": 0.9327429533004761,
+            "neutral": 0.060752276331186295
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/maximo-kirchner-critico-el-spot-del-gobierno-se-pone-en-duda-la-tragedia-argentina/",
@@ -3620,14 +4064,20 @@
         "hora": "14:59",
         "personas_detectadas_normalizadas": [
             "Side",
-            "Juan Bautista “Tata” Yofre",
-            "Santiago Oría",
-            "Victoria Villaruel",
-            "Néstor Kirchner",
-            "Humberto Viola",
             "María Fernanda Viola",
-            "Luis Labraña"
-        ]
+            "Luis Labraña",
+            "Humberto Viola",
+            "Santiago Oría",
+            "Néstor Kirchner",
+            "Juan Bautista “Tata” Yofre",
+            "Victoria Villaruel"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.0026328577660024166,
+            "negativo": 0.9791848659515381,
+            "neutral": 0.018182191997766495
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/encuesta-a-100-dias-de-milei-del-estoy-peor-que-antes-a-la-aprobacion-del-515/",
@@ -3696,18 +4146,24 @@
         "fecha": "19-03-2024",
         "hora": "14:56",
         "personas_detectadas_normalizadas": [
-            "Balotaje\nOtro",
-            "Cristina Kirchner",
-            "Juan Grabois",
-            "Aquella",
             "Sergio Massa",
-            "Victoria Villaruel",
             "Axel Kicillof",
-            "Javier Milei",
-            "Alberto Fernández",
             "Mauricio Macri",
-            "Explanans"
-        ]
+            "Javier Milei",
+            "Aquella",
+            "Explanans",
+            "Cristina Kirchner",
+            "Balotaje\nOtro",
+            "Victoria Villaruel",
+            "Juan Grabois",
+            "Alberto Fernández"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.27925530076026917,
+            "negativo": 0.03386504575610161,
+            "neutral": 0.6868797540664673
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/en-106-dias-de-milei-primero-el-shock-y-ahora-el-gradualismo/",
@@ -3756,14 +4212,20 @@
         "fecha": "25-03-2024",
         "hora": "18:39",
         "personas_detectadas_normalizadas": [
-            "Santiago Bausili",
+            "Luis Caputo",
             "Alberto Fernández",
+            "Santiago Bausili",
             "Javier Milei",
-            "Osvaldo Giordano",
-            "Bausili",
             "Marina Dal Pogetto",
-            "Luis Caputo"
-        ]
+            "Osvaldo Giordano",
+            "Bausili"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.010927766561508179,
+            "negativo": 0.8885822296142578,
+            "neutral": 0.10048999637365341
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-saludo-de-martin-menem-presidente-de-la-camara-de-diputados-de-la-nacion/",
@@ -3787,7 +4249,13 @@
         "hora": "10:17",
         "personas_detectadas_normalizadas": [
             "Martín Menem"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "POS",
+            "positivo": 0.6390966773033142,
+            "negativo": 0.027079656720161438,
+            "neutral": 0.33382371068000793
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/legisladores-del-pj-y-la-ucr-coincidieron-en-la-preocupacion-por-el-sector-pymes/",
@@ -3815,13 +4283,19 @@
         "fecha": "25-03-2024",
         "hora": "18:23",
         "personas_detectadas_normalizadas": [
-            "Gustavo Tevez",
-            "Raúl Figueroa",
-            "Ileana Quaglino",
             "Lucas Valiente",
-            "Antonio Russo",
-            "Mariano Ceballos"
-        ]
+            "Raúl Figueroa",
+            "Mariano Ceballos",
+            "Gustavo Tevez",
+            "Ileana Quaglino",
+            "Antonio Russo"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.017094703391194344,
+            "negativo": 0.7326851487159729,
+            "neutral": 0.2502202093601227
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/conferencia-del-prensa-de-manuel-adorni-vocero-presidencial-del-jueves-21-de-marzo-de-2024/",
@@ -3855,14 +4329,20 @@
         "fecha": "21-03-2024",
         "hora": "14:07",
         "personas_detectadas_normalizadas": [
-            "Manuel García-Mansilla",
-            "Ariel Lijo",
-            "Javier Milei",
-            "Fopea",
             "Manuel Adorni",
+            "Fopea",
             "Hijos",
-            "Casa Rosada"
-        ]
+            "Javier Milei",
+            "Casa Rosada",
+            "Ariel Lijo",
+            "Manuel García-Mansilla"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.10361836105585098,
+            "negativo": 0.2616189420223236,
+            "neutral": 0.6347626447677612
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/sigue-el-escandalo-las-nuevas-polizas-sospechosas-detectadas-en-el-exministerio-de-la-mujer/",
@@ -3895,13 +4375,19 @@
         "fecha": "25-03-2024",
         "hora": "17:53",
         "personas_detectadas_normalizadas": [
+            "Elizabeth Gómez Alcorta",
             "Carlos Soria",
-            "Ercolini",
-            "Alberto Fernández",
             "Osvaldo Giordano",
+            "Alberto Fernández",
             "Julián Ercolini",
-            "Elizabeth Gómez Alcorta"
-        ]
+            "Ercolini"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.06475619971752167,
+            "negativo": 0.13095495104789734,
+            "neutral": 0.8042888641357422
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/decomisaron-el-barco-que-pesco-ilegalmente-merluza-negra-y-encontraron-una-grave-falta-ambiental/",
@@ -3936,14 +4422,20 @@
         "fecha": "21-03-2024",
         "hora": "18:12",
         "personas_detectadas_normalizadas": [
-            "Suárez",
             "Cancillería",
-            "Pablo Ferrara Raisberg",
             "Juan Antonio López Cazorla",
-            "Liu Zhijiang",
+            "Pablo Ferrara Raisberg",
+            "Suárez",
+            "Julián Suárez",
             "Tai An",
-            "Julián Suárez"
-        ]
+            "Liu Zhijiang"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.0066594211384654045,
+            "negativo": 0.8356872797012329,
+            "neutral": 0.15765328705310822
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/pediran-una-sesion-especial-para-limitar-el-juego-on-line/",
@@ -3986,10 +4478,16 @@
         "fecha": "25-03-2024",
         "hora": "16:25",
         "personas_detectadas_normalizadas": [
-            "Alejandra Ferrero",
             "José de la Quintana",
-            "Ferrero"
-        ]
+            "Ferrero",
+            "Alejandra Ferrero"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.011748525314033031,
+            "negativo": 0.506222665309906,
+            "neutral": 0.4820288121700287
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/sin-los-votos-de-union-por-la-patria-en-el-senado-el-gobierno-no-podra-completar-la-corte/",
@@ -4028,24 +4526,30 @@
         "fecha": "20-03-2024",
         "hora": "19:15",
         "personas_detectadas_normalizadas": [
-            "Victoria Villarruel",
-            "Guadalupe Tagliaferri",
-            "Horacio Rosatti",
-            "Juliana Di Tullio",
-            "Martín Lousteau",
-            "Carlos Arce",
-            "Ricardo Lorenzetti",
-            "Ezequiel Atauche",
-            "Carlos Rosenkrantz",
-            "Anabel Fernández Sagasti",
-            "Alicia Kirchner",
-            "José Mayans",
-            "Néstor Kirchner",
-            "Juan Carlos Romero",
             "Mauricio Macri",
+            "Carlos Arce",
             "Carlos “Camau” Espínola",
-            "Ariel Lijo"
-        ]
+            "Ariel Lijo",
+            "Anabel Fernández Sagasti",
+            "Néstor Kirchner",
+            "Ezequiel Atauche",
+            "Juliana Di Tullio",
+            "Horacio Rosatti",
+            "Carlos Rosenkrantz",
+            "Alicia Kirchner",
+            "Guadalupe Tagliaferri",
+            "Ricardo Lorenzetti",
+            "Victoria Villarruel",
+            "Martín Lousteau",
+            "Juan Carlos Romero",
+            "José Mayans"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.04622699320316315,
+            "negativo": 0.4716976284980774,
+            "neutral": 0.48207536339759827
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/camiones-para-enfrentar-al-covid-19-china-desmintio-al-gobierno-argentino/",
@@ -4076,9 +4580,15 @@
         "fecha": "22-03-2024",
         "hora": "19:30",
         "personas_detectadas_normalizadas": [
-            "Alberto Fernández",
-            "Manuel Adorni"
-        ]
+            "Manuel Adorni",
+            "Alberto Fernández"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.022709527984261513,
+            "negativo": 0.6604552865028381,
+            "neutral": 0.3168351948261261
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/victoria-villarruel-la-funcion-de-las-fuerzas-armadas-no-es-combatir-a-civiles/",
@@ -4130,15 +4640,21 @@
         "fecha": "22-03-2024",
         "hora": "00:00",
         "personas_detectadas_normalizadas": [
-            "Cristina Kirchner",
-            "Victoria Villarruel",
             "Hijos",
-            "Victoria Villaruel",
-            "Néstor Kirchner",
             "Javier Milei",
+            "Victoria Villarruel",
+            "Néstor Kirchner",
             "Podía",
+            "Cristina Kirchner",
+            "Victoria Villaruel",
             "Jonatan Viale"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.020123114809393883,
+            "negativo": 0.7270087003707886,
+            "neutral": 0.2528681457042694
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-tweet-de-javier-milei-sobre-el-aborto-es-un-asesinato-agravado-por-el-vinculo/",
@@ -4171,11 +4687,17 @@
         "fecha": "23-03-2024",
         "hora": "22:05",
         "personas_detectadas_normalizadas": [
+            "Presidente",
             "Usted",
-            "Javier Milei",
             "Victoria Villarruel",
-            "Presidente"
-        ]
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.030641455203294754,
+            "negativo": 0.5868886709213257,
+            "neutral": 0.38246989250183105
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/martin-menem-que-el-pacto-de-mayo-sea-en-cordoba-refleja-mucho-lo-que-paso-a-nivel-electoral/",
@@ -4255,24 +4777,30 @@
         "fecha": "24-03-2024",
         "hora": "07:00",
         "personas_detectadas_normalizadas": [
-            "Cristina Kirchner",
-            "Karina Miliei",
-            "Presidente",
-            "Sergio Massa",
+            "Guillermo Francos",
+            "Mínimo",
+            "Mauricio Macri",
             "Alberto",
+            "Karina Miliei",
             "Javier Milei",
             "papelerío",
-            "Buffon",
             "Nacho” García Aresca",
-            "Martín Llaryora",
             "Miguel Ángel Pichetto",
+            "Cristina Kirchner",
+            "Martín Llaryora",
+            "Presidente",
+            "Sergio Massa",
             "Saben",
-            "De Loredo",
             "Gabriel Bornoroni",
-            "Mauricio Macri",
-            "Mínimo",
-            "Guillermo Francos"
-        ]
+            "Buffon",
+            "De Loredo"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.30499693751335144,
+            "negativo": 0.11521174013614655,
+            "neutral": 0.5797913670539856
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/acuerdan-la-realizacion-de-una-sesion-especial-en-el-ex-grupo-de-artilleria-141/",
@@ -4305,20 +4833,26 @@
         "fecha": "21-03-2024",
         "hora": "14:33",
         "personas_detectadas_normalizadas": [
-            "Ariela Szpanic",
-            "Sonia Torres",
-            "Matías Chamorro",
             "Sonia Torres\n“Córdoba",
-            "Inés Contrera",
-            "Pablo Ovejeros",
-            "Silvina Jurich",
             "Mauricio Macri",
             "Leandro Carpintero-",
+            "Inés Contrera",
+            "Ariela Szpanic",
+            "Sonia Torres",
             "Rodrigo Rufeil",
-            "Karen Acuña",
+            "Matías Chamorro",
             "Chamorro",
-            "Viviana Martoccia"
-        ]
+            "Silvina Jurich",
+            "Pablo Ovejeros",
+            "Viviana Martoccia",
+            "Karen Acuña"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.2457677721977234,
+            "negativo": 0.04352803900837898,
+            "neutral": 0.7107041478157043
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/schiaretti-envio-un-mensaje-por-el-dia-de-la-memoria-y-marco-diferencias-con-la-gestion-de-milei/",
@@ -4353,10 +4887,16 @@
         "fecha": "24-03-2024",
         "hora": "12:15",
         "personas_detectadas_normalizadas": [
+            "Juan Schiaretti",
             "Negarlos",
-            "Javier Milei",
-            "Juan Schiaretti"
-        ]
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.05493732541799545,
+            "negativo": 0.7108984589576721,
+            "neutral": 0.2341642528772354
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/investigan-a-un-fiscal-por-demoras-en-enviar-a-la-justicia-federal-una-causa-relacionada-a-insaurralde/",
@@ -4391,19 +4931,25 @@
         "fecha": "20-03-2024",
         "hora": "07:44",
         "personas_detectadas_normalizadas": [
+            "Axel Kicillof",
             "Julio Conte Grand",
+            "Daniel Lago",
+            "Jorge Griecco",
             "Insaurralde",
             "Martín Insaurralde",
-            "Daniel Lago",
-            "Sergio Mola",
             "Sebastián Bisquert",
-            "Axel Kicillof",
-            "Griecco",
-            "Carlos Baccini",
+            "Sergio Mola",
             "Pablo Rossi",
-            "Mola",
-            "Jorge Griecco"
-        ]
+            "Carlos Baccini",
+            "Griecco",
+            "Mola"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.031927675008773804,
+            "negativo": 0.4116685390472412,
+            "neutral": 0.5564037561416626
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/patricia-bullrich-fue-atacada-por-un-perro-durante-un-simulacro-en-cordoba/",
@@ -4439,11 +4985,17 @@
         "fecha": "19-03-2024",
         "hora": "15:31",
         "personas_detectadas_normalizadas": [
-            "Juan Pablo Quinteros",
-            "Jesús María",
             "Patricia Bullrich",
+            "Jesús María",
+            "Juan Pablo Quinteros",
             "Martín Llaryora"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.1948813796043396,
+            "negativo": 0.1901315450668335,
+            "neutral": 0.6149870157241821
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/voz-y-voto-por-el-doce-con-el-presidente-de-la-camara-de-diputados-martin-menem/",
@@ -4472,16 +5024,22 @@
         "fecha": "23-03-2024",
         "hora": "17:39",
         "personas_detectadas_normalizadas": [
-            "Paula Gaido",
             "Maximiliano Aguiar",
-            "Juan Leyes",
-            "Juan Manuel González",
-            "Florencia Ripoll",
-            "Mariano Bergero y Chumbi",
-            "Mauricio Ortega",
+            "Martín Menem",
             "Federico Giammaría",
-            "Martín Menem"
-        ]
+            "Florencia Ripoll",
+            "Paula Gaido",
+            "Juan Manuel González",
+            "Mauricio Ortega",
+            "Juan Leyes",
+            "Mariano Bergero y Chumbi"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.28037169575691223,
+            "negativo": 0.05014321208000183,
+            "neutral": 0.6694850325584412
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/francos-confirmo-que-el-aumento-por-decreto-para-jubilados-sera-del-125/",
@@ -4509,7 +5067,13 @@
         "hora": "16:53",
         "personas_detectadas_normalizadas": [
             "Guillermo Francos"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.07337822020053864,
+            "negativo": 0.2676096558570862,
+            "neutral": 0.6590121388435364
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-gobierno-buscara-cambiar-las-leyes-para-que-las-fuerzas-armadas-puedan-actuar-en-seguridad-interior/",
@@ -4549,9 +5113,15 @@
         "fecha": "22-03-2024",
         "hora": "08:49",
         "personas_detectadas_normalizadas": [
-            "Luis Petri",
-            "Patricia Bullrich"
-        ]
+            "Patricia Bullrich",
+            "Luis Petri"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.047086846083402634,
+            "negativo": 0.5428581833839417,
+            "neutral": 0.4100549817085266
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/diputados-estallo-la-crisis-en-el-oficialismo-con-cuestionamientos-al-jefe-del-bloque/",
@@ -4588,17 +5158,23 @@
         "fecha": "22-03-2024",
         "hora": "08:58",
         "personas_detectadas_normalizadas": [
-            "Karina Milei",
-            "Victoria Villarruel",
-            "José Luis Espert",
-            "Zago",
-            "Manuel García-Mansilla",
-            "Gabriel Bornoroni",
             "Javier Milei",
+            "Gabriel Bornoroni",
             "Martín Menem",
+            "Karina Milei",
             "Ariel Lijo",
-            "Oscar Zago"
-        ]
+            "José Luis Espert",
+            "Victoria Villarruel",
+            "Zago",
+            "Oscar Zago",
+            "Manuel García-Mansilla"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.007653523236513138,
+            "negativo": 0.8169618844985962,
+            "neutral": 0.17538459599018097
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/argentina-cerro-2023-en-recesion-con-una-caida-del-pib-del-16/",
@@ -4630,10 +5206,16 @@
         "fecha": "20-03-2024",
         "hora": "16:48",
         "personas_detectadas_normalizadas": [
-            "Javier Milei",
+            "Sergio Massa",
             "Alberto Fernández",
-            "Sergio Massa"
-        ]
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.02002066746354103,
+            "negativo": 0.694442868232727,
+            "neutral": 0.2855364680290222
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/100-dias-para-la-conjura-de-los-necios/",
@@ -4674,17 +5256,23 @@
         "fecha": "20-03-2024",
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
-            "Karina Milei",
-            "Cristina Kirchner",
-            "Jonathan Swift",
             "Swift",
-            "Nicolás Posse",
-            "Alberto Fernández",
             "Javier Milei",
+            "Karina Milei",
+            "Ignora",
             "Santiago Caputo",
+            "Jonathan Swift",
+            "Cristina Kirchner",
+            "Nicolás Posse",
             "Juan Bautista Alberdi",
-            "Ignora"
-        ]
+            "Alberto Fernández"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.033667124807834625,
+            "negativo": 0.5680172443389893,
+            "neutral": 0.39831557869911194
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/dia-de-la-memoria-historica-manifestacion-en-cordoba/",
@@ -4740,18 +5328,24 @@
         "fecha": "24-03-2024",
         "hora": "22:30",
         "personas_detectadas_normalizadas": [
-            "Sonia",
-            "Luis Juez",
-            "Juan Schiaretti",
-            "Sonia Torres",
-            "Victoria Villarruel",
-            "Hijos",
             "Silvia Parodi",
+            "Hijos",
             "Javier Milei",
-            "Daniel Orozco",
+            "Sonia Torres",
+            "Sonia",
+            "Victoria Villarruel",
+            "Juan Schiaretti",
+            "Luis Juez",
+            "Urquiza",
             "Martín Llaryora",
-            "Urquiza"
-        ]
+            "Daniel Orozco"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.3182734549045563,
+            "negativo": 0.14533497393131256,
+            "neutral": 0.5363916158676147
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/dia-de-la-memoria-el-gobierno-nego-planes-para-otorgar-prision-domiciliaria-a-genocidas/",
@@ -4793,11 +5387,17 @@
         "hora": "14:13",
         "personas_detectadas_normalizadas": [
             "Patricia Bullrich",
-            "General Paz",
-            "Javier Milei",
             "Manuel Adorni",
+            "Javier Milei",
+            "General Paz",
             "Luis Petri"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.02582642436027527,
+            "negativo": 0.674959123134613,
+            "neutral": 0.2992144525051117
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-mediterranea-advierte-que-la-importacion-de-alimentos-provocara-el-cierre-de-empresas-nacionales/",
@@ -4845,13 +5445,19 @@
         "fecha": "24-03-2024",
         "hora": "15:56",
         "personas_detectadas_normalizadas": [
-            "Cohen Arazi",
-            "Marcelo Capello",
-            "Javier Milei",
+            "Luis Caputo",
             "Capello",
             "Marcos Cohen Arazi",
-            "Luis Caputo"
-        ]
+            "Cohen Arazi",
+            "Javier Milei",
+            "Marcelo Capello"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.013360468670725822,
+            "negativo": 0.7292162179946899,
+            "neutral": 0.25742340087890625
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/juventud-del-frente-civico-conmemoro-el-dia-de-la-memoria-en-cementerio-san-vicente/",
@@ -4881,7 +5487,13 @@
         "hora": "17:40",
         "personas_detectadas_normalizadas": [
             "Luis Juez"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "POS",
+            "positivo": 0.5726607441902161,
+            "negativo": 0.0716962143778801,
+            "neutral": 0.35564300417900085
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-oposicion-presiona-con-la-nueva-formula-jubilatoria-mientras-el-gobierno-dilata-la-discusion/",
@@ -4924,22 +5536,28 @@
         "fecha": "22-03-2024",
         "hora": "00:00",
         "personas_detectadas_normalizadas": [
-            "Danya Tavela",
-            "Alejandra Torres",
-            "Pedro Galimberti",
-            "Juan Schiaretti",
-            "Itai Hagman",
-            "Maximiliano Ferraro",
-            "José Luis Espert",
             "Karina Banfi",
-            "Brouwer de Koning",
-            "Nicolás del Caño",
-            "María Eugenia Vidal",
-            "Sergio Palazzo",
+            "Itai Hagman",
             "Gisela Marziotta",
             "Romina Del Plá",
-            "Hacienda"
-        ]
+            "Danya Tavela",
+            "Nicolás del Caño",
+            "José Luis Espert",
+            "Brouwer de Koning",
+            "Juan Schiaretti",
+            "Sergio Palazzo",
+            "Pedro Galimberti",
+            "Alejandra Torres",
+            "María Eugenia Vidal",
+            "Hacienda",
+            "Maximiliano Ferraro"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.04422716796398163,
+            "negativo": 0.3213260769844055,
+            "neutral": 0.6344467401504517
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/como-sera-la-marcha-del-24-de-marzo-en-cordoba/",
@@ -4970,9 +5588,15 @@
         "fecha": "24-03-2024",
         "hora": "00:07",
         "personas_detectadas_normalizadas": [
-            "Irigoyen",
-            "Hijos"
-        ]
+            "Hijos",
+            "Irigoyen"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.21282196044921875,
+            "negativo": 0.1336781531572342,
+            "neutral": 0.6534999012947083
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/docentes-de-cordoba-aceptaron-la-oferta-del-gobierno-de-llaryora-y-no-habra-paro/",
@@ -5019,9 +5643,15 @@
         "fecha": "21-03-2024",
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
-            "Javier Milei",
-            "Fonid"
-        ]
+            "Fonid",
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.022166801616549492,
+            "negativo": 0.2871611416339874,
+            "neutral": 0.690671980381012
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-nueva-formula-jubilatoria-comenzara-a-aplicarse-desde-julio/",
@@ -5082,10 +5712,16 @@
         "fecha": "25-03-2024",
         "hora": "10:19",
         "personas_detectadas_normalizadas": [
+            "Luis Caputo",
             "Milei\nEl DNU",
-            "Javier Milei",
-            "Luis Caputo"
-        ]
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.09021378308534622,
+            "negativo": 0.11298731714487076,
+            "neutral": 0.7967988848686218
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/miles-de-personas-marchan-a-plaza-de-mayo-por-el-dia-de-la-memoria/",
@@ -5126,7 +5762,13 @@
         "personas_detectadas_normalizadas": [
             "Néstor Kirchner",
             "Javier Milei"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.008610956370830536,
+            "negativo": 0.9098210334777832,
+            "neutral": 0.0815679281949997
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/estela-de-carlotto-denuncio-que-tiene-el-telefono-intervenido-no-les-conviene-que-hable/",
@@ -5165,13 +5807,19 @@
         "fecha": "22-03-2024",
         "hora": "14:42",
         "personas_detectadas_normalizadas": [
-            "Estela de Carlotto",
+            "Abuelas",
             "Manuel Adroni",
             "Manuel Adorni",
-            "Abuelas",
             "Mauro Federico",
-            "Digan"
-        ]
+            "Digan",
+            "Estela de Carlotto"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.042878128588199615,
+            "negativo": 0.41803398728370667,
+            "neutral": 0.5390878319740295
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-fmi-advierte-sobre-el-impacto-del-ajuste-en-argentina-en-los-sectores-mas-vulnerables/",
@@ -5205,7 +5853,13 @@
         "personas_detectadas_normalizadas": [
             "Valdés",
             "Rodrigo Valdés"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.15255224704742432,
+            "negativo": 0.35761308670043945,
+            "neutral": 0.4898346960544586
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/capital-humano-presento-el-programa-de-asistencia-vouchers-educativos/",
@@ -5240,7 +5894,13 @@
         "index": 709,
         "fecha": "20-03-2024",
         "hora": "21:52",
-        "personas_detectadas_normalizadas": []
+        "personas_detectadas_normalizadas": [],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.15059927105903625,
+            "negativo": 0.15492461621761322,
+            "neutral": 0.6944761276245117
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/javier-milei-designo-a-luis-lucero-como-nuevo-secretario-de-mineria/",
@@ -5273,11 +5933,17 @@
         "personas_detectadas_normalizadas": [
             "Marval O’Farrell Mairal",
             "Lucero",
+            "Pillsbury Winthrop Shaw Pittman",
             "Honorary Lecturer",
             "Minería\nSegún",
-            "Luis Lucero",
-            "Pillsbury Winthrop Shaw Pittman"
-        ]
+            "Luis Lucero"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.2879634201526642,
+            "negativo": 0.049957722425460815,
+            "neutral": 0.662078857421875
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/capital-humano-renuncio-un-funcionario-ligado-a-la-familia-de-sandra-pettovello/",
@@ -5312,12 +5978,18 @@
         "fecha": "23-03-2024",
         "hora": "10:35",
         "personas_detectadas_normalizadas": [
-            "Hugo Basilotta",
             "Cristina Kirchner",
-            "Pettovello",
+            "Hugo Basilotta",
+            "Marcelo Basilotta",
             "Sandra Pettovello",
-            "Marcelo Basilotta"
-        ]
+            "Pettovello"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.047931183129549026,
+            "negativo": 0.3150111734867096,
+            "neutral": 0.6370576620101929
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/senores-de-ojos-vendados/",
@@ -5358,12 +6030,18 @@
         "fecha": "22-03-2024",
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
+            "Olvidarse",
             "General de la Nación",
             "María Elena Walsh",
-            "Alejandra Gils Carbó",
             "Aída Tarditti",
-            "Olvidarse"
-        ]
+            "Alejandra Gils Carbó"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.004304955247789621,
+            "negativo": 0.9291839003562927,
+            "neutral": 0.06651117652654648
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/historia-de-los-dnu-880-desde-la-reforma-constitucional-seis-rechazados-a-medias-y-ninguno-volteado/",
@@ -5420,22 +6098,28 @@
         "fecha": "24-03-2024",
         "hora": "16:48",
         "personas_detectadas_normalizadas": [
-            "Enrique Veramendi",
-            "Cristina Kirchner",
-            "Duhalde",
-            "Fernández",
-            "Castro Vega",
-            "Eduardo Duhalde",
-            "Luis E. Vivacqua",
-            "Santiago Castro Videla",
-            "Castro Videla",
-            "Adolfo Rodríguez Saá",
-            "Néstor Kirchner",
-            "Alberto Fernández",
-            "Javier Milei",
             "Mauricio Macri",
-            "Alfonso Santiago"
-        ]
+            "Javier Milei",
+            "Luis E. Vivacqua",
+            "Duhalde",
+            "Castro Videla",
+            "Néstor Kirchner",
+            "Fernández",
+            "Alfonso Santiago",
+            "Cristina Kirchner",
+            "Adolfo Rodríguez Saá",
+            "Eduardo Duhalde",
+            "Santiago Castro Videla",
+            "Alberto Fernández",
+            "Castro Vega",
+            "Enrique Veramendi"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.024362439289689064,
+            "negativo": 0.3859323263168335,
+            "neutral": 0.589705228805542
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-mensaje-de-patricia-bullrich-en-el-dia-de-la-memoria-una-verdad-a-medias-no-es-verdad/",
@@ -5467,7 +6151,13 @@
         "hora": "12:41",
         "personas_detectadas_normalizadas": [
             "Patricia Bullrich"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.04781494289636612,
+            "negativo": 0.5970467925071716,
+            "neutral": 0.35513827204704285
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-gobierno-decidio-que-actualizara-las-jubilaciones-por-decreto/",
@@ -5510,10 +6200,16 @@
         "fecha": "22-03-2024",
         "hora": "08:47",
         "personas_detectadas_normalizadas": [
+            "Luis Caputo",
             "Maximiliano Ferraro",
-            "Javier Milei",
-            "Luis Caputo"
-        ]
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.04971366003155708,
+            "negativo": 0.2027672529220581,
+            "neutral": 0.7475191354751587
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-gobierno-nacional-ratifico-el-aumento-de-las-jubilaciones-de-abril-por-inflacion/",
@@ -5562,9 +6258,15 @@
         "fecha": "25-03-2024",
         "hora": "16:51",
         "personas_detectadas_normalizadas": [
-            "Martín Vauthier",
-            "Luis Caputo"
-        ]
+            "Luis Caputo",
+            "Martín Vauthier"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.050522539764642715,
+            "negativo": 0.18273720145225525,
+            "neutral": 0.7667402029037476
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/luis-petri-aseguro-que-discutir-la-cantidad-de-desaparecidos-no-aporta-al-debate/",
@@ -5592,12 +6294,18 @@
         "fecha": "24-03-2024",
         "hora": "19:49",
         "personas_detectadas_normalizadas": [
-            "Villarruel. Petri",
             "Javier Milei",
-            "Victoria Villarruel",
             "Luis Petri",
-            "Piensen"
-        ]
+            "Piensen",
+            "Villarruel. Petri",
+            "Victoria Villarruel"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.03902596980333328,
+            "negativo": 0.6055376529693604,
+            "neutral": 0.3554363548755646
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/gobierno-de-milei-en-medio-de-una-polemica-renuncio-el-encargado-de-controlar-la-pesca-furtiva/",
@@ -5634,16 +6342,22 @@
         "fecha": "19-03-2024",
         "hora": "18:16",
         "personas_detectadas_normalizadas": [
+            "Cancillería",
+            "Juan Antonio López Cazorla",
             "Suárez",
+            "Infobae",
+            "Diana Mondino",
             "Pablo Ferrara Raisberg",
             "Mondino",
-            "Juan Antonio López Cazorla",
-            "Diana Mondino",
-            "Infobae",
-            "Cancillería",
-            "Liu Zhijiang",
-            "Julián Suárez"
-        ]
+            "Julián Suárez",
+            "Liu Zhijiang"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.01739737205207348,
+            "negativo": 0.6350944638252258,
+            "neutral": 0.34750819206237793
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/fuerte-respaldo-de-llaryora-a-empresarios-del-sector-metalurgico/",
@@ -5679,20 +6393,26 @@
         "fecha": "22-03-2024",
         "hora": "00:06",
         "personas_detectadas_normalizadas": [
-            "Nancy Lizzul",
-            "Pedro Dellarossa",
-            "Sebastian Kosacof",
-            "Guillermo Acosta",
-            "Juan Giacoboni",
-            "Ariel Poli",
-            "Javier Milei",
             "Elio Del Re",
-            "Luis Manini",
+            "Javier Milei",
+            "Juan Giacoboni",
             "Gustavo del Boca",
-            "Alejandra Cesolari",
             "José Manuali",
-            "Horacio Cepeda"
-        ]
+            "Ariel Poli",
+            "Nancy Lizzul",
+            "Alejandra Cesolari",
+            "Guillermo Acosta",
+            "Pedro Dellarossa",
+            "Horacio Cepeda",
+            "Sebastian Kosacof",
+            "Luis Manini"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.4456300437450409,
+            "negativo": 0.0924844890832901,
+            "neutral": 0.461885541677475
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-mensaje-de-martin-llaryora-en-el-dia-de-la-memoria-nunca-mas-terrorismo-de-estado/",
@@ -5721,7 +6441,13 @@
         "hora": "12:58",
         "personas_detectadas_normalizadas": [
             "Sonia Torres"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.16354024410247803,
+            "negativo": 0.38544100522994995,
+            "neutral": 0.451018750667572
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-nacion-corto-subsidios-al-transporte-en-amba-y-las-empresas-bonaerenses-estan-en-pie-de-guerra/",
@@ -5766,13 +6492,19 @@
         "fecha": "19-03-2024",
         "hora": "13:54",
         "personas_detectadas_normalizadas": [
-            "CEAP",
-            "Claramente",
-            "Javier Milei",
+            "Luis Caputo",
             "Manuel Adorni",
             "Franco Mogetta",
-            "Luis Caputo"
-        ]
+            "Javier Milei",
+            "CEAP",
+            "Claramente"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.031185658648610115,
+            "negativo": 0.5997350215911865,
+            "neutral": 0.3690792918205261
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/javier-milei-y-victoria-villarruel-publicaron-fotos-juntos-para-alejar-los-rumores-de-una-pelea/",
@@ -5808,13 +6540,19 @@
         "fecha": "19-03-2024",
         "hora": "19:23",
         "personas_detectadas_normalizadas": [
-            "Primero",
+            "Instagram",
             "Javier Milei",
-            "Victoria Villarruel",
             "escueto",
+            "Primero",
             "Ministro",
-            "Instagram"
-        ]
+            "Victoria Villarruel"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.06637365370988846,
+            "negativo": 0.16726718842983246,
+            "neutral": 0.7663590908050537
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/jubilaciones-corte-y-ley-bases-los-movimientos-del-gobierno-desconciertan-al-congreso/",
@@ -5858,16 +6596,22 @@
         "fecha": "22-03-2024",
         "hora": "17:47",
         "personas_detectadas_normalizadas": [
-            "Desconcierto\nCon",
+            "Juan Carlos Maqueda",
+            "Elena Highton",
+            "Ariel Lijo",
             "Victoria Villarruel",
-            "Maximiliano Ferraro",
             "Gabriela Brouwer de Koning",
             "Brouwer de Koning",
             "Manuel García-Mansilla",
-            "Juan Carlos Maqueda",
-            "Elena Highton",
-            "Ariel Lijo"
-        ]
+            "Maximiliano Ferraro",
+            "Desconcierto\nCon"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.04203522577881813,
+            "negativo": 0.3396476209163666,
+            "neutral": 0.6183171272277832
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/cronograma-para-la-eleccion-municipal-en-rio-cuarto-que-se-vota-y-hasta-cuando-hay-tiempo-de-registrar-alianzas/",
@@ -5900,10 +6644,16 @@
         "fecha": "9-04-2024",
         "hora": "08:10",
         "personas_detectadas_normalizadas": [
-            "Ariel Armando Baldo",
             "Marcela Patricia Giordano",
+            "Ariel Armando Baldo",
             "Ariel Edgardo Ellena"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.07511374354362488,
+            "negativo": 0.08971590548753738,
+            "neutral": 0.8351702690124512
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/opinion/el-lado-oculto-del-tiempo-presente/",
@@ -5939,11 +6689,17 @@
         "fecha": "26-03-2024",
         "hora": "01:35",
         "personas_detectadas_normalizadas": [
-            "Podríamos",
-            "Bernardo Houssay",
             "Recordarlas",
-            "Máxime"
-        ]
+            "Podríamos",
+            "Máxime",
+            "Bernardo Houssay"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.058807455003261566,
+            "negativo": 0.41021519899368286,
+            "neutral": 0.5309773087501526
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/conferencia-de-prensa-de-manuel-adorni-del-martes-26-de-marzo-de-2024/",
@@ -5976,17 +6732,23 @@
         "fecha": "26-03-2024",
         "hora": "12:12",
         "personas_detectadas_normalizadas": [
-            "Declaraciones de Macri",
+            "Manuel Adorni",
+            "Javier Milei",
             "Dejará",
             "Derechos Humanos",
-            "Patricia Bullrich",
-            "Alberto Fernández",
-            "Javier Milei",
             "Santiago Maldonado",
-            "Manuel Adorni",
-            "Horacio Pietragala",
-            "Maduro"
-        ]
+            "Patricia Bullrich",
+            "Declaraciones de Macri",
+            "Maduro",
+            "Alberto Fernández",
+            "Horacio Pietragala"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.12904806435108185,
+            "negativo": 0.10661891102790833,
+            "neutral": 0.7643330097198486
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/en-60-dias-hubo-apuestas-por-5860-millones-y-el-estado-recibio-22-millones/",
@@ -6039,17 +6801,23 @@
         "fecha": "24-03-2024",
         "hora": "00:05",
         "personas_detectadas_normalizadas": [
-            "Darío Capitani",
             "Orlando Arduh",
+            "Lotería de Córdoba",
             "PlayCet",
             "Juan Schiaretti",
-            "Daruma Sam",
-            "Lotería de Córdoba",
-            "Daniel Passerini",
             "Daniel Mautone",
-            "Martín Llaryora",
-            "Munir Bracco"
-        ]
+            "Daruma Sam",
+            "Darío Capitani",
+            "Daniel Passerini",
+            "Munir Bracco",
+            "Martín Llaryora"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.1087673082947731,
+            "negativo": 0.09300046414136887,
+            "neutral": 0.7982321977615356
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/recuperan-informe-multimedia-de-la-voz-sobre-la-identificacion-de-desaparecidos-en-cordoba/",
@@ -6103,18 +6871,24 @@
         "fecha": "26-03-2024",
         "hora": "11:18",
         "personas_detectadas_normalizadas": [
-            "Melisa Paiaro",
-            "Sara Solarz",
-            "Gabriel García Márquez",
-            "Juan Carlos Simo",
-            "Mario Andrés Osatinsky",
-            "Ana Mariani",
-            "Franco Piccato",
-            "Luciano Benjamín Menéndez",
             "Carlos Vullo",
+            "Gabriel García Márquez",
+            "Melisa Paiaro",
+            "Mario Andrés Osatinsky",
+            "Sara Solarz",
+            "Juan Carlos Simo",
+            "Ana Mariani",
             "Lisandro Guzmán",
-            "Mariani"
-        ]
+            "Mariani",
+            "Luciano Benjamín Menéndez",
+            "Franco Piccato"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.1824677735567093,
+            "negativo": 0.13076724112033844,
+            "neutral": 0.6867649555206299
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/villarruel-toma-distancia-de-milei-como-se-entero-de-lijo-el-rol-de-las-ffaa-en-rosario-y-los-sueldos/",
@@ -6160,19 +6934,25 @@
         "fecha": "22-03-2024",
         "hora": "07:40",
         "personas_detectadas_normalizadas": [
+            "Presidente",
+            "Freddy Krueger",
+            "García Mansilla",
+            "Javier Milei",
             "Manuel José García-Mansilla",
+            "Roberto Perdía",
+            "Victoria Villarruel",
+            "Elena Highton de Nolasco",
+            "Rucci",
             "José Ignacio Rucci",
             "Claudia Rucci",
-            "Freddy Krueger",
-            "Victoria Villarruel",
-            "Presidente",
-            "Roberto Perdía",
-            "Rucci",
-            "Elena Highton de Nolasco",
-            "Javier Milei",
-            "García Mansilla",
             "Jonatan Viale"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.0062041087076067924,
+            "negativo": 0.9360495209693909,
+            "neutral": 0.05774645507335663
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/conferencia-de-prensa-de-manuel-adorni-vocero-presidencial-del-20-de-marzo-de-2024/",
@@ -6220,15 +7000,21 @@
         "fecha": "20-03-2024",
         "hora": "14:10",
         "personas_detectadas_normalizadas": [
-            "Mariano Cúneo Libarona",
-            "Manuel García-Mansilla",
-            "Elena Highton de Nolasco",
+            "Manuel Adorni",
             "Javier Milei",
             "Juan Carlos Maqueda",
-            "Manuel Adorni",
-            "García-Mansilla",
-            "Ariel Lijo"
-        ]
+            "Ariel Lijo",
+            "Mariano Cúneo Libarona",
+            "Elena Highton de Nolasco",
+            "Manuel García-Mansilla",
+            "García-Mansilla"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.09348580241203308,
+            "negativo": 0.07651419192552567,
+            "neutral": 0.8300000429153442
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/patricia-bullrich-en-jesus-maria-confirmo-las-practicas-profesionales-de-gendarmeria-en-las-calles/",
@@ -6257,16 +7043,22 @@
         "fecha": "19-03-2024",
         "hora": "16:29",
         "personas_detectadas_normalizadas": [
-            "Vicente Ventura Barreiro",
+            "Ignacio Cichello",
+            "Zárate",
             "Juan Pablo Quinteros",
             "Raúl Remberto Cuello",
-            "Federico Zárate",
-            "Zárate",
-            "Jesús María",
             "Patricia Bullrich",
             "Néstor Majul",
-            "Ignacio Cichello"
-        ]
+            "Jesús María",
+            "Vicente Ventura Barreiro",
+            "Federico Zárate"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.2238921970129013,
+            "negativo": 0.08467629551887512,
+            "neutral": 0.69143146276474
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/jubilados-cuanto-cobraria-en-abril-con-el-aumento-por-dnu/",
@@ -6296,7 +7088,13 @@
         "hora": "09:05",
         "personas_detectadas_normalizadas": [
             "Luis Caputo"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.074147067964077,
+            "negativo": 0.09780947118997574,
+            "neutral": 0.8280434608459473
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/grinman-sobre-el-plan-de-milei-y-su-impacto-en-comercio-estamos-con-recesion-y-esperanza/",
@@ -6331,13 +7129,19 @@
         "fecha": "26-03-2024",
         "hora": "09:17",
         "personas_detectadas_normalizadas": [
-            "Grinman",
-            "Javier Milei",
             "Presidente",
-            "Mario Grinam",
             "Eduardo Feinmann",
-            "Mitre"
-        ]
+            "Javier Milei",
+            "Mitre",
+            "Grinman",
+            "Mario Grinam"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.005445727147161961,
+            "negativo": 0.945743203163147,
+            "neutral": 0.04881101846694946
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/milei-propone-a-un-juez-y-a-un-academico-para-completar-la-corte-suprema/",
@@ -6383,36 +7187,42 @@
         "fecha": "21-03-2024",
         "hora": "00:05",
         "personas_detectadas_normalizadas": [
-            "Mariano Cúneo Libarona",
-            "Dr. Maqueda",
-            "Cristina Kirchner",
-            "Comodoro Py",
-            "Guillermo Montenegro",
-            "Julián Ercolini",
-            "Horacio Rosatti",
-            "Decano",
-            "Elena Highton de Nolasco",
-            "Daniel Rafecas",
-            "Dr. Manuel García Mansilla",
-            "Gil Domínguez",
+            "Manuel Adorni",
+            "Mauricio Macri",
             "Javier Milei",
             "Juan Carlos Maqueda",
-            "García Mansilla",
-            "Ricardo Lorenzetti",
-            "Miguel Ángel Pichetto",
-            "Juan Manuel López",
-            "Carlos Rosenkrantz",
+            "Gil Domínguez",
+            "Ariel Lijo",
             "Amado Boudou",
-            "Margarita Stolbizer",
-            "Dr. García-Mansilla",
-            "Elisa Carrió",
-            "Andrés Gil Domínguez",
-            "Néstor Kirchner",
+            "Guillermo Montenegro",
             "Jorge Di Lello",
-            "Mauricio Macri",
-            "Manuel Adorni",
-            "Ariel Lijo"
-        ]
+            "Miguel Ángel Pichetto",
+            "Néstor Kirchner",
+            "Mariano Cúneo Libarona",
+            "Juan Manuel López",
+            "Cristina Kirchner",
+            "Comodoro Py",
+            "Elisa Carrió",
+            "Julián Ercolini",
+            "Dr. Maqueda",
+            "García Mansilla",
+            "Carlos Rosenkrantz",
+            "Horacio Rosatti",
+            "Margarita Stolbizer",
+            "Decano",
+            "Dr. García-Mansilla",
+            "Ricardo Lorenzetti",
+            "Dr. Manuel García Mansilla",
+            "Elena Highton de Nolasco",
+            "Daniel Rafecas",
+            "Andrés Gil Domínguez"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.024006064981222153,
+            "negativo": 0.35068032145500183,
+            "neutral": 0.6253136396408081
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-desafiante-mensaje-de-victoria-villarruel-en-el-dia-de-la-memoria-no-fueron-30-mil/",
@@ -6439,9 +7249,15 @@
         "fecha": "24-03-2024",
         "hora": "10:35",
         "personas_detectadas_normalizadas": [
-            "Juan",
-            "Victoria Villarruel"
-        ]
+            "Victoria Villarruel",
+            "Juan"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.1363186240196228,
+            "negativo": 0.514919638633728,
+            "neutral": 0.34876173734664917
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/impuesto-a-las-ganancias-cuantos-trabajadores-volverian-a-pagarlo-segun-el-proyecto-oficial/",
@@ -6473,9 +7289,15 @@
         "fecha": "22-03-2024",
         "hora": "09:14",
         "personas_detectadas_normalizadas": [
-            "Ganancias",
-            "Sergio Massa"
-        ]
+            "Sergio Massa",
+            "Ganancias"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.030525701120495796,
+            "negativo": 0.498496413230896,
+            "neutral": 0.4709779620170593
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/politica-social-la-motosierra-de-milei-paso-por-los-intermediarios/",
@@ -6526,15 +7348,21 @@
         "fecha": "24-03-2024",
         "hora": "00:08",
         "personas_detectadas_normalizadas": [
+            "Raúl La Cava",
+            "Pablo Montes",
             "Fernando Miño",
-            "Juan Grabois",
             "Polémica\nLa decisión del",
             "Sandra Pettovello",
             "Desarrollo Social de la Municipalidad de Córdoba",
-            "Raúl La Cava",
-            "Daniel Passerini",
-            "Pablo Montes"
-        ]
+            "Juan Grabois",
+            "Daniel Passerini"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.1291937679052353,
+            "negativo": 0.14153152704238892,
+            "neutral": 0.7292747497558594
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/en-los-tres-meses-de-javier-milei-asi-se-acelero-el-derrumbe-de-los-salarios/",
@@ -6589,9 +7417,15 @@
         "hora": "11:05",
         "personas_detectadas_normalizadas": [
             "Giordano",
-            "Virginia Giordano",
-            "Javier Milei"
-        ]
+            "Javier Milei",
+            "Virginia Giordano"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.004290395881980658,
+            "negativo": 0.9408204555511475,
+            "neutral": 0.05488916486501694
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/cordoba-se-concreto-la-audiencia-en-la-justicia-por-la-pelea-por-el-nombre-de-la-libertad-avanza/",
@@ -6628,19 +7462,25 @@
         "fecha": "21-03-2024",
         "hora": "10:14",
         "personas_detectadas_normalizadas": [
-            "Karina Milei",
-            "Blanco",
-            "Losano",
-            "Ponce",
-            "Córdoba Karina Milei",
             "Celeste Ponce",
-            "Abelardo Losano",
-            "Entre Ríos",
-            "Gabriel Bornoroni",
+            "Ponce",
             "Javier Milei",
+            "Gabriel Bornoroni",
             "Martín Menem",
+            "Karina Milei",
+            "Abelardo Losano",
+            "Córdoba Karina Milei",
+            "Losano",
+            "Blanco",
+            "Entre Ríos",
             "Rodolfo Eiben"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.17013654112815857,
+            "negativo": 0.13376696407794952,
+            "neutral": 0.6960964798927307
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-gobierno-presento-el-ordenamiento-procesal-que-introduce-el-sistema-acusatorio-en-la-justicia-federal/",
@@ -6692,21 +7532,27 @@
         "fecha": "20-03-2024",
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
-            "Mariano Cúneo Libarona",
+            "Guillermo Francos",
+            "Cúneo",
+            "Javier Milei",
+            "Horacio Rosatti",
+            "Diego Guerendiain",
             "Stella Martínez",
             "Eduardo Casal",
-            "Mariano Borinsky",
-            "Cúneo",
-            "Horacio Rosatti",
-            "Sebastián Amerio",
-            "Diego Guerendiain",
-            "Stella Maris Martínez",
             "Patricia Bullrich",
-            "Javier Milei",
+            "Mariano Cúneo Libarona",
+            "Mariano Borinsky",
             "Evitamos",
-            "Guillermo Francos",
-            "Cúneo Libarona"
-        ]
+            "Cúneo Libarona",
+            "Stella Maris Martínez",
+            "Sebastián Amerio"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.22600211203098297,
+            "negativo": 0.10533349961042404,
+            "neutral": 0.6686644554138184
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/recorte-de-gastos-la-camara-de-diputados-subasta-46-autos-de-la-flota-oficial/",
@@ -6737,7 +7583,13 @@
         "index": 925,
         "fecha": "22-03-2024",
         "hora": "20:25",
-        "personas_detectadas_normalizadas": []
+        "personas_detectadas_normalizadas": [],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.02801535092294216,
+            "negativo": 0.6293870210647583,
+            "neutral": 0.3425975739955902
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/schiaretti-reaparecera-en-publico-con-una-conferencia-en-nueva-york/",
@@ -6780,14 +7632,20 @@
         "fecha": "25-03-2024",
         "hora": "12:43",
         "personas_detectadas_normalizadas": [
-            "José Manuel de la Sota",
-            "Negarlos",
             "Juan Schiaretti",
-            "Victoria Villarruel",
-            "Javier Milei",
+            "Negarlos",
             "Alejandra Vigo",
-            "Martín Llaryora"
-        ]
+            "Javier Milei",
+            "José Manuel de la Sota",
+            "Martín Llaryora",
+            "Victoria Villarruel"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.34818926453590393,
+            "negativo": 0.03402330353856087,
+            "neutral": 0.6177874803543091
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/interna-en-la-libertad-avanza-en-cordoba-se-cruzaran-en-la-justicia-por-la-constitucion-del-partido/",
@@ -6834,20 +7692,26 @@
         "fecha": "19-03-2024",
         "hora": "18:52",
         "personas_detectadas_normalizadas": [
-            "Marcos Patiño Brizuela",
-            "María Cecilia Ibáñez",
-            "Losano",
-            "Ponce",
-            "Guillermo Fernández",
             "Celeste Ponce",
-            "Olga Riutort",
+            "Marcos Patiño Brizuela",
+            "Ponce",
             "Presidente",
-            "Abelardo Losano",
-            "Gabriel Bornoroni",
             "Javier Milei",
             "Martín Menem",
+            "Guillermo Fernández",
+            "Gabriel Bornoroni",
+            "Abelardo Losano",
+            "María Cecilia Ibáñez",
+            "Olga Riutort",
+            "Losano",
             "Rodolfo Eiben"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.24821637570858002,
+            "negativo": 0.0994584783911705,
+            "neutral": 0.6523251533508301
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/proponen-una-ley-que-transparente-la-facturacion-de-servicios-publicos-esenciales-en-cordoba/",
@@ -6885,9 +7749,15 @@
         "hora": "14:04",
         "personas_detectadas_normalizadas": [
             "Agustín Spaccesi",
-            "Epec",
-            "Spaccesi"
-        ]
+            "Spaccesi",
+            "Epec"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.09653223305940628,
+            "negativo": 0.20231179893016815,
+            "neutral": 0.701155960559845
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/cordoba-fadea-aplica-suspensiones-rotativas-y-abre-retiros-voluntarios/",
@@ -6918,7 +7788,13 @@
             "Davicini",
             "Javier Milei",
             "Gianfranco Davicini"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.03710907697677612,
+            "negativo": 0.4280933141708374,
+            "neutral": 0.5347976684570312
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/corte-suprema-siguen-las-criticas-por-la-falta-de-mujeres-en-las-nominaciones-del-presidente-milei/",
@@ -6967,37 +7843,43 @@
         "fecha": "21-03-2024",
         "hora": "19:28",
         "personas_detectadas_normalizadas": [
-            "Mariano Cúneo Libarona",
-            "Cristina Kirchner",
-            "Presidente",
-            "García de Mansilla",
+            "Manuel Adorni",
+            "López",
+            "Ignacio Ortelli",
             "Carmen Argibay",
-            "Daniel Sabsay",
-            "Horacio Rosatti",
-            "Juliana Di Tullio",
-            "Elena Highton de Nolasco",
+            "Abogado",
             "Javier Milei",
             "Juan Carlos Maqueda",
-            "García Mansilla",
-            "Santiago Caputo",
-            "Ricardo Lorenzetti",
-            "Juan Manuel López",
-            "Vergüenza Milei",
-            "López",
-            "Carlos Rosenkrantz",
-            "Anabel Fernández Sagasti",
-            "Abogado",
-            "Alejandro Vigo",
-            "Quién",
-            "Marcelo Longobardi",
+            "García de Mansilla",
+            "Ariel Lijo",
             "Argibay",
-            "Elisa Carrió",
+            "Anabel Fernández Sagasti",
+            "Santiago Caputo",
             "Néstor Kirchner",
-            "Ignacio Ortelli",
-            "Manuel Adorni",
+            "Mariano Cúneo Libarona",
+            "Juan Manuel López",
+            "Quién",
+            "Vergüenza Milei",
+            "Cristina Kirchner",
             "Carrió",
-            "Ariel Lijo"
-        ]
+            "Elisa Carrió",
+            "Alejandro Vigo",
+            "Presidente",
+            "Marcelo Longobardi",
+            "García Mansilla",
+            "Juliana Di Tullio",
+            "Carlos Rosenkrantz",
+            "Horacio Rosatti",
+            "Ricardo Lorenzetti",
+            "Elena Highton de Nolasco",
+            "Daniel Sabsay"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.010156207717955112,
+            "negativo": 0.6497174501419067,
+            "neutral": 0.3401263654232025
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/gobierno-de-milei-desde-abril-las-jubilaciones-se-ajustaran-por-inflacion-y-con-un-125-de-compensacion/",
@@ -7032,7 +7914,13 @@
         "index": 991,
         "fecha": "22-03-2024",
         "hora": "22:14",
-        "personas_detectadas_normalizadas": []
+        "personas_detectadas_normalizadas": [],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.2052154541015625,
+            "negativo": 0.10987237095832825,
+            "neutral": 0.6849122047424316
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-nacion-paga-375-al-dia-por-cada-preso-federal-menos-del-5-del-costo/",
@@ -7071,11 +7959,17 @@
         "fecha": "23-03-2024",
         "hora": "00:00",
         "personas_detectadas_normalizadas": [
-            "Sánchez Torres",
             "Patricia Bullrich",
+            "Sánchez Torres",
             "Martín Soria",
             "Abel Sánchez Torres"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.023726917803287506,
+            "negativo": 0.38263261318206787,
+            "neutral": 0.5936404466629028
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-paralizacion-de-las-obras-de-las-represas-chinas-en-santa-cruz-deja-sin-trabajo-a-1800-personas/",
@@ -7110,11 +8004,17 @@
         "fecha": "19-03-2024",
         "hora": "18:38",
         "personas_detectadas_normalizadas": [
-            "Jorge Cepernic",
+            "Manuel Adorni",
             "Néstor Kirchner",
-            "Javier Milei",
-            "Manuel Adorni"
-        ]
+            "Jorge Cepernic",
+            "Javier Milei"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.007688317913562059,
+            "negativo": 0.8975462317466736,
+            "neutral": 0.09476548433303833
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/se-viene-un-nuevo-aumento-de-la-nafta-y-el-gasoil-para-cuando-se-espera-otra-suba/",
@@ -7149,10 +8049,16 @@
         "fecha": "22-03-2024",
         "hora": "10:27",
         "personas_detectadas_normalizadas": [
-            "Economía Luis Caputo",
             "Infobae",
+            "Economía Luis Caputo",
             "Javier Milei"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.09052664786577225,
+            "negativo": 0.21444156765937805,
+            "neutral": 0.6950318217277527
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-jefe-de-la-cia-esta-en-argentina-a-que-vino-con-quien-se-reunio-y-que-le-preocupa/",
@@ -7187,16 +8093,22 @@
         "fecha": "21-03-2024",
         "hora": "18:17",
         "personas_detectadas_normalizadas": [
-            "Burns",
-            "Posse",
-            "Nicolás Posse",
-            "Donald Trump",
-            "Milei\nBajo la Presidencia de Milei",
-            "Alberto Fernández",
+            "Manuel Adorni",
             "Javier Milei",
             "William Burns",
-            "Manuel Adorni"
-        ]
+            "Nicolás Posse",
+            "Burns",
+            "Posse",
+            "Milei\nBajo la Presidencia de Milei",
+            "Alberto Fernández",
+            "Donald Trump"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.14755775034427643,
+            "negativo": 0.09980225563049316,
+            "neutral": 0.7526400089263916
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/apyme-critica-a-milei-y-pide-emergencia-para-el-sector/",
@@ -7221,10 +8133,16 @@
         "fecha": "19-03-2024",
         "hora": "21:17",
         "personas_detectadas_normalizadas": [
-            "Eduardo Fernández",
             "Pymes",
-            "Sergio Massa"
-        ]
+            "Sergio Massa",
+            "Eduardo Fernández"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.005298744421452284,
+            "negativo": 0.8917405009269714,
+            "neutral": 0.10296080261468887
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/passerini-y-pares-de-capitales-buscan-alternativas-para-recuperar-fondos-al-transporte-y-obras/",
@@ -7257,13 +8175,19 @@
         "fecha": "25-03-2024",
         "hora": "21:38",
         "personas_detectadas_normalizadas": [
-            "Zoom",
-            "Franco Mogetta",
+            "Guillermo Francos",
             "Ulpiano Suárez",
+            "Zoom",
             "Rosario Romero",
-            "Passerini",
-            "Guillermo Francos"
-        ]
+            "Franco Mogetta",
+            "Passerini"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.1703263372182846,
+            "negativo": 0.24623487889766693,
+            "neutral": 0.5834387540817261
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/ley-bases-el-gobierno-reactiva-el-dialogo-y-aceptaria-incluir-la-reforma-laboral/",
@@ -7309,37 +8233,43 @@
         "fecha": "25-03-2024",
         "hora": "19:33",
         "personas_detectadas_normalizadas": [
-            "Javier Milano",
-            "José Rolandi",
-            "Gildo Insfrán",
-            "Gustavo Saénz",
-            "Silvia Lospennato",
-            "Raúl Jalil",
-            "Nicolás Posse",
-            "Gustavo Valdés",
             "Lisandro Catalán",
-            "Guberman",
-            "Axel Kicillof",
-            "Ganancias",
-            "Martín Menem",
-            "Carlos Sadir",
-            "Sáez",
-            "Rolandi",
-            "Maximiliano Pullaro",
+            "Raúl Jalil",
             "Pullaro",
-            "Posse",
-            "Silvana Giudici",
-            "Leandro Zdero",
             "Ricardo Quintela",
-            "Gerardo Zamora",
-            "Carlos Guberman",
-            "Osvaldo Jaldo",
-            "Fonid",
-            "Cristian Ritondo",
-            "Hacienda",
+            "Axel Kicillof",
             "Guillermo Francos",
-            "Hugo Passalacqua"
-        ]
+            "Gildo Insfrán",
+            "Carlos Sadir",
+            "Silvana Giudici",
+            "José Rolandi",
+            "Osvaldo Jaldo",
+            "Ganancias",
+            "Nicolás Posse",
+            "Guberman",
+            "Javier Milano",
+            "Hacienda",
+            "Carlos Guberman",
+            "Cristian Ritondo",
+            "Martín Menem",
+            "Gustavo Saénz",
+            "Sáez",
+            "Fonid",
+            "Posse",
+            "Gerardo Zamora",
+            "Silvia Lospennato",
+            "Hugo Passalacqua",
+            "Maximiliano Pullaro",
+            "Leandro Zdero",
+            "Rolandi",
+            "Gustavo Valdés"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.2794707417488098,
+            "negativo": 0.08382733911275864,
+            "neutral": 0.6367019414901733
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/sergio-berni-critico-al-pj-y-elogio-a-victoria-villarruel/",
@@ -7375,13 +8305,19 @@
         "fecha": "23-03-2024",
         "hora": "17:51",
         "personas_detectadas_normalizadas": [
+            "Axel Kicillof",
             "Victoria Villarruel\n“Yo la quiero",
             "Sergio Berni",
-            "Axel Kicillof",
-            "Victoria Villarruel",
             "Alberto Fernández",
+            "Victoria Villarruel",
             "Berni"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.184430792927742,
+            "negativo": 0.45561280846595764,
+            "neutral": 0.3599563539028168
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/que-dijo-llaryora-cuando-lo-consultaron-sobre-las-subas-de-las-tarifas-electricas/",
@@ -7427,16 +8363,22 @@
         "fecha": "25-03-2024",
         "hora": "11:19",
         "personas_detectadas_normalizadas": [
-            "Silvana Paredes",
-            "Epec",
+            "Manuel Calvo",
+            "Juan Blangino",
             "Daniel Kieffer",
             "Rosario Acevedo",
-            "Manuel Calvo",
-            "Miguel Siciliano",
-            "Juan Blangino",
+            "Silvana Paredes",
             "Aompañaron",
+            "Epec",
+            "Miguel Siciliano",
             "Martín Llaryora"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.061345167458057404,
+            "negativo": 0.5430194735527039,
+            "neutral": 0.39563533663749695
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/la-casta-no-registra-a-los-chicos-que-roban-y-matan/",
@@ -7480,10 +8422,16 @@
         "hora": "00:01",
         "personas_detectadas_normalizadas": [
             "María Rosa Marcone",
-            "Sebastián Villarreal",
+            "Liliana Montero",
             "Martín Llaryora",
-            "Liliana Montero"
-        ]
+            "Sebastián Villarreal"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.08693170547485352,
+            "negativo": 0.27025893330574036,
+            "neutral": 0.6428093314170837
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/vigo-volvio-a-cuestionar-a-milei-por-no-proponer-a-una-mujer-para-la-corte-suprema/",
@@ -7519,13 +8467,19 @@
         "fecha": "23-03-2024",
         "hora": "18:25",
         "personas_detectadas_normalizadas": [
-            "Alejandra Vigo",
             "Juan Schiaretti",
-            "Victoria Villarruel",
+            "Alejandra Vigo",
             "Javier Milei",
             "Myrian Prunotto",
+            "Victoria Villarruel",
             "Prunotto"
-        ]
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.07901377230882645,
+            "negativo": 0.5406938195228577,
+            "neutral": 0.3802923858165741
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/100-dias-de-milei-el-sinceramiento-tarifario-marcha-a-media-maquina/",
@@ -7579,22 +8533,28 @@
         "fecha": "19-03-2024",
         "hora": "11:04",
         "personas_detectadas_normalizadas": [
-            "Daniel Scioli",
-            "Chirilo",
             "Ferrario",
-            "Eduardo Rodríguez Chirillo",
+            "Mauricio Macri",
             "Rodríguez",
-            "Fernández",
+            "Javier Milei",
+            "Eduardo Rodríguez Chirillo",
+            "Daniel Scioli",
+            "Néstor Kirchner",
             "Alejandro Ferrario",
             "Alejandro Eintoss",
-            "Néstor Kirchner",
-            "Alberto Fernández",
-            "Javier Milei",
-            "Mauricio Macri",
+            "Chirilo",
             "José María Rodríguez",
-            "Rodríguez Chirillo",
-            "Cammesa"
-        ]
+            "Cammesa",
+            "Fernández",
+            "Alberto Fernández",
+            "Rodríguez Chirillo"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.026165027171373367,
+            "negativo": 0.7598371505737305,
+            "neutral": 0.21399785578250885
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/jubilados-anses-extiende-hasta-abril-el-bono-de-70-mil/",
@@ -7617,7 +8577,13 @@
         "index": 1109,
         "fecha": "21-03-2024",
         "hora": "08:18",
-        "personas_detectadas_normalizadas": []
+        "personas_detectadas_normalizadas": [],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.13643501698970795,
+            "negativo": 0.10109026730060577,
+            "neutral": 0.7624747157096863
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/passerini-emitio-letras-por-30-mil-millones-y-cancelo-el-primer-vencimiento-de-deuda-externa/",
@@ -7646,11 +8612,17 @@
         "fecha": "19-03-2024",
         "hora": "21:29",
         "personas_detectadas_normalizadas": [
+            "Passerini",
             "Ramón Mestre",
-            "Sergio Lorenzatti",
             "Martín Llaryora",
-            "Passerini"
-        ]
+            "Sergio Lorenzatti"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.14025570452213287,
+            "negativo": 0.11635079979896545,
+            "neutral": 0.7433934807777405
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-informe-de-libertad-de-prensa-de-adepa-advierte-sobre-la-situacion-en-rosario/",
@@ -7690,11 +8662,17 @@
         "fecha": "21-03-2024",
         "hora": "09:20",
         "personas_detectadas_normalizadas": [
-            "Dessein",
-            "José Luis Cabezas",
+            "Alejandro Pueblas",
             "Daniel Dessein",
-            "Alejandro Pueblas"
-        ]
+            "José Luis Cabezas",
+            "Dessein"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.021972885355353355,
+            "negativo": 0.7933750152587891,
+            "neutral": 0.1846521645784378
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/midieron-a-opositores-a-milei-y-hubo-sorpresa-con-el-lider-a-la-altura-de-la-sociedad/",
@@ -7753,26 +8731,32 @@
         "fecha": "25-03-2024",
         "hora": "18:21",
         "personas_detectadas_normalizadas": [
-            "Cristina Kirchner",
-            "Sergio Massa",
-            "Myrian Bregman",
             "Luis Caputo",
             "Axel Kicillof",
-            "Javier Milei",
-            "Luis Majul",
-            "Karina Milei",
-            "Facundo Manes",
-            "Horacio Rodríguez Larreta",
-            "Milei\nLa encuesta",
-            "Guillermo Moreno",
-            "Gustavo Sylvestre",
-            "Patricia Bullrich",
             "Mauricio Macri",
-            "Segundo",
+            "Javier Milei",
+            "Facundo Manes",
+            "Karina Milei",
+            "Gustavo Sylvestre",
+            "Cristina Kirchner",
+            "Luis Majul",
+            "Myrian Bregman",
             "Aníbal Urios",
+            "Sergio Massa",
             "Eduardo Feinmann",
-            "Martín Lousteau"
-        ]
+            "Guillermo Moreno",
+            "Patricia Bullrich",
+            "Martín Lousteau",
+            "Segundo",
+            "Horacio Rodríguez Larreta",
+            "Milei\nLa encuesta"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.019116351380944252,
+            "negativo": 0.676928699016571,
+            "neutral": 0.30395492911338806
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/el-mensaje-de-cristina-kirchner-por-el-24-de-marzo-para-aquellos-que-todavia-se-niegan-a-reflexionar/",
@@ -7811,11 +8795,17 @@
         "fecha": "24-03-2024",
         "hora": "09:00",
         "personas_detectadas_normalizadas": [
-            "Cristina Kirchner",
+            "Presidente",
             "Néstor Kirchner",
-            "General Perón",
-            "Presidente"
-        ]
+            "Cristina Kirchner",
+            "General Perón"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.06079436466097832,
+            "negativo": 0.4404715299606323,
+            "neutral": 0.49873417615890503
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/boleta-de-aguas-cordobesas-aumento-314-en-12-meses/",
@@ -7865,13 +8855,19 @@
         "fecha": "20-03-2024",
         "hora": "08:53",
         "personas_detectadas_normalizadas": [
-            "Epec",
-            "Cortés",
             "Juan Schiaretti",
+            "Epec",
             "Facundo Cortés",
-            "Martín Llaryora",
-            "Ersep"
-        ]
+            "Cortés",
+            "Ersep",
+            "Martín Llaryora"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEG",
+            "positivo": 0.007494612131267786,
+            "negativo": 0.8929603695869446,
+            "neutral": 0.09954503178596497
+        }
     },
     {
         "link": "https://www.lavoz.com.ar/politica/llaryora-y-schiaretti-no-iran-ni-enviaran-representantes-a-la-cumbre-del-pj-nacional/",
@@ -7928,22 +8924,28 @@
         "fecha": "20-03-2024",
         "hora": "12:23",
         "personas_detectadas_normalizadas": [
-            "Juan Domingo Perón",
-            "Gildo Insfrán",
-            "Oscar González",
-            "Juan Schiaretti",
-            "Cristina Kirchner",
-            "Sergio Massa",
-            "Gutiérrez",
             "Javier Milei",
-            "Francisco Fortuna",
-            "Martín Llaryora",
+            "Gildo Insfrán",
             "José Manuel de la Sota",
-            "Carlos Gutiérrez",
+            "Oscar González",
+            "Jorge “Zurdo” Montoya",
+            "Cristina Kirchner",
+            "Martín Llaryora",
+            "Sergio Massa",
             "González",
+            "Juan Domingo Perón",
+            "Juan Schiaretti",
             "José “Pepe” Pihen",
+            "Carlos Gutiérrez",
+            "Francisco Fortuna",
             "Alberto Fernández",
-            "Jorge “Zurdo” Montoya"
-        ]
+            "Gutiérrez"
+        ],
+        "sentimiento": {
+            "etiqueta": "NEU",
+            "positivo": 0.04568937048316002,
+            "negativo": 0.3563618063926697,
+            "neutral": 0.5979488492012024
+        }
     }
 ]
