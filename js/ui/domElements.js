@@ -20,7 +20,7 @@ export const articlesContainer = document.getElementById('articles-container');
 // export const articleSearchBtn = document.getElementById('article-search-btn');     // <-- ELIMINADO O COMENTADO
 export const articleSelect = document.getElementById('article-select'); // <-- AÑADIDO
 export const politicianSelect = document.getElementById('politician-select'); // Ya estaba bien
-export const resetFilterBtn = document.getElementById('reset-filter-btn'); // Ya estaba bien
+export const resetFilterBtn = document.getElementById('reset-news-filter-btn'); // Ya estaba bien
 export const sortNewestBtn = document.getElementById('sort-newest-btn');   // Ya estaba bien
 export const sortOldestBtn = document.getElementById('sort-oldest-btn');   // Ya estaba bien
 // --- Fin Controles Vista Noticias ---

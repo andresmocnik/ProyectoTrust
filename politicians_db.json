@@ -1,523 +1,522 @@
 [
-    {
-      "name": "Javier Milei",
-      "description": "Economista y político argentino. Presidente de la Nación Argentina desde diciembre de 2023. Líder del partido La Libertad Avanza.",
-      "img": "https://estaticos.elcolombiano.com/binrepository/848x565/0c0/780d565/none/11101/UGBC/a20240211t045027-m-10-211-95-50-2a-7241-7301-07-f_44659132_20240316015332.jpg"
-    },
-    {
-      "name": "Victoria Villarruel",
-      "description": "Abogada y política argentina. Vicepresidenta de la Nación Argentina desde diciembre de 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/86/Victoria_Villarruel_vicepresidential_portrait.jpg/440px-Victoria_Villarruel_vicepresidential_portrait.jpg"
-    },
-    {
-      "name": "Luis Caputo",
-      "description": "Economista argentino. Ministro de Economía de Argentina desde diciembre de 2023. Anteriormente fue Ministro de Finanzas y Presidente del Banco Central.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Luis_Caputo_%28cropped%29.jpg/440px-Luis_Caputo_%28cropped%29.jpg"
-    },
-    {
-      "name": "Patricia Bullrich",
-      "description": "Política argentina. Ministra de Seguridad de Argentina desde diciembre de 2023, cargo que también ocupó entre 2015 y 2019. Presidenta del PRO.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a7/Patricia_Bullrich_-_Ministerio_de_Seguridad_%28cropped%29.jpg/440px-Patricia_Bullrich_-_Ministerio_de_Seguridad_%28cropped%29.jpg"
-    },
-    {
-      "name": "Guillermo Francos",
-      "description": "Abogado y político argentino. Ministro del Interior de Argentina desde diciembre de 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0b/Guillermo_Francos_en_A_la_Bolsa_TV.jpg/440px-Guillermo_Francos_en_A_la_Bolsa_TV.jpg"
-    },
-    {
-      "name": "Nicolás Posse",
-      "description": "Ingeniero y ejecutivo argentino. Jefe de Gabinete de Ministros de Argentina desde diciembre de 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Nicolas_Posse_Chief_of_the_Cabinet_of_Ministers_of_Argentina.jpg/440px-Nicolas_Posse_Chief_of_the_Cabinet_of_Ministers_of_Argentina.jpg"
-    },
-    {
-      "name": "Karina Milei",
-      "description": "Política argentina. Hermana de Javier Milei y Secretaria General de la Presidencia de la Nación Argentina desde diciembre de 2023. Conocida como \"El Jefe\".",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5f/Karina_Milei_en_Mar_del_Plata.jpg/440px-Karina_Milei_en_Mar_del_Plata.jpg"
-    },
-    {
-      "name": "Manuel Adorni",
-      "description": "Analista económico y político argentino. Vocero Presidencial de la República Argentina desde diciembre de 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Manuel_Adorni_at_Casa_Rosada_in_2024_%28cropped%29.jpg/440px-Manuel_Adorni_at_Casa_Rosada_in_2024_%28cropped%29.jpg"
-    },
-    {
-      "name": "Luis Petri",
-      "description": "Abogado y político argentino. Ministro de Defensa de Argentina desde diciembre de 2023. Fue candidato a vicepresidente en 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Luis_Petri_2023_%28cropped%29.jpg/440px-Luis_Petri_2023_%28cropped%29.jpg"
-    },
-    {
-      "name": "Martín Menem",
-      "description": "Abogado y político argentino. Presidente de la Cámara de Diputados de la Nación Argentina desde diciembre de 2023 (La Libertad Avanza).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Martin_Menem_%28cropped%29.jpg/440px-Martin_Menem_%28cropped%29.jpg"
-    },
-    {
-      "name": "Diana Mondino",
-      "description": "Economista y política argentina. Ministra de Relaciones Exteriores, Comercio Internacional y Culto de Argentina desde diciembre de 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/ce/Diana_Mondino_Minister_of_Foreign_Affairs_International_Trade_and_Worship_of_Argentina.jpg/440px-Diana_Mondino_Minister_of_Foreign_Affairs_International_Trade_and_Worship_of_Argentina.jpg"
-    },
-    {
-      "name": "Sandra Pettovello",
-      "description": "Periodista y política argentina. Ministra de Capital Humano de Argentina desde diciembre de 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Sandra_Pettovello_Minister_of_Human_Capital_of_Argentina.jpg/440px-Sandra_Pettovello_Minister_of_Human_Capital_of_Argentina.jpg"
-    },
-    {
-      "name": "Mariano Cúneo Libarona",
-      "description": "Abogado penalista y académico argentino. Ministro de Justicia de Argentina desde diciembre de 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Mariano_C%C3%BAneo_Libarona_Minister_of_Justice_of_Argentina.jpg/440px-Mariano_C%C3%BAneo_Libarona_Minister_of_Justice_of_Argentina.jpg"
-    },
-    {
-      "name": "Santiago Bausili",
-      "description": "Economista argentino. Presidente del Banco Central de la República Argentina (BCRA) desde diciembre de 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e2/Santiago_Bausili.jpg/440px-Santiago_Bausili.jpg" 
-    },
-    {
-      "name": "Mauricio Macri",
-      "description": "Ingeniero civil, político y empresario argentino. Presidente de la Nación Argentina (2015-2019). Ex Jefe de Gobierno de Buenos Aires. Referente del PRO.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Mauricio_Macri_presidential_portrait.jpg/440px-Mauricio_Macri_presidential_portrait.jpg"
-    },
-    {
-      "name": "Cristina Fernández de Kirchner",
-      "description": "Abogada y política argentina. Vicepresidenta de Argentina (2019-2023). Presidenta de la Nación Argentina (2007-2015). Referente del kirchnerismo.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Cristina_Fern%C3%A1ndez_de_Kirchner_2023.jpg/440px-Cristina_Fern%C3%A1ndez_de_Kirchner_2023.jpg"
-    },
-    {
-      "name": "Alberto Fernández",
-      "description": "Abogado y político argentino. Presidente de la Nación Argentina (2019-2023). Ex Jefe de Gabinete de Ministros.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Alberto_Fernandez_en_2019.jpg/440px-Alberto_Fernandez_en_2019.jpg"
-    },
-    {
-      "name": "Sergio Massa",
-      "description": "Abogado y político argentino. Ex Ministro de Economía (2022-2023) y candidato presidencial en 2023. Líder del Frente Renovador.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Sergio_Massa_en_Washington_DC%2C_2022_%28cropped%29.jpg/440px-Sergio_Massa_en_Washington_DC%2C_2022_%28cropped%29.jpg"
-    },
-    {
-      "name": "Axel Kicillof",
-      "description": "Economista y político argentino. Gobernador de la Provincia de Buenos Aires desde 2019. Ex Ministro de Economía.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Axel_Kicillof_-_Gobernador_de_la_Provincia_de_Buenos_Aires.jpg/440px-Axel_Kicillof_-_Gobernador_de_la_Provincia_de_Buenos_Aires.jpg"
-    },
-    {
-      "name": "Horacio Rodríguez Larreta",
-      "description": "Economista y político argentino. Ex Jefe de Gobierno de la Ciudad de Buenos Aires (2015-2023). Referente del PRO.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Horacio_Rodr%C3%ADguez_Larreta_%28Recorte%29.jpg/440px-Horacio_Rodr%C3%ADguez_Larreta_%28Recorte%29.jpg"
-    },
-    {
-      "name": "Martín Lousteau",
-      "description": "Economista y político argentino. Senador Nacional (CABA) y presidente del Comité Nacional de la UCR. Ex Ministro de Economía y embajador.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Martin_Lousteau_2018.jpg/440px-Martin_Lousteau_2018.jpg"
-    },
-    {
-      "name": "Gerardo Morales",
-      "description": "Contador público y político argentino. Ex Gobernador de Jujuy (2015-2023) y expresidente de la UCR.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Gerardo_Morales_%28cropped%29.jpg/440px-Gerardo_Morales_%28cropped%29.jpg"
-    },
-    {
-      "name": "Máximo Kirchner",
-      "description": "Político argentino. Diputado Nacional (Buenos Aires). Hijo de Néstor y Cristina Kirchner, referente de La Cámpora.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/M%C3%A1ximo_Kirchner_en_el_Congreso_de_la_Naci%C3%B3n.jpg/440px-M%C3%A1ximo_Kirchner_en_el_Congreso_de_la_Naci%C3%B3n.jpg"
-    },
-    {
-      "name": "Eduardo “Wado” de Pedro",
-      "description": "Abogado y político argentino. Senador Nacional (Buenos Aires). Ex Ministro del Interior. Referente de La Cámpora.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Eduardo_de_Pedro_%28cropped%29.jpg/440px-Eduardo_de_Pedro_%28cropped%29.jpg"
-    },
-    {
-      "name": "Agustín Rossi",
-      "description": "Ingeniero y político argentino. Ex Jefe de Gabinete de Ministros (2023) y ex Ministro de Defensa en varias ocasiones. Candidato a vicepresidente en 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Agust%C3%ADn_Rossi_%28cropped%29.jpg/440px-Agust%C3%ADn_Rossi_%28cropped%29.jpg"
-    },
-    {
-      "name": "Aníbal Fernández",
-      "description": "Contador público y político argentino. Ha ocupado múltiples cargos ministeriales, incluyendo Jefe de Gabinete, Ministro del Interior, de Justicia y de Seguridad.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/An%C3%ADbal_Fern%C3%A1ndez_2022_%28cropped%29.jpg/440px-An%C3%ADbal_Fern%C3%A1ndez_2022_%28cropped%29.jpg"
-    },
-    {
-      "name": "Daniel Scioli",
-      "description": "Político, empresario y exmotonauta argentino. Actual Secretario de Turismo, Ambiente y Deportes. Ex Gobernador de Buenos Aires y ex Vicepresidente.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Daniel_Scioli.jpg/440px-Daniel_Scioli.jpg"
-    },
-    {
-      "name": "José Luis Espert",
-      "description": "Economista y político argentino. Diputado Nacional (Buenos Aires). Presidente de la comisión de Presupuesto y Hacienda. Aliado de La Libertad Avanza.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ea/Jos%C3%A9_Luis_Espert_2023.jpg/440px-Jos%C3%A9_Luis_Espert_2023.jpg"
-    },
-    {
-      "name": "Ramiro Marra",
-      "description": "Financista y político argentino. Legislador de la Ciudad de Buenos Aires por La Libertad Avanza.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f2/Ramiro_Marra_-_May_2022.jpg/440px-Ramiro_Marra_-_May_2022.jpg"
-    },
-    {
-      "name": "Lilia Lemoine",
-      "description": "Cosplayer, influencer y política argentina. Diputada Nacional por la Ciudad de Buenos Aires (La Libertad Avanza).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Lilia_Lemoine_July_2023.jpg/440px-Lilia_Lemoine_July_2023.jpg"
-    },
-    {
-      "name": "Juan Grabois",
-      "description": "Abogado, dirigente social y político argentino. Referente del Movimiento de Trabajadores Excluidos (MTE) y del Frente Patria Grande.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1f/Juan_Grabois_%28cropped%29.jpg/440px-Juan_Grabois_%28cropped%29.jpg"
-    },
-    {
-      "name": "Myriam Bregman",
-      "description": "Abogada, activista y política argentina. Diputada Nacional (CABA). Dirigente del PTS y referente del Frente de Izquierda y de Trabajadores - Unidad.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/94/Myriam_Bregman_Diputada_Nacional_2021.jpg/440px-Myriam_Bregman_Diputada_Nacional_2021.jpg"
-    },
-    {
-      "name": "Nicolás del Caño",
-      "description": "Político argentino. Diputado Nacional (Buenos Aires). Dirigente del PTS y referente del Frente de Izquierda y de Trabajadores - Unidad.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/43/Nicolas_del_Ca%C3%B1o_2019_%28cropped%29.jpg/440px-Nicolas_del_Ca%C3%B1o_2019_%28cropped%29.jpg"
-    },
-    {
-      "name": "Martín Llaryora",
-      "description": "Político y abogado argentino. Gobernador de la Provincia de Córdoba desde diciembre de 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Martin_Llaryora_-_Gobernador_de_Cordoba.jpg/440px-Martin_Llaryora_-_Gobernador_de_Cordoba.jpg"
-    },
-    {
-      "name": "Juan Schiaretti",
-      "description": "Político y contador público argentino. Ex Gobernador de Córdoba (2007-2011, 2015-2023).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/ef/Juan_Schiaretti_%28cropped%29.jpg/440px-Juan_Schiaretti_%28cropped%29.jpg"
-    },
-    {
-      "name": "Rogelio Frigerio",
-      "description": "Economista y político argentino. Gobernador de Entre Ríos desde diciembre de 2023. Ex Ministro del Interior.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Rogelio_Frigerio_2019_%28cropped%29.jpg/440px-Rogelio_Frigerio_2019_%28cropped%29.jpg"
-    },
-    {
-      "name": "Jorge Macri",
-      "description": "Político y empresario argentino. Jefe de Gobierno de la Ciudad de Buenos Aires desde diciembre de 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Jorge_Macri_asuncion.jpg/440px-Jorge_Macri_asuncion.jpg"
-    },
-    {
-      "name": "Gildo Insfrán",
-      "description": "Político y médico veterinario argentino. Gobernador de Formosa desde 1995.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Gildo_Insfran_2019_%28cropped%29.jpg/440px-Gildo_Insfran_2019_%28cropped%29.jpg"
-    },
-    {
-      "name": "Sergio Uñac",
-      "description": "Abogado y político argentino. Senador Nacional (San Juan). Ex Gobernador de San Juan (2015-2023).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Sergio_U%C3%B1ac_%28cropped%29.jpg/440px-Sergio_U%C3%B1ac_%28cropped%29.jpg"
-    },
-    {
-      "name": "Juan Manzur",
-      "description": "Médico cirujano y político argentino. Senador Nacional (Tucumán). Ex Jefe de Gabinete de Ministros y ex Gobernador de Tucumán.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Juan_Luis_Manzur_%28cropped%29.jpg/440px-Juan_Luis_Manzur_%28cropped%29.jpg"
-    },
-    {
-      "name": "Jorge Capitanich",
-      "description": "Contador público y político argentino. Ex Gobernador del Chaco y ex Jefe de Gabinete de Ministros.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Jorge_Capitanich_%28cropped%29.jpg/440px-Jorge_Capitanich_%28cropped%29.jpg"
-    },
-    {
-      "name": "Claudio Poggi",
-      "description": "Contador público y político argentino. Gobernador de San Luis desde diciembre de 2023. Anteriormente fue Gobernador y Senador Nacional.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Claudio_Poggi_2017.jpg/440px-Claudio_Poggi_2017.jpg"
-    },
-    {
-      "name": "Gerardo Zamora",
-      "description": "Abogado y político argentino. Gobernador de Santiago del Estero.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Gerardo_Zamora_%28cropped%29.jpg/440px-Gerardo_Zamora_%28cropped%29.jpg"
-    },
-    {
-      "name": "Omar Perotti",
-      "description": "Contador público y político argentino. Ex Gobernador de Santa Fe (2019-2023).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Omar_Perotti_2019.jpg/440px-Omar_Perotti_2019.jpg"
-    },
-    {
-      "name": "Rodolfo Suárez",
-      "description": "Abogado y político argentino. Ex Gobernador de Mendoza (2019-2023).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b4/Rodolfo_Suarez_%28cropped%29.jpg/440px-Rodolfo_Suarez_%28cropped%29.jpg"
-    },
-    {
-      "name": "Gustavo Valdés",
-      "description": "Abogado y político argentino. Gobernador de Corrientes desde 2017.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Gustavo_Valdes_%28cropped%29.jpg/440px-Gustavo_Valdes_%28cropped%29.jpg"
-    },
-    {
-      "name": "Lucía Corpacci",
-      "description": "Médica y política argentina. Diputada Nacional (Catamarca). Ex Gobernadora de Catamarca y ex Senadora Nacional.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Luc%C3%ADa_Corpacci_2019_%28cropped%29.jpg/440px-Luc%C3%ADa_Corpacci_2019_%28cropped%29.jpg"
-    },
-    {
-      "name": "Diego Santilli",
-      "description": "Contador público y político argentino. Diputado Nacional (Buenos Aires). Ex Vicejefe de Gobierno de CABA.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Diego_Santilli_en_2020.jpg/440px-Diego_Santilli_en_2020.jpg"
-    },
-    {
-      "name": "María Eugenia Vidal",
-      "description": "Politóloga argentina. Diputada Nacional (CABA). Ex Gobernadora de Buenos Aires.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Maria_Eugenia_Vidal_-_Diputada_Nacional.jpg/440px-Maria_Eugenia_Vidal_-_Diputada_Nacional.jpg"
-    },
-    {
-      "name": "Elisa Carrió",
-      "description": "Abogada, política y escritora argentina. Fundadora de la Coalición Cívica ARI. Ex Diputada Nacional.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Elisa_Carri%C3%B3_2019.jpg/440px-Elisa_Carri%C3%B3_2019.jpg"
-    },
-    {
-      "name": "Cecilia Moreau",
-      "description": "Política argentina. Diputada Nacional (Buenos Aires). Ex Presidenta de la Cámara de Diputados.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/26/Cecilia_Moreau_2023_%28cropped%29.jpg/440px-Cecilia_Moreau_2023_%28cropped%29.jpg"
-    },
-    {
-      "name": "Leandro Santoro",
-      "description": "Politólogo y político argentino. Diputado Nacional (CABA).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1b/Leandro_Santoro_2021_%28cropped%29.jpg/440px-Leandro_Santoro_2021_%28cropped%29.jpg"
-    },
-    {
-      "name": "Juliana Di Tullio",
-      "description": "Psicóloga social y política argentina. Senadora Nacional (Buenos Aires).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d4/Juliana_di_Tullio_2021_%28cropped%29.jpg/440px-Juliana_di_Tullio_2021_%28cropped%29.jpg"
-    },
-    {
-      "name": "Fernando Iglesias",
-      "description": "Escritor, periodista y político argentino. Diputado Nacional (CABA).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Fernando_Iglesias_%28cropped%29.jpg/440px-Fernando_Iglesias_%28cropped%29.jpg"
-    },
-    {
-      "name": "Luis Juez",
-      "description": "Abogado y político argentino. Senador Nacional (Córdoba).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Luis_Juez_2023.jpg/440px-Luis_Juez_2023.jpg"
-    },
-    {
-      "name": "Miguel Ángel Pichetto",
-      "description": "Abogado y político argentino. Auditor General de la Nación. Ex Senador Nacional y ex candidato a vicepresidente.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Miguel_%C3%81ngel_Pichetto_%28cropped%29.jpg/440px-Miguel_%C3%81ngel_Pichetto_%28cropped%29.jpg"
-    },
-    {
-      "name": "Ricardo López Murphy",
-      "description": "Economista y político argentino. Diputado Nacional (CABA). Ex Ministro de Economía y de Defensa.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/41/Ricardo_L%C3%B3pez_Murphy_2021.jpg/440px-Ricardo_L%C3%B3pez_Murphy_2021.jpg"
-    },
-    {
-      "name": "Waldo Wolff",
-      "description": "Político argentino. Ministro de Seguridad de la Ciudad de Buenos Aires. Ex Diputado Nacional.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Waldo_Wolff_%28cropped%29.jpg/440px-Waldo_Wolff_%28cropped%29.jpg"
-    },
-    {
-      "name": "Facundo Manes",
-      "description": "Neurólogo y político argentino. Diputado Nacional (Buenos Aires).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/89/Facundo_Manes_2023_%28cropped%29.jpg/440px-Facundo_Manes_2023_%28cropped%29.jpg"
-    },
-    {
-      "name": "Soledad Acuña",
-      "description": "Politóloga argentina. Ex Ministra de Educación de la Ciudad de Buenos Aires.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Soledad_Acu%C3%B1a_%28cropped%29.jpg/440px-Soledad_Acu%C3%B1a_%28cropped%29.jpg"
-    },
-    {
-      "name": "Florencio Randazzo",
-      "description": "Político argentino. Ex Ministro del Interior y Transporte. Ex Diputado Nacional.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Florencio_Randazzo.jpg/440px-Florencio_Randazzo.jpg"
-    },
-    {
-      "name": "Emilio Monzó",
-      "description": "Abogado y político argentino. Diputado Nacional (Buenos Aires). Ex Presidente de la Cámara de Diputados.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/Diputado_Emilio_Monzo.jpg/440px-Diputado_Emilio_Monzo.jpg"
-    },
-    {
-      "name": "Graciela Camaño",
-      "description": "Abogada y política argentina. Diputada Nacional (Buenos Aires) con múltiples mandatos.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/Graciela_Cama%C3%B1o_-_Diputada_Nacional_2021_%28cropped%29.jpg/440px-Graciela_Cama%C3%B1o_-_Diputada_Nacional_2021_%28cropped%29.jpg"
-    },
-    {
-      "name": "Maximiliano Ferraro",
-      "description": "Político argentino. Presidente de la Coalición Cívica ARI y Diputado Nacional (CABA).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Maximiliano_Ferraro_%28cropped%29.jpg/440px-Maximiliano_Ferraro_%28cropped%29.jpg"
-    },
-    {
-      "name": "Margarita Stolbizer",
-      "description": "Abogada y política argentina. Diputada Nacional (Buenos Aires). Líder del partido GEN.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f0/Margarita_Stolbizer_-_Diputada_Nacional.jpg/440px-Margarita_Stolbizer_-_Diputada_Nacional.jpg"
-    },
-    {
-      "name": "Mónica Fein",
-      "description": "Bioquímica y política argentina. Diputada Nacional (Santa Fe). Ex Intendenta de Rosario y Presidenta del Partido Socialista.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c4/Monica_Fein_2021_%28cropped%29.jpg/440px-Monica_Fein_2021_%28cropped%29.jpg"
-    },
-    {
-      "name": "José Mayans",
-      "description": "Político argentino. Senador Nacional por Formosa, jefe del bloque opositor principal en el Senado.",
-      "img": "https://www.senado.gov.ar/senadores/senador/fotos/JMayans.jpg"
-    },
-    {
-      "name": "Juan Carlos Romero",
-      "description": "Abogado y político argentino. Senador Nacional por Salta. Ex Gobernador de Salta.",
-      "img": "https://www.senado.gov.ar/senadores/senador/fotos/JRomero.jpg"
-    },
-    {
-      "name": "Martín Tetaz",
-      "description": "Economista y político argentino. Diputado Nacional por la Ciudad de Buenos Aires (Evolución Radical).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Mart%C3%ADn_Tetaz_%28cropped%29.jpg/440px-Mart%C3%ADn_Tetaz_%28cropped%29.jpg"
-    },
-    {
-      "name": "Mario Negri",
-      "description": "Abogado y político argentino. Ex Diputado Nacional por Córdoba, figura importante de la UCR.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1c/Mario_Negri_en_el_aniversario_de_la_Reforma_Universitaria.jpg/440px-Mario_Negri_en_el_aniversario_de_la_Reforma_Universitaria.jpg"
-    },
-    {
-      "name": "Anabel Fernández Sagasti",
-      "description": "Abogada y política argentina. Senadora Nacional por Mendoza.",
-      "img": "https://www.senado.gov.ar/senadores/senador/fotos/AFernandezSagasti.jpg"
-    },
-    {
-      "name": "Alejandra Vigo",
-      "description": "Política argentina. Senadora Nacional por Córdoba.",
-      "img": "https://www.senado.gov.ar/senadores/senador/fotos/AVigo.jpg"
-    },
-    {
-      "name": "Ariel Lijo",
-      "description": "Abogado argentino. Juez federal a cargo del Juzgado Criminal y Correccional Federal N° 4 de Buenos Aires. Propuesto para la Corte Suprema.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Lijo_Ariel_2016.jpg/440px-Lijo_Ariel_2016.jpg"
-    },
-    {
-      "name": "Juan Carlos Maqueda",
-      "description": "Abogado y político argentino. Juez de la Corte Suprema de Justicia de la Nación Argentina desde 2002.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Juan_Carlos_Maqueda.jpg/440px-Juan_Carlos_Maqueda.jpg"
-    },
-    {
-      "name": "Horacio Rosatti",
-      "description": "Abogado, político y exjuez argentino. Juez de la Corte Suprema de Justicia de la Nación Argentina desde 2016 y su presidente desde 2021.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Horacio_Rosatti_-_Presidente_de_la_Corte_Suprema_de_Justicia.jpg/440px-Horacio_Rosatti_-_Presidente_de_la_Corte_Suprema_de_Justicia.jpg"
-    },
-    {
-      "name": "Ricardo Lorenzetti",
-      "description": "Abogado y Doctor en Ciencias Jurídicas y Sociales. Juez de la Corte Suprema de Justicia de la Nación Argentina desde 2004. Fue presidente de la misma.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cb/Ricardo_Lorenzetti_at_the_meeting_on_Environment_and_Sustainable_Development_in_the_Vatican%2C_2019.jpg/440px-Ricardo_Lorenzetti_at_the_meeting_on_Environment_and_Sustainable_Development_in_the_Vatican%2C_2019.jpg"
-    },
-    {
-      "name": "Carlos Rosenkrantz",
-      "description": "Abogado argentino. Juez de la Corte Suprema de Justicia de la Nación Argentina desde 2016. Fue presidente de la misma.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/29/Carlos_Rosenkrantz_-_Ministro_de_la_Corte_Suprema_de_Justicia.jpg/440px-Carlos_Rosenkrantz_-_Ministro_de_la_Corte_Suprema_de_Justicia.jpg"
-    },
-    {
-      "name": "Elena Highton de Nolasco",
-      "description": "Abogada y exjueza argentina. Ex miembro de la Corte Suprema de Justicia de la Nación (2004-2021).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Elena_Highton_de_Nolasco.jpg/440px-Elena_Highton_de_Nolasco.jpg"
-    },
-    {
-      "name": "Daniel Passerini",
-      "description": "Médico y político argentino. Intendente de la Ciudad de Córdoba desde diciembre de 2023.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Daniel_Passerini_%28cropped%29.jpg/440px-Daniel_Passerini_%28cropped%29.jpg"
-    },
-    {
-      "name": "Estela de Carlotto",
-      "description": "Activista argentina por los derechos humanos y presidenta de la asociación Abuelas de Plaza de Mayo.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bc/Estela_de_Carlotto_-_Plan_Nacional_de_Lectura_%28cropped%29.jpg/440px-Estela_de_Carlotto_-_Plan_Nacional_de_Lectura_%28cropped%29.jpg"
-    },
-    {
-      "name": "Gabriel Bornoroni",
-      "description": "Empresario y político argentino. Diputado Nacional por Córdoba. Presidente del bloque de La Libertad Avanza en Diputados.",
-      "img": "https://www.diputados.gov.ar/fotos/diputadosrn/20231210-rn-gabriel_bornoroni.jpg" 
-    },
-    {
-      "name": "Rodrigo de Loredo",
-      "description": "Abogado y político argentino. Diputado Nacional por Córdoba y presidente del bloque de la UCR.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Rodrigo_de_Loredo_%28cropped%29.jpg/440px-Rodrigo_de_Loredo_%28cropped%29.jpg"
-    },
-    {
-      "name": "Myrian Prunotto",
-      "description": "Política argentina. Vicegobernadora de la provincia de Córdoba desde diciembre de 2023.",
-      "img": null 
-    },
-    {
-      "name": "Martín Insaurralde",
-      "description": "Político argentino. Ex Jefe de Gabinete de Ministros de la Provincia de Buenos Aires y ex Intendente de Lomas de Zamora.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Mart%C3%ADn_Insaurralde_%28cropped%29.jpg/440px-Mart%C3%ADn_Insaurralde_%28cropped%29.jpg"
-    },
-    {
-      "name": "José Luis Gioja",
-      "description": "Ingeniero y político argentino. Diputado Nacional (San Juan). Ex Gobernador de San Juan y ex presidente del PJ.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0c/Jos%C3%A9_Luis_Gioja_%28cropped%29.jpg/440px-Jos%C3%A9_Luis_Gioja_%28cropped%29.jpg"
-    },
-    {
-      "name": "Ricardo Alfonsín",
-      "description": "Abogado y político argentino. Ex embajador en España. Hijo de Raúl Alfonsín.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Ricardo_Alfons%C3%ADn_%28cropped%29.jpg/440px-Ricardo_Alfons%C3%ADn_%28cropped%29.jpg"
-    },
-    {
-      "name": "Claudio Lozano",
-      "description": "Economista y político argentino. Ex director del Banco Nación. Referente de Unidad Popular.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/Claudio_Lozano.jpg/440px-Claudio_Lozano.jpg" 
-    },
-    {
-      "name": "Luis Brandoni",
-      "description": "Actor y político argentino. Ex Diputado Nacional (UCR).",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/39/Luis_Brandoni_%28cropped%29.jpg/440px-Luis_Brandoni_%28cropped%29.jpg"
-    },
-    {
-      "name": "Daniel Filmus",
-      "description": "Sociólogo y político argentino. Ex Ministro de Ciencia, Tecnología e Innovación, ex Ministro de Educación y ex Senador Nacional.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d3/Daniel_Filmus_2019_%28cropped%29.jpg/440px-Daniel_Filmus_2019_%28cropped%29.jpg"
-    },
-    {
-      "name": "Jorge Taiana",
-      "description": "Sociólogo y político argentino. Ex Ministro de Defensa y ex Canciller.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Jorge_Taiana_jurando_como_Ministro_de_Defensa.jpg/440px-Jorge_Taiana_jurando_como_Ministro_de_Defensa.jpg"
-    },
-    {
-      "name": "Graciela Ocaña",
-      "description": "Politóloga argentina. Diputada Nacional (Buenos Aires). Ex Ministra de Salud.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Graciela_Oca%C3%B1a_-_Diputada_Nacional_2021.jpg/440px-Graciela_Oca%C3%B1a_-_Diputada_Nacional_2021.jpg"
-    },
-     {
-      "name": "Carlos Pagni",
-      "description": "Periodista y analista político argentino.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Carlos_Pagni_en_Experiencia_IDEA_Management_2018.jpg/440px-Carlos_Pagni_en_Experiencia_IDEA_Management_2018.jpg"
-     },
-     {
-      "name": "Jorge Lanata",
-      "description": "Periodista y escritor argentino. Conductor de programas de radio y televisión de alto impacto político.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e9/Jorge_Lanata_2017.jpg/440px-Jorge_Lanata_2017.jpg"
-     },
-     {
-      "name": "Luis Majul",
-      "description": "Periodista, escritor y conductor argentino.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e3/Luis_Majul_%28cropped%29.jpg/440px-Luis_Majul_%28cropped%29.jpg"
-     },
-     {
-      "name": "Jonatan Viale",
-      "description": "Periodista y politólogo argentino. Conductor de programas de televisión.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Jonatan_Viale_en_La_Naci%C3%B3n%2B.jpg/440px-Jonatan_Viale_en_La_Naci%C3%B3n%2B.jpg"
-     },
-     {
-      "name": "Eduardo Feinmann",
-      "description": "Periodista, abogado y conductor argentino.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/Eduardo_Feinmann.jpg/440px-Eduardo_Feinmann.jpg"
-     },
-     {
-      "name": "Roberto Navarro",
-      "description": "Periodista económico y político argentino.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Roberto_Navarro_en_C5N.jpg/440px-Roberto_Navarro_en_C5N.jpg"
-     },
-     {
-      "name": "Víctor Hugo Morales",
-      "description": "Periodista, relator deportivo, locutor y escritor uruguayo radicado en Argentina.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2a/Victor_Hugo_Morales_-_20191017_-_Cultura_Argentina_%28cropped_2%29.jpg/440px-Victor_Hugo_Morales_-_20191017_-_Cultura_Argentina_%28cropped_2%29.jpg"
-     },
-     {
-      "name": "Alejandro Fantino",
-      "description": "Periodista y conductor argentino.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Alejandro_Fantino_%28cropped%29.jpg/440px-Alejandro_Fantino_%28cropped%29.jpg"
-     },
-     {
-      "name": "Alfredo Leuco",
-      "description": "Periodista y conductor argentino.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/07/Alfredo_Leuco_%28cropped%29.jpg/440px-Alfredo_Leuco_%28cropped%29.jpg"
-     },
-     {
-      "name": "Marcelo Tinelli",
-      "description": "Conductor, empresario y productor argentino. Figura influyente en medios y ocasionalmente en política.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cf/Tinelli_2014.jpg/440px-Tinelli_2014.jpg"
-     },
-      {
-      "name": "Jorge Fontevecchia",
-      "description": "Periodista y empresario argentino. Fundador y CEO de Editorial Perfil.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a8/Jorge_Fontevecchia_2018.jpg/440px-Jorge_Fontevecchia_2018.jpg"
-      },
-      {
-      "name": "Marcos Galperin",
-      "description": "Empresario argentino. Fundador y CEO de Mercado Libre.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Marcos_Galperin.jpg/440px-Marcos_Galperin.jpg"
-      },
-      {
-      "name": "Paolo Rocca",
-      "description": "Empresario ítalo-argentino. CEO del Grupo Techint.",
-      "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Paolo_Rocca_%28cropped%29.jpg/440px-Paolo_Rocca_%28cropped%29.jpg"
-      }
-        
-  ]
+  {
+    "name": "Javier Milei",
+    "description": "Economista y político argentino. Presidente de la Nación Argentina desde diciembre de 2023. Líder del partido La Libertad Avanza.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/45/Cristina_Fern%C3%A1ndez_de_Kirchner_y_Javier_Milei_%28cropped%29.jpg/250px-Cristina_Fern%C3%A1ndez_de_Kirchner_y_Javier_Milei_%28cropped%29.jpg"
+  },
+  {
+    "name": "Victoria Villarruel",
+    "description": "Abogada y política argentina. Vicepresidenta de la Nación Argentina desde diciembre de 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/cc/Victoria_Villarruel_2023.jpg/250px-Victoria_Villarruel_2023.jpg"
+  },
+  {
+    "name": "Luis Caputo",
+    "description": "Economista argentino. Ministro de Economía de Argentina desde diciembre de 2023. Anteriormente fue Ministro de Finanzas y Presidente del Banco Central.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Caputocepo_%28cropped%29.jpg/250px-Caputocepo_%28cropped%29.jpg"
+  },
+  {
+    "name": "Patricia Bullrich",
+    "description": "Política argentina. Ministra de Seguridad de Argentina desde diciembre de 2023, cargo que también ocupó entre 2015 y 2019. Presidenta del PRO.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/USDHS_Secretary_Alejandro_Mayorkas_participates_in_a_Bilateral_Meeting_with_Argentina_Minister_of_Security_Patricia_Bullrich_in_Washington%2C_DC_on_9_April_2024_-_17_%28cropped%29_2.jpg/250px-thumbnail.jpg"
+  },
+  {
+    "name": "Guillermo Francos",
+    "description": "Abogado y político argentino. Ministro del Interior de Argentina desde diciembre de 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/Guillermo_francos.jpg/250px-Guillermo_francos.jpg"
+  },
+  {
+    "name": "Nicolás Posse",
+    "description": "Ingeniero y ejecutivo argentino. Jefe de Gabinete de Ministros de Argentina desde diciembre de 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Nicol%C3%A1s_Posse%28cropped%29.jpg/250px-Nicol%C3%A1s_Posse%28cropped%29.jpg"
+  },
+  {
+    "name": "Karina Milei",
+    "description": "Política argentina. Hermana de Javier Milei y Secretaria General de la Presidencia de la Nación Argentina desde diciembre de 2023. Conocida como \"El Jefe\".",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7e/Karina_Milei.jpg/250px-Karina_Milei.jpg"
+  },
+  {
+    "name": "Manuel Adorni",
+    "description": "Analista económico y político argentino. Vocero Presidencial de la República Argentina desde diciembre de 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/16/Adorniprensa_%28cropped%29.jpg/250px-Adorniprensa_%28cropped%29.jpg"
+  },
+  {
+    "name": "Luis Petri",
+    "description": "Abogado y político argentino. Ministro de Defensa de Argentina desde diciembre de 2023. Fue candidato a vicepresidente en 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/bf/Argentina_Minister_of_Defense_Luis_Petri_upon_the_conclusion_of_the_23rd_iteration_of_the_Ukraine_Defense_Contact_Group_at_NATO_Headquarters_in_Brussels%2C_Belgium%2C_June_13%2C_2024_%28cropped%29.jpg/250px-thumbnail.jpg"
+  },
+  {
+    "name": "Martín Menem",
+    "description": "Abogado y político argentino. Presidente de la Cámara de Diputados de la Nación Argentina desde diciembre de 2023 (La Libertad Avanza).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2b/Menem_Chinos2_%28cropped%29.jpg/250px-Menem_Chinos2_%28cropped%29.jpg"
+  },
+  {
+    "name": "Diana Mondino",
+    "description": "Economista y política argentina. Ministra de Relaciones Exteriores, Comercio Internacional y Culto de Argentina desde diciembre de 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/83/Canciller_Diana_Elena_Mondino_en_Deciembre_2023_-_1_%28cropped%29.jpg/250px-Canciller_Diana_Elena_Mondino_en_Deciembre_2023_-_1_%28cropped%29.jpg"
+  },
+  {
+    "name": "Sandra Pettovello",
+    "description": "Periodista y política argentina. Ministra de Capital Humano de Argentina desde diciembre de 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Pettovellotorres2_%28cropped%29.jpg/250px-Pettovellotorres2_%28cropped%29.jpg"
+  },
+  {
+    "name": "Mariano Cúneo Libarona",
+    "description": "Abogado penalista y académico argentino. Ministro de Justicia de Argentina desde diciembre de 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/LibaronaConferencia.jpg/250px-LibaronaConferencia.jpg"
+  },
+  {
+    "name": "Santiago Bausili",
+    "description": "Economista argentino. Presidente del Banco Central de la República Argentina (BCRA) desde diciembre de 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/CaputoBausili_%28cropped%29.jpg/250px-CaputoBausili_%28cropped%29.jpg"
+  },
+  {
+    "name": "Mauricio Macri",
+    "description": "Ingeniero civil, político y empresario argentino. Presidente de la Nación Argentina (2015-2019). Ex Jefe de Gobierno de Buenos Aires. Referente del PRO.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Retrato_oficial_del_Presidente_Mauricio_Macri.jpg/250px-Retrato_oficial_del_Presidente_Mauricio_Macri.jpg"
+  },
+  {
+    "name": "Cristina Fernández de Kirchner",
+    "description": "Abogada y política argentina. Vicepresidenta de Argentina (2019-2023). Presidenta de la Nación Argentina (2007-2015). Referente del kirchnerismo.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b0/Cristina_Fern%C3%A1ndez_de_Kirchner_2011-12-10.jpg/250px-Cristina_Fern%C3%A1ndez_de_Kirchner_2011-12-10.jpg"
+  },
+  {
+    "name": "Alberto Fernández",
+    "description": "Abogado y político argentino. Presidente de la Nación Argentina (2019-2023). Ex Jefe de Gabinete de Ministros.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/db/Alberto_fernandez_presidente_%28cropped%29.jpg/250px-Alberto_fernandez_presidente_%28cropped%29.jpg"
+  },
+  {
+    "name": "Sergio Massa",
+    "description": "Abogado y político argentino. Ex Ministro de Economía (2022-2023) y candidato presidencial en 2023. Líder del Frente Renovador.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f5/Sergio_Massa_-_Presentaci%C3%B3n_nueva_l%C3%ADnea_de_financiamiento_para_la_producci%C3%B3n_de_contenidos_audiovisuales_%28cropped2%29.jpg/250px-Sergio_Massa_-_Presentaci%C3%B3n_nueva_l%C3%ADnea_de_financiamiento_para_la_producci%C3%B3n_de_contenidos_audiovisuales_%28cropped2%29.jpg"
+  },
+  {
+    "name": "Axel Kicillof",
+    "description": "Economista y político argentino. Gobernador de la Provincia de Buenos Aires desde 2019. Ex Ministro de Economía.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/13.08.2024_-_Governador_da_Prov%C3%ADncia_de_Buenos_Aires%2C_Axel_Kicillof_%2853920733451%29_%28cropped%29.jpg/250px-13.08.2024_-_Governador_da_Prov%C3%ADncia_de_Buenos_Aires%2C_Axel_Kicillof_%2853920733451%29_%28cropped%29.jpg"
+  },
+  {
+    "name": "Horacio Rodríguez Larreta",
+    "description": "Economista y político argentino. Ex Jefe de Gobierno de la Ciudad de Buenos Aires (2015-2023). Referente del PRO.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Conferencia_de_prensa_hrl_1-12-203_%28cropped%29.jpg/250px-Conferencia_de_prensa_hrl_1-12-203_%28cropped%29.jpg"
+  },
+  {
+    "name": "Martín Lousteau",
+    "description": "Economista y político argentino. Senador Nacional (CABA) y presidente del Comité Nacional de la UCR. Ex Ministro de Economía y embajador.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/MartinLousteau.jpg/250px-MartinLousteau.jpg"
+  },
+  {
+    "name": "Gerardo Morales",
+    "description": "Contador público y político argentino. Ex Gobernador de Jujuy (2015-2023) y expresidente de la UCR.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Gerardo_Morales.png/250px-Gerardo_Morales.png"
+  },
+  {
+    "name": "Máximo Kirchner",
+    "description": "Político argentino. Diputado Nacional (Buenos Aires). Hijo de Néstor y Cristina Kirchner, referente de La Cámpora.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Sesi%C3%B3n_13-06-2018_Diputado_Maximo_Kirchner_%28cropped%29.jpg/250px-Sesi%C3%B3n_13-06-2018_Diputado_Maximo_Kirchner_%28cropped%29.jpg"
+  },
+  {
+    "name": "Eduardo “Wado” de Pedro",
+    "description": "Abogado y político argentino. Senador Nacional (Buenos Aires). Ex Ministro del Interior. Referente de La Cámpora.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Eduardo_de_Pedro_%28cropped%29.jpg/440px-Eduardo_de_Pedro_%28cropped%29.jpg"
+  },
+  {
+    "name": "Agustín Rossi",
+    "description": "Ingeniero y político argentino. Ex Jefe de Gabinete de Ministros (2023) y ex Ministro de Defensa en varias ocasiones. Candidato a vicepresidente en 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/Agust%C3%ADn_Rossi_%28cropped%29.jpg/440px-Agust%C3%ADn_Rossi_%28cropped%29.jpg"
+  },
+  {
+    "name": "Aníbal Fernández",
+    "description": "Contador público y político argentino. Ha ocupado múltiples cargos ministeriales, incluyendo Jefe de Gabinete, Ministro del Interior, de Justicia y de Seguridad.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/An%C3%ADbal_Fern%C3%A1ndez%2C_Security_Minister_%28cropped%29.jpg/250px-An%C3%ADbal_Fern%C3%A1ndez%2C_Security_Minister_%28cropped%29.jpg"
+  },
+  {
+    "name": "Daniel Scioli",
+    "description": "Político, empresario y exmotonauta argentino. Actual Secretario de Turismo, Ambiente y Deportes. Ex Gobernador de Buenos Aires y ex Vicepresidente.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/ff/DanielScioli.jpg/250px-DanielScioli.jpg"
+  },
+  {
+    "name": "José Luis Espert",
+    "description": "Economista y político argentino. Diputado Nacional (Buenos Aires). Presidente de la comisión de Presupuesto y Hacienda. Aliado de La Libertad Avanza.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c7/EspertComision_%28cropped%29.jpg/250px-EspertComision_%28cropped%29.jpg"
+  },
+  {
+    "name": "Ramiro Marra",
+    "description": "Financista y político argentino. Legislador de la Ciudad de Buenos Aires por La Libertad Avanza.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Ramiro_Marra.jpg/250px-Ramiro_Marra.jpg"
+  },
+  {
+    "name": "Lilia Lemoine",
+    "description": "Cosplayer, influencer y política argentina. Diputada Nacional por la Ciudad de Buenos Aires (La Libertad Avanza).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/LemoinePaP_%28cropped%29.jpg/250px-LemoinePaP_%28cropped%29.jpg"
+  },
+  {
+    "name": "Juan Grabois",
+    "description": "Abogado, dirigente social y político argentino. Referente del Movimiento de Trabajadores Excluidos (MTE) y del Frente Patria Grande.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2c/Conversa_com_Juan_Grabois%2C_Lisboa%2C_Mar._2023_%2852760468063%29_%28cropped%29.jpg/250px-Conversa_com_Juan_Grabois%2C_Lisboa%2C_Mar._2023_%2852760468063%29_%28cropped%29.jpg"
+  },
+  {
+    "name": "Myriam Bregman",
+    "description": "Abogada, activista y política argentina. Diputada Nacional (CABA). Dirigente del PTS y referente del Frente de Izquierda y de Trabajadores - Unidad.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/4/46/Myriam_Bregman.png"
+  },
+  {
+    "name": "Nicolás del Caño",
+    "description": "Político argentino. Diputado Nacional (Buenos Aires). Dirigente del PTS y referente del Frente de Izquierda y de Trabajadores - Unidad.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/9/90/Nicol%C3%A1s_Del_Ca%C3%B1o_%28cropped%29.jpg"
+  },
+  {
+    "name": "Martín Llaryora",
+    "description": "Político y abogado argentino. Gobernador de la Provincia de Córdoba desde diciembre de 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Martin-llaryora-2025.jpg/250px-Martin-llaryora-2025.jpg"
+  },
+  {
+    "name": "Juan Schiaretti",
+    "description": "Político y contador público argentino. Ex Gobernador de Córdoba (2007-2011, 2015-2023).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/b/b1/XV_Reuni%C3%B3n_Institucional_de_la_Regi%C3%B3n_Centro_-_02_%28cropped%29.jpg/250px-XV_Reuni%C3%B3n_Institucional_de_la_Regi%C3%B3n_Centro_-_02_%28cropped%29.jpg"
+  },
+  {
+    "name": "Rogelio Frigerio",
+    "description": "Economista y político argentino. Gobernador de Entre Ríos desde diciembre de 2023. Ex Ministro del Interior.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f1/Rogelio_Frigerio_2019_%28cropped%29.jpg/440px-Rogelio_Frigerio_2019_%28cropped%29.jpg"
+  },
+  {
+    "name": "Jorge Macri",
+    "description": "Político y empresario argentino. Jefe de Gobierno de la Ciudad de Buenos Aires desde diciembre de 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/04/Jorge_Macri_en_2024.jpg/250px-Jorge_Macri_en_2024.jpg"
+  },
+  {
+    "name": "Gildo Insfrán",
+    "description": "Político y médico veterinario argentino. Gobernador de Formosa desde 1995.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Gildo_Insfr%C3%A1n_2018.jpg/250px-Gildo_Insfr%C3%A1n_2018.jpg"
+  },
+  {
+    "name": "Sergio Uñac",
+    "description": "Abogado y político argentino. Senador Nacional (San Juan). Ex Gobernador de San Juan (2015-2023).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fd/SU_2023.jpg/250px-SU_2023.jpg"
+  },
+  {
+    "name": "Juan Manzur",
+    "description": "Médico cirujano y político argentino. Senador Nacional (Tucumán). Ex Jefe de Gabinete de Ministros y ex Gobernador de Tucumán.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Manzur_y_Trotta_%28cropped%29.jpg/250px-Manzur_y_Trotta_%28cropped%29.jpg"
+  },
+  {
+    "name": "Jorge Capitanich",
+    "description": "Contador público y político argentino. Ex Gobernador del Chaco y ex Jefe de Gabinete de Ministros.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Basterra_y_Capitanich_%28cropped%29_2.jpg/250px-Basterra_y_Capitanich_%28cropped%29_2.jpg"
+  },
+  {
+    "name": "Claudio Poggi",
+    "description": "Contador público y político argentino. Gobernador de San Luis desde diciembre de 2023. Anteriormente fue Gobernador y Senador Nacional.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/PettovelloconPoggi_%28cropped%29_2.jpg/250px-PettovelloconPoggi_%28cropped%29_2.jpg"
+  },
+  {
+    "name": "Gerardo Zamora",
+    "description": "Abogado y político argentino. Gobernador de Santiago del Estero.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Gerardo_Zamora_%28cropped%29.jpg/440px-Gerardo_Zamora_%28cropped%29.jpg"
+  },
+  {
+    "name": "Omar Perotti",
+    "description": "Contador público y político argentino. Ex Gobernador de Santa Fe (2019-2023).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Omar_Diputado_Perotti.jpg/250px-Omar_Diputado_Perotti.jpg"
+  },
+  {
+    "name": "Rodolfo Suárez",
+    "description": "Abogado y político argentino. Ex Gobernador de Mendoza (2019-2023).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4b/Rodolfo_Suarez_es_el_nuevo_gobernador_de_la_provincia_%28cropped%29.jpg/250px-Rodolfo_Suarez_es_el_nuevo_gobernador_de_la_provincia_%28cropped%29.jpg"
+  },
+  {
+    "name": "Gustavo Valdés",
+    "description": "Abogado y político argentino. Gobernador de Corrientes desde 2017.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Gustavo_Vald%C3%A9s.jpg/250px-Gustavo_Vald%C3%A9s.jpg"
+  },
+  {
+    "name": "Lucía Corpacci",
+    "description": "Médica y política argentina. Diputada Nacional (Catamarca). Ex Gobernadora de Catamarca y ex Senadora Nacional.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0d/Luc%C3%ADa_Corpacci_-_Diputada.png/200px-Luc%C3%ADa_Corpacci_-_Diputada.png"
+  },
+  {
+    "name": "Diego Santilli",
+    "description": "Contador público y político argentino. Diputado Nacional (Buenos Aires). Ex Vicejefe de Gobierno de CABA.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/DefPuebloCABA_-_Amor%2C_Santilli_%28cropped%29.jpg/250px-DefPuebloCABA_-_Amor%2C_Santilli_%28cropped%29.jpg"
+  },
+  {
+    "name": "María Eugenia Vidal",
+    "description": "Politóloga argentina. Diputada Nacional (CABA). Ex Gobernadora de Buenos Aires.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/Mar%C3%ADa_Eugenia_Vidal_en_2019_%28cropped%29.jpg/250px-Mar%C3%ADa_Eugenia_Vidal_en_2019_%28cropped%29.jpg"
+  },
+  {
+    "name": "Elisa Carrió",
+    "description": "Abogada, política y escritora argentina. Fundadora de la Coalición Cívica ARI. Ex Diputada Nacional.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/06/Elisa_Carrio.jpg/250px-Elisa_Carrio.jpg"
+  },
+  {
+    "name": "Cecilia Moreau",
+    "description": "Política argentina. Diputada Nacional (Buenos Aires). Ex Presidenta de la Cámara de Diputados.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7c/Cecilia_Moreau_2022_%28cropped%29.jpg/250px-Cecilia_Moreau_2022_%28cropped%29.jpg"
+  },
+  {
+    "name": "Leandro Santoro",
+    "description": "Politólogo y político argentino. Diputado Nacional (CABA).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/Santoro54372_%28cropped%29.jpg/250px-Santoro54372_%28cropped%29.jpg"
+  },
+  {
+    "name": "Juliana Di Tullio",
+    "description": "Psicóloga social y política argentina. Senadora Nacional (Buenos Aires).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Juliana_di_Tullio_2023.jpg/250px-Juliana_di_Tullio_2023.jpg"
+  },
+  {
+    "name": "Fernando Iglesias",
+    "description": "Escritor, periodista y político argentino. Diputado Nacional (CABA).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/Fernando_Iglesias_%28cropped%29.jpg/440px-Fernando_Iglesias_%28cropped%29.jpg"
+  },
+  {
+    "name": "Luis Juez",
+    "description": "Abogado y político argentino. Senador Nacional (Córdoba).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Luis_Juez_2011-06-22.jpg/250px-Luis_Juez_2011-06-22.jpg"
+  },
+  {
+    "name": "Miguel Ángel Pichetto",
+    "description": "Abogado y político argentino. Auditor General de la Nación. Ex Senador Nacional y ex candidato a vicepresidente.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/dd/MAP_Foto_Oficial_AGN.jpg/250px-MAP_Foto_Oficial_AGN.jpg"
+  },
+  {
+    "name": "Ricardo López Murphy",
+    "description": "Economista y político argentino. Diputado Nacional (CABA). Ex Ministro de Economía y de Defensa.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/c/c4/Ricardo_L%C3%B3pez_Murphy_HCDN.png"
+  },
+  {
+    "name": "Waldo Wolff",
+    "description": "Político argentino. Ministro de Seguridad de la Ciudad de Buenos Aires. Ex Diputado Nacional.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6e/Fotograf%C3%ADa_Waldo_Wolff.jpg/250px-Fotograf%C3%ADa_Waldo_Wolff.jpg"
+  },
+  {
+    "name": "Facundo Manes",
+    "description": "Neurólogo y político argentino. Diputado Nacional (Buenos Aires).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Facundo_Manes_-_La_Neurociencia_de_la_Creatividad_-_%2827411957132%29_%28cropped%29.jpg/250px-Facundo_Manes_-_La_Neurociencia_de_la_Creatividad_-_%2827411957132%29_%28cropped%29.jpg"
+  },
+  {
+    "name": "Soledad Acuña",
+    "description": "Politóloga argentina. Ex Ministra de Educación de la Ciudad de Buenos Aires.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/82/Soledad_Acu%C3%B1a_%28cropped%29.jpg/440px-Soledad_Acu%C3%B1a_%28cropped%29.jpg"
+  },
+  {
+    "name": "Florencio Randazzo",
+    "description": "Político argentino. Ex Ministro del Interior y Transporte. Ex Diputado Nacional.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/1/19/Florencio_Randazzo_en_2023.png/250px-Florencio_Randazzo_en_2023.png"
+  },
+  {
+    "name": "Emilio Monzó",
+    "description": "Abogado y político argentino. Diputado Nacional (Buenos Aires). Ex Presidente de la Cámara de Diputados.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Macri_Asamblea_15_%28cropped%29.jpg/250px-Macri_Asamblea_15_%28cropped%29.jpg"
+  },
+  {
+    "name": "Graciela Camaño",
+    "description": "Abogada y política argentina. Diputada Nacional (Buenos Aires) con múltiples mandatos.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/Graciela_Cama%C3%B1o%2C_sep._2019_%28cropped%29.jpg/250px-Graciela_Cama%C3%B1o%2C_sep._2019_%28cropped%29.jpg"
+  },
+  {
+    "name": "Maximiliano Ferraro",
+    "description": "Político argentino. Presidente de la Coalición Cívica ARI y Diputado Nacional (CABA).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/6c/Maximiliano_Ferraro.jpg/250px-Maximiliano_Ferraro.jpg"
+  },
+  {
+    "name": "Margarita Stolbizer",
+    "description": "Abogada y política argentina. Diputada Nacional (Buenos Aires). Líder del partido GEN.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Margarita_Rosa_Stolbizer.png/200px-Margarita_Rosa_Stolbizer.png"
+  },
+  {
+    "name": "Mónica Fein",
+    "description": "Bioquímica y política argentina. Diputada Nacional (Santa Fe). Ex Intendenta de Rosario y Presidenta del Partido Socialista.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/7/76/M%C3%B3nica_Fein.png"
+  },
+  {
+    "name": "José Mayans",
+    "description": "Político argentino. Senador Nacional por Formosa, jefe del bloque opositor principal en el Senado.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Senador_Jos%C3%A9_Mayans_13_de_marzo_de_2020_%28cropped%29.jpg/250px-Senador_Jos%C3%A9_Mayans_13_de_marzo_de_2020_%28cropped%29.jpg"
+  },
+  {
+    "name": "Juan Carlos Romero",
+    "description": "Abogado y político argentino. Senador Nacional por Salta. Ex Gobernador de Salta.",
+    "img": "https://www.senado.gov.ar/senadores/senador/fotos/JRomero.jpg"
+  },
+  {
+    "name": "Martín Tetaz",
+    "description": "Economista y político argentino. Diputado Nacional por la Ciudad de Buenos Aires (Evolución Radical).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/3/3e/Mart%C3%ADn_Alberto_Tetaz.png"
+  },
+  {
+    "name": "Mario Negri",
+    "description": "Abogado y político argentino. Ex Diputado Nacional por Córdoba, figura importante de la UCR.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/64/Mnegri_medium.jpg/250px-Mnegri_medium.jpg"
+  },
+  {
+    "name": "Anabel Fernández Sagasti",
+    "description": "Abogada y política argentina. Senadora Nacional por Mendoza.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Anabel_Fern%C3%A1ndez_Sagasti.jpg/250px-Anabel_Fern%C3%A1ndez_Sagasti.jpg"
+  },
+  {
+    "name": "Alejandra Vigo",
+    "description": "Política argentina. Senadora Nacional por Córdoba.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/0f/Senadora_Alejandra_Vigo.jpg/250px-Senadora_Alejandra_Vigo.jpg"
+  },
+  {
+    "name": "Ariel Lijo",
+    "description": "Abogado argentino. Juez federal a cargo del Juzgado Criminal y Correccional Federal N° 4 de Buenos Aires. Propuesto para la Corte Suprema.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/ArielOscarLijo_%28cropped%29.jpg/250px-ArielOscarLijo_%28cropped%29.jpg"
+  },
+  {
+    "name": "Juan Carlos Maqueda",
+    "description": "Abogado y político argentino. Juez de la Corte Suprema de Justicia de la Nación Argentina desde 2002.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/54/Juan_Carlos_Maqueda2024.jpg/250px-Juan_Carlos_Maqueda2024.jpg"
+  },
+  {
+    "name": "Horacio Rosatti",
+    "description": "Abogado, político y exjuez argentino. Juez de la Corte Suprema de Justicia de la Nación Argentina desde 2016 y su presidente desde 2021.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Horacio-rosatti-2025.jpg/250px-Horacio-rosatti-2025.jpg"
+  },
+  {
+    "name": "Ricardo Lorenzetti",
+    "description": "Abogado y Doctor en Ciencias Jurídicas y Sociales. Juez de la Corte Suprema de Justicia de la Nación Argentina desde 2004. Fue presidente de la misma.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/84/Ricardo_Lorenzetti.jpg/250px-Ricardo_Lorenzetti.jpg"
+  },
+  {
+    "name": "Carlos Rosenkrantz",
+    "description": "Abogado argentino. Juez de la Corte Suprema de Justicia de la Nación Argentina desde 2016. Fue presidente de la misma.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/0/08/Rosenkrantz_juez.jpg/250px-Rosenkrantz_juez.jpg"
+  },
+  {
+    "name": "Elena Highton de Nolasco",
+    "description": "Abogada y exjueza argentina. Ex miembro de la Corte Suprema de Justicia de la Nación (2004-2021).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/2/2c/Elena_Highton_de_Nolasco_%28cropped%29.jpg"
+  },
+  {
+    "name": "Daniel Passerini",
+    "description": "Médico y político argentino. Intendente de la Ciudad de Córdoba desde diciembre de 2023.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/7b/Daniel_Alejandro_Passerini.jpg/250px-Daniel_Alejandro_Passerini.jpg"
+  },
+  {
+    "name": "Estela de Carlotto",
+    "description": "Activista argentina por los derechos humanos y presidenta de la asociación Abuelas de Plaza de Mayo.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/d7/Estela_de_Carlotto_%282015%29_%28cropped%29.jpg/250px-Estela_de_Carlotto_%282015%29_%28cropped%29.jpg"
+  },
+  {
+    "name": "Gabriel Bornoroni",
+    "description": "Empresario y político argentino. Diputado Nacional por Córdoba. Presidente del bloque de La Libertad Avanza en Diputados.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/5/5e/Gabriel_Bornoroni.png"
+  },
+  {
+    "name": "Rodrigo de Loredo",
+    "description": "Abogado y político argentino. Diputado Nacional por Córdoba y presidente del bloque de la UCR.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/f/f2/Rodrigo_de_Loredo.png"
+  },
+  {
+    "name": "Myrian Prunotto",
+    "description": "Política argentina. Vicegobernadora de la provincia de Córdoba desde diciembre de 2023.",
+    "img": null
+  },
+  {
+    "name": "Martín Insaurralde",
+    "description": "Político argentino. Ex Jefe de Gabinete de Ministros de la Provincia de Buenos Aires y ex Intendente de Lomas de Zamora.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Manzur_e_Insaurralde_%28cropped%29.jpg/250px-Manzur_e_Insaurralde_%28cropped%29.jpg"
+  },
+  {
+    "name": "José Luis Gioja",
+    "description": "Ingeniero y político argentino. Diputado Nacional (San Juan). Ex Gobernador de San Juan y ex presidente del PJ.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/4c/Jos%C3%A9_Luis_Gioja_-_Diputado.png/200px-Jos%C3%A9_Luis_Gioja_-_Diputado.png"
+  },
+  {
+    "name": "Ricardo Alfonsín",
+    "description": "Abogado y político argentino. Ex embajador en España. Hijo de Raúl Alfonsín.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Ricardo_Alfons%C3%ADn_3_%28cropped%29.jpg/250px-Ricardo_Alfons%C3%ADn_3_%28cropped%29.jpg"
+  },
+  {
+    "name": "Claudio Lozano",
+    "description": "Economista y político argentino. Ex director del Banco Nación. Referente de Unidad Popular.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/a4/Claudio_Lozano.jpg/250px-Claudio_Lozano.jpg"
+  },
+  {
+    "name": "Luis Brandoni",
+    "description": "Actor y político argentino. Ex Diputado Nacional (UCR).",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/7/75/Luis_Brandoni_2017.jpg/250px-Luis_Brandoni_2017.jpg"
+  },
+  {
+    "name": "Daniel Filmus",
+    "description": "Sociólogo y político argentino. Ex Ministro de Ciencia, Tecnología e Innovación, ex Ministro de Educación y ex Senador Nacional.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Daniel_Filmus_Ministro.jpg/250px-Daniel_Filmus_Ministro.jpg"
+  },
+  {
+    "name": "Jorge Taiana",
+    "description": "Sociólogo y político argentino. Ex Ministro de Defensa y ex Canciller.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/9a/Jorge_Taiana.png/250px-Jorge_Taiana.png"
+  },
+  {
+    "name": "Graciela Ocaña",
+    "description": "Politóloga argentina. Diputada Nacional (Buenos Aires). Ex Ministra de Salud.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/92/Graciela_Oca%C3%B1a.jpg/250px-Graciela_Oca%C3%B1a.jpg"
+  },
+  {
+    "name": "Carlos Pagni",
+    "description": "Periodista y analista político argentino.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Carlos_Pagni.jpg/250px-Carlos_Pagni.jpg"
+  },
+  {
+    "name": "Jorge Lanata",
+    "description": "Periodista y escritor argentino. Conductor de programas de radio y televisión de alto impacto político.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Jorge_Lanata_hablando_sobre_un_kirchnerismo_punk.png/250px-Jorge_Lanata_hablando_sobre_un_kirchnerismo_punk.png"
+  },
+  {
+    "name": "Luis Majul",
+    "description": "Periodista, escritor y conductor argentino.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/2/25/Luis_Majul.jpg/250px-Luis_Majul.jpg"
+  },
+  {
+    "name": "Jonatan Viale",
+    "description": "Periodista y politólogo argentino. Conductor de programas de televisión.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/90/Jonatan_Viale_en_La_Naci%C3%B3n%2B.jpg/440px-Jonatan_Viale_en_La_Naci%C3%B3n%2B.jpg"
+  },
+  {
+    "name": "Eduardo Feinmann",
+    "description": "Periodista, abogado y conductor argentino.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/9/99/Feinmann_22.jpg/250px-Feinmann_22.jpg"
+  },
+  {
+    "name": "Roberto Navarro",
+    "description": "Periodista económico y político argentino.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/aa/Roberto_Navarro_en_C5N.jpg/440px-Roberto_Navarro_en_C5N.jpg"
+  },
+  {
+    "name": "Víctor Hugo Morales",
+    "description": "Periodista, relator deportivo, locutor y escritor uruguayo radicado en Argentina.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/5/5b/Premios_Eter_2015_%2823405512379%29_%28cropped%29.jpg/250px-Premios_Eter_2015_%2823405512379%29_%28cropped%29.jpg"
+  },
+  {
+    "name": "Alejandro Fantino",
+    "description": "Periodista y conductor argentino.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/f6/Ale_Fantino.jpg/200px-Ale_Fantino.jpg"
+  },
+  {
+    "name": "Alfredo Leuco",
+    "description": "Periodista y conductor argentino.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/Alfredo_Leuco.png/250px-Alfredo_Leuco.png"
+  },
+  {
+    "name": "Marcelo Tinelli",
+    "description": "Conductor, empresario y productor argentino. Figura influyente en medios y ocasionalmente en política.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ab/Recorte_de_Marcelo_Tinelli.jpg/250px-Recorte_de_Marcelo_Tinelli.jpg"
+  },
+  {
+    "name": "Jorge Fontevecchia",
+    "description": "Periodista y empresario argentino. Fundador y CEO de Editorial Perfil.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Jorge_Fontevecchia_en_TN.png/250px-Jorge_Fontevecchia_en_TN.png"
+  },
+  {
+    "name": "Marcos Galperin",
+    "description": "Empresario argentino. Fundador y CEO de Mercado Libre.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/e/e4/GalperinandMilei_%28cropped%29.jpg/250px-GalperinandMilei_%28cropped%29.jpg"
+  },
+  {
+    "name": "Paolo Rocca",
+    "description": "Empresario ítalo-argentino. CEO del Grupo Techint.",
+    "img": "https://upload.wikimedia.org/wikipedia/commons/thumb/8/8b/Paolo_Rocca_in_2017_%28cropped%29.jpg/250px-Paolo_Rocca_in_2017_%28cropped%29.jpg"
+  }
+]
