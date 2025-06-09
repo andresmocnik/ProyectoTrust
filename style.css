@@ -415,9 +415,12 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 
 .key-news-section { padding: 27px 0; text-align: center; }
 .key-news-section h2 { font-size: 1.7em; font-weight: 600; color: var(--text-primary); margin-bottom: 27px; }
-.key-news-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-bottom: 27px; text-align: left; }
-.news-card { background-color: var(--bg-secondary); border-radius: 6px; padding: 17px; border: 1px solid var(--border-color); transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; display: flex; flex-direction: column; }
+.key-news-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-bottom: 27px; text-align: left; }
+.news-card { background-color: var(--bg-secondary); border-radius: 8px; /*padding: 17px;*/ border: 1px solid var(--border-color); transition: transform 0.2s ease-out, box-shadow 0.2s ease-out; display: flex; flex-direction: column; overflow: hidden;}
 .news-card:hover { transform: translateY(-3px); box-shadow: 0 5px 10px rgba(0,0,0,0.2); }
+.news-card-image-container { width: 100%; height: 150px; /* Altura fija para la imagen, ajusta según necesites */ overflow: hidden; /* Para que la imagen no se desborde si es más grande */ background-color: var(--bg-tertiary); /* Color de fondo si la imagen es pequeña o no carga */ }
+.news-card-image { width: 100%; height: 100%; object-fit: cover; /* Cubre el contenedor, puede recortar la imagen */ /* object-fit: contain; */ /* Muestra toda la imagen, puede dejar espacios vacíos */ display: block; /* No es necesario border aquí si la tarjeta ya tiene uno y overflow:hidden */ } /* Contenedor para el contenido textual de la tarjeta */
+.news-card-content { padding: 15px; /* Padding para el texto, ya que la imagen puede ir al borde */ flex-grow: 1; /* Para que el contenido ocupe el espacio restante */ display: flex; flex-direction: column;}
 .news-card h3 { font-size: 1.2em; color: var(--text-primary); margin-top: 0; margin-bottom: 7px; font-weight: 600; }
 .news-card .meta { font-size: 0.8em; color: var(--text-muted); margin-bottom: 10px; }
 .news-card .summary { font-size: 0.9em; color: var(--text-secondary); margin-bottom: 14px; flex-grow: 1; }
@@ -434,6 +437,12 @@ body.view-graph #graph-view, body.view-timeseries #timeseries-view { display: bl
 /* --- Ajustes Responsive (Ajustados) --- */
 @media (max-width: 768px) {
     /* Mostrar overlay en móvil */
+    .key-news-cards { grid-template-columns: 1fr; /* Una columna en móviles */ }
+    .news-card-image-container { height: 180px; /* Quizás un poco más altas en móvil */}
+    .news-card-content { padding: 12px; }
+    .news-card h3 { font-size: 1.1em; }
+
+
      body.sidebar-visible::before { display: block; }
      .sidebar { width: 180px; left: -200px; padding: 10px; }
      #page-content { padding: 10px; }

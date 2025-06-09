@@ -1,47 +1,59 @@
 // js/views/mainView.js
-import * as DOM from '../ui/domElements.js'; // Necesitamos el contenedor
-import { state } from '../state.js'; // Necesitamos los artículos
+
+import * as DOM from '../ui/domElements.js';
+import { state } from '../state.js';
 import { switchView } from '../ui/navigation.js'; // Para el botón "Ver Todas" implícito en la tarjeta
 
 // Función para crear el HTML de una tarjeta de noticia
 function createNewsCardHTML(article) {
     // Extraer datos del artículo, con valores por defecto
     const title = article.titulo || 'Sin Título';
-    const source = article.fuente || 'Fuente desconocida'; // Asume que tienes 'fuente' en tus datos
-    const date = article.fecha_hora || ''; // Formatear fecha si es necesario
-    const summary = article.subtitulo || article.cuerpo?.substring(0, 100) + '...' || 'No hay resumen disponible.'; // Tomar subtitulo o inicio del cuerpo
+    const source = article.fuente || 'Fuente desconocida';
+    const date = article.fecha_hora || '';
+    const summary = article.subtitulo || article.cuerpo?.substring(0, 100) + '...' || 'No hay resumen disponible.';
     const politicians = article.personas_detectadas_normalizadas || [];
-    // Limitar el número de tags de políticos a mostrar (ej. 3)
+    const imageUrl = article.link_img || null; // <--- OBTENER URL DE LA IMAGEN
+
     const displayedPoliticians = politicians.slice(0, 3);
     const extraPoliticiansCount = politicians.length - displayedPoliticians.length;
 
-    // Generar HTML para los tags de políticos
     let tagsHTML = displayedPoliticians.map(p => `<span class="tag">${p}</span>`).join('');
     if (extraPoliticiansCount > 0) {
-        tagsHTML += ` <span class="tag tag-more">+${extraPoliticiansCount}</span>`; // Tag para indicar más
+        tagsHTML += ` <span class="tag tag-more">+${extraPoliticiansCount}</span>`;
     }
     if (tagsHTML === '') {
-        tagsHTML = '<span class="tag tag-none">Sin figuras detectadas</span>'; // Mensaje si no hay políticos
+        tagsHTML = '<span class="tag tag-none">Sin figuras detectadas</span>';
     }
 
-    // Devolver el HTML completo de la tarjeta
-    // Añadimos un data-article-id para identificar la noticia si hacemos clic
-    // Hacemos que toda la tarjeta sea clickeable hacia la vista de noticias
+    // --- AÑADIR HTML PARA LA IMAGEN ---
+    let imageHTML = '';
+    if (imageUrl) {
+        // Usaremos un contenedor para la imagen para mejor control con CSS si es necesario
+        imageHTML = `
+            <div class="news-card-image-container">
+                <img src="${imageUrl}" alt="${title}" class="news-card-image">
+            </div>
+        `;
+    }
+    // --- FIN HTML IMAGEN ---
+
     return `
         <article class="news-card" data-article-id="${article.id || ''}" role="link" tabindex="0">
-            <h3>${title}</h3>
-            <div class="meta">${source} - ${date}</div>
-            <p class="summary">${summary}</p>
-            <div class="tags">
-                ${tagsHTML}
+            ${imageHTML} 
+                <h3>${title}</h3>
+                <div class="meta">${source} - ${date}</div>
+                <p class="summary">${summary}</p>
+                <div class="tags">
+                    ${tagsHTML}
+                </div>
             </div>
         </article>
     `;
 }
 
-// Función principal para renderizar las noticias clave
+// Función principal para renderizar las noticias clave (sin cambios en esta función, solo en createNewsCardHTML)
 export function renderKeyNews() {
-    console.log("[renderKeyNews] Iniciando..."); 
+    console.log("[renderKeyNews] Iniciando...");
     console.log("[renderKeyNews] DOM.keyNewsCardsContainer:", DOM.keyNewsCardsContainer);
     console.log("Renderizando Noticias Clave...");
     if (!DOM.keyNewsCardsContainer) {
@@ -50,7 +62,7 @@ export function renderKeyNews() {
     }
 
     const container = DOM.keyNewsCardsContainer;
-    container.innerHTML = '<p class="loading-placeholder">Cargando noticias clave...</p>'; // Mostrar carga
+    container.innerHTML = '<p class="loading-placeholder">Cargando noticias clave...</p>';
 
     if (!state.allArticles || state.allArticles.length === 0) {
         console.warn("No hay artículos disponibles en el estado para mostrar.");
@@ -58,12 +70,7 @@ export function renderKeyNews() {
         return;
     }
 
-    // Ordenar artículos por fecha (más recientes primero) - Asume que parseDateString existe
-    // Necesitaremos mover parseDateString a utils.js
-    // Por ahora, asumimos que ya están más o menos ordenados o tomamos los primeros N
-    // const sortedArticles = [...state.allArticles].sort((a, b) => /* lógica de ordenación por fecha descendente */);
-
-    // Tomar las primeras 3 noticias (o las que haya si son menos)
+    // Tomar las primeras 3 noticias
     const articlesToDisplay = state.allArticles.slice(0, 3);
 
     if (articlesToDisplay.length === 0) {
@@ -71,34 +78,25 @@ export function renderKeyNews() {
         return;
     }
 
-    // Generar el HTML para cada tarjeta y unirlas
     const cardsHTML = articlesToDisplay.map(createNewsCardHTML).join('');
-
-    // Insertar el HTML en el contenedor
     container.innerHTML = cardsHTML;
 
-    // Añadir event listeners a las tarjetas creadas (delegación)
     container.addEventListener('click', (event) => {
         const card = event.target.closest('.news-card');
         if (card) {
             const articleId = card.dataset.articleId;
             console.log(`Clic en tarjeta de noticia ID: ${articleId}. Navegando a 'news'...`);
-            // Aquí podríamos querer filtrar la vista de noticias para mostrar ESTE artículo
-            // o simplemente navegar a la vista general de noticias.
             switchView('news');
-            // TODO: Scroll o highlight al artículo específico en la vista 'news' si se desea.
+            // TODO: Scroll o highlight al artículo específico en la vista 'news'
         }
     });
-     // Hacer las tarjetas accesibles con teclado
      container.querySelectorAll('.news-card').forEach(card => {
         card.addEventListener('keydown', (event) => {
             if (event.key === 'Enter' || event.key === ' ') {
-                event.preventDefault(); // Evitar scroll con espacio
-                card.click(); // Simular clic
+                event.preventDefault();
+                card.click();
             }
         });
     });
-
-
     console.log("Noticias Clave renderizadas.");
 }
