@@ -149,52 +149,88 @@ async function loadMainTopicsChart() {
 }
 
 async function loadCooccurrenceHeatmap() {
-    const data = await fetchData('cooccurrence_heatmap.json');
-    if (data && data.labels && data.matrix) {
-        const { labels, matrix } = data;
-        const ctx = document.getElementById('cooccurrenceHeatmap').getContext('2d');
+  try {
+    const res = await fetch('cooccurrenceHeatmap.json'); 
+    const raw = await res.json();
 
-        // Chart.js nativo no tiene heatmap. Esto es un placeholder muy básico.
-        // Para un heatmap real con Chart.js, necesitarías `chartjs-chart-matrix`
-        // o dibujar manualmente o usar otra librería.
-        // Ejemplo con chartjs-chart-matrix (tendrías que instalarla e importarla):
-        /*
-        new Chart(ctx, {
-            type: 'matrix',
-            data: {
-                labels: labels, // Nombres en eje X
-                datasets: [{
-                    label: 'Co-ocurrencias',
-                    data: matrix.flatMap((row, i) => // Necesita datos en formato {x, y, v}
-                        row.map((value, j) => ({ x: labels[j], y: labels[i], v: value }))
-                    ),
-                    backgroundColor: function(context) {
-                        const value = context.dataset.data[context.dataIndex]?.v;
-                        if (value === undefined) return 'rgba(200,200,200,0.5)';
-                        const alpha = Math.min(1, Math.max(0.1, value / (Math.max(...matrix.flat()) || 1) * 0.8 + 0.2)); // Escalar opacidad
-                        return `rgba(255, 99, 132, ${alpha})`; // Rojo para co-ocurrencias
-                    },
-                    width: (ctx) => (ctx.chart.chartArea.width / labels.length) - 1,
-                    height: (ctx) => (ctx.chart.chartArea.height / labels.length) - 1
-                }]
-            },
-            options: {
-                plugins: { legend: { display: false } },
-                scales: {
-                    x: { type: 'category', labels: labels, ticks: { autoSkip: false, maxRotation: 90, minRotation: 45 } },
-                    y: { type: 'category', labels: labels, offset: true, ticks: { autoSkip: false } }
-                },
-                responsive: true,
-                maintainAspectRatio: false // Importante para heatmaps
-            }
-        });
-        */
-       // Alternativa simple: Mostrar mensaje de que se necesita librería o implementación
-       ctx.font = "16px Arial";
-       ctx.fillText("Heatmap requiere una implementación específica.", 10, 50);
-       console.log("Datos para Heatmap (labels y matrix):", data);
-       alert("Para el Heatmap, considera usar una librería como ApexCharts, ECharts, o el plugin chartjs-chart-matrix para Chart.js. Los datos están en cooccurrence_heatmap.json.");
+    const labels = raw.labels;
+    const matrix = raw.matrix;
+
+    const data = [];
+    let maxVal = 0;
+
+    for (let i = 0; i < labels.length; i++) {
+      for (let j = 0; j < labels.length; j++) {
+        const value = matrix[i][j];
+        data.push({ x: j, y: i, v: value });
+        if (value > maxVal) maxVal = value;
+      }
     }
+
+    const ctx = document.getElementById('cooccurrenceHeatmap').getContext('2d');
+
+    new Chart(ctx, {
+      type: 'matrix',
+      data: {
+        datasets: [{
+          label: 'Coocurrencias entre políticos',
+          data: data,
+          backgroundColor: ctx => {
+            const v = ctx.dataset.data[ctx.dataIndex].v;
+            const alpha = v / maxVal;
+            return `rgba(30, 144, 255, ${alpha})`; // azul con opacidad según valor
+          },
+          width: ({ chart }) => chart.chartArea.width / labels.length - 1,
+          height: ({ chart }) => chart.chartArea.height / labels.length - 1,
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            type: 'category',
+            labels: labels,
+            ticks: {
+              color: '#ffffff',
+              maxRotation: 90,
+              minRotation: 45,
+              autoSkip: false,
+              font: { size: 10 }
+            }
+          },
+          y: {
+            type: 'category',
+            labels: labels,
+            offset: true,
+            ticks: {
+              color: '#ffffff',
+              autoSkip: false,
+              font: { size: 10 }
+            }
+          }
+        },
+        plugins: {
+          tooltip: {
+            callbacks: {
+              title: ctx => {
+                const x = labels[ctx[0].parsed.x];
+                const y = labels[ctx[0].parsed.y];
+                return `${y} / ${x}`;
+              },
+              label: ctx => `Coocurrencias: ${ctx.raw.v}`
+            }
+          },
+          legend: {
+            display: false
+          }
+        }
+      }
+    });
+
+  } catch (error) {
+    console.error("Error al cargar el heatmap de coocurrencia:", error);
+  }
 }
 
 async function loadMediaPoliticiansChart() {
@@ -242,6 +278,6 @@ document.addEventListener('DOMContentLoaded', () => {
     loadMentionsPoliticianTimeChart();
     loadPoliticianRankingChart();
     loadMainTopicsChart();
-    loadCooccurrenceHeatmap(); // Implementación específica necesaria
+    loadCooccurrenceHeatmap(); 
     loadMediaPoliticiansChart();
 });

@@ -9,11 +9,12 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
-    <script src="https://cdn.jsdelivr.net/npm/moment@^2"></script> <!-- Para chartjs-adapter-moment -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@^3"></script> <!-- Chart.js v3 o superior -->
-    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment@^1"></script> <!-- Adaptador para Chart.js -->
-    <!-- Si usas chartjs-chart-matrix para el heatmap, añádelo aquí: -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@^1"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@2.0.0/dist/chartjs-chart-matrix.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
+
+    <script src="./timeseriesView.js"></script>
+    
 </head>
 <body class="view-main">
 
@@ -159,9 +160,12 @@
                         <h2>Artículos Procesados vs Tiempo</h2>
                         <canvas id="articlesTimeChart"></canvas>
                     </div>
-                    <div class="chart-container">
-                        <h2>Menciones por Político vs Tiempo (Top 10)</h2>
-                        <canvas id="mentionsPoliticianTimeChart"></canvas>
+                </div>
+
+                <div class="chart-row">
+                    <div class="chart-container full-width">
+                        <h2>Mapa de Calor de Coocurrencias</h2>
+                        <canvas id="cooccurrenceHeatmap"></canvas>
                     </div>
                 </div>
 
@@ -170,25 +174,8 @@
                         <h2>Ranking de Políticos (Top 20)</h2>
                         <canvas id="politicianRankingChart"></canvas>
                     </div>
-                    <div class="chart-container">
-                        <h2>Temas Principales (Top 20)</h2>
-                        <canvas id="mainTopicsChart"></canvas>
-                    </div>
                 </div>
 
-                <div class="chart-row">
-                    <div class="chart-container full-width">
-                        <h2>Mapa de Calor de Coocurrencias</h2>
-                        <canvas id="cooccurrenceHeatmap"></canvas>
-                        <p class="chart-note">Nota: El mapa de calor requiere una implementación específica (e.g., chartjs-chart-matrix o similar).</p>
-                    </div>
-                </div>
-                <div class="chart-row">
-                     <div class="chart-container full-width">
-                        <h2>Menciones de Políticos por Medio</h2>
-                        <canvas id="mediaPoliticiansChart"></canvas>
-                    </div>
-                </div>
             </div> <!-- Fin de dashboard-charts-area -->
 
         </div>
