@@ -1,0 +1,82 @@
+[
+    {
+        "politico": "Karina Milei",
+        "sentimiento_promedio": -0.8333333333333334
+    },
+    {
+        "politico": "Estela de Carlotto",
+        "sentimiento_promedio": -0.7777777777777778
+    },
+    {
+        "politico": "Sergio Massa",
+        "sentimiento_promedio": -0.6363636363636364
+    },
+    {
+        "politico": "Victoria Villarruel",
+        "sentimiento_promedio": -0.6
+    },
+    {
+        "politico": "Luis Petri",
+        "sentimiento_promedio": -0.6
+    },
+    {
+        "politico": "Luis Caputo",
+        "sentimiento_promedio": -0.5625
+    },
+    {
+        "politico": "Juan Schiaretti",
+        "sentimiento_promedio": -0.5384615384615384
+    },
+    {
+        "politico": "Alberto Fernández",
+        "sentimiento_promedio": -0.47619047619047616
+    },
+    {
+        "politico": "Patricia Bullrich",
+        "sentimiento_promedio": -0.4666666666666667
+    },
+    {
+        "politico": "Manuel Adorni",
+        "sentimiento_promedio": -0.45
+    },
+    {
+        "politico": "Javier Milei",
+        "sentimiento_promedio": -0.4307692307692308
+    },
+    {
+        "politico": "Daniel Passerini",
+        "sentimiento_promedio": -0.42857142857142855
+    },
+    {
+        "politico": "Ariel Lijo",
+        "sentimiento_promedio": -0.4
+    },
+    {
+        "politico": "Gildo Insfrán",
+        "sentimiento_promedio": -0.4
+    },
+    {
+        "politico": "Martín Llaryora",
+        "sentimiento_promedio": -0.375
+    },
+    {
+        "politico": "Mauricio Macri",
+        "sentimiento_promedio": -0.3333333333333333
+    },
+    {
+        "politico": "Axel Kicillof",
+        "sentimiento_promedio": -0.3333333333333333
+    },
+    {
+        "politico": "Cristina Fernández de Kirchner",
+        "sentimiento_promedio": -0.2727272727272727
+    },
+    {
+        "politico": "Guillermo Francos",
+        "sentimiento_promedio": -0.16666666666666666
+    },
+    {
+        "politico": "Martín Menem",
+        "sentimiento_promedio": -0.125
+    }
+]

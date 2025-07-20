@@ -1,0 +1,182 @@
+[
+    {
+        "politico": "Javier Milei",
+        "sentimientos": {
+            "positivo": 2,
+            "negativo": 30,
+            "neutral": 33
+        },
+        "articulos_analizados": 65
+    },
+    {
+        "politico": "Victoria Villarruel",
+        "sentimientos": {
+            "positivo": 1,
+            "negativo": 16,
+            "neutral": 8
+        },
+        "articulos_analizados": 25
+    },
+    {
+        "politico": "Martín Llaryora",
+        "sentimientos": {
+            "positivo": 2,
+            "negativo": 11,
+            "neutral": 11
+        },
+        "articulos_analizados": 24
+    },
+    {
+        "politico": "Alberto Fernández",
+        "sentimientos": {
+            "positivo": 1,
+            "negativo": 11,
+            "neutral": 9
+        },
+        "articulos_analizados": 21
+    },
+    {
+        "politico": "Manuel Adorni",
+        "sentimientos": {
+            "positivo": 1,
+            "negativo": 10,
+            "neutral": 9
+        },
+        "articulos_analizados": 20
+    },
+    {
+        "politico": "Luis Caputo",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 9,
+            "neutral": 7
+        },
+        "articulos_analizados": 16
+    },
+    {
+        "politico": "Patricia Bullrich",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 7,
+            "neutral": 8
+        },
+        "articulos_analizados": 15
+    },
+    {
+        "politico": "Juan Schiaretti",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 7,
+            "neutral": 6
+        },
+        "articulos_analizados": 13
+    },
+    {
+        "politico": "Cristina Fernández de Kirchner",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 3,
+            "neutral": 8
+        },
+        "articulos_analizados": 11
+    },
+    {
+        "politico": "Sergio Massa",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 7,
+            "neutral": 4
+        },
+        "articulos_analizados": 11
+    },
+    {
+        "politico": "Ariel Lijo",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 4,
+            "neutral": 6
+        },
+        "articulos_analizados": 10
+    },
+    {
+        "politico": "Mauricio Macri",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 3,
+            "neutral": 6
+        },
+        "articulos_analizados": 9
+    },
+    {
+        "politico": "Estela de Carlotto",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 7,
+            "neutral": 2
+        },
+        "articulos_analizados": 9
+    },
+    {
+        "politico": "Martín Menem",
+        "sentimientos": {
+            "positivo": 1,
+            "negativo": 2,
+            "neutral": 5
+        },
+        "articulos_analizados": 8
+    },
+    {
+        "politico": "Daniel Passerini",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 3,
+            "neutral": 4
+        },
+        "articulos_analizados": 7
+    },
+    {
+        "politico": "Karina Milei",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 5,
+            "neutral": 1
+        },
+        "articulos_analizados": 6
+    },
+    {
+        "politico": "Guillermo Francos",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 1,
+            "neutral": 5
+        },
+        "articulos_analizados": 6
+    },
+    {
+        "politico": "Axel Kicillof",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 2,
+            "neutral": 4
+        },
+        "articulos_analizados": 6
+    },
+    {
+        "politico": "Luis Petri",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 3,
+            "neutral": 2
+        },
+        "articulos_analizados": 5
+    },
+    {
+        "politico": "Gildo Insfrán",
+        "sentimientos": {
+            "positivo": 0,
+            "negativo": 2,
+            "neutral": 3
+        },
+        "articulos_analizados": 5
+    }
+]

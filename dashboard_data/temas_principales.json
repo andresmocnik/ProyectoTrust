@@ -1,7 +1,7 @@
 [
     {
         "tema": "javier milei",
-        "frecuencia": 34
+        "frecuencia": 35
     },
     {
         "tema": "corte supremo",
@@ -10,10 +10,6 @@
     {
         "tema": "casa rosado",
         "frecuencia": 12
-    },
-    {
-        "tema": "derechos humanos",
-        "frecuencia": 11
     },
     {
         "tema": "manuel adorni",
@@ -28,15 +24,11 @@
         "frecuencia": 9
     },
     {
+        "tema": "derechos humanos",
+        "frecuencia": 9
+    },
+    {
         "tema": "habitual conferencia",
-        "frecuencia": 8
-    },
-    {
-        "tema": "victoria villarruel",
-        "frecuencia": 8
-    },
-    {
-        "tema": "río cuarto",
         "frecuencia": 8
     },
     {
@@ -44,11 +36,15 @@
         "frecuencia": 7
     },
     {
+        "tema": "río cuarto",
+        "frecuencia": 7
+    },
+    {
         "tema": "luis caputo",
         "frecuencia": 6
     },
     {
-        "tema": "martín llaryoro",
+        "tema": "libertad avanzo",
         "frecuencia": 6
     },
     {
@@ -56,15 +52,11 @@
         "frecuencia": 5
     },
     {
-        "tema": "néstor kirchner",
-        "frecuencia": 5
-    },
-    {
         "tema": "superávit financiero",
         "frecuencia": 4
     },
     {
-        "tema": "patricia bullrich",
+        "tema": "crisis económico",
         "frecuencia": 4
     },
     {
@@ -77,6 +69,14 @@
     },
     {
         "tema": "atentado político",
+        "frecuencia": 3
+    },
+    {
+        "tema": "martín llaryoro",
+        "frecuencia": 3
+    },
+    {
+        "tema": "gestión libertario",
         "frecuencia": 3
     }
 ]

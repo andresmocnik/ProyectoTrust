@@ -1,82 +1,82 @@
 [
     {
         "politico": "Javier Milei",
-        "menciones": 81
+        "menciones": 73
     },
     {
         "politico": "Victoria Villarruel",
-        "menciones": 25
-    },
-    {
-        "politico": "Martín Llaryora",
-        "menciones": 24
-    },
-    {
-        "politico": "Alberto Fernández",
-        "menciones": 21
-    },
-    {
-        "politico": "Manuel Adorni",
-        "menciones": 20
-    },
-    {
-        "politico": "Cristina Kirchner",
-        "menciones": 16
-    },
-    {
-        "politico": "Luis Caputo",
-        "menciones": 16
+        "menciones": 50
     },
     {
         "politico": "Patricia Bullrich",
-        "menciones": 15
+        "menciones": 44
     },
     {
-        "politico": "Néstor Kirchner",
-        "menciones": 14
+        "politico": "Martín Llaryora",
+        "menciones": 36
+    },
+    {
+        "politico": "Luis Caputo",
+        "menciones": 34
     },
     {
         "politico": "Juan Schiaretti",
-        "menciones": 13
+        "menciones": 33
     },
     {
-        "politico": "Mauricio Macri",
-        "menciones": 12
-    },
-    {
-        "politico": "Presidente",
-        "menciones": 12
-    },
-    {
-        "politico": "Sergio Massa",
-        "menciones": 11
+        "politico": "Alberto Fernández",
+        "menciones": 26
     },
     {
         "politico": "Ariel Lijo",
-        "menciones": 10
+        "menciones": 26
     },
     {
-        "politico": "Estela de Carlotto",
-        "menciones": 9
+        "politico": "Manuel Adorni",
+        "menciones": 22
+    },
+    {
+        "politico": "Sergio Massa",
+        "menciones": 20
     },
     {
         "politico": "Martín Menem",
-        "menciones": 8
+        "menciones": 18
     },
     {
-        "politico": "Juan Carlos Maqueda",
-        "menciones": 7
+        "politico": "Estela de Carlotto",
+        "menciones": 16
     },
     {
-        "politico": "Elena Highton de Nolasco",
-        "menciones": 6
+        "politico": "Gildo Insfrán",
+        "menciones": 16
+    },
+    {
+        "politico": "Daniel Passerini",
+        "menciones": 15
+    },
+    {
+        "politico": "Cristina Fernández de Kirchner",
+        "menciones": 12
+    },
+    {
+        "politico": "Luis Petri",
+        "menciones": 11
+    },
+    {
+        "politico": "Mauricio Macri",
+        "menciones": 9
     },
     {
         "politico": "Karina Milei",
-        "menciones": 6
+        "menciones": 9
     },
     {
         "politico": "Guillermo Francos",
-        "menciones": 6
+        "menciones": 9
+    },
+    {
+        "politico": "Axel Kicillof",
+        "menciones": 9
     }
 ]
