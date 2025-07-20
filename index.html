@@ -9,12 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Scripts de Librerías -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.2/dist/chart.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-chart-matrix@2.0.0/dist/chartjs-chart-matrix.umd.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns"></script>
-
-    <script src="./timeseriesView.js"></script>
-    
+    <script src="https://cdn.jsdelivr.net/npm/date-fns"></script>
+    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
 </head>
 <body class="view-main">
 
@@ -49,7 +51,6 @@
                     <i class="fas fa-brain fa-7x" style="color: var(--color-accent-hover); opacity: 0.7;"></i>
                 </div>
             </section>
-
             <section class="key-news-section">
                 <h2>NOTICIAS CLAVE RECIENTES</h2>
                 <div id="key-news-cards-container" class="key-news-cards">
@@ -59,7 +60,6 @@
                     <button class="btn btn-secondary" data-target-view="news">Ver Todas las Noticias</button>
                 </div>
             </section>
-
             <section class="discover-network-section">
                  <div class="discover-content">
                      <h2>DESCUBRE LA RED DE INFLUENCIA</h2>
@@ -71,7 +71,6 @@
                  </div>
             </section>
         </div>
-        <!-- === FIN VISTA 0 === -->
 
         <!-- === VISTA 1: LECTOR DE NOTICIAS === -->
         <div id="news-feed-view" class="main-view">
@@ -79,150 +78,97 @@
                 <h1>Noticias Recientes</h1>
             </header>
             <section class="search-controls" style="max-width: 900px; margin: 25px auto; padding: 20px; border-radius: 8px; display: flex; flex-wrap: wrap; gap: 20px; align-items: center;">
-                <div style="flex: 1 1 350px;">
-                    <label for="article-select" style="display: block; margin-bottom: 5px; font-weight: 500;">Seleccionar Artículo:</label>
-                    <select id="article-select" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-                        <option value="">-- Todos los Artículos --</option>
-                    </select>
-                </div>
-                <div style="flex: 1 1 300px;">
-                    <label for="politician-select" style="display: block; margin-bottom: 5px; font-weight: 500;">Filtrar por Político:</label>
-                    <select id="politician-select" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;">
-                        <option value="">-- Seleccionar Político --</option>
-                    </select>
-                </div>
-                <div class="filter-buttons" style="flex-basis: 100%; display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px;">
-                    <button id="sort-newest-btn" class="btn btn-info" title="Ordenar por más recientes"><i class="fas fa-arrow-down-short-wide"></i> Recientes</button>
-                    <button id="sort-oldest-btn" class="btn btn-info" title="Ordenar por más antiguos"><i class="fas fa-arrow-up-wide-short"></i> Antiguos</button>
-                    <button id="reset-news-filter-btn" class="btn btn-danger" title="Mostrar todos los artículos"><i class="fas fa-times"></i> Reset</button>
-                </div>
+                <div style="flex: 1 1 350px;"><label for="article-select" style="display: block; margin-bottom: 5px; font-weight: 500;">Seleccionar Artículo:</label><select id="article-select" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"><option value="">-- Todos los Artículos --</option></select></div>
+                <div style="flex: 1 1 300px;"><label for="politician-select" style="display: block; margin-bottom: 5px; font-weight: 500;">Filtrar por Político:</label><select id="politician-select" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 4px;"><option value="">-- Seleccionar Político --</option></select></div>
+                <div class="filter-buttons" style="flex-basis: 100%; display: flex; justify-content: flex-end; gap: 12px; margin-top: 10px;"><button id="sort-newest-btn" class="btn btn-info" title="Ordenar por más recientes"><i class="fas fa-arrow-down-short-wide"></i> Recientes</button><button id="sort-oldest-btn" class="btn btn-info" title="Ordenar por más antiguos"><i class="fas fa-arrow-up-wide-short"></i> Antiguos</button><button id="reset-news-filter-btn" class="btn btn-danger" title="Mostrar todos los artículos"><i class="fas fa-times"></i> Reset</button></div>
             </section>
-            <main id="articles-container">
-            </main>
+            <main id="articles-container"></main>
         </div>
-        <!-- === FIN VISTA 1 === -->
 
         <!-- === VISTA 2: GRAFO DE RELACIONES === -->
         <div id="graph-view" class="main-view">
-            <header>
-                <h1>Red de Influencia</h1>
-            </header>
-            <div class="graph-description">
-                <p>Este grafo muestra qué personas fueron mencionadas juntas en los mismos artículos. El tamaño del círculo indica cuántas veces aparece la persona, y el grosor de la línea cuántas veces aparecen juntas.</p>
-                <p><i class="fas fa-info-circle"></i> Haz clic en un nodo (círculo) para ver las noticias relacionadas con esa persona.</p>
-            </div>
+            <header><h1>Red de Influencia</h1></header>
+            <div class="graph-description"><p>Este grafo muestra qué personas fueron mencionadas juntas en los mismos artículos. El tamaño del círculo indica cuántas veces aparece la persona, y el grosor de la línea cuántas veces aparecen juntas.</p><p><i class="fas fa-info-circle"></i> Haz clic en un nodo (círculo) para ver las noticias relacionadas con esa persona.</p></div>
             <div id="graph-filters" style="padding: 15px; background-color: var(--background-secondary); margin-bottom: 20px; border-radius: 8px; max-width: 800px; margin-left: auto; margin-right: auto; display: flex; flex-wrap: wrap; gap: 15px; align-items: center; justify-content: center;">
-                <div style="flex: 1 1 250px; min-width: 200px;">
-                    <label for="focus-politician-select" style="display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-primary);">Político Principal:</label>
-                    <select id="focus-politician-select" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; background-color: var(--background-primary); color: var(--text-primary);">
-                        <option value="">-- Seleccionar Político --</option>
-                    </select>
-                </div>
-                <div style="flex: 0 1 180px; min-width: 150px;">
-                    <label for="relation-threshold-input" style="display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-primary);">Mín. Apariciones Conjuntas:</label>
-                    <input type="number" id="relation-threshold-input" value="5" min="1" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; background-color: var(--background-primary); color: var(--text-primary);">
-                </div>
-                <div class="filter-buttons" style="flex-basis: 100%; display: flex; justify-content: center; gap: 12px; margin-top: 10px;">
-                    <button id="apply-filter-btn" class="btn btn-primary"><i class="fas fa-filter"></i> Aplicar Filtro</button>
-                    <button id="reset-graph-filter-btn" class="btn btn-secondary"><i class="fas fa-undo"></i> Mostrar Todo</button>
-                </div>
+                <div style="flex: 1 1 250px; min-width: 200px;"><label for="focus-politician-select" style="display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-primary);">Político Principal:</label><select id="focus-politician-select" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; background-color: var(--background-primary); color: var(--text-primary);"><option value="">-- Seleccionar Político --</option></select></div>
+                <div style="flex: 0 1 180px; min-width: 150px;"><label for="relation-threshold-input" style="display: block; margin-bottom: 5px; font-weight: 500; color: var(--text-primary);">Mín. Apariciones Conjuntas:</label><input type="number" id="relation-threshold-input" value="5" min="1" style="width: 100%; padding: 10px; border: 1px solid var(--border-color); border-radius: 4px; background-color: var(--background-primary); color: var(--text-primary);"></div>
+                <div class="filter-buttons" style="flex-basis: 100%; display: flex; justify-content: center; gap: 12px; margin-top: 10px;"><button id="apply-filter-btn" class="btn btn-primary"><i class="fas fa-filter"></i> Aplicar Filtro</button><button id="reset-graph-filter-btn" class="btn btn-secondary"><i class="fas fa-undo"></i> Mostrar Todo</button></div>
             </div>
             <div id="mynetwork" style="width: 100%; height: 600px; border: 1px solid var(--border-color-strong);"></div>
         </div>
-        <!-- === FIN VISTA 2 === -->
 
-        <!-- === VISTA 3: DASHBOARD (antes Series Temporales) === -->
+        <!-- === VISTA 3: DASHBOARD === -->
         <div id="timeseries-view" class="main-view">
             <header>
                 <h1>Dashboard Analítico</h1>
             </header>
-
-            <!-- Contenedor de KPIs -->
             <div class="kpi-container">
-                <div class="kpi-box">
-                    <h2>Total Artículos</h2>
-                    <p id="kpi-total-articles">-</p>
-                </div>
-                <div class="kpi-box">
-                    <h2>Figura Destacada</h2>
-                    <p id="kpi-figura-destacada">-</p>
-                </div>
-                <div class="kpi-box">
-                    <h2>Tema Emergente</h2>
-                    <p id="kpi-tema-emergente">-</p>
-                </div>
+                <div class="kpi-box"><h2>Total Artículos</h2><p id="kpi-total-articles">-</p></div>
+                <div class="kpi-box"><h2>Figura Destacada</h2><p id="kpi-figura-destacada">-</p></div>
+                <div class="kpi-box"><h2>Tema Emergente</h2><p id="kpi-tema-emergente">-</p></div>
             </div>
-
-            <!-- Contenedor para filas de gráficos -->
             <div class="dashboard-charts-area">
-
-
                 <div class="chart-row">
                     <div class="chart-container">
                         <h2>Ranking de Políticos (Top 20)</h2>
                         <canvas id="politicianRankingChart"></canvas>
                     </div>
+                    <div class="chart-container">
+                        <h2>Análisis de Sentimiento por Volumen</h2>
+                        <canvas id="sentimentPoliticianChart"></canvas>
+                    </div>
                 </div>
-
-
                 <div class="chart-row">
+                    <div class="chart-container full-width">
+                        <h2>Sentimiento Promedio por Político (-1 a 1)</h2>
+                        <canvas id="averageSentimentChart"></canvas>
+                    </div>
+                </div>
+                <div class="chart-row">
+                    <div class="chart-container">
+                        <h2>Temas Principales</h2>
+                        <canvas id="mainTopicsChart"></canvas>
+                    </div>
                     <div class="chart-container">
                         <h2>Artículos Procesados vs Tiempo</h2>
                         <canvas id="articlesTimeChart"></canvas>
                     </div>
                 </div>
-
                 <div class="chart-row">
                     <div class="chart-container full-width">
+                        <h2>Menciones de Políticos (Top 10) vs Tiempo</h2>
+                        <canvas id="mentionsPoliticianTimeChart"></canvas>
+                    </div>
+                </div>
+                 <div class="chart-row">
+                    <div class="chart-container">
                         <h2>Mapa de Calor de Coocurrencias</h2>
                         <canvas id="cooccurrenceHeatmap"></canvas>
                     </div>
+                    <div class="chart-container">
+                        <h2>Menciones por Medio (Top Políticos)</h2>
+                        <canvas id="mediaPoliticiansChart"></canvas>
+                    </div>
                 </div>
-
-
-            </div> <!-- Fin de dashboard-charts-area -->
-
+            </div>
         </div>
-        <!-- === FIN VISTA 3 === -->
-
-    </div> <!-- Fin de page-content -->
-
-    <div id="tooltip-popup">
-        <img id="tooltip-img" src="" alt="Persona">
-        <p id="tooltip-desc"></p>
     </div>
 
-    <script src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
-    <link href="https://unpkg.com/vis-network/styles/vis-network.min.css" rel="stylesheet" type="text/css" />
+    <div id="tooltip-popup"><img id="tooltip-img" src="" alt="Persona"><p id="tooltip-desc"></p></div>
     
     <div id="politician-modal-overlay" class="modal-overlay">
         <div id="politician-modal" class="modal-content">
             <button id="close-modal-btn" class="modal-close-btn">×</button>
-            <div class="modal-header">
-                <img id="modal-politician-img" src="" alt="Político" class="modal-img">
-                <h2 id="modal-politician-name">Nombre Político</h2>
-            </div>
+            <div class="modal-header"><img id="modal-politician-img" src="" alt="Político" class="modal-img"><h2 id="modal-politician-name">Nombre Político</h2></div>
             <div class="modal-body">
-                <section>
-                    <h3>Artículos Relacionados (<span id="modal-article-count">0</span>)</h3>
-                    <ul id="modal-article-list" class="modal-list">
-                        <li>Cargando artículos...</li>
-                    </ul>
-                </section>
-                <section>
-                    <h3>Mencionado Junto Con (<span id="modal-related-count">0</span>)</h3>
-                    <ul id="modal-related-list" class="modal-list">
-                         <li>Cargando relaciones...</li>
-                    </ul>
-                </section>
+                <section><h3>Artículos Relacionados (<span id="modal-article-count">0</span>)</h3><ul id="modal-article-list" class="modal-list"><li>Cargando artículos...</li></ul></section>
+                <section><h3>Mencionado Junto Con (<span id="modal-related-count">0</span>)</h3><ul id="modal-related-list" class="modal-list"><li>Cargando relaciones...</li></ul></section>
             </div>
         </div>
     </div>
 
+    <!-- Scripts de la Aplicación -->
     <script type="module" src="js/main.js"></script>
-    <!-- Si tienes un dashboard.js separado y quieres cargarlo: -->
-    <!-- <script type="module" src="js/dashboard.js"></script> -->
-    <!-- O, mejor aún, importa las funciones de dashboard.js en main.js -->
-
+    <script type="module" src="./timeseriesView.js"></script>
 </body>
 </html>
